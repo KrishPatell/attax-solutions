@@ -26,7 +26,7 @@ export function AttaxAbout() {
   return (
     <section
       id="about"
-      className="bg-white py-[120px]"
+      className="bg-white py-[60px] md:py-[120px]"
       ref={ref}
     >
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
@@ -93,7 +93,7 @@ export function AttaxAbout() {
                 [From Our Founder]
               </span>
               <h2
-                className="text-[32px] lg:text-[48px] leading-[1.15] text-[#0a1628]"
+                className="text-[32px] md:text-[40px] lg:text-[48px] leading-[1.15] text-[#0a1628]"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   fontWeight: 500,

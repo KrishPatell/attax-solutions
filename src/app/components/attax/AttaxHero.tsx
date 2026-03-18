@@ -32,7 +32,7 @@ export function AttaxHero() {
 
       {/* Blue accent glow */}
       <div
-        className="absolute top-1/3 right-0 w-[600px] h-[600px] rounded-full opacity-10 pointer-events-none"
+        className="absolute top-1/3 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full opacity-10 pointer-events-none"
         style={{ background: "radial-gradient(circle, #1d1ee3 0%, transparent 70%)" }}
       />
 

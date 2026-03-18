@@ -33,7 +33,7 @@ export function AttaxFooter() {
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div>
               <h2
-                className="text-[32px] lg:text-[44px] leading-[1.15] text-white"
+                className="text-[32px] md:text-[38px] lg:text-[44px] leading-[1.15] text-white"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 Ready to resolve your{" "}

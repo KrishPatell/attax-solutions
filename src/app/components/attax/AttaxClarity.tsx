@@ -84,7 +84,7 @@ export function AttaxClarity() {
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white rounded-[16px] p-6 md:p-8 flex flex-col gap-6 md:gap-7 relative overflow-hidden sticky top-[80px] md:static"
+            className="bg-white rounded-[16px] p-6 md:p-8 flex flex-col gap-6 md:gap-7 relative overflow-hidden sticky top-[70px] sm:top-[80px] md:static"
             style={{ border: "1px solid #dde0ff", zIndex: 1 }}
           >
             {/* Badge */}
@@ -154,7 +154,7 @@ export function AttaxClarity() {
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.22 }}
-            className="bg-[#1d1ee3] rounded-[16px] p-6 md:p-8 flex flex-col gap-6 md:gap-7 relative overflow-hidden sticky top-[100px] md:static"
+            className="bg-[#1d1ee3] rounded-[16px] p-6 md:p-8 flex flex-col gap-6 md:gap-7 relative overflow-hidden sticky top-[90px] sm:top-[100px] md:static"
             style={{ zIndex: 2 }}
           >
             {/* Glow */}
@@ -231,7 +231,7 @@ export function AttaxClarity() {
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.34 }}
-            className="bg-white rounded-[16px] p-6 md:p-8 flex flex-col gap-6 sticky top-[120px] md:static"
+            className="bg-white rounded-[16px] p-6 md:p-8 flex flex-col gap-6 sticky top-[110px] sm:top-[120px] md:static"
             style={{ border: "1px solid #dde0ff", zIndex: 3 }}
           >
             {/* Competitor callout */}
