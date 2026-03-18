@@ -76,7 +76,7 @@ export function AttaxResults() {
               [Client Results]
             </span>
             <h2
-              className="text-[32px] lg:text-[52px] leading-[1.15] text-[#03030F]"
+              className="text-[32px] md:text-[42px] lg:text-[52px] leading-[1.15] text-[#03030F]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
               Real Outcomes.{" "}

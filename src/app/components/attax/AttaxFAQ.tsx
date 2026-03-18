@@ -70,7 +70,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
             className="overflow-hidden"
           >
             <p
-              className="text-[16px] leading-[1.6] text-[rgba(10,22,40,0.65)] pb-6 pr-12"
+              className="text-[16px] leading-[1.6] text-[rgba(10,22,40,0.65)] pb-6 pr-8 md:pr-12"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >
               {faq.a}
@@ -104,7 +104,7 @@ export function AttaxFAQ() {
               [FAQ]
             </span>
             <h2
-              className="text-[32px] lg:text-[52px] leading-[1.2] text-[#0a1628]"
+              className="text-[32px] md:text-[42px] lg:text-[52px] leading-[1.2] text-[#0a1628]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
               Common{" "}
