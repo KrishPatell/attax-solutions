@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Map Figma font-family names to actual loaded fonts */
+[class*="Inter_Tight"] {
+  font-family: 'Inter Tight', sans-serif !important;
+}
+
+[class*="Playfair_Display"] {
+  font-family: 'Playfair Display', serif !important;
+}
+
+[class*="'Inter:"] {
+  font-family: 'Inter', sans-serif !important;
+}
+
+[class*="Helvetica"] {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
