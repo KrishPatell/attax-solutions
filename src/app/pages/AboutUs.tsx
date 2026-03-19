@@ -9,6 +9,8 @@ import { ClientAssurance } from "../components/attax/about/ClientAssurance";
 import { TeamSection } from "../components/attax/about/TeamSection";
 import { ReferralProgram } from "../components/attax/about/ReferralProgram";
 import { AboutCTA } from "../components/attax/about/AboutCTA";
+import { AttaxFAQ } from "../components/attax/AttaxFAQ";
+import { AttaxContactForm } from "../components/attax/AttaxContactForm";
 import { useEffect } from "react";
 
 export default function AboutUs() {
@@ -38,6 +40,8 @@ export default function AboutUs() {
         <TeamSection />
         <ReferralProgram />
         <AboutCTA />
+        <AttaxFAQ />
+        <AttaxContactForm />
       </main>
 
       <AttaxFooter />

@@ -95,8 +95,8 @@ export function AttaxContactForm() {
 
   return (
     <section
-      id="contact-form"
-      className="relative bg-white py-[60px] md:py-[120px] px-5 md:px-8 overflow-hidden"
+      id="contact"
+      className="relative bg-white py-[60px] md:py-[120px] px-5 md:px-8 overflow-x-hidden"
       ref={ref}
     >
       {/* Subtle background grid - now dark on light */}
@@ -117,7 +117,7 @@ export function AttaxContactForm() {
           initial={{ opacity: 0, y: 28 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="mb-16"
+          className="mb-8 md:mb-16"
         >
           <div className="flex items-center gap-2 mb-4">
             <div className="w-1 h-5 rounded-full bg-[#1d1ee3]" />
@@ -150,7 +150,7 @@ export function AttaxContactForm() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* ── Left: Contact Info ── */}
           <motion.div
             initial={{ opacity: 0, x: -32 }}
@@ -182,9 +182,7 @@ export function AttaxContactForm() {
                     {card.label}
                   </p>
                   <p
-                    className={`text-[#0A1628] leading-tight group-hover:text-[#1d1ee3] transition-colors ${
-                      card.label === "Call" ? "text-[20px] md:text-[22px]" : "text-[18px] md:text-[20px]"
-                    }`}
+                    className="text-[#0A1628] text-[15px] leading-tight group-hover:text-[#1d1ee3] transition-colors"
                     style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
                   >
                     {card.value}
@@ -216,7 +214,7 @@ export function AttaxContactForm() {
                   Visit Us
                 </p>
                 <p
-                  className="text-[#0A1628] text-[18px] md:text-[20px] leading-tight group-hover:text-[#1d1ee3] transition-colors"
+                  className="text-[#0A1628] text-[15px] leading-tight group-hover:text-[#1d1ee3] transition-colors"
                   style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
                 >
                   See on Google Map
@@ -225,10 +223,10 @@ export function AttaxContactForm() {
             </motion.a>
 
             {/* Divider */}
-            <div className="border-t border-slate-100 mt-4 mb-2 lg:block hidden" />
+            <div className="border-t border-slate-100 mt-2 mb-2" />
 
             {/* Trust Badges */}
-            <div className="relative w-[201px] h-[116px]">
+            <div className="relative w-full max-w-[240px] h-[140px]">
               <AttaxTrustpilot />
             </div>
           </motion.div>
@@ -240,7 +238,7 @@ export function AttaxContactForm() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="col-span-12 lg:col-span-7"
           >
-            <div className="bg-white border border-slate-200 rounded-[24px] p-6 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] relative">
+            <div className="bg-white border border-slate-200 rounded-[24px] p-5 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] relative overflow-hidden">
               <div className="mb-6 md:mb-8">
                 <h3
                   className="text-[#060e1e] text-[22px] md:text-[24px]"
@@ -455,7 +453,7 @@ export function AttaxContactForm() {
                         boxShadow: "0 20px 40px rgba(29,30,227,0.25)",
                       }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex items-center justify-center gap-3 bg-[#1d1ee3] rounded-[50px] py-4 md:py-4.5 px-6 md:px-8 mt-2 group w-full max-w-[280px] self-center md:self-start transition-shadow duration-300"
+                      className="flex items-center justify-center gap-3 bg-[#1d1ee3] rounded-[50px] py-4 md:py-4.5 px-6 md:px-8 mt-2 group w-full max-w-[280px] mx-auto md:mx-0 transition-shadow duration-300"
                     >
                       <span
                         className="text-white text-[16px]"

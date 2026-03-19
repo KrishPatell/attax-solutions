@@ -7,9 +7,9 @@ const officeImg = "https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?
 
 export function TeamSection() {
   return (
-    <section id="team" className="bg-white py-[120px]">
-      <div className="max-w-[1200px] mx-auto px-8">
-        <div className="grid grid-cols-12 gap-16 items-start mb-[100px]">
+    <section id="team" className="bg-white py-[60px] md:py-[120px]">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="grid grid-cols-12 gap-8 md:gap-16 items-start mb-[60px] md:mb-[100px]">
           {/* Founder Bio */}
           <div className="col-span-12 lg:col-span-7">
             <motion.div
@@ -19,7 +19,7 @@ export function TeamSection() {
               transition={{ duration: 0.7 }}
             >
               <h2
-                className="text-[48px] leading-[1.1] text-[#0a1628] mb-8"
+                className="text-[32px] md:text-[48px] leading-[1.2] md:leading-[1.1] text-[#0a1628] mb-6 md:mb-8"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 Meet Our{" "}
@@ -37,7 +37,7 @@ export function TeamSection() {
               </div>
 
               {/* Credential Box */}
-              <div className="mt-12 p-8 rounded-[24px] bg-[#f0f4ff]/50 border border-[#1d1ee3]/10 relative overflow-hidden group">
+              <div className="mt-8 md:mt-12 p-5 md:p-8 rounded-[16px] md:rounded-[24px] bg-[#f0f4ff]/50 border border-[#1d1ee3]/10 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#1d1ee3]/5 rounded-bl-[100px] -z-10 group-hover:scale-125 transition-transform duration-700" />
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#1d1ee3] shadow-sm">
@@ -72,14 +72,14 @@ export function TeamSection() {
               <ImageWithFallback
                 src={teamImg}
                 alt="Omar Hassan"
-                className="w-full h-[580px] object-cover"
+                className="w-full h-[360px] md:h-[580px] object-cover"
               />
             </motion.div>
           </div>
         </div>
 
         {/* Office / Culture / Careers */}
-        <div className="grid grid-cols-12 gap-8 items-center pt-[100px] border-t border-[#eaeaff]">
+        <div className="grid grid-cols-12 gap-8 items-center pt-[60px] md:pt-[100px] border-t border-[#eaeaff]">
           <div className="col-span-12 lg:col-span-6">
             <motion.div
               initial={{ opacity: 0, x: -30 }}

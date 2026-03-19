@@ -1,5 +1,4 @@
 import { Shield } from "lucide-react";
-import imgLogo from "figma:asset/2595bc767e6c53dda8ddd79a59b6a14bcc3549a0.png";
 
 interface BrandLogoProps {
   light?: boolean;

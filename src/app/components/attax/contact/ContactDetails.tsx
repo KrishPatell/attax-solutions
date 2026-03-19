@@ -47,8 +47,8 @@ export function ContactDetails() {
             >
               {item.label}
             </span>
-            <span 
-              className="text-[18px] md:text-[22px] text-[#0A1628] leading-tight"
+            <span
+              className="text-[15px] text-[#0A1628] leading-tight"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
             >
               {item.value}

@@ -10,7 +10,7 @@ export function AttaxHero() {
   const scrollTo = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="hero" className="relative min-h-screen bg-[#0a1628] overflow-hidden flex items-center">
+    <section id="hero" className="relative min-h-[100vh] lg:min-h-[85vh] bg-[#0a1628] overflow-hidden flex items-center">
       {/* BG color/solid as requested */}
       <div className="absolute inset-0 bg-[#0a1628]">
         {/* Subtle grid pattern */}
@@ -37,7 +37,7 @@ export function AttaxHero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 pt-[120px] pb-[80px] w-full">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 pt-[100px] pb-[60px] w-full">
         <div className="grid grid-cols-12 gap-10 items-center">
           {/* Left — copy */}
           <div className="col-span-12 lg:col-span-7">
@@ -79,13 +79,13 @@ export function AttaxHero() {
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               <span
-                className="block text-[32px] md:text-[44px] lg:text-[72px] leading-[1.2] md:leading-[1.1] text-white tracking-[-1px] lg:tracking-[-1.5px]"
+                className="block text-[34px] md:text-[44px] lg:text-[72px] leading-[1.2] md:leading-[1.1] text-white tracking-[-1px] lg:tracking-[-1.5px]"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 Tax Debt Doesn't
               </span>
               <span
-                className="block text-[32px] md:text-[44px] lg:text-[72px] leading-[1.2] md:leading-[1.1] tracking-[-1px] lg:tracking-[-1.5px] text-white"
+                className="block text-[34px] md:text-[44px] lg:text-[72px] leading-[1.2] md:leading-[1.1] tracking-[-1px] lg:tracking-[-1.5px] text-white"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 Have to{" "}
@@ -103,7 +103,7 @@ export function AttaxHero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="mt-6 leading-[1.65] lg:leading-[1.7] text-[rgba(255,255,255,0.72)] max-w-[520px] text-[16px] md:text-[18.5px]"
+              className="mt-6 leading-[1.65] lg:leading-[1.7] text-[rgba(255,255,255,0.72)] max-w-[340px] md:max-w-[520px] text-[15px] md:text-[18.5px]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >ATTAX Solutions resolves IRS and state tax debt — with honesty, clarity, and a plan that actually works.</motion.p>
 
@@ -121,10 +121,10 @@ export function AttaxHero() {
                 whileHover={{ scale: 1.04, boxShadow: "0 12px 40px rgba(29,30,227,0.45)" }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
-                className="flex items-center gap-3 bg-[#1d1ee3] rounded-[50px] pl-4 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group w-full md:w-auto"
+                className="flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group self-start"
               >
                 <span
-                  className="text-white text-[14px] md:text-[16px] flex-1 text-center md:text-left"
+                  className="text-white text-[13px] md:text-[16px] whitespace-nowrap"
                   style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
                 >
                   Start Your Complimentary Consultation
@@ -135,7 +135,7 @@ export function AttaxHero() {
               </motion.button>
 
               {/* 100% Confidential Consultation */}
-              <div className="flex gap-[8px] items-center justify-center md:justify-start mt-2 md:mt-0">
+              <div className="flex gap-[8px] items-center justify-start mt-2 md:mt-0">
                 <div className="relative shrink-0 size-[20px]">
                   <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
                     <g clipPath="url(#clip0_18_50)">
@@ -149,7 +149,7 @@ export function AttaxHero() {
                     </defs>
                   </svg>
                 </div>
-                <p className="font-normal leading-[22.5px] text-[16px] text-[rgba(255,255,255,0.8)] whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                <p className="font-normal leading-[22.5px] text-[15px] text-[rgba(255,255,255,0.8)] whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   100% Confidential Consultation
                 </p>
               </div>
@@ -165,7 +165,7 @@ export function AttaxHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="flex gap-16 mt-20 pt-10 border-t border-white/10 items-center flex-wrap"
+          className="flex gap-8 md:gap-16 mt-10 pt-8 border-t border-white/10 items-center flex-wrap"
         >
           <div className="max-w-[520px]">
             <div

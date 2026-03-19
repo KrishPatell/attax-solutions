@@ -24,7 +24,7 @@ export const blogPosts: Record<string, BlogPostData> = {
     slug: "irs-audit-survival-guide",
     category: "Audit Insight",
     title: "The Ultimate Hub for IRS Audit Survival Strategies",
-    featuredImage: "https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=1200",
+    featuredImage: "https://images.unsplash.com/photo-1554224155-1696413575b8?w=1200&auto=format&fit=crop&q=80",
     overview: "Welcome to ATTAX Insights, a platform dedicated to helping taxpayers navigate, plan, and address tax audits with confidence. Backed by professional tax specialization, our Hub provides a comprehensive framework to understand, prepare, and resolve your audit challenges.",
     expectations: [
       "Strategic insights into federal and state audit processes.",
@@ -55,7 +55,7 @@ export const blogPosts: Record<string, BlogPostData> = {
     slug: "offer-in-compromise-guide",
     category: "Debt Relief",
     title: "Navigating the Offer in Compromise (OIC) Program",
-    featuredImage: "https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&q=80&w=1200",
+    featuredImage: "https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=1200&auto=format&fit=crop&q=80",
     overview: "The Offer in Compromise (OIC) is perhaps the most misunderstood program in the tax resolution world. It allows qualified taxpayers to settle their tax liability for less than the full amount they owe. It’s a legitimate 'fresh start,' but the IRS criteria are stringent.",
     expectations: [
       "A deep dive into the 'Reasonable Collection Potential' formula.",

@@ -10,6 +10,8 @@ import { TaxProblems } from "../components/attax/services/TaxProblems";
 import { FreeConsultation } from "../components/attax/services/FreeConsultation";
 import { HandlingCases } from "../components/attax/about/HandlingCases";
 import { ServiceCTA } from "../components/attax/services/ServiceCTA";
+import { AttaxFAQ } from "../components/attax/AttaxFAQ";
+import { AttaxContactForm } from "../components/attax/AttaxContactForm";
 import { useEffect } from "react";
 
 export default function Services() {
@@ -35,6 +37,8 @@ export default function Services() {
           <FreeConsultation />
           <ServiceCTA />
         </div>
+        <AttaxFAQ />
+        <AttaxContactForm />
       </main>
 
       <AttaxFooter />

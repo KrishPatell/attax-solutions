@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, ShieldCheck, UserCheck, MessageCircle, FileBarChart, Plus, Minus } from "lucide-react";
 import { AttaxTestimonialCard } from "../AttaxTestimonialCard";
 
-import imgBackground from "figma:asset/adb14c0ee13b2c301a01861138500063f7004c62.png";
-import imgProfile from "figma:asset/86f98efb7be5f3bbd5bbbabbad193afccd3d2e03.png";
+const imgBackground = "https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080";
+const imgProfile = "https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=200";
 
 const features = [
   {
@@ -33,8 +33,8 @@ export function HandlingCases() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="how-we-handle" className="bg-white py-[120px] overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section id="how-we-handle" className="bg-white py-[60px] md:py-[120px] overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
@@ -48,11 +48,11 @@ export function HandlingCases() {
             >
               [How We Handle Cases]
             </motion.span>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-[52px] leading-[1.1] text-[#03030f] font-medium" 
+              className="text-[32px] md:text-[42px] lg:text-[52px] leading-[1.2] md:leading-[1.1] text-[#03030f] font-medium"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
               The Advantage of <br />
@@ -67,7 +67,7 @@ export function HandlingCases() {
           >
             <button
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="group relative bg-[#1d1ee3] rounded-[50px] pl-8 pr-2 py-2 inline-flex items-center gap-10 hover:bg-[#1618c7] transition-all"
+              className="group relative bg-[#1d1ee3] rounded-[50px] pl-6 pr-2 py-2 inline-flex items-center gap-5 hover:bg-[#1618c7] transition-all self-start"
             >
               <span className="text-white text-[16px] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 Get Started
@@ -88,7 +88,7 @@ export function HandlingCases() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex-1 min-h-[500px] relative rounded-[12px] overflow-hidden group"
+            className="flex-1 min-h-[340px] md:min-h-[500px] relative rounded-[12px] overflow-hidden group"
           >
             {/* Background Image Container */}
             <div className="absolute inset-0">
@@ -119,7 +119,7 @@ export function HandlingCases() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="lg:w-[420px] bg-[#eaeaff] rounded-[12px] p-8 flex flex-col"
+            className="w-full lg:w-[420px] bg-[#eaeaff] rounded-[12px] p-5 md:p-8 flex flex-col"
           >
             <div className="flex flex-col h-full">
               {features.map((feature, idx) => {

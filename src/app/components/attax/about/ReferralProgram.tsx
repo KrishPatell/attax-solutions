@@ -21,9 +21,9 @@ export function ReferralProgram() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="referral" className="bg-[#f7f9ff] py-[120px]">
-      <div className="max-w-[1200px] mx-auto px-8">
-        <div className="grid grid-cols-12 gap-16">
+    <section id="referral" className="bg-[#f7f9ff] py-[60px] md:py-[120px]">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="grid grid-cols-12 gap-8 md:gap-16">
           {/* Left - Program Info */}
           <div className="col-span-12 lg:col-span-5">
             <motion.div
@@ -33,7 +33,7 @@ export function ReferralProgram() {
               transition={{ duration: 0.7 }}
             >
               <h2
-                className="text-[48px] leading-[1.1] text-[#0a1628] mb-8"
+                className="text-[32px] md:text-[48px] leading-[1.2] md:leading-[1.1] text-[#0a1628] mb-6 md:mb-8"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 Help Others.{" "}
@@ -42,7 +42,7 @@ export function ReferralProgram() {
                 </span>
               </h2>
               <p
-                className="text-[18px] text-[#0a1628]/60 leading-[1.7] mb-12"
+                className="text-[15px] md:text-[18px] text-[#0a1628]/60 leading-[1.7] mb-8 md:mb-12"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
               >
                 Know someone struggling with IRS or state tax debt? Refer them to ATTAX Solutions. Our referral program is designed to reward you for helping people find professional representation.
@@ -106,27 +106,27 @@ export function ReferralProgram() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="bg-white p-10 lg:p-12 rounded-[32px] shadow-[0_40px_80px_rgba(0,0,0,0.06)] border border-[#eaeaff]"
+              className="bg-white p-6 md:p-10 lg:p-12 rounded-[24px] md:rounded-[32px] shadow-[0_40px_80px_rgba(0,0,0,0.06)] border border-[#eaeaff]"
             >
               <h3 className="text-[28px] text-[#0a1628] mb-8 font-semibold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Refer a Case</h3>
               <form className="space-y-6">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="col-span-2 sm:col-span-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
                     <label className="block text-[14px] text-[#0a1628]/60 mb-2 font-medium">Your Name</label>
                     <input type="text" className="w-full bg-[#f9faff] border border-[#eaeaff] rounded-[12px] px-4 py-3 outline-none focus:border-[#1d1ee3] transition-colors" placeholder="Full Name" />
                   </div>
-                  <div className="col-span-2 sm:col-span-1">
+                  <div>
                     <label className="block text-[14px] text-[#0a1628]/60 mb-2 font-medium">Your Contact</label>
                     <input type="text" className="w-full bg-[#f9faff] border border-[#eaeaff] rounded-[12px] px-4 py-3 outline-none focus:border-[#1d1ee3] transition-colors" placeholder="Email or Phone" />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="col-span-2 sm:col-span-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
                     <label className="block text-[14px] text-[#0a1628]/60 mb-2 font-medium">Referral Name</label>
                     <input type="text" className="w-full bg-[#f9faff] border border-[#eaeaff] rounded-[12px] px-4 py-3 outline-none focus:border-[#1d1ee3] transition-colors" placeholder="Full Name" />
                   </div>
-                  <div className="col-span-2 sm:col-span-1">
+                  <div>
                     <label className="block text-[14px] text-[#0a1628]/60 mb-2 font-medium">Referral Phone/Email</label>
                     <input type="text" className="w-full bg-[#f9faff] border border-[#eaeaff] rounded-[12px] px-4 py-3 outline-none focus:border-[#1d1ee3] transition-colors" placeholder="Contact Details" />
                   </div>

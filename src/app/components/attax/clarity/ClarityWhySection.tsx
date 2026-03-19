@@ -3,9 +3,9 @@ import { AlertCircle, CheckCircle2 } from "lucide-react";
 
 export function ClarityWhySection() {
   return (
-    <section className="py-[140px] bg-slate-50 relative overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-8 relative z-10">
-        <div className="grid grid-cols-12 gap-10 lg:gap-24 items-center">
+    <section className="py-[60px] md:py-[120px] bg-slate-50 relative overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+        <div className="grid grid-cols-12 gap-8 lg:gap-24 items-center">
           {/* Left Column: Problem */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -24,7 +24,7 @@ export function ClarityWhySection() {
               </span>
             </div>
             <h2
-              className="text-[44px] leading-[1.1] text-[#060e1e] mb-6"
+              className="text-[32px] md:text-[36px] lg:text-[44px] leading-[1.1] text-[#060e1e] mb-6"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
             >
               Most people find out about IRS problems when it's{" "}
@@ -33,7 +33,7 @@ export function ClarityWhySection() {
               </span>
             </h2>
             <p
-              className="text-[17px] leading-[1.6] text-slate-600 mb-0"
+              className="text-[14px] md:text-[16px] lg:text-[17px] leading-[1.6] text-slate-600 mb-0"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >
               Whether it's a scary letter or an unexpected wage garnishment, the IRS doesn't wait for you to be ready. By the time you notice, the damage is already done.
@@ -67,7 +67,7 @@ export function ClarityWhySection() {
               </span>
             </div>
             <h2
-              className="text-[44px] leading-[1.1] text-[#060e1e] mb-6"
+              className="text-[32px] md:text-[36px] lg:text-[44px] leading-[1.1] text-[#060e1e] mb-6"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
             >
               ATTAX Clarity monitors your IRS account{" "}
@@ -76,7 +76,7 @@ export function ClarityWhySection() {
               </span>
             </h2>
             <p
-              className="text-[17px] leading-[1.6] text-slate-600 mb-0"
+              className="text-[14px] md:text-[16px] lg:text-[17px] leading-[1.6] text-slate-600 mb-0"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >
               We alert you before a notice becomes a crisis. Our system watches for liens, levies, and penalty accruals in real-time, giving you the power of "calm, not panic."

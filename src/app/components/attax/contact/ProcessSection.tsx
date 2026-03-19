@@ -30,16 +30,16 @@ export function ProcessSection() {
   ];
 
   return (
-    <section className="py-[120px] bg-[#f9faff] border-y border-[#eaeaff]">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
-        <div className="text-center max-w-[800px] mx-auto mb-20">
+    <section className="py-[60px] md:py-[120px] bg-[#f9faff] border-y border-[#eaeaff]">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="text-center max-w-[800px] mx-auto mb-10 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 
-              className="text-[48px] text-[#0a1628] mb-6 tracking-tight"
+            <h2
+              className="text-[32px] md:text-[40px] lg:text-[48px] text-[#0a1628] mb-6 tracking-tight"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700 }}
             >
               What Happens After You{" "}
@@ -47,13 +47,13 @@ export function ProcessSection() {
                 Submit
               </span>
             </h2>
-            <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full border border-[#eaeaff] shadow-sm">
-              <Clock size={18} className="text-[#1d1ee3]" />
-              <p 
-                className="text-[15px] text-[#0a1628]/70"
+            <div className="flex items-center justify-center gap-3 bg-white px-5 py-3 rounded-[20px] md:rounded-full border border-[#eaeaff] shadow-sm max-w-[340px] mx-auto">
+              <Clock size={18} className="text-[#1d1ee3] shrink-0" />
+              <p
+                className="text-[13px] md:text-[15px] text-[#0a1628]/70 text-left"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
               >
-                We respond within 1 business day (Monday–Friday, 9 AM–6 PM PT)
+                We respond within 1 business day (Mon–Fri, 9 AM–6 PM PT)
               </p>
             </div>
           </motion.div>
@@ -67,7 +67,7 @@ export function ProcessSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="relative p-8 rounded-[32px] bg-white border border-[#eaeaff] group hover:shadow-xl transition-all duration-300"
+              className="relative p-5 md:p-8 rounded-[24px] md:rounded-[32px] bg-white border border-[#eaeaff] group hover:shadow-xl transition-all duration-300"
             >
               <div 
                 className="w-14 h-14 rounded-[18px] flex items-center justify-center mb-6 text-white shadow-lg"
@@ -86,8 +86,8 @@ export function ProcessSection() {
               >
                 {step.title}
               </h3>
-              <p 
-                className="text-[16px] text-[#0a1628]/60 leading-relaxed"
+              <p
+                className="text-[14px] md:text-[15px] text-[#0a1628]/60 leading-relaxed"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 {step.description}

@@ -5,17 +5,17 @@ import { AttaxTestimonialCard } from "../AttaxTestimonialCard";
 
 export function CoreValuesSection() {
   return (
-    <section className="py-[120px] bg-white overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-[60px]">
-          
+    <section className="py-[60px] md:py-[120px] bg-white overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-[60px]">
+
           {/* Left: Image with Testimonial Card */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex-1 relative w-full lg:max-w-[540px] h-[620px] rounded-[12px] overflow-hidden"
+            className="flex-1 relative w-full lg:max-w-[540px] h-[300px] md:h-[480px] lg:h-[620px] rounded-[12px] overflow-hidden"
           >
             <ImageWithFallback
               src="https://images.unsplash.com/photo-1770943558988-2c605d6bd5a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0ZWFtJTIwY29sbGFib3JhdGluZyUyMGluJTIwbW9kZXJuJTIwZ2xhc3MlMjBvZmZpY2UlMjBtZWV0aW5nfGVufDF8fHx8MTc3MzY1NjkwOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
@@ -50,7 +50,7 @@ export function CoreValuesSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-[52px] leading-[1.1] text-[#03030f] font-medium mb-6" 
+                className="text-[32px] md:text-[40px] lg:text-[52px] leading-[1.1] text-[#03030f] font-medium mb-6"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 The Value <span className="italic italic text-[#03030f]" style={{ fontFamily: "'Playfair Display', serif" }}>Behind</span>
@@ -59,7 +59,7 @@ export function CoreValuesSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-[18px] leading-[1.6] text-[rgba(3,3,15,0.7)] max-w-[500px]" 
+                className="text-[14px] md:text-[16px] lg:text-[18px] leading-[1.6] text-[rgba(3,3,15,0.7)] max-w-[500px]"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 The value behind our tax relief work goes far beyond simple resolutions. It's rooted in how we listen, collaborate, and protect every client's financial future.
@@ -91,8 +91,8 @@ export function CoreValuesSection() {
                     <feature.icon size={22} className="text-[#1d1ee3]" />
                   </div>
                   <div>
-                    <h4 className="text-[20px] font-medium text-[#03030f]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{feature.title}</h4>
-                    <p className="text-[16px] text-[rgba(3,3,15,0.7)]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{feature.desc}</p>
+                    <h4 className="text-[16px] md:text-[18px] lg:text-[20px] font-medium text-[#03030f]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{feature.title}</h4>
+                    <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[rgba(3,3,15,0.7)]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{feature.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -105,13 +105,13 @@ export function CoreValuesSection() {
             >
               <button
                 onClick={() => document.querySelector("#clarity")?.scrollIntoView({ behavior: "smooth" })}
-                className="group relative bg-[#1d1ee3] rounded-[50px] pl-8 pr-2 py-2 inline-flex items-center gap-10 hover:bg-[#1618c7] transition-all"
+                className="self-start group relative bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 inline-flex items-center gap-5 hover:bg-[#1618c7] transition-all"
               >
-                <span className="text-white text-[16px] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                <span className="text-white text-[14px] md:text-[16px] font-medium whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Get Started
                 </span>
-                <div className="w-11 h-11 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
-                  <ArrowUpRight size={20} className="text-[#1d1ee3]" />
+                <div className="w-10 h-10 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
+                  <ArrowUpRight size={18} className="text-[#1d1ee3]" />
                 </div>
               </button>
             </motion.div>

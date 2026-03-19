@@ -64,7 +64,7 @@ export function AttaxServices() {
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 md:gap-3 bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group shrink-0 w-full max-w-[250px] justify-between"
+            className="flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group shrink-0 self-start"
           >
             <span className="text-white text-[14px] md:text-[16px] font-medium px-2" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
               View All Services
@@ -99,7 +99,7 @@ export function AttaxServices() {
                     {svc.title}
                   </h3>
                   <p 
-                    className="text-[rgba(3,3,15,0.7)] text-[14px] md:text-[13.7px] leading-[1.6] md:leading-[24px]"
+                    className="text-[rgba(3,3,15,0.7)] text-[14px] md:text-[15px] leading-[1.6] md:leading-[24px]"
                     style={{ fontFamily: "'Inter Tight', sans-serif" }}
                   >
                     {svc.desc}

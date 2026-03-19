@@ -4,7 +4,8 @@ import { AttaxFooter } from "../components/attax/AttaxFooter";
 import { ProcessHero } from "../components/attax/process/ProcessHero";
 import { ProcessStats } from "../components/attax/process/ProcessStats";
 import { ProcessStepsSection } from "../components/attax/process/ProcessStepsSection";
-import { ProcessFAQ } from "../components/attax/process/ProcessFAQ";
+import { AttaxFAQ } from "../components/attax/AttaxFAQ";
+import { AttaxContactForm } from "../components/attax/AttaxContactForm";
 import { ProcessCTA } from "../components/attax/process/ProcessCTA";
 
 export default function OurProcess() {
@@ -26,10 +27,13 @@ export default function OurProcess() {
         {/* 03. Steps Grid - Based on Optimo "Explore More Services" */}
         <ProcessStepsSection />
 
-        {/* 04. FAQ - Based on Optimo Design */}
-        <ProcessFAQ />
+        {/* 04. FAQ */}
+        <AttaxFAQ />
 
-        {/* 05. CTA - Based on Optimo Design */}
+        {/* 05. Contact Form */}
+        <AttaxContactForm />
+
+        {/* 06. CTA */}
         <ProcessCTA />
       </main>
 

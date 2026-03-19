@@ -5,9 +5,9 @@ import { Link } from "react-router";
 
 export function FreeConsultation() {
   return (
-    <section className="py-[120px] bg-white scroll-mt-[120px]">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+    <section className="py-[60px] md:py-[120px] bg-white scroll-mt-[120px]">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
           {/* Left: Image */}
           <div className="w-full lg:w-[45%] relative">
             <motion.div 
@@ -37,43 +37,43 @@ export function FreeConsultation() {
               [The First Step]
             </motion.span>
             
-            <h2 
-              className="text-[42px] lg:text-[52px] leading-[1.1] text-[#0a1628] font-medium mb-8"
+            <h2
+              className="text-[32px] md:text-[42px] lg:text-[52px] leading-[1.1] text-[#0a1628] font-medium mb-6 md:mb-8"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              Start With a <br />
+              Start With a{" "}
               <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Free Consultation
               </span>
             </h2>
 
-            <p className="text-[18px] leading-[1.8] text-[rgba(10,22,40,0.6)] mb-10">
+            <p className="text-[14px] md:text-[16px] leading-[1.8] text-[rgba(10,22,40,0.6)] mb-8 md:mb-10">
               Your journey to tax resolution begins with a 30-minute introductory meeting. We review your current tax situation, explain your available options, and provide a clear roadmap for moving forward.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-              <div className="bg-[#f9faff] p-8 rounded-[24px] border border-[rgba(0,0,0,0.03)] flex flex-col gap-4">
-                <div className="w-10 h-10 bg-[#1d1ee3] rounded-full flex items-center justify-center text-white">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
+              <div className="bg-[#f9faff] p-5 md:p-8 rounded-[24px] border border-[rgba(0,0,0,0.03)] flex flex-col gap-4">
+                <div className="w-[50px] h-[50px] bg-[#eaeeff] rounded-full flex items-center justify-center text-[#1d1ee3]">
                   <Clock size={20} />
                 </div>
                 <div>
-                  <h4 className="text-[#0a1628] font-bold text-[18px]">30 Minutes</h4>
+                  <h4 className="text-[#0a1628] font-bold text-[16px] md:text-[18px]">30 Minutes</h4>
                   <p className="text-[14px] text-[rgba(10,22,40,0.5)]">Duration of consultation</p>
                 </div>
               </div>
-              
-              <div className="bg-[#f9faff] p-8 rounded-[24px] border border-[rgba(0,0,0,0.03)] flex flex-col gap-4">
-                <div className="w-10 h-10 bg-[#1d1ee3] rounded-full flex items-center justify-center text-white">
+
+              <div className="bg-[#f9faff] p-5 md:p-8 rounded-[24px] border border-[rgba(0,0,0,0.03)] flex flex-col gap-4">
+                <div className="w-[50px] h-[50px] bg-[#eaeeff] rounded-full flex items-center justify-center text-[#1d1ee3]">
                   <Video size={20} />
                 </div>
                 <div>
-                  <h4 className="text-[#0a1628] font-bold text-[18px]">Phone or Video</h4>
+                  <h4 className="text-[#0a1628] font-bold text-[16px] md:text-[18px]">Phone or Video</h4>
                   <p className="text-[14px] text-[rgba(10,22,40,0.5)]">Choose your preferred format</p>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-4 mb-12">
+            <div className="space-y-4 mb-8 md:mb-12">
               {[
                 "Comprehensive Review of Tax History",
                 "Explanation of IRS Resolution Options",
@@ -86,15 +86,15 @@ export function FreeConsultation() {
               ))}
             </div>
 
-            <Link to="/contact">
-              <motion.button 
+            <Link to="/contact" className="self-start w-fit">
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-[#1d1ee3] text-white rounded-full px-10 py-5 font-bold text-[18px] flex items-center gap-3 group"
+                className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 font-medium text-[14px] md:text-[16px] flex items-center gap-5 group w-fit"
               >
-                Schedule Your Meeting
-                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
-                  <ArrowRight size={20} />
+                <span className="whitespace-nowrap">Schedule Your Meeting</span>
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 shrink-0">
+                  <ArrowRight size={18} className="text-[#1d1ee3]" />
                 </div>
               </motion.button>
             </Link>

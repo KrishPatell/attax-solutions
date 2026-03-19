@@ -4,18 +4,18 @@ import { Link } from "react-router";
 
 export function AboutCTA() {
   return (
-    <section className="bg-white py-[120px] relative overflow-hidden">
+    <section className="bg-white py-[60px] md:py-[120px] relative overflow-hidden">
       {/* Decorative patterns */}
       <div className="absolute top-0 left-0 w-full h-1/2 bg-[#f9faff] -z-10" />
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-white -z-10" />
 
-      <div className="max-w-[1200px] mx-auto px-8 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-[#0a1628] rounded-[48px] p-16 lg:p-24 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.2)]"
+          className="bg-[#0a1628] rounded-[24px] md:rounded-[48px] p-8 md:p-16 lg:p-24 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.2)]"
         >
           {/* Blue accent glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1d1ee3]/20 rounded-full blur-[100px] pointer-events-none" />
@@ -42,7 +42,7 @@ export function AboutCTA() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-[52px] lg:text-[64px] leading-[1.1] text-white mb-8 max-w-[800px]"
+              className="text-[32px] md:text-[52px] lg:text-[64px] leading-[1.2] md:leading-[1.1] text-white mb-6 md:mb-8 max-w-[800px]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
             >
               Start Your{" "}
@@ -74,7 +74,7 @@ export function AboutCTA() {
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(29,30,227,0.3)" }}
                   whileTap={{ scale: 0.97 }}
-                  className="flex items-center gap-4 bg-[#1d1ee3] text-white rounded-[50px] pl-10 pr-4 py-4 group"
+                  className="flex items-center gap-4 bg-[#1d1ee3] text-white rounded-[50px] pl-6 md:pl-10 pr-2 md:pr-4 py-2 md:py-4 group self-start mx-auto"
                 >
                   <span className="text-[18px] font-semibold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Get Started</span>
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#1d1ee3] group-hover:bg-blue-50 transition-colors">

@@ -76,7 +76,7 @@ export function AttaxProcess() {
               </span>
             </h2>
           </motion.div>
-          <div className="flex items-center gap-10 shrink-0 w-full md:w-auto">
+          <div className="flex items-center gap-10 shrink-0 w-auto">
             
             <motion.button
               initial={{ opacity: 0, y: 20 }}
@@ -85,7 +85,7 @@ export function AttaxProcess() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="flex items-center justify-between gap-3 bg-[#0a1628] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group shrink-0 h-fit w-full max-w-[250px]"
+              className="flex items-center gap-5 bg-[#0a1628] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group shrink-0 h-fit w-auto"
             >
               <span
                 className="text-white text-[14px] md:text-[15px]"
@@ -124,9 +124,9 @@ export function AttaxProcess() {
               }}
             />
             {/* Bottom overlay content */}
-            <div className="absolute bottom-0 left-0 right-0 p-10">
+            <div className="absolute bottom-0 left-0 right-0 p-5 md:p-10">
               <p
-                className="text-white text-[28px] leading-[1.25] mb-2 font-[Inter_Tight]"
+                className="text-white text-[22px] md:text-[28px] leading-[1.25] mb-2 font-[Inter_Tight]"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 {currentStep.num}.{" "}
@@ -159,13 +159,13 @@ export function AttaxProcess() {
                     className="w-full flex items-center gap-3 md:gap-5 py-5 px-5 md:py-6 md:px-6 text-left"
                   >
                     <span
-                      className="text-[22px] md:text-[28px] text-[#03030f] shrink-0"
+                      className="text-[18px] md:text-[24px] text-[#03030f] shrink-0"
                       style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
                     >
                       {step.num}
                     </span>
                     <span
-                      className="flex-1 text-[22px] md:text-[28px] text-[#03030f]"
+                      className="flex-1 text-[16px] md:text-[20px] text-[#03030f] not-italic font-['Inter_Tight',sans-serif]"
                       style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
                     >
                       {step.title}
@@ -210,7 +210,7 @@ export function AttaxProcess() {
                           <motion.button
                             whileHover={{ scale: 1.04 }}
                             whileTap={{ scale: 0.97 }}
-                            className="flex items-center gap-3 bg-[#1d1ee3] rounded-[50px] pl-6 pr-2 py-2 w-fit mt-2 group"
+                            className="self-start flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 mt-2 group"
                           >
                             <span className="text-white text-[16px]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}>
                               Explore Service
@@ -234,21 +234,21 @@ export function AttaxProcess() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12 bg-[#0a1628] rounded-[18px] p-8 flex flex-col md:flex-row items-center justify-between gap-6"
+          className="mt-12 bg-[#0a1628] rounded-[18px] p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 md:gap-6"
         >
-          <div className="flex items-start gap-5">
-            <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center shrink-0">
-              <Shield size={22} className="text-[#a5b4fc]" />
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 rounded-full flex items-center justify-center shrink-0">
+              <Shield size={20} className="text-[#a5b4fc]" />
             </div>
             <p
-              className="text-white/80 text-[17px] leading-[1.6] max-w-[700px]"
+              className="text-white/80 text-[15px] md:text-[17px] leading-[1.6] max-w-[700px]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >
               Every ATTAX client receives a dedicated tax professional — not a salesperson. No handoffs. No surprises. We handle the IRS so you don't have to.
             </p>
           </div>
-          <div className="flex items-center justify-center lg:justify-end gap-10 shrink-0 w-full md:w-auto mt-6 md:mt-0">
-            <div className="block p-0">
+          <div className="flex items-center justify-start md:justify-end shrink-0 w-full md:w-auto">
+            <div className="scale-90 origin-left">
               <AttaxTrustpilot />
             </div>
           </div>

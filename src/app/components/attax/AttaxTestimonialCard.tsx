@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { Star } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 
@@ -22,14 +21,8 @@ export function AttaxTestimonialCard({
   index = 0,
 }: AttaxTestimonialCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="flex flex-col gap-6 w-full"
-    >
-      <div className="bg-[#eaeaff] rounded-[12px] px-5 py-6 flex flex-col gap-6 relative">
+    <div className="flex flex-col gap-6 w-full h-full">
+      <div className="bg-[#eaeaff] rounded-[12px] px-5 py-6 flex flex-col gap-6 relative flex-1">
         {/* Quote Icon */}
         <div className="w-[34px] h-[26px]">
           <svg viewBox="0 0 34 26" fill="none">
@@ -41,9 +34,9 @@ export function AttaxTestimonialCard({
           </svg>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 flex-1">
           <p
-            className="leading-[1.4] text-[16px] text-[#03030fb8]"
+            className="leading-[1.4] text-[16px] text-[#03030fb8] flex-1"
             style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
           >
             “{quote}”
@@ -67,7 +60,7 @@ export function AttaxTestimonialCard({
 
       {/* Profile */}
       <div className="flex gap-3 items-center px-2">
-        <div className="relative size-12 rounded-full overflow-hidden border border-[#03030f]">
+        <div className="relative size-12 rounded-full overflow-hidden">
           <ImageWithFallback
             src={photo}
             alt={name}
@@ -89,6 +82,6 @@ export function AttaxTestimonialCard({
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

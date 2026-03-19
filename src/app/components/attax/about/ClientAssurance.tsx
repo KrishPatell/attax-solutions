@@ -40,12 +40,12 @@ const testimonials = [
 
 export function ClientAssurance() {
   return (
-    <section id="client-assurance" className="bg-[#0a1628] py-[120px] overflow-hidden relative">
+    <section id="client-assurance" className="bg-[#0a1628] py-[60px] md:py-[120px] overflow-hidden relative">
       {/* Decorative glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1d1ee3]/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto px-8 relative z-10">
-        <div className="grid grid-cols-12 gap-16 items-start">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+        <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
           <div className="col-span-12 lg:col-span-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ export function ClientAssurance() {
               transition={{ duration: 0.7 }}
             >
               <h2
-                className="text-[48px] leading-[1.1] text-white mb-8"
+                className="text-[32px] md:text-[48px] leading-[1.2] md:leading-[1.1] text-white mb-6 md:mb-8"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 Our Client{" "}
@@ -63,7 +63,7 @@ export function ClientAssurance() {
                 </span>
               </h2>
               <p
-                className="text-[18px] text-white/60 leading-[1.7] mb-12"
+                className="text-[15px] md:text-[18px] text-white/60 leading-[1.7] mb-8 md:mb-12"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
               >
                 We do not use the word "guarantee" when it comes to legal outcomes — the IRS is a complex government agency and no firm can ethically promise a specific result.

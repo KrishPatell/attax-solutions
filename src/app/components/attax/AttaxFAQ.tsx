@@ -42,10 +42,10 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-6 gap-6 text-left group"
+        className="w-full flex items-center justify-between py-4 md:py-6 gap-4 md:gap-6 text-left group"
       >
         <span
-          className="text-[18px] leading-[1.4] text-[#0a1628] group-hover:text-[#1d1ee3] transition-colors duration-200"
+          className="text-[15px] md:text-[18px] leading-[1.4] text-[#0a1628] group-hover:text-[#1d1ee3] transition-colors duration-200"
           style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
         >
           {faq.q}
@@ -53,7 +53,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
         <motion.div
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ duration: 0.25 }}
-          className="w-[36px] h-[36px] rounded-full bg-[#eaeaff] flex items-center justify-center shrink-0 group-hover:bg-[#1d1ee3] transition-colors duration-200"
+          className="w-[36px] h-[36px] rounded-full bg-[#eaeaff] flex items-center justify-center shrink-0 group-hover:bg-[#1d1ee3] transition-colors duration-200 ml-3"
         >
           <Plus size={18} className="text-[#1d1ee3] group-hover:text-white transition-colors" />
         </motion.div>
@@ -70,7 +70,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
             className="overflow-hidden"
           >
             <p
-              className="text-[16px] leading-[1.6] text-[rgba(10,22,40,0.65)] pb-6 pr-12"
+              className="text-[14px] md:text-[16px] leading-[1.6] text-[rgba(10,22,40,0.65)] pb-6 pr-0 md:pr-12"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >
               {faq.a}
@@ -89,7 +89,7 @@ export function AttaxFAQ() {
   return (
     <section id="faq" className="bg-[#f7f9ff] py-[60px] md:py-[120px]" ref={ref}>
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20">
           {/* Left heading */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -122,19 +122,19 @@ export function AttaxFAQ() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
-              className="mt-6 flex items-center gap-3 bg-[#1d1ee3] rounded-[50px] pl-6 pr-2 py-2 group"
+              className="mt-6 self-start flex items-center gap-5 bg-[#0a1628] rounded-[50px] pl-5 pr-1.5 py-1.5 group w-fit"
             >
               <span
-                className="text-white text-[16px]"
+                className="text-white text-[15px]"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
               >
                 Book Free Call
               </span>
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#1d1ee3] rounded-full flex items-center justify-center shrink-0">
                 <svg width="18" height="18" fill="none" viewBox="0 0 18 18">
                   <path
                     d="M4 14L14 4M14 4H7M14 4V11"
-                    stroke="#1d1ee3"
+                    stroke="white"
                     strokeWidth="1.8"
                     strokeLinecap="round"
                     strokeLinejoin="round"

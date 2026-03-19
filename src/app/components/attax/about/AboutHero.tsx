@@ -14,7 +14,7 @@ export function AboutHero() {
   ];
 
   return (
-    <section className="relative min-h-[85vh] bg-[#0a1628] overflow-hidden flex items-center pt-[100px]">
+    <section className="relative min-h-[100vh] lg:min-h-[85vh] bg-[#0a1628] overflow-hidden flex items-center pt-[100px]">
       {/* BG pattern */}
       <div className="absolute inset-0">
         <div 
@@ -33,7 +33,7 @@ export function AboutHero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-8 w-full py-20">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 w-full py-12 md:py-20">
         <Breadcrumbs current="About" />
 
         <div className="grid grid-cols-12 gap-12 items-center">
@@ -71,13 +71,13 @@ export function AboutHero() {
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               <span
-                className="block text-[64px] lg:text-[72px] leading-[1.1] text-white tracking-[-1.5px]"
+                className="block text-[34px] md:text-[44px] lg:text-[72px] leading-[1.2] md:leading-[1.1] text-white tracking-[-1px] lg:tracking-[-1.5px]"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 Tax Debt Doesn't
               </span>
               <span
-                className="block text-[64px] lg:text-[72px] leading-[1.1] tracking-[-1.5px] text-white"
+                className="block text-[34px] md:text-[44px] lg:text-[72px] leading-[1.2] md:leading-[1.1] tracking-[-1px] lg:tracking-[-1.5px] text-white"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 Have to{" "}
@@ -94,7 +94,7 @@ export function AboutHero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="mt-6 text-[18px] leading-[1.7] text-white/72 max-w-[620px]"
+              className="mt-6 text-[15px] md:text-[18px] leading-[1.7] text-white/70 max-w-[620px]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >
               ATTAX Solutions provides direct representation and clarity for IRS and state tax resolution. We are committed to honest, direct, and effective advocacy for every client.
@@ -107,7 +107,7 @@ export function AboutHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-wrap gap-x-8 gap-y-4 mt-16 pt-8 border-t border-white/10"
+          className="hidden md:flex flex-wrap gap-x-8 gap-y-4 mt-16 pt-8 border-t border-white/10"
         >
           {navLinks.map((link) => (
             <button

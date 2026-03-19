@@ -5,7 +5,7 @@ function Paragraph() {
   return (
     <div className="h-[16.5px] relative shrink-0 w-[199.953px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Inter',sans-serif] font-medium leading-[16.5px] left-0 not-italic text-[11px] text-white top-[0.5px] tracking-[2px] uppercase whitespace-nowrap">Verified Reviews</p>
+        <p className="absolute font-['Inter',sans-serif] font-medium leading-[16.5px] left-[2px] not-italic text-[11px] text-white top-[0.5px] tracking-[2px] uppercase whitespace-nowrap">Verified Reviews</p>
       </div>
     </div>
   );
@@ -35,7 +35,7 @@ function ClipPathGroup() {
 
 function WordmarkSvg() {
   return (
-    <div className="absolute h-[21px] left-0 overflow-clip top-[17px] w-[84px]" data-name="WordmarkSvg">
+    <div className="absolute h-[21px] left-[14px] overflow-clip top-[17px] w-[84px]" data-name="WordmarkSvg">
       <ClipPathGroup />
     </div>
   );
@@ -43,7 +43,7 @@ function WordmarkSvg() {
 
 function Paragraph1() {
   return (
-    <div className="absolute h-[15.398px] left-0 top-[84px] w-[157.953px]" data-name="Paragraph">
+    <div className="absolute h-[15.398px] left-[14px] top-[84px] w-[157.953px]" data-name="Paragraph">
       <p className="absolute font-['Inter',sans-serif] font-normal leading-none left-0 not-italic text-[11px] text-[rgba(255,255,255,0.55)] top-0 whitespace-nowrap">
         <span className="leading-[15.4px]">{`TrustScore `}</span>
         <span className="font-semibold leading-[15.4px] text-[rgba(255,255,255,0.9)]">4.2</span>
@@ -202,7 +202,7 @@ function Container5() {
 
 function StarRow() {
   return (
-    <div className="absolute h-[26px] left-0 top-[48px] w-[143px]" data-name="StarRow">
+    <div className="absolute h-[26px] left-[14px] top-[48px] w-[143px]" data-name="StarRow">
       <Container1 />
       <Container2 />
       <Container3 />
@@ -227,7 +227,7 @@ function TrustpilotBadge() {
 
 export function AttaxTrustpilot() {
   return (
-    <div className="flex flex-col gap-[12px] items-center scale-75 origin-right" data-name="Container">
+    <div className="flex flex-col gap-[12px] items-center scale-[0.92] origin-left py-2 md:py-0" data-name="Container">
       <Paragraph />
       <TrustpilotBadge />
     </div>

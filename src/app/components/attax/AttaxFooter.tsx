@@ -53,16 +53,16 @@ export function AttaxFooter() {
                 whileHover={{ scale: 1.04, boxShadow: "0 0 40px rgba(29,30,227,0.4)" }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => document.querySelector("#contact-form")?.scrollIntoView({ behavior: "smooth" })}
-                className="flex items-center justify-start gap-3 bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-7 pr-1.5 md:pr-2 py-1.5 md:py-2 group cursor-pointer w-auto"
+                className="flex items-center justify-start gap-5 bg-white rounded-[50px] pl-5 md:pl-7 pr-1.5 md:pr-2 py-1.5 md:py-2 group cursor-pointer w-auto"
               >
                 <span
-                  className="text-white text-[14px] md:text-[15px]"
+                  className="text-[#0a1628] text-[14px] md:text-[15px]"
                   style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
                 >
                   Free Consultation
                 </span>
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-blue-50 transition-colors shrink-0">
-                  <Mail size={18} className="md:w-[18px] md:h-[18px] w-4 h-4" color="#1d1ee3" />
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center group-hover:bg-[#1618c7] transition-colors shrink-0">
+                  <Mail size={18} className="md:w-[18px] md:h-[18px] w-4 h-4" color="white" />
                 </div>
               </motion.button>
               <a
@@ -94,13 +94,13 @@ export function AttaxFooter() {
             </p>
 
             {/* Newsletter */}
-            <div className="flex items-center bg-white/10 rounded-full p-1.5 gap-2 max-w-[280px]">
+            <div className="flex items-center bg-white/10 rounded-full p-1.5 gap-2 w-full max-w-[280px] overflow-hidden">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
-                className="flex-1 bg-transparent px-3 py-1 text-[13px] text-white placeholder:text-white/40 outline-none border-none"
+                className="min-w-0 flex-1 bg-transparent px-3 py-1 text-[14px] text-white placeholder:text-white/40 outline-none border-none"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               />
               <motion.button
@@ -131,7 +131,7 @@ export function AttaxFooter() {
           {Object.entries(links).map(([category, items]) => (
             <div key={category} className="col-span-6 lg:col-span-2">
               <h4
-                className="text-white text-[12px] mb-5 uppercase tracking-wider"
+                className="text-white text-[13px] mb-5 uppercase tracking-wider"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 {category}
@@ -141,7 +141,7 @@ export function AttaxFooter() {
                   <li key={item}>
                     <button
                       onClick={(e) => handleLinkClick(e, item)}
-                      className="text-white/50 text-[13px] hover:text-white/90 transition-colors duration-200 cursor-pointer text-left"
+                      className="text-white/50 text-[15px] hover:text-white/90 transition-colors duration-200 cursor-pointer text-left"
                       style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
                     >
                       {item}
@@ -155,7 +155,7 @@ export function AttaxFooter() {
           {/* Contact */}
           <div className="col-span-12 lg:col-span-2">
             <h4
-              className="text-white text-[12px] mb-5 uppercase tracking-wider"
+              className="text-white text-[13px] mb-5 uppercase tracking-wider"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
             >
               Contact
@@ -169,7 +169,7 @@ export function AttaxFooter() {
                 <li key={text}>
                   <a
                     href={href}
-                    className="flex items-start gap-2 text-white/50 text-[13px] hover:text-white/90 transition-colors"
+                    className="flex items-start gap-2 text-white/50 text-[15px] hover:text-white/90 transition-colors"
                     style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
                   >
                     <Icon size={13} className="shrink-0 mt-0.5" />
@@ -184,14 +184,14 @@ export function AttaxFooter() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10 border-solid">
-        <div className="max-w-[1200px] mx-auto px-5 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-[1200px] mx-auto px-5 lg:px-8 py-6 flex flex-col items-center gap-4 text-center">
           <p
             className="text-white/35 text-[12px]"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
           >
             © 2026 ATTAX Solutions LLC · All rights reserved. · ATTAX Solutions LLC is not affiliated with the IRS.
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 items-center">
             <Link
               to="/privacy"
               className="text-white/35 text-[12px] hover:text-white/70 transition-colors"
@@ -207,6 +207,18 @@ export function AttaxFooter() {
               Terms of Use
             </Link>
           </div>
+          <a
+            href="https://blitzstudio.xyz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/25 text-[11px] hover:text-white/55 transition-colors"
+            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
+          >
+            Website designed &amp; built by{" "}
+            <span className="text-white/40 hover:text-white/70 transition-colors" style={{ fontWeight: 500 }}>
+              Blitz Studio
+            </span>
+          </a>
         </div>
       </div>
     </footer>

@@ -6,9 +6,9 @@ const founderImg = "https://images.unsplash.com/photo-1661854236305-b02cef4aa0af
 
 export function OurStory() {
   return (
-    <section id="our-story" className="bg-white py-[120px] overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-8">
-        <div className="grid grid-cols-12 gap-16 items-start">
+    <section id="our-story" className="bg-white py-[60px] md:py-[120px] overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
           {/* Left - Founder Image */}
           <div className="col-span-12 lg:col-span-5 relative">
             <motion.div
@@ -21,7 +21,7 @@ export function OurStory() {
               <ImageWithFallback
                 src={founderImg}
                 alt="Omar Hassan"
-                className="w-full h-[640px] object-cover"
+                className="w-full h-[380px] md:h-[640px] object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8">
                 <p 
@@ -51,7 +51,7 @@ export function OurStory() {
               transition={{ duration: 0.7 }}
             >
               <h2
-                className="text-[48px] leading-[1.15] text-[#0a1628] mb-8"
+                className="text-[32px] md:text-[48px] leading-[1.2] md:leading-[1.15] text-[#0a1628] mb-6 md:mb-8"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 A direct approach to a{" "}
@@ -60,7 +60,7 @@ export function OurStory() {
                 </span>
               </h2>
 
-              <div className="space-y-6 text-[18px] leading-[1.8] text-[#0a1628]/70" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              <div className="space-y-6 text-[15px] md:text-[18px] leading-[1.8] text-[#0a1628]/70" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 <p>
                   At ATTAX Solutions, we don't believe in the traditional high-pressure sales approach. Tax debt is stressful enough without having to worry about who is actually handling your case.
                 </p>

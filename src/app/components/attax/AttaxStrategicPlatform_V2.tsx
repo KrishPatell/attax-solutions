@@ -2,8 +2,8 @@ import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import svgPaths from "../../../imports/svg-ps3a1hmcku";
-import imgBuildingA from "figma:asset/81685e48be7599104961655536f1cff4d9e1687b.png";
-import imgBuildingB from "figma:asset/75c625e12e429e69fa04d226df2a67ef68773f5d.png";
+
+const imgBuildingA = "https://images.unsplash.com/photo-1554224155-6726b3ff858f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800";
 
 export function AttaxStrategicPlatformV2() {
   const ref = useRef<HTMLDivElement>(null);
@@ -47,24 +47,20 @@ export function AttaxStrategicPlatformV2() {
 
   return (
     <section className="bg-[#f7f9ff] py-[60px] md:py-[120px] overflow-hidden" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-5 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-[40px] items-start relative">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-[40px] items-stretch relative">
           
           {/* Left: Image Card with Overlays */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-[45%] h-[480px] lg:h-[642px] relative shrink-0"
+            className="w-full lg:w-[45%] h-[300px] md:h-[380px] lg:h-auto relative shrink-0 lg:self-stretch"
           >
             <div className="absolute inset-0 border border-white/10 rounded-[24px] overflow-hidden group">
-              <ImageWithFallback 
-                src={imgBuildingA} 
-                className="absolute inset-0 object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105" 
-              />
-              <ImageWithFallback 
-                src={imgBuildingB} 
-                className="absolute inset-0 object-cover w-full h-full opacity-60 mix-blend-overlay" 
+              <ImageWithFallback
+                src={imgBuildingA}
+                className="absolute inset-0 object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105"
               />
               
               {/* Dark Gradient Overlay */}
@@ -106,7 +102,7 @@ export function AttaxStrategicPlatformV2() {
           </motion.div>
 
           {/* Right: Text and Cards */}
-          <div className="flex-1 lg:w-[55%] flex flex-col gap-[48px]">
+          <div className="flex-1 lg:w-[55%] flex flex-col gap-8 lg:gap-[48px]">
             {/* Header Area */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -115,7 +111,7 @@ export function AttaxStrategicPlatformV2() {
               className="flex flex-col gap-3"
             >
               <span className="text-[#1d1ee3] text-[14px] md:text-[16px] font-medium font-['Inter_Tight']">[The Problem]</span>
-              <h2 className="leading-[1.2] text-[#0a1628] font-medium font-['Inter_Tight'] max-w-[500px] text-[32px] lg:text-[40px]">
+              <h2 className="leading-[1.2] text-[#0a1628] font-medium font-['Inter_Tight'] text-[32px] lg:text-[40px]">
                 You shouldn't have to face this <span className="italic font-['Playfair_Display']">alone</span>.
               </h2>
               <p className="text-[15px] lg:text-[16px] leading-relaxed text-[#0a1628]/70 max-w-[500px] font-['Inter_Tight'] mt-2">
@@ -126,9 +122,9 @@ export function AttaxStrategicPlatformV2() {
               <motion.button 
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.98 }}
-                className="mt-6 flex items-center justify-between gap-3 bg-[#1d1ee3] rounded-full pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 w-full max-w-[250px] group"
+                className="mt-6 self-start flex items-center gap-5 bg-[#1d1ee3] rounded-full pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group"
               >
-                <span className="text-white text-[14px] md:text-[16px] font-medium font-['Inter_Tight'] leading-tight px-1">Book Strategic Session</span>
+                <span className="text-white text-[14px] md:text-[16px] font-medium font-['Inter_Tight'] leading-tight px-1 whitespace-nowrap">Book Strategic Session</span>
                 <div className="w-10 h-10 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center transition-transform group-hover:rotate-12 shrink-0">
                   <svg className="size-4.5 text-[#1D1EE3]" fill="none" viewBox="0 0 18 18">
                     <path d="M5.25 5.25H12.75V12.75" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
@@ -146,14 +142,14 @@ export function AttaxStrategicPlatformV2() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                  className="bg-white p-5 pt-6 pb-2 border border-[#eaeeff] rounded-[10px] flex flex-col gap-6 h-full min-h-[240px] hover:border-blue-200 hover:shadow-lg hover:shadow-blue-900/5 transition-all"
+                  className="bg-white p-5 pt-6 pb-5 border border-[#eaeeff] rounded-[10px] flex flex-col gap-4 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-900/5 transition-all"
                 >
                   <div className="w-12 h-12 bg-[#eaeaff] rounded-full flex items-center justify-center shrink-0">
                     {p.icon}
                   </div>
                   <div className="flex flex-col gap-2">
-                    <h3 className="font-medium text-[#0a1628] font-['Inter_Tight'] text-[16px]">{p.title}</h3>
-                    <p className="lg:text-[11.5px] leading-[1.6] text-[#0a1628]/70 font-['Inter_Tight'] text-[13px]">{p.desc}</p>
+                    <h3 className="font-medium text-[#0a1628] font-['Inter_Tight'] text-[18px]">{p.title}</h3>
+                    <p className="leading-[1.6] text-[#0a1628]/70 font-['Inter_Tight'] text-[15px]">{p.desc}</p>
                   </div>
                 </motion.div>
               ))}

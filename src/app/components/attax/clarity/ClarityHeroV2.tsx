@@ -6,18 +6,18 @@ import svgPaths from "../../../imports/svg-sgovbpraxs";
 
 export function ClarityHeroV2() {
   return (
-    <section className="relative pt-[160px] pb-[120px] bg-white overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
-        
+    <section className="relative pt-[100px] md:pt-[160px] pb-[60px] md:pb-[120px] bg-white overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+
         {/* Top Content Layout */}
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-12 mb-16">
-          
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-12 mb-12 md:mb-16">
+
           {/* Left: Heading & Description */}
           <div className="max-w-[720px]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-[#1d1ee3] text-[16px] font-medium mb-4"
+              className="text-[#1d1ee3] text-[14px] md:text-[16px] font-medium mb-4"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
               [ATTAX Clarity]
@@ -27,7 +27,7 @@ export function ClarityHeroV2() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-[72px] leading-[1.1] tracking-[-0.02em] text-[#03030f] font-semibold mb-8"
+              className="text-[34px] md:text-[44px] lg:text-[72px] leading-[1.1] tracking-[-0.02em] text-[#03030f] font-semibold mb-6 md:mb-8"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
               Know Before the <br />
@@ -43,7 +43,7 @@ export function ClarityHeroV2() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[20px] leading-[1.6] text-[rgba(3,3,15,0.7)] max-w-[620px] mb-12"
+              className="text-[14px] md:text-[16px] lg:text-[20px] leading-[1.6] text-[rgba(3,3,15,0.7)] max-w-[620px] mb-8 md:mb-12"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
               ATTAX Clarity is a proactive monitoring and scoring system — built so you're never caught off guard by your tax standing again.
@@ -56,13 +56,13 @@ export function ClarityHeroV2() {
             >
               <button
                 onClick={() => document.querySelector("#clarity")?.scrollIntoView({ behavior: "smooth" })}
-                className="group relative bg-[#1d1ee3] rounded-[50px] pl-8 pr-2 py-2 inline-flex items-center gap-12 hover:bg-[#1618c7] transition-all"
+                className="self-start group relative bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 inline-flex items-center gap-5 hover:bg-[#1618c7] transition-all"
               >
-                <span className="text-white text-[16px] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                <span className="text-white text-[14px] md:text-[16px] font-medium whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Join Our Waitlist
                 </span>
-                <div className="w-11 h-11 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
-                  <ArrowUpRight size={20} className="text-[#1d1ee3]" />
+                <div className="w-10 h-10 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
+                  <ArrowUpRight size={18} className="text-[#1d1ee3]" />
                 </div>
               </button>
             </motion.div>
@@ -84,7 +84,7 @@ export function ClarityHeroV2() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="relative rounded-[16px] overflow-hidden aspect-[1140/580] mb-24"
+          className="relative rounded-[16px] overflow-hidden h-[220px] sm:h-[360px] md:h-[480px] lg:aspect-[1140/580] lg:h-auto mb-12 md:mb-24"
         >
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1695067058684-da5a90013c57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWlsaW5nJTIwZGl2ZXJzZSUyMGJ1c2luZXNzJTIwcGVvcGxlJTIwaGlnaCUyMGZpdmUlMjBjZWxlYnJhdGlvbiUyMG9mZmljZXxlbnwxfHx8fDE3NzM2NTY3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
@@ -94,7 +94,7 @@ export function ClarityHeroV2() {
         </motion.div>
 
         {/* Features Row */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8">
           {[
             { label: "Transcript Sync", icon: FileText },
             { label: "Notice Analysis", icon: Bell },
@@ -108,10 +108,10 @@ export function ClarityHeroV2() {
               transition={{ duration: 0.6, delay: 0.6 + i * 0.1 }}
               className="pt-6 border-t border-[#eaeaff] flex flex-col items-start gap-4 group"
             >
-              <div className="w-[52px] h-[52px] rounded-full bg-[#eaeaff] flex items-center justify-center transition-transform group-hover:scale-110">
-                <item.icon size={24} className="text-[#1d1ee3]" />
+              <div className="w-[50px] h-[50px] rounded-full bg-[#eaeaff] flex items-center justify-center transition-transform group-hover:scale-110">
+                <item.icon size={22} className="text-[#1d1ee3]" />
               </div>
-              <span className="text-[20px] text-[#03030f] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              <span className="text-[14px] md:text-[16px] lg:text-[20px] text-[#03030f] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 {item.label}
               </span>
             </motion.div>

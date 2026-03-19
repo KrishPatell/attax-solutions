@@ -26,19 +26,19 @@ const steps = [
 
 export function WhatHappensNext() {
   return (
-    <section id="what-happens-next" className="bg-white py-[120px]">
-      <div className="max-w-[1200px] mx-auto px-8">
-        <div className="grid grid-cols-12 gap-16 items-start">
+    <section id="what-happens-next" className="bg-white py-[60px] md:py-[120px]">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
           <div className="col-span-12 lg:col-span-5">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="sticky top-40"
+              className="md:sticky md:top-40"
             >
               <h2
-                className="text-[48px] leading-[1.1] text-[#0a1628] mb-8"
+                className="text-[32px] md:text-[48px] leading-[1.2] md:leading-[1.1] text-[#0a1628] mb-6 md:mb-8"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 What Happens{" "}
@@ -47,7 +47,7 @@ export function WhatHappensNext() {
                 </span>
               </h2>
               <p
-                className="text-[18px] text-[#0a1628]/60 leading-[1.7] mb-8"
+                className="text-[15px] md:text-[18px] text-[#0a1628]/60 leading-[1.7] mb-8"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
               >
                 Hesitation often comes from not knowing what to expect. We've made our process as transparent as possible to eliminate that uncertainty.

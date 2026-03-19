@@ -26,17 +26,17 @@ export function AttaxAbout() {
   return (
     <section
       id="about"
-      className="bg-white py-[120px]"
+      className="bg-white py-[60px] md:py-[120px]"
       ref={ref}
     >
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Left: founder image with badge */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.75 }}
-            className="w-full lg:w-[380px] shrink-0 relative"
+            className="w-full lg:w-[380px] shrink-0 relative pb-14 lg:pb-0"
           >
             <div className="rounded-[16px] overflow-hidden aspect-[4/5] grayscale hover:grayscale-0 transition-all duration-700">
               <ImageWithFallback
@@ -51,7 +51,7 @@ export function AttaxAbout() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="absolute -bottom-6 -right-4 lg:-right-6 bg-[#1d1ee3] rounded-[14px] p-4 lg:p-5 max-w-[180px] lg:max-w-[200px]"
+              className="absolute -bottom-10 right-4 lg:-right-6 bg-[#1d1ee3] rounded-[14px] p-4 lg:p-5 max-w-[180px] lg:max-w-[200px]"
             >
               <Award size={24} color="white" className="mb-3" />
               <p

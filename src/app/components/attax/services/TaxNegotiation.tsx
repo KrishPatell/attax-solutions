@@ -4,9 +4,9 @@ import { ImageWithFallback } from "../../figma/ImageWithFallback";
 
 export function TaxNegotiation() {
   return (
-    <section id="tax-negotiation" className="py-[120px] bg-white scroll-mt-[120px]">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24">
+    <section id="tax-negotiation" className="py-[60px] md:py-[120px] bg-white scroll-mt-[120px]">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-24">
           {/* Left: Content */}
           <div className="w-full lg:w-[50%]">
             <motion.span 
@@ -19,17 +19,17 @@ export function TaxNegotiation() {
               [Tax Negotiation]
             </motion.span>
             
-            <h2 
-              className="text-[42px] lg:text-[52px] leading-[1.1] text-[#0a1628] font-medium mb-8"
+            <h2
+              className="text-[32px] md:text-[42px] lg:text-[52px] leading-[1.1] text-[#0a1628] font-medium mb-6 md:mb-8"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              Strategic Advocacy <br />
+              Strategic Advocacy{" "}
               <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Negotiated Results
               </span>
             </h2>
 
-            <p className="text-[18px] leading-[1.8] text-[rgba(10,22,40,0.6)] mb-10">
+            <p className="text-[14px] md:text-[16px] leading-[1.8] text-[rgba(10,22,40,0.6)] mb-8 md:mb-10">
               Negotiation is the heart of our service. Our Tax Specialists work directly with IRS Revenue Officers to reach the most favorable outcomes, identifying leverage and proposing strategic terms based on your unique financial profile.
             </p>
 
@@ -57,7 +57,7 @@ export function TaxNegotiation() {
                 }
               ].map((item, i) => (
                 <div key={i} className="flex flex-col gap-4">
-                  <div className="w-10 h-10 bg-[#1d1ee3]/10 rounded-full flex items-center justify-center text-[#1d1ee3] shrink-0">
+                  <div className="w-[50px] h-[50px] bg-[#eaeeff] rounded-full flex items-center justify-center text-[#1d1ee3] shrink-0">
                     <item.icon size={20} />
                   </div>
                   <div>
