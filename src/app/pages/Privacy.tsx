@@ -86,7 +86,7 @@ export default function Privacy() {
                 <div className="mt-4 p-6 bg-white rounded-xl border border-[#eaeeff] shadow-sm">
                   <p className="font-bold text-[#1d1ee3]">ATTAX Solutions LLC</p>
                   <p>Irvine, CA</p>
-                  <p>Phone: +1 (949) 287-3015</p>
+                  <p>Phone: +1 (855) 829-2829</p>
                   <p>Email: info@attaxsolutions.com</p>
                 </div>
               </section>

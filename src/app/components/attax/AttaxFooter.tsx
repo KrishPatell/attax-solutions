@@ -53,12 +53,12 @@ export function AttaxFooter() {
                 </div>
               </motion.button>
               <a
-                href="tel:+19492873015"
+                href="tel:+18558292829"
                 className="flex items-center justify-start gap-2 text-white/70 hover:text-white text-[14px] md:text-[15px] transition-colors py-2 whitespace-nowrap"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
               >
                 <Phone size={15} className="text-[#a5b4fc]" />
-                +1 (949) 287-3015
+                +1 (855) 829-2829
               </a>
             </div>
           </div>
@@ -164,7 +164,7 @@ export function AttaxFooter() {
             <ul className="flex flex-col gap-4">
               {[
                 { icon: Mail, text: "info@attaxsolutions.com", href: "mailto:info@attaxsolutions.com" },
-                { icon: Phone, text: "+1 (949) 287-3015", href: "tel:+19492873015" },
+                { icon: Phone, text: "+1 (855) 829-2829", href: "tel:+18558292829" },
                 { icon: MapPin, text: "Irvine, CA", href: "#" },
               ].map(({ icon: Icon, text, href }) => (
                 <li key={text}>
@@ -190,7 +190,7 @@ export function AttaxFooter() {
             className="text-white/60 text-[12px]"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
           >
-            © 2026 ATTAX Solutions LLC · All rights reserved. · ATTAX Solutions LLC is not affiliated with the IRS.
+            © 2025-26 ATTAX Solutions LLC · All rights reserved. · ATTAX Solutions LLC is not affiliated with the IRS.
           </p>
           <a
             href="https://blitzstudio.xyz/"

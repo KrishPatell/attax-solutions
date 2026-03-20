@@ -29,8 +29,8 @@ const contactCards = [
   {
     icon: Phone,
     label: "Call or Text Anytime",
-    value: "+1 (949) 287-3015",
-    href: "tel:+19492873015",
+    value: "+1 (855) 829-2829",
+    href: "tel:+18558292829",
   },
   {
     icon: Mail,

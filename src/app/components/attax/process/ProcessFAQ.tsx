@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     question: "How can I get started with ATTAX Solutions?",
-    answer: "Simply book a free consultation via our website or call +1 (949) 287-3015. You'll speak directly with a Tax Specialist who can provide an immediate assessment of your case.",
+    answer: "Simply book a free consultation via our website or call +1 (855) 829-2829. You'll speak directly with a Tax Specialist who can provide an immediate assessment of your case.",
   },
 ];
 

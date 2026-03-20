@@ -38,7 +38,7 @@ export function UrgencyCallout() {
 
           <div className="relative z-10 shrink-0 w-full lg:w-auto">
             <motion.a
-              href="tel:+19492873015"
+              href="tel:+18558292829"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex flex-col items-center justify-center bg-white rounded-[32px] p-10 lg:p-12 text-center shadow-2xl group transition-all"
@@ -51,7 +51,7 @@ export function UrgencyCallout() {
                 className="text-[32px] lg:text-[40px] text-[#0a1628] mb-6 flex items-center gap-2"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700 }}
               >
-                +1 (949) 287-3015
+                +1 (855) 829-2829
               </p>
               <div className="flex items-center gap-2 text-[#1d1ee3] font-bold uppercase tracking-wider text-[13px]">
                 <span>Speak with a specialist now</span>

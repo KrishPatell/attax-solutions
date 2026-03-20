@@ -227,9 +227,15 @@ function TrustpilotBadge() {
 
 export function AttaxTrustpilot() {
   return (
-    <div className="flex flex-col gap-[12px] items-center scale-[0.92] origin-left py-2 md:py-0" data-name="Container">
+    <a
+      href="https://www.trustpilot.com/review/attaxsolutions.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col gap-[12px] items-center scale-[0.92] origin-left py-2 md:py-0"
+      aria-label="See ATTAX Solutions reviews on Trustpilot"
+    >
       <Paragraph />
       <TrustpilotBadge />
-    </div>
+    </a>
   );
 }

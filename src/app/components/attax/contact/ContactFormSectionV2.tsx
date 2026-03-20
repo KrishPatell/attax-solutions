@@ -61,8 +61,8 @@ export function ContactFormSectionV2() {
                   </div>
                   <div>
                     <p className="text-[#03030f]/50 text-[14px] font-medium uppercase mb-1">Call</p>
-                    <a href="tel:+19492873015" className="text-[20px] font-semibold text-[#03030f] hover:text-[#1d1ee3] transition-colors">
-                      +1 (949) 287-3015
+                    <a href="tel:+18558292829" className="text-[20px] font-semibold text-[#03030f] hover:text-[#1d1ee3] transition-colors">
+                      +1 (855) 829-2829
                     </a>
                   </div>
                 </div>

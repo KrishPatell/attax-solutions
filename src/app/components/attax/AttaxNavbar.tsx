@@ -87,12 +87,12 @@ export function AttaxNavbar() {
           {/* Right side: phone + CTA */}
           <div className="hidden lg:flex items-center gap-4 shrink-0 ml-auto xl:ml-0">
             <a
-              href="tel:+19492873015"
+              href="tel:+18558292829"
               className="flex items-center gap-2 text-[#0a1628] text-[14px] hover:text-[#1d1ee3] transition-colors"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
               <Phone size={15} className="text-[#1d1ee3]" />
-              +1 (949) 287-3015
+              +1 (855) 829-2829
             </a>
             <motion.button
               whileHover={{ scale: 1.04 }}
@@ -136,8 +136,8 @@ export function AttaxNavbar() {
               </button>
             ))}
             <div className="px-6 py-4 flex items-center gap-4">
-              <a href="tel:+19492873015" className="text-[#1d1ee3] text-[14px] flex items-center gap-2">
-                <Phone size={14} /> +1 (949) 287-3015
+              <a href="tel:+18558292829" className="text-[#1d1ee3] text-[14px] flex items-center gap-2">
+                <Phone size={14} /> +1 (855) 829-2829
               </a>
               <button
                 onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
