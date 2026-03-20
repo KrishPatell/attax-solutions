@@ -20,6 +20,18 @@ const navbarStyle: CSSProperties = {
   animation: "navbarSlideIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
 };
 
+// Inject the keyframes once when the module loads
+if (typeof document !== "undefined") {
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes navbarSlideIn {
+      from { transform: translateY(-100%); opacity: 0; }
+      to   { transform: translateY(0);     opacity: 1; }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
 export function AttaxNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -141,19 +153,3 @@ export function AttaxNavbar() {
     </header>
   );
 }
-
-// CSS keyframe injected once at module level
-const _styleTag = (
-  <style>{`
-    @keyframes navbarSlideIn {
-      from {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-  `}</style>
-);
