@@ -36,11 +36,14 @@ export function AttaxAbout() {
             transition={{ duration: 0.75 }}
             className="w-full lg:w-[380px] shrink-0 relative pb-14 lg:pb-0"
           >
-            <div className="rounded-[16px] overflow-hidden aspect-[4/5]">
+            {/* Mobile: reduce height ~15% by adjusting aspect ratio */}
+            <div className="rounded-[16px] overflow-hidden aspect-[4/4.25] lg:aspect-[4/5]">
               <ImageWithFallback
                 src={founderImg}
                 alt="Omar Hassan   Founder, ATTAX Solutions"
                 className="w-full h-full object-cover"
+                width={1519}
+                height={1421}
               />
             </div>
 

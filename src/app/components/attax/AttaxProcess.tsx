@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useInView } from "motion/react";
 import { ArrowUpRight, MessageCircle, Search, Shield, CheckCircle2, ChevronDown } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { AttaxTrustpilot } from "./TrustpilotBadge";
-import complimentaryConsultationImg from "../../../assets/9ac5963fc0e77b27818e101e597556691793370f.png";
+import complimentaryConsultationImg from "../../../assets/9ac5963fc0e77b27818e101e597556691793370f.webp";
 
 const steps = [
   {
@@ -114,7 +114,11 @@ export function AttaxProcess() {
             <ImageWithFallback
               src={currentStep.img}
               alt={currentStep.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              width={1024}
+              height={682}
+              // Make the image fill the card deterministically on mobile Safari.
+              // Also apply a small mobile-only zoom so the subject isn't clipped.
+              className="absolute inset-0 w-full h-full object-cover object-center scale-[1.06] transition-transform duration-700 md:scale-100 md:group-hover:scale-105"
             />
             {/* Gradient overlay */}
             <div

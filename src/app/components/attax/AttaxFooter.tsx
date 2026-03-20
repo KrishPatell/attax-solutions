@@ -74,7 +74,7 @@ export function AttaxFooter() {
               <BrandLogo light className="w-[145px]" />
             </div>
             <p
-              className="text-white/55 text-[14px] leading-[1.7] mb-6 max-w-[280px]"
+              className="text-white/60 text-[14px] leading-[1.7] mb-6 max-w-[280px]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >
               The fastest growing tax relief company in the nation. IRS & state tax debt resolution handled with integrity and precision.
@@ -93,6 +93,7 @@ export function AttaxFooter() {
               <motion.button
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
+                aria-label="Subscribe to newsletter"
                 className="w-8 h-8 bg-[#1d1ee3] rounded-full flex items-center justify-center shrink-0 cursor-pointer"
               >
                 <Send size={13} color="white" />
@@ -101,16 +102,30 @@ export function AttaxFooter() {
 
             {/* Social */}
             <div className="flex gap-3 mt-6">
-              {[Linkedin, Twitter, Facebook].map((Icon, i) => (
-                <motion.a
-                  key={i}
-                  href="#"
-                  whileHover={{ scale: 1.1, backgroundColor: "#1d1ee3" }}
-                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center transition-colors"
-                >
-                  <Icon size={15} color="white" />
-                </motion.a>
-              ))}
+              <motion.a
+                href="#"
+                aria-label="LinkedIn"
+                whileHover={{ scale: 1.1, backgroundColor: "#1d1ee3" }}
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center transition-colors"
+              >
+                <Linkedin size={15} color="white" />
+              </motion.a>
+              <motion.a
+                href="#"
+                aria-label="Twitter"
+                whileHover={{ scale: 1.1, backgroundColor: "#1d1ee3" }}
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center transition-colors"
+              >
+                <Twitter size={15} color="white" />
+              </motion.a>
+              <motion.a
+                href="#"
+                aria-label="Facebook"
+                whileHover={{ scale: 1.1, backgroundColor: "#1d1ee3" }}
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center transition-colors"
+              >
+                <Facebook size={15} color="white" />
+              </motion.a>
             </div>
           </div>
 
@@ -172,34 +187,20 @@ export function AttaxFooter() {
       <div className="border-t border-white/10 border-solid">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 py-6 flex flex-col items-center gap-4 text-center">
           <p
-            className="text-white/35 text-[12px]"
+            className="text-white/60 text-[12px]"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
           >
             © 2026 ATTAX Solutions LLC · All rights reserved. · ATTAX Solutions LLC is not affiliated with the IRS.
           </p>
-          <div className="flex gap-6 items-center">
-            <span
-              className="text-white/35 text-[12px]"
-              style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
-            >
-              Privacy Policy
-            </span>
-            <span
-              className="text-white/35 text-[12px]"
-              style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
-            >
-              Terms of Use
-            </span>
-          </div>
           <a
             href="https://blitzstudio.xyz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/25 text-[12px] hover:text-white/55 transition-colors"
+            className="text-white/60 text-[12px] hover:text-white/80 transition-colors"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
           >
             Website designed &amp; built by{" "}
-            <span className="text-white/40 hover:text-white/70 transition-colors" style={{ fontWeight: 500 }}>
+            <span className="text-white/70 hover:text-white/90 transition-colors" style={{ fontWeight: 500 }}>
               Blitz Studio
             </span>
           </a>

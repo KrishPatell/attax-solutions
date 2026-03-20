@@ -94,10 +94,10 @@ export function TeamSection() {
                     {member.title}
                   </p>
                   <div className="flex gap-2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-[#1d1ee3] transition-colors">
+                    <button aria-label="LinkedIn" className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-[#1d1ee3] transition-colors">
                       <Linkedin size={14} color="white" />
                     </button>
-                    <button className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-[#1d1ee3] transition-colors">
+                    <button aria-label="Twitter" className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-[#1d1ee3] transition-colors">
                       <Twitter size={14} color="white" />
                     </button>
                   </div>

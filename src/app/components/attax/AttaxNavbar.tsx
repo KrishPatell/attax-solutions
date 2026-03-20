@@ -44,7 +44,7 @@ export function AttaxNavbar() {
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
         <div
-          className={`bg-white rounded-[16px] px-6 py-3.5 flex items-center gap-4 transition-shadow duration-300 ${
+          className={`bg-white rounded-[16px] px-6 py-3.5 flex items-center gap-4 transition-shadow duration-300 [transform:translate3d(0,0,0)] [-webkit-backface-visibility:hidden] [backface-visibility:hidden] ${
             scrolled ? "shadow-[0_8px_32px_rgba(0,0,0,0.14)]" : "shadow-[0_2px_16px_rgba(0,0,0,0.07)]"
           }`}
         >
@@ -93,6 +93,7 @@ export function AttaxNavbar() {
           {/* Mobile Hamburger */}
           <button
             className="xl:hidden ml-auto p-2"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}

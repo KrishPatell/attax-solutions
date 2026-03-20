@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
-import handlingCasesImg from "../../../../assets/handling-cases.jpg";
+import handlingCasesImg from "../../../../assets/handling-cases.webp";
 
 export function FeaturedResource() {
   return (
@@ -19,6 +19,8 @@ export function FeaturedResource() {
             <ImageWithFallback
               src={handlingCasesImg}
               alt="Tax Specialist Consultation"
+              width={1292}
+              height={734}
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>

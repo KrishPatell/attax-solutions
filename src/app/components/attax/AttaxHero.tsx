@@ -18,6 +18,9 @@ export function AttaxHero() {
           alt=""
           aria-hidden="true"
           className="absolute top-0 right-0 h-full"
+          width={1500}
+          height={1000}
+          fetchPriority="high"
           style={{
             width: "62%",
             objectFit: "cover",
@@ -68,7 +71,7 @@ export function AttaxHero() {
                     className="w-[44px] h-[44px] rounded-full border-[2.5px] border-[#0a1628] overflow-hidden shrink-0"
                     style={{ marginLeft: i === 0 ? 0 : "-12px", zIndex: 3 - i }}
                   >
-                    <img src={src} alt="" className="w-full h-full object-cover" />
+                    <img src={src} alt={`Client avatar ${i + 1} of 3`} className="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
@@ -188,7 +191,7 @@ export function AttaxHero() {
             </div>
             <div className="w-px h-4 bg-white/20 shrink-0" />
             <p
-              className="text-[14px] md:text-[16px] text-white/85 italic leading-snug"
+              className="text-[16.1px] md:text-[18.4px] text-white/85 italic leading-snug"
               style={{ fontFamily: "'Playfair Display', serif", fontWeight: 500 }}
             >
               "The fastest growing tax relief company in the nation"

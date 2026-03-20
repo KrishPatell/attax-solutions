@@ -3,7 +3,7 @@ import { motion, useInView } from "motion/react";
 import { ArrowUpRight, Scale, Handshake, BadgeDollarSign } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { AttaxTrustpilot } from "./TrustpilotBadge";
-import consultImg from "../../../assets/handling-cases.jpg";
+import consultImg from "../../../assets/handling-cases.webp";
 
 const services = [
   {
@@ -139,6 +139,8 @@ export function AttaxServices() {
           <ImageWithFallback
             src={consultImg}
             alt="ATTAX Solutions   Professional Tax Consultation"
+            width={1292}
+            height={734}
             className="w-full h-full object-cover"
           />
           <div

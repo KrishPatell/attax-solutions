@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import svgPaths from "../../../imports/svg-ps3a1hmcku";
-import imgBuildingA from "../../../assets/75c625e12e429e69fa04d226df2a67ef68773f5d.png";
+import imgBuildingA from "../../../assets/75c625e12e429e69fa04d226df2a67ef68773f5d.webp";
 
 export function AttaxStrategicPlatformV2() {
   const ref = useRef<HTMLDivElement>(null);
@@ -59,6 +59,10 @@ export function AttaxStrategicPlatformV2() {
             <div className="absolute inset-0 border border-white/10 rounded-[24px] overflow-hidden group">
               <ImageWithFallback
                 src={imgBuildingA}
+                alt=""
+                aria-hidden="true"
+                width={1200}
+                height={1200}
                 className="absolute inset-0 object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105"
               />
               
@@ -86,7 +90,7 @@ export function AttaxStrategicPlatformV2() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold font-['Inter_Tight'] text-[18px]">The ATTAX Advantage</h4>
+                    <h3 className="text-white font-semibold font-['Inter_Tight'] text-[18px]">The ATTAX Advantage</h3>
                     <p className="text-white/60 text-[12px] lg:text-[14px] font-['Inter_Tight']">Proactive Resolution Architecture</p>
                   </div>
                 </div>

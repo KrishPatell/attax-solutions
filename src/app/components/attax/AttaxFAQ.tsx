@@ -74,6 +74,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
     >
       <button
         onClick={() => setOpen(!open)}
+        aria-label={open ? "Collapse answer" : "Expand answer"}
         className="w-full flex items-center justify-between py-4 md:py-6 gap-4 md:gap-6 text-left group"
       >
         <span
@@ -154,7 +155,7 @@ export function AttaxFAQ() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
-              className="mt-6 self-start flex items-center gap-5 bg-[#0a1628] rounded-[50px] pl-5 pr-1.5 py-1.5 group w-fit"
+              className="mt-6 self-start hidden lg:flex items-center gap-5 bg-[#0a1628] rounded-[50px] pl-5 pr-1.5 py-1.5 group w-fit"
             >
               <span
                 className="text-white text-[15px]"

@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { MapPin } from "lucide-react";
-import laImg from "../../../../assets/handling-cases.jpg";
+import laImg from "../../../../assets/handling-cases.webp";
 
 const dublinImg = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800";
 const remoteImg = "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800";
@@ -69,7 +69,7 @@ export function ContactOfficeLocation() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="relative rounded-[16px] md:rounded-[20px] overflow-hidden group"
               >
-                <ImageWithFallback src={laImg} alt="Office" className="w-full h-[140px] md:h-[200px] object-cover transition-transform duration-700 group-hover:scale-110" />
+                <ImageWithFallback src={laImg} alt="Office" width={1292} height={734} className="w-full h-[140px] md:h-[200px] object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[12px] font-medium text-[#03030f]">California</div>
               </motion.div>
             </div>

@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { ArrowUpRight, TrendingUp, Zap } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { AttaxTestimonialCard } from "../AttaxTestimonialCard";
-import handlingCasesImg from "../../../../assets/handling-cases.jpg";
+import handlingCasesImg from "../../../../assets/handling-cases.webp";
 
 export function CoreValuesSection() {
   return (
@@ -21,6 +21,8 @@ export function CoreValuesSection() {
             <ImageWithFallback
               src={handlingCasesImg}
               alt="ATTAX Collaboration"
+              width={1292}
+              height={734}
               className="w-full h-full object-cover rounded-[12px]"
             />
             

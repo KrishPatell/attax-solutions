@@ -65,7 +65,7 @@ export function AttaxTrustBar() {
                     {item.title}
                   </p>
                   <p
-                    className="text-[rgba(10,22,40,0.55)] text-[11px] sm:text-[12px] lg:text-[13px] mt-0.5 leading-snug max-lg:line-clamp-2 lg:whitespace-nowrap"
+                    className="text-[rgba(10,22,40,0.7)] text-[11px] sm:text-[12px] lg:text-[13px] mt-0.5 leading-snug max-lg:line-clamp-2 lg:whitespace-nowrap"
                     style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
                   >
                     {item.desc}

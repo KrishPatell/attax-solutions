@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, ShieldCheck, UserCheck, MessageCircle, FileBarChart, Plus, Minus } from "lucide-react";
 import { AttaxTestimonialCard } from "../AttaxTestimonialCard";
-import imgBackground from "../../../../assets/handling-cases.jpg";
+import imgBackground from "../../../../assets/handling-cases.webp";
 import imgProfile from "../../../../assets/me.jpg";
 
 const features = [
@@ -94,6 +94,8 @@ export function HandlingCases() {
               <img 
                 src={imgBackground} 
                 alt="Client Meeting" 
+                width={1292}
+                height={734}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-colors duration-500" />

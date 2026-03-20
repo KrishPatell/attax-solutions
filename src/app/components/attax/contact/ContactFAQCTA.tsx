@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
-import expertsImg from "../../../../assets/handling-cases.jpg";
+import expertsImg from "../../../../assets/handling-cases.webp";
 
 export function ContactFAQCTA() {
   const bookingUrl = "https://calendly.com/attax-solutions";
@@ -57,6 +57,8 @@ export function ContactFAQCTA() {
             <ImageWithFallback 
               src={expertsImg} 
               alt="Team working" 
+              width={1292}
+              height={734}
               className="absolute inset-0 w-full h-full object-cover"
             />
             {/* Gradient overlay for blending */}
