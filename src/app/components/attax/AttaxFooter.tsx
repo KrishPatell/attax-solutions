@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Shield, Mail, Phone, MapPin, Send, Linkedin, Twitter, Facebook } from "lucide-react";
-import { useNavigate, Link } from "react-router";
+import { Link } from "react-router";
 import { BrandLogo } from "./BrandLogo";
 
 const links = {
@@ -11,19 +11,6 @@ const links = {
 
 export function AttaxFooter() {
   const [email, setEmail] = useState("");
-  const navigate = useNavigate();
-
-  const handleLinkClick = (e: React.MouseEvent, item: string) => {
-    e.preventDefault();
-    if (item === "About") navigate("/about");
-    if (item === "Resources" || item === "Tax Resources") navigate("/resources");
-    if (item === "Our Process") navigate("/our-process");
-    if (item === "ATTAX") navigate("/attax");
-    if (item === "Clarity" || item === "Client Portal") navigate("/clarity");
-    if (item === "Contact") navigate("/contact");
-    if (item === "Blog") navigate("/resources");
-    if (item === "IRS Fresh Start" || item === "Offer in Compromise") navigate("/services");
-  };
 
   return (
     <footer id="contact" className="bg-[#0a1628] text-white">
@@ -139,13 +126,12 @@ export function AttaxFooter() {
               <ul className="flex flex-col gap-3">
                 {items.map((item) => (
                   <li key={item}>
-                    <button
-                      onClick={(e) => handleLinkClick(e, item)}
-                      className="text-white/50 text-[15px] hover:text-white/90 transition-colors duration-200 cursor-pointer text-left"
+                    <span
+                      className="text-white/50 text-[15px] cursor-default text-left"
                       style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
                     >
                       {item}
-                    </button>
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -192,26 +178,24 @@ export function AttaxFooter() {
             © 2026 ATTAX Solutions LLC · All rights reserved. · ATTAX Solutions LLC is not affiliated with the IRS.
           </p>
           <div className="flex gap-6 items-center">
-            <Link
-              to="/privacy"
-              className="text-white/35 text-[12px] hover:text-white/70 transition-colors"
+            <span
+              className="text-white/35 text-[12px]"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
             >
               Privacy Policy
-            </Link>
-            <Link
-              to="/terms"
-              className="text-white/35 text-[12px] hover:text-white/70 transition-colors"
+            </span>
+            <span
+              className="text-white/35 text-[12px]"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
             >
               Terms of Use
-            </Link>
+            </span>
           </div>
           <a
             href="https://blitzstudio.xyz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/25 text-[11px] hover:text-white/55 transition-colors"
+            className="text-white/25 text-[12px] hover:text-white/55 transition-colors"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
           >
             Website designed &amp; built by{" "}

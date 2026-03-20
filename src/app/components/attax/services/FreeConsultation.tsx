@@ -87,18 +87,17 @@ export function FreeConsultation() {
               ))}
             </div>
 
-            <Link to="/contact" className="self-start w-fit">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 font-medium text-[14px] md:text-[16px] flex items-center gap-5 group w-fit"
-              >
-                <span className="whitespace-nowrap">Schedule Your Meeting</span>
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 shrink-0">
-                  <ArrowRight size={18} className="text-[#1d1ee3]" />
-                </div>
-              </motion.button>
-            </Link>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
+              className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 font-medium text-[14px] md:text-[16px] flex items-center gap-5 group w-fit self-start"
+            >
+              <span className="whitespace-nowrap">Schedule Your Meeting</span>
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 shrink-0">
+                <ArrowRight size={18} className="text-[#1d1ee3]" />
+              </div>
+            </motion.button>
           </div>
         </div>
       </div>

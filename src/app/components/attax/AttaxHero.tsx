@@ -44,8 +44,8 @@ export function AttaxHero() {
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto pt-[100px] pb-[60px] w-full">
+      {/* Content — horizontal padding matches Services / Process / navbar inset */}
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 pt-[100px] pb-[60px] w-full">
         <div className="grid grid-cols-12 gap-10 items-center">
           {/* Left   copy */}
           <div className="col-span-12 lg:col-span-7">

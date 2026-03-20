@@ -42,7 +42,7 @@ export function AttaxTestimonialCard({
             “{quote}”
           </p>
 
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+          <div className="flex flex-col gap-2 pt-2">
             {/* Stars */}
             <div className="flex gap-1">
               {Array.from({ length: stars }).map((_, i) => (
@@ -50,9 +50,17 @@ export function AttaxTestimonialCard({
               ))}
             </div>
 
-            {/* Result badge */}
+            {/* Result line — below stars */}
             {result && (
-              null
+              <div className="flex items-center gap-1.5">
+                <span className="w-[5px] h-[5px] rounded-full bg-[#1d1ee3] shrink-0" />
+                <span
+                  className="text-[12px] text-[#1d1ee3]"
+                  style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
+                >
+                  {result}
+                </span>
+              </div>
             )}
           </div>
         </div>

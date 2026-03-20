@@ -46,7 +46,7 @@ export function AttaxStrategicPlatformV2() {
 
   return (
     <section className="bg-[#f7f9ff] py-[60px] md:py-[120px] overflow-hidden" ref={ref}>
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-[40px] items-stretch relative">
           
           {/* Left: Image Card with Overlays */}
