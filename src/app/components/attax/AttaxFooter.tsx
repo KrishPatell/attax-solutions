@@ -16,7 +16,7 @@ export function AttaxFooter() {
     <footer id="contact" className="bg-[#0a1628] text-white">
       {/* Contact CTA bar */}
       <div className="border-b border-white/10 border-solid">
-        <div className="max-w-[1200px] mx-auto py-10 lg:py-16">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 py-10 lg:py-16">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div>
               <h2
@@ -66,7 +66,7 @@ export function AttaxFooter() {
       </div>
 
       {/* Main footer grid */}
-      <div className="max-w-[1200px] mx-auto py-12 lg:py-16">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-12 gap-y-12 lg:gap-10">
           {/* Brand */}
           <div className="col-span-12 lg:col-span-4">
@@ -170,7 +170,7 @@ export function AttaxFooter() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10 border-solid">
-        <div className="max-w-[1200px] mx-auto py-6 flex flex-col items-center gap-4 text-center">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 py-6 flex flex-col items-center gap-4 text-center">
           <p
             className="text-white/35 text-[12px]"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}

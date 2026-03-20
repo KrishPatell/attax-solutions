@@ -54,7 +54,7 @@ export function AttaxStrategicPlatformV2() {
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-[45%] h-[300px] md:h-[380px] lg:h-auto relative shrink-0 lg:self-stretch"
+            className="w-full lg:w-[45%] h-[380px] md:h-[420px] lg:h-auto relative shrink-0 lg:self-stretch"
           >
             <div className="absolute inset-0 border border-white/10 rounded-[24px] overflow-hidden group">
               <ImageWithFallback

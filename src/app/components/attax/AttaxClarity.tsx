@@ -65,7 +65,7 @@ export function AttaxClarity() {
 
   return (
     <section id="clarity" className="py-[60px] md:py-[120px] bg-white" ref={ref}>
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
 
         {/* Header */}
         <motion.div

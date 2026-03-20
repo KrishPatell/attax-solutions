@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useInView } from "motion/react";
 import { ArrowUpRight, MessageCircle, Search, Shield, CheckCircle2, ChevronDown } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { AttaxTrustpilot } from "./TrustpilotBadge";
-import handlingCasesImg from "../../../assets/handling-cases.jpg";
+import complimentaryConsultationImg from "../../../assets/9ac5963fc0e77b27818e101e597556691793370f.png";
 
 const steps = [
   {
@@ -13,7 +13,7 @@ const steps = [
     title: "Complimentary Consultation",
     desc: "We listen first. A 30-minute call with a licensed tax professional   no charge, no obligation.",
     highlights: ["No fees, no pressure", "Expert consultation", "Nationwide representation"],
-    img: handlingCasesImg,
+    img: complimentaryConsultationImg,
   },
   {
     num: "02",

@@ -27,7 +27,7 @@ export function AttaxAbout() {
       className="bg-white py-[60px] md:py-[120px]"
       ref={ref}
     >
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Left: founder image with badge */}
           <motion.div

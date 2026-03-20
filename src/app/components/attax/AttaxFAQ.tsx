@@ -120,7 +120,7 @@ export function AttaxFAQ() {
 
   return (
     <section id="faq" className="bg-[#f7f9ff] py-[60px] md:py-[120px]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-20">
           {/* Left heading */}
           <motion.div

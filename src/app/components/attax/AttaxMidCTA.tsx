@@ -15,7 +15,7 @@ export function AttaxMidCTA() {
 
   return (
     <section className="bg-white py-[60px] md:py-[120px]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
