@@ -45,12 +45,6 @@ const contactCards = [
     href: "mailto:support@attaxsolutions.com",
   },
   {
-    icon: Mail,
-    label: "Founder Direct Line",
-    value: "omar@attaxsolutions.com",
-    href: "mailto:omar@attaxsolutions.com",
-  },
-  {
     icon: MapPin,
     label: "Newport Beach, CA",
     value: "Serving clients nationwide",

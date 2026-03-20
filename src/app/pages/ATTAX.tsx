@@ -4,13 +4,11 @@ import { AttaxTrustBar } from "../components/attax/AttaxTrustBar";
 import { AttaxStrategicPlatformV2 } from "../components/attax/AttaxStrategicPlatform_V2";
 import { AttaxServices } from "../components/attax/AttaxServices";
 import { AttaxProcess } from "../components/attax/AttaxProcess";
-import { AttaxClarity } from "../components/attax/AttaxClarity";
 import { AttaxResults } from "../components/attax/AttaxResults";
 import { AttaxMidCTA } from "../components/attax/AttaxMidCTA";
-import { AttaxAbout } from "../components/attax/AttaxAbout";
+import { AttaxContactForm } from "../components/attax/AttaxContactForm";
 import { AttaxFAQ } from "../components/attax/AttaxFAQ";
 import { AttaxCtaBanner } from "../components/attax/CtaBannerSection";
-import { AttaxContactForm } from "../components/attax/AttaxContactForm";
 import { AttaxFooter } from "../components/attax/AttaxFooter";
 
 export default function ATTAX() {
@@ -23,13 +21,11 @@ export default function ATTAX() {
         <AttaxStrategicPlatformV2 />
         <AttaxServices />
         <AttaxProcess />
-        <AttaxClarity />
         <AttaxResults />
         <AttaxMidCTA />
-        <AttaxAbout />
+        <AttaxContactForm />
         <AttaxFAQ />
         <AttaxCtaBanner />
-        <AttaxContactForm />
       </main>
       <AttaxFooter />
     </div>
