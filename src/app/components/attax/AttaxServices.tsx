@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { ArrowUpRight, Scale, Handshake, BadgeDollarSign } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
@@ -26,12 +26,36 @@ const services = [
   },
 ];
 
+export function useImmersiveTrigger() {
+  const ref = useRef<HTMLDivElement>(null!);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setActive(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, active };
+}
+
 export function AttaxServices() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const { ref: ctaRef, active: immersiveActive } = useImmersiveTrigger();
 
   return (
-    <section id="services" className="bg-white py-[60px] md:py-[120px]" ref={ref}>
+    <section
+      id="services"
+      className="relative py-[60px] md:py-[120px] transition-colors duration-500"
+      style={{ background: immersiveActive ? "#0a1628" : "#ffffff" }}
+      ref={ref}
+    >
       <div className="max-w-[1240px] mx-auto px-5 md:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-6 md:gap-8">
@@ -130,7 +154,8 @@ export function AttaxServices() {
         </div>
 
         {/* Full-width image CTA */}
-        <motion.div
+        <div ref={ctaRef}>
+          <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -176,6 +201,7 @@ export function AttaxServices() {
             </div>
           </div>
         </motion.div>
+        </div>
       </div>
     </section>
   );
