@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { ArrowUpRight, Scale, Handshake, BadgeDollarSign } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
@@ -26,39 +26,12 @@ const services = [
   },
 ];
 
-export function useImmersiveTrigger() {
-  const ref = useRef<HTMLDivElement>(null!);
-  const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setActive(entry.isIntersecting),
-      { threshold: 0.05 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return { ref, active };
-}
-
 export function AttaxServices() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const { ref: ctaRef, active: immersiveActive } = useImmersiveTrigger();
 
   return (
-    <section
-      id="services"
-      className="relative py-[60px] md:py-[120px] [will-change:background-color] [backface-visibility:hidden] duration-150"
-      style={{
-        background: immersiveActive ? "#0a1628" : "#ffffff",
-        transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)",
-      }}
-      ref={ref}
-    >
+    <section id="services" className="bg-white py-[60px] md:py-[120px]" ref={ref}>
       <div className="max-w-[1240px] mx-auto px-5 md:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-6 md:gap-8">
@@ -69,21 +42,21 @@ export function AttaxServices() {
             className="max-w-[640px]"
           >
             <span
-              className="text-[14px] md:text-[16px] font-medium block mb-2 md:mb-4"
-              style={{ fontFamily: "'Inter Tight', sans-serif", color: immersiveActive ? "#ffffff" : "#1d1ee3" }}
+              className="text-[#1d1ee3] text-[14px] md:text-[16px] font-medium block mb-2 md:mb-4"
+              style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
               [What We Do]
             </span>
             <h2
-              className="text-[32px] md:text-[36px] lg:text-[56px] leading-[1.2] md:leading-[1.1]"
-              style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, color: immersiveActive ? "#ffffff" : "#03030f" }}
+              className="text-[32px] md:text-[36px] lg:text-[56px] leading-[1.2] md:leading-[1.1] text-[#03030f]"
+              style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
               <span className="lg:whitespace-nowrap">Services That{" "}
               <span className="italic" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Actually Work
               </span></span>
             </h2>
-            <p className="text-[14px] md:text-[16px] lg:text-[18px] mt-4 md:mt-6 leading-relaxed" style={{ fontFamily: "'Inter Tight', sans-serif", color: immersiveActive ? "rgba(255,255,255,0.6)" : "rgba(10,22,40,0.6)" }}>
+            <p className="text-[14px] md:text-[16px] lg:text-[18px] text-[#0a1628]/60 mt-4 md:mt-6 leading-relaxed" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
               Our licensed Tax Specialists handle every aspect of your case, from initial analysis to final settlement, ensuring you never have to face the IRS alone.
             </p>
           </motion.div>
@@ -157,8 +130,7 @@ export function AttaxServices() {
         </div>
 
         {/* Full-width image CTA */}
-        <div ref={ctaRef}>
-          <motion.div
+        <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -204,7 +176,6 @@ export function AttaxServices() {
             </div>
           </div>
         </motion.div>
-        </div>
       </div>
     </section>
   );
