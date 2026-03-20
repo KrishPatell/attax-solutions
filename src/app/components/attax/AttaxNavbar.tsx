@@ -12,7 +12,6 @@ const navLinks = [
   { label: "Clarity", href: "/clarity" },
   { label: "About", href: "/about" },
   { label: "Resources", href: "/resources" },
-  { label: "Client Portal", href: "/clarity" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -30,31 +29,10 @@ export function AttaxNavbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
-    
-    if (href.startsWith("/#")) {
-      const id = href.substring(2);
-      if (location.pathname === "/" || location.pathname === "/attax") {
-        const target = document.getElementById(id);
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth" });
-          return;
-        }
-      } else {
-        navigate(href);
-        return;
-      }
-    }
-
     if (href === "/") {
-      if (location.pathname === "/" || location.pathname === "/attax") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        return;
-      }
-      navigate("/");
-      return;
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-
-    navigate(href);
+    // All other pages are currently draft — no navigation
   };
 
   return (
