@@ -9,7 +9,7 @@ export function AttaxHero() {
   const scrollTo = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="hero" className="relative min-h-[100vh] lg:min-h-[88vh] bg-[#0a1628] overflow-hidden flex items-center">
+    <section id="hero" className="relative min-h-[90vh] lg:min-h-[88vh] bg-[#0a1628] overflow-hidden flex items-center">
       {/* Background */}
       <div className="absolute inset-0 bg-[#0a1628]">
         {/* Image pinned to right half   mask-image fades its left edge into the dark bg */}
