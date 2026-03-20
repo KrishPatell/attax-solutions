@@ -1,0 +1,23 @@
+{
+  "name": "ATTAX Solutions",
+  "short_name": "ATTAX",
+  "description": "Expert IRS and state tax debt resolution. Free consultations with licensed tax professionals.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1628",
+  "theme_color": "#0a1628",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
