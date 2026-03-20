@@ -4,28 +4,60 @@ import { Plus } from "lucide-react";
 
 const faqs = [
   {
-    q: "How quickly can ATTAX stop IRS collection actions like levies or garnishments?",
-    a: "In many cases, we can get an IRS levy or wage garnishment released within 24–72 hours of engaging with us. We immediately file for a Collection Due Process hearing or contact the IRS Automated Collection System on your behalf to halt aggressive collection activity while we negotiate a resolution.",
+    q: "I owe the IRS and I'm honestly not sure what to do. What should I do first?",
+    a: "The first step is not to panic. Many people reach out to us after months or even years of worrying about their situation. The most important thing is understanding what the IRS believes you owe, why it exists, and what options may be available. A proper review of your situation allows us to see the full picture before any decisions are made.",
   },
   {
-    q: "What is an Offer in Compromise and do I qualify?",
-    a: "An Offer in Compromise (OIC) is an IRS program that allows qualified taxpayers to settle their tax debt for less than the full amount owed. Eligibility depends on your income, expenses, asset equity, and ability to pay. ATTAX conducts a thorough financial analysis before pursuing an OIC to ensure it's the right strategy — not every firm will tell you when you don't qualify, but we will.",
+    q: "Is it too late to fix my tax situation?",
+    a: "In most cases, it is not. Tax problems can grow over time through penalties and interest, but the IRS still provides structured programs designed to help taxpayers resolve their balances. The key is understanding which options apply to your situation and addressing the matter before it becomes more serious.",
   },
   {
-    q: "I haven't filed taxes in several years. Can ATTAX still help me?",
-    a: "Absolutely. Unfiled returns are one of the most common situations we handle. We'll prepare and file all delinquent returns, bring you into compliance with the IRS, and then negotiate the best possible resolution for any resulting liability — often preventing the IRS from filing Substitute for Returns (SFRs) that inflate what you owe.",
+    q: "Will the IRS take my house or empty my bank account?",
+    a: "Those types of enforcement actions are typically the last stage of a long process. The IRS usually sends multiple notices and warnings before taking aggressive action. Part of our role is to step in before matters reach that stage and work toward a structured resolution.",
   },
   {
-    q: "What's the difference between an installment agreement and an Offer in Compromise?",
-    a: "An installment agreement lets you pay your full tax debt over time in monthly payments, while an Offer in Compromise settles the debt for a reduced lump sum (or short-term payments). We evaluate both options — along with Currently Not Collectible status and penalty abatement — to determine which path saves you the most money.",
+    q: "Do I have to speak to the IRS myself if I hire representation?",
+    a: "In most cases, once proper authorization forms are filed, your representative can communicate with the IRS on your behalf. This allows the process to move forward without you having to handle difficult conversations directly.",
   },
   {
-    q: "How much does ATTAX charge for tax resolution services?",
-    a: "Our fees are transparent and based on the complexity of your case — never a percentage of your debt. We offer a free consultation to review your situation and provide a clear fee estimate before you commit to anything. We believe you shouldn't have to pay a fortune to stop paying a fortune to the IRS.",
+    q: "How do I know what option I actually qualify for?",
+    a: "Many taxpayers hear about programs like settling for less, but eligibility depends on several factors including income, assets, filing history, and financial ability. A proper investigation is necessary before determining what resolution options may realistically apply.",
   },
   {
-    q: "Will the IRS negotiate directly with me, or do I need representation?",
-    a: "You have the right to represent yourself, but the IRS is an experienced negotiating party with tools and tactics most taxpayers aren't prepared for. Having a tax professional from ATTAX represent you levels the playing field, protects your rights, and typically results in a significantly better outcome.",
+    q: "I've ignored IRS letters for a while. Is that a problem?",
+    a: "You are not alone. Many people delay dealing with tax notices because the situation feels overwhelming. The important thing is addressing it now. Once the situation is reviewed, the next steps can become much clearer.",
+  },
+  {
+    q: "Can the IRS really settle tax debt for less than what is owed?",
+    a: "In certain situations the IRS may accept a settlement if it determines the taxpayer cannot reasonably pay the full balance. However, the process involves strict financial analysis and documentation. Every case is different, and eligibility must be evaluated carefully.",
+  },
+  {
+    q: "What if I haven't filed taxes in several years?",
+    a: "Unfiled returns are one of the most common issues taxpayers face. Before most resolution options can be considered, filing compliance usually needs to be addressed. Once that is handled, the situation can be evaluated more accurately.",
+  },
+  {
+    q: "How long does resolving a tax case usually take?",
+    a: "Some matters can move quickly, while others require several months depending on the complexity of the situation and the IRS processes involved. Each case follows its own timeline, and our role is to move it forward in an organized and responsible way.",
+  },
+  {
+    q: "Is my information safe and confidential?",
+    a: "Yes. Tax matters involve sensitive financial information, and confidentiality is treated with the highest level of care. All discussions and documentation are handled professionally and privately.",
+  },
+  {
+    q: "What happens after I contact ATTAX Solutions?",
+    a: "The first step is understanding your situation. During the initial conversation we focus on learning about the issue, reviewing what information is available, and determining what the next investigative steps should be. We will be there for every step, notifying you along the way.",
+  },
+  {
+    q: "What if I simply cannot afford to pay what the IRS says I owe?",
+    a: "Financial hardship is something the IRS recognizes. In certain circumstances taxpayers may qualify for structured payment plans, temporary relief from collection activity, or other resolution options depending on their financial situation.",
+  },
+  {
+    q: "Why do people hire professional representation instead of doing this themselves?",
+    a: "Tax matters often involve detailed rules, financial analysis, and negotiation with government agencies. Many taxpayers prefer to have experienced representation guiding the process so they understand their options and avoid mistakes that could complicate the case.",
+  },
+  {
+    q: "I'm embarrassed about my situation. Do you see cases like mine often?",
+    a: "More often than you might think. Tax issues affect people from every profession and income level. Our focus is not on how the situation started, but on helping resolve it responsibly.",
   },
 ];
 
@@ -88,7 +120,7 @@ export function AttaxFAQ() {
 
   return (
     <section id="faq" className="bg-[#f7f9ff] py-[60px] md:py-[120px]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-20">
           {/* Left heading */}
           <motion.div
@@ -116,7 +148,7 @@ export function AttaxFAQ() {
               className="text-[15px] lg:text-[16px] leading-[1.6] text-[rgba(10,22,40,0.6)] mt-4"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >
-              Don't see your question here? Book a free consultation and we'll walk you through your options — no pressure, no obligation.
+              Don't see your question here? Book a free consultation and we'll walk you through your options   no pressure, no obligation.
             </p>
             <motion.button
               whileHover={{ scale: 1.04 }}

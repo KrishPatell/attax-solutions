@@ -41,7 +41,7 @@ export function TaxProblems() {
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#1d1ee3]/10 rounded-full blur-[100px] -ml-32 -mt-32" />
 
       <div className="max-w-[1440px] mx-auto px-5 md:px-8 relative z-10">
-        <div className="flex flex-col items-center text-center mb-10 md:mb-20 max-w-[900px] mx-auto">
+        <div className="flex flex-col items-center text-center mb-10 md:mb-12 max-w-[900px] mx-auto">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

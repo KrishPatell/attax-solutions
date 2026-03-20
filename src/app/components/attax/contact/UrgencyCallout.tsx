@@ -32,7 +32,7 @@ export function UrgencyCallout() {
               className="text-[18px] lg:text-[20px] text-white/70 leading-relaxed"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              Call us directly — time-sensitive situations require immediate action to stop collection activities before they escalate.
+              Call us directly   time-sensitive situations require immediate action to stop collection activities before they escalate.
             </p>
           </div>
 

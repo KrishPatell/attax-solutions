@@ -27,28 +27,35 @@ const issueOptions = [
 
 const contactCards = [
   {
-    icon: Mail,
-    label: "Email",
-    value: "info@attaxsolutions.com",
-    href: "mailto:info@attaxsolutions.com",
-  },
-  {
     icon: Phone,
-    label: "Call",
+    label: "Call or Text Anytime",
     value: "+1 (949) 287-3015",
     href: "tel:+19492873015",
   },
   {
     icon: Mail,
-    label: "Support",
+    label: "General Inquiries",
+    value: "info@attaxsolutions.com",
+    href: "mailto:info@attaxsolutions.com",
+  },
+  {
+    icon: Mail,
+    label: "Client Support",
     value: "support@attaxsolutions.com",
     href: "mailto:support@attaxsolutions.com",
   },
   {
     icon: Mail,
-    label: "Founder",
+    label: "Founder Direct Line",
     value: "omar@attaxsolutions.com",
     href: "mailto:omar@attaxsolutions.com",
+  },
+  {
+    icon: MapPin,
+    label: "Newport Beach, CA",
+    value: "Serving clients nationwide",
+    href: "https://maps.google.com/?q=Newport+Beach,CA",
+    external: true,
   },
 ];
 
@@ -145,7 +152,7 @@ export function AttaxContactForm() {
             className="text-slate-600 text-[15px] lg:text-[17px] max-w-[560px] leading-relaxed"
             style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
           >
-            Whether you're facing an IRS audit, a threatening notice, or years of unfiled returns —
+            Whether you're facing an IRS audit, a threatening notice, or years of unfiled returns  
             our team is ready to help. Reach out and we'll respond within one business day.
           </p>
         </motion.div>
@@ -156,77 +163,45 @@ export function AttaxContactForm() {
             initial={{ opacity: 0, x: -32 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="col-span-12 lg:col-span-5 flex flex-col gap-[32px] md:gap-[40px]"
+            className="col-span-12 lg:col-span-5 flex flex-col gap-[12px] md:gap-[14px]"
           >
             {/* Contact items */}
             {contactCards.map((card, i) => (
               <motion.a
                 key={card.value}
                 href={card.href}
+                target={card.external ? "_blank" : undefined}
+                rel={card.external ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.55, delay: 0.25 + i * 0.07 }}
-                className="flex items-center gap-[20px] group cursor-pointer"
+                className="flex items-center gap-4 lg:gap-5 p-4 lg:p-5 bg-white border border-slate-100 rounded-[14px] group cursor-pointer hover:border-[#1d1ee3]/25 hover:shadow-[0_4px_20px_rgba(29,30,227,0.06)] transition-all duration-200"
               >
-                {/* Icon bubble - Updated to 50x50px as requested */}
-                <div
-                  className="w-[50px] h-[50px] rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 bg-[#EAEEFF] text-[#1D1EE3]"
-                >
-                  <card.icon size={22} strokeWidth={2.5} />
+                <div className="w-[42px] h-[42px] lg:w-[52px] lg:h-[52px] rounded-[10px] lg:rounded-[12px] bg-[#EAEEFF] flex items-center justify-center shrink-0">
+                  <card.icon size={20} className="lg:w-[24px] lg:h-[24px] text-[#1D1EE3]" strokeWidth={2} />
                 </div>
                 <div className="flex flex-col">
-                  <p
-                    className="text-[#0A1628]/70 text-[14px] md:text-[15px] mb-0.5"
-                    style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
+                  <span
+                    className="text-[10px] lg:text-[11px] text-[#1d1ee3] uppercase tracking-[0.1em] mb-1"
+                    style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700 }}
                   >
                     {card.label}
-                  </p>
-                  <p
-                    className="text-[#0A1628] text-[15px] leading-tight group-hover:text-[#1d1ee3] transition-colors"
+                  </span>
+                  <span
+                    className="text-[14px] lg:text-[17px] text-[#0A1628] leading-tight group-hover:text-[#1d1ee3] transition-colors"
                     style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
                   >
                     {card.value}
-                  </p>
+                  </span>
                 </div>
               </motion.a>
             ))}
 
-            {/* Visit Us - Separated to maintain clear hierarchy */}
-            <motion.a
-              href="https://maps.google.com/?q=Irvine,CA"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 16 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.55, delay: 0.25 + contactCards.length * 0.07 }}
-              className="flex items-center gap-[20px] group cursor-pointer"
-            >
-              <div
-                className="w-[50px] h-[50px] rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 bg-[#EAEEFF] text-[#1D1EE3]"
-              >
-                <MapPin size={22} strokeWidth={2.5} />
-              </div>
-              <div className="flex flex-col">
-                <p
-                  className="text-[#0A1628]/70 text-[14px] md:text-[15px] mb-0.5"
-                  style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
-                >
-                  Visit Us
-                </p>
-                <p
-                  className="text-[#0A1628] text-[15px] leading-tight group-hover:text-[#1d1ee3] transition-colors"
-                  style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
-                >
-                  See on Google Map
-                </p>
-              </div>
-            </motion.a>
-
             {/* Divider */}
-            <div className="border-t border-slate-100 mt-2 mb-2" />
+            <div className="border-t border-slate-100" />
 
             {/* Trust Badges */}
-            <div className="relative w-full max-w-[240px] h-[140px]">
+            <div className="relative w-full max-w-[240px] h-[100px]">
               <AttaxTrustpilot />
             </div>
           </motion.div>

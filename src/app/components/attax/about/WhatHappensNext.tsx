@@ -15,7 +15,7 @@ const steps = [
   {
     icon: Search,
     title: "Case Review",
-    description: "We review your situation together — no charge, no commitment. We provide an honest evaluation of your legal options."
+    description: "We review your situation together   no charge, no commitment. We provide an honest evaluation of your legal options."
   },
   {
     icon: ClipboardCheck,
@@ -27,7 +27,7 @@ const steps = [
 export function WhatHappensNext() {
   return (
     <section id="what-happens-next" className="bg-white py-[60px] md:py-[120px]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
           <div className="col-span-12 lg:col-span-5">
             <motion.div

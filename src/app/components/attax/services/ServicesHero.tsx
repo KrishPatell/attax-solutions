@@ -9,7 +9,7 @@ export function ServicesHero() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#1d1ee3]/5 rounded-full blur-[120px] -mr-32 -mt-32" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#a5b4fc]/10 rounded-full blur-[100px] -ml-32 -mb-32" />
 
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+      <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="max-w-[1000px] mx-auto text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -27,7 +27,7 @@ export function ServicesHero() {
             className="text-[34px] md:text-[52px] lg:text-[72px] leading-[1.1] text-[#0a1628] font-medium mb-6 md:mb-10"
             style={{ fontFamily: "'Inter Tight', sans-serif" }}
           >
-            Comprehensive Tax Relief Services —{" "}
+            Comprehensive Tax Relief Services  {" "}
             <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
               Tailored to Your Situation
             </span>

@@ -24,7 +24,7 @@ export function ContactFormSectionV2() {
 
   return (
     <section className="bg-white py-[120px]">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-12 gap-16 lg:gap-24 items-start">
           
           {/* Left Side: Contact Info */}

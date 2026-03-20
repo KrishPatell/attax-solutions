@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "What does the 'Book A Free Call' offer include?",
-    a: "Our free discovery call is a 30-45 minute conversation where we learn about your business challenges and goals. We'll provide initial insights and outline how we can help—completely free and with no obligation.",
+    a: "Our free discovery call is a 30-45 minute conversation where we learn about your business challenges and goals. We'll provide initial insights and outline how we can help completely free and with no obligation.",
   },
 ];
 

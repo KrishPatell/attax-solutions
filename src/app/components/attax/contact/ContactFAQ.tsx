@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "How much does ATTAX charge for services?",
-    a: "Our fees are transparent and based on case complexity — never a percentage of your debt. We provide a clear fee estimate before you commit.",
+    a: "Our fees are transparent and based on case complexity   never a percentage of your debt. We provide a clear fee estimate before you commit.",
   },
   {
     q: "Will the IRS negotiate directly with me?",
@@ -71,7 +71,7 @@ export function ContactFAQ() {
 
   return (
     <section className="bg-white py-[120px]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-12 gap-16 lg:gap-24">
           
           {/* Left Column */}

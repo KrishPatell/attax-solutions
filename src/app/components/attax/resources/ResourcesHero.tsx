@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 export function ResourcesHero() {
   return (
     <section className="bg-white pt-[120px] md:pt-[180px] pb-[60px] md:pb-[80px]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8 lg:px-8 text-center">
+      <div className="max-w-[1200px] mx-auto text-center">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

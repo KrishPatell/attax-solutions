@@ -1,15 +1,15 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { MapPin } from "lucide-react";
+import laImg from "../../../../assets/handling-cases.jpg";
 
-const dublinImg = "https://images.unsplash.com/photo-1549918838-0678d9f10903?auto=format&fit=crop&q=80&w=800";
-const laImg = "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800";
+const dublinImg = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800";
 const remoteImg = "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800";
 
 export function ContactOfficeLocation() {
   return (
     <section className="bg-[#f7f7f4] pt-[120px] md:pt-[180px] pb-[60px] md:pb-[100px] overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
           {/* Left Side: Content */}
           <div className="col-span-12 lg:col-span-6">

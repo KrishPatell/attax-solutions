@@ -6,7 +6,7 @@ import { Link } from "react-router";
 export function TaxResolution() {
   return (
     <section id="tax-resolution" className="py-[60px] md:py-[120px] bg-white scroll-mt-[120px]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
           {/* Left: Content */}
           <div className="w-full lg:w-[50%]">
@@ -71,13 +71,13 @@ export function TaxResolution() {
               className="aspect-[4/5] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.12)] border border-[rgba(0,0,0,0.05)]"
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1770943558988-2c605d6bd5a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHRheCUyMHN0cmF0ZWd5JTIwZG9jdW1lbnQlMjBtZWV0aW5nJTIwb2ZmaWNlJTIwdGVhbSUyMHdvcmtzcGFjZSUyMGRlc2slMjBsYXB0b3AlMjBwcmVtaXVtJTIwY2l0eSUyMHZpZXclMjBza3lzY3JhcGVyfGVufDF8fHx8MTc3MzY2MTEzNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1080"
                 alt="Tax Specialist Reviewing Documents"
                 className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700"
               />
             </motion.div>
 
-            {/* Trust badge — visible on md+ only to avoid mobile overflow */}
+            {/* Trust badge   visible on md+ only to avoid mobile overflow */}
             <div className="hidden md:block absolute -bottom-0 -left-8 bg-white p-6 rounded-[24px] shadow-2xl border border-[rgba(0,0,0,0.05)] max-w-[240px]">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-[#1d1ee3] rounded-full flex items-center justify-center">

@@ -6,14 +6,12 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-
-const founderImg =
-  "https://images.unsplash.com/photo-1603252112050-5ee77b4b4fde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxlJTIwcHJvZmVzc2lvbmFsJTIwZmluYW5jaWFsJTIwYWR2aXNvciUyMHBvcnRyYWl0JTIwaGVhZHNob3R8ZW58MXx8fHwxNzczNDg4NjE5fDA&ixlib=rb-4.1.0&q=80&w=1080";
+import founderImg from "../../../assets/me.jpg";
 
 const credentials = [
   "Expert Tax Resolution Specialist",
   "Certified Tax Resolution Specialist (CTRS)",
-  "Irvine, CA — Established Practice",
+  "Irvine, CA   Established Practice",
 ];
 
 export function AttaxAbout() {
@@ -29,7 +27,7 @@ export function AttaxAbout() {
       className="bg-white py-[60px] md:py-[120px]"
       ref={ref}
     >
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Left: founder image with badge */}
           <motion.div
@@ -38,10 +36,10 @@ export function AttaxAbout() {
             transition={{ duration: 0.75 }}
             className="w-full lg:w-[380px] shrink-0 relative pb-14 lg:pb-0"
           >
-            <div className="rounded-[16px] overflow-hidden aspect-[4/5] grayscale hover:grayscale-0 transition-all duration-700">
+            <div className="rounded-[16px] overflow-hidden aspect-[4/5]">
               <ImageWithFallback
                 src={founderImg}
-                alt="Omar Hassan — Founder, ATTAX Solutions"
+                alt="Omar Hassan   Founder, ATTAX Solutions"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -99,7 +97,7 @@ export function AttaxAbout() {
                   fontWeight: 500,
                 }}
               >
-                Built by Someone Who Has{" "}
+                <span className="lg:whitespace-nowrap">Built by Someone Who Has{" "}
                 <span
                   style={{
                     fontFamily: "'Playfair Display', serif",
@@ -107,7 +105,7 @@ export function AttaxAbout() {
                   }}
                 >
                   Been There
-                </span>
+                </span></span>
               </h2>
             </div>
 
@@ -120,7 +118,7 @@ export function AttaxAbout() {
             >
               ATTAX Solutions was founded with one purpose: to
               give individuals and businesses facing IRS and
-              state tax problems a real advocate — not a
+              state tax problems a real advocate   not a
               salesperson. With direct experience working 
               inside the tax resolution system, I
               understand both sides of the table. That knowledge
@@ -135,7 +133,7 @@ export function AttaxAbout() {
               }}
             >
               Our mission is simple: resolve your tax problem as
-              efficiently and affordably as possible — with
+              efficiently and affordably as possible   with
               total transparency at every step. No jargon. No
               false promises. Just honest work and real results.
             </p>

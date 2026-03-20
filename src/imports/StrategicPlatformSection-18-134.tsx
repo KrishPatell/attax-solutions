@@ -97,7 +97,7 @@ function Paragraph1() {
   return (
     <div className="flex-[1_0_0] min-h-px min-w-px relative w-[139.27px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Inter_Tight:Regular',sans-serif] font-normal leading-[17.037px] left-0 text-[11.358px] text-[rgba(10,22,40,0.7)] top-0 w-[135.486px]">Years of unpaid taxes accumulating with penalties and interest can feel crushing — but there are real pathways to resolution.</p>
+        <p className="absolute font-['Inter_Tight:Regular',sans-serif] font-normal leading-[17.037px] left-0 text-[11.358px] text-[rgba(10,22,40,0.7)] top-0 w-[135.486px]">Years of unpaid taxes accumulating with penalties and interest can feel crushing   but there are real pathways to resolution.</p>
       </div>
     </div>
   );
@@ -226,7 +226,7 @@ function Paragraph5() {
   return (
     <div className="flex-[1_0_0] min-h-px min-w-px relative w-[139.276px]" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Inter_Tight:Regular',sans-serif] font-normal leading-[17.037px] left-0 text-[11.358px] text-[rgba(10,22,40,0.7)] top-0 w-[137.108px]">Letters, levies, liens and wage garnishments are serious — but they can be stopped. You need a licensed professional in your corner.</p>
+        <p className="absolute font-['Inter_Tight:Regular',sans-serif] font-normal leading-[17.037px] left-0 text-[11.358px] text-[rgba(10,22,40,0.7)] top-0 w-[137.108px]">Letters, levies, liens and wage garnishments are serious   but they can be stopped. You need a licensed professional in your corner.</p>
       </div>
     </div>
   );

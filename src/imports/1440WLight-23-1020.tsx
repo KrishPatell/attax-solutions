@@ -2712,9 +2712,9 @@ function Container82() {
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[24px] not-italic relative shrink-0 text-[14.4px] text-[rgba(3,3,15,0.7)] w-full whitespace-pre-wrap">
         <p className="mb-0">{`It starts with a conversation. During an initial consultation, we’ll learn about `}</p>
-        <p className="mb-0">your goals, challenges, and opportunities, then recommend services—</p>
+        <p className="mb-0">your goals, challenges, and opportunities, then recommend services </p>
         <p className="mb-0">whether that’s growth planning, talent strategy, or performance optimization</p>
-        <p>—best aligned to your needs.</p>
+        <p> best aligned to your needs.</p>
       </div>
     </div>
   );

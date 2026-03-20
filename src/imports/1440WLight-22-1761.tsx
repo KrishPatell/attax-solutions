@@ -930,7 +930,7 @@ function Heading3() {
       <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[33.6px] not-italic relative shrink-0 text-[#03030f] text-[21.9px] w-full whitespace-pre-wrap">
         <p className="mb-0">{`“At the heart of every great company lies a `}</p>
         <p className="mb-0">{`commitment to continuous improvement. We `}</p>
-        <p className="mb-0">{`don’t just grow for the sake of growth — we grow `}</p>
+        <p className="mb-0">{`don’t just grow for the sake of growth   we grow `}</p>
         <p className="mb-0">{`to create value, simplify complexity, and solve real `}</p>
         <p className="mb-0">{`problems for real people. Thanks for being part of `}</p>
         <p>the journey.”</p>
@@ -1289,7 +1289,7 @@ function Heading4() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[28px] not-italic relative shrink-0 text-[#03030f] text-[18.6px] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`The Growth Blueprint — Strategies and `}</p>
+        <p className="mb-0">{`The Growth Blueprint   Strategies and `}</p>
         <p>Solutions Hub for You</p>
       </div>
     </div>
@@ -1693,7 +1693,7 @@ function Heading6() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[28px] not-italic relative shrink-0 text-[#03030f] text-[18.6px] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`The Leadership Forum — Insights and `}</p>
+        <p className="mb-0">{`The Leadership Forum   Insights and `}</p>
         <p>Guidance Hub for You</p>
       </div>
     </div>
@@ -1896,7 +1896,7 @@ function Heading7() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[28px] not-italic relative shrink-0 text-[#03030f] text-[18.6px] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`The Strategy Hub — Guidance and `}</p>
+        <p className="mb-0">{`The Strategy Hub   Guidance and `}</p>
         <p>Insights for Modern Leaders</p>
       </div>
     </div>
@@ -2099,7 +2099,7 @@ function Heading8() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[28px] not-italic relative shrink-0 text-[#03030f] text-[18.6px] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`The Transformation Guide — Insights and `}</p>
+        <p className="mb-0">{`The Transformation Guide   Insights and `}</p>
         <p>Solutions Hub for You</p>
       </div>
     </div>

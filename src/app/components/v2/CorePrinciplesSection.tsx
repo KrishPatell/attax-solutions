@@ -7,13 +7,13 @@ const principles = [
     id: "01",
     title: "Client-Centered Thinking",
     content:
-      "We put our clients first—understanding their goals, challenges, and customers to deliver tailored solutions that create real value.",
+      "We put our clients first understanding their goals, challenges, and customers to deliver tailored solutions that create real value.",
   },
   {
     id: "02",
     title: "Data-Driven Excellence",
     content:
-      "Every strategy is backed by rigorous analysis and insight. We don't guess—we measure, validate, and optimize for maximum impact.",
+      "Every strategy is backed by rigorous analysis and insight. We don't guess we measure, validate, and optimize for maximum impact.",
   },
   {
     id: "03",

@@ -969,7 +969,7 @@ function Container32() {
       <div className="flex flex-col font-['Inter_Tight:Regular',sans-serif] font-normal justify-center leading-[24px] relative shrink-0 text-[16px] text-[rgba(3,3,15,0.7)] w-full whitespace-pre-wrap">
         <p className="mb-0">{`Welcome to The Innovation Compass, a platform dedicated to helping organizations navigate disruption, `}</p>
         <p className="mb-0">{`spark creativity, and embrace transformation with confidence. Backed by Novara Consulting’s deep `}</p>
-        <p className="mb-0">{`expertise, this hub is more than a collection of ideas—it’s a strategic guide built to accelerate innovation and `}</p>
+        <p className="mb-0">{`expertise, this hub is more than a collection of ideas it’s a strategic guide built to accelerate innovation and `}</p>
         <p>future-proof your business.</p>
       </div>
     </div>
@@ -1006,7 +1006,7 @@ function Container33() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Inter_Tight:Regular',sans-serif] font-normal justify-center leading-[24px] relative shrink-0 text-[16px] text-[rgba(3,3,15,0.7)] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`At Novara, we believe innovation is not just about new ideas—it’s about structured execution that creates `}</p>
+        <p className="mb-0">{`At Novara, we believe innovation is not just about new ideas it’s about structured execution that creates `}</p>
         <p className="mb-0">{`real value. Many companies face challenges bridging the gap between creative thinking and operational `}</p>
         <p className="mb-0">{`impact. The Innovation Compass was designed to give leaders clarity, practical models, and tested `}</p>
         <p>strategies to transform bold ideas into measurable outcomes.</p>
@@ -1048,7 +1048,7 @@ function Container34() {
 
 function PartneringWithOptimoForStrategyConsultingWasATurningPointForOurBusinessTheirTeamBroughtClarityStructureAndVisionToOurGoalsWithinMonthsWeSawImprovedEfficiencyStrongerAlignmentAcrossDepartmentsAndAClearPathForScalableGrowthTheirInsightsWereNotOnlyActionableButTransformative() {
   return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="'Partnering with Optimo for strategy consulting was a turning point for our business. Their team brought clarity, structure, and vision to our goals. Within months, we saw improved efficiency, stronger alignment across departments, and a clear path for scalable growth. Their insights were not only actionable—but transformative.'">
+    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="'Partnering with Optimo for strategy consulting was a turning point for our business. Their team brought clarity, structure, and vision to our goals. Within months, we saw improved efficiency, stronger alignment across departments, and a clear path for scalable growth. Their insights were not only actionable but transformative.'">
       <Container34 />
     </div>
   );
@@ -1359,7 +1359,7 @@ function Container44() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Inter_Tight:Regular',sans-serif] font-normal justify-center leading-[24px] relative shrink-0 text-[16px] text-[rgba(3,3,15,0.7)] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`At The Innovation Compass, we aim to be more than a source of ideas—we deliver the strategies and `}</p>
+        <p className="mb-0">{`At The Innovation Compass, we aim to be more than a source of ideas we deliver the strategies and `}</p>
         <p className="mb-0">{`resources leaders need to take confident action. Whether you’re redefining your business model, scaling `}</p>
         <p>innovation, or navigating disruption, our insights are here to help you stay aligned with the future.</p>
       </div>
@@ -1789,7 +1789,7 @@ function Heading10() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Inter_Tight:Medium',sans-serif] font-medium justify-center leading-[28px] relative shrink-0 text-[#03030f] text-[20px] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`The Growth Blueprint — `}</p>
+        <p className="mb-0">{`The Growth Blueprint   `}</p>
         <p className="mb-0">{`Strategies and Solutions Hub `}</p>
         <p>for You</p>
       </div>
@@ -1985,7 +1985,7 @@ function Heading11() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Inter_Tight:Medium',sans-serif] font-medium justify-center leading-[28px] relative shrink-0 text-[#03030f] text-[20px] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`The Leadership Forum — `}</p>
+        <p className="mb-0">{`The Leadership Forum   `}</p>
         <p className="mb-0">{`Insights and Guidance Hub for `}</p>
         <p>You</p>
       </div>
@@ -2181,7 +2181,7 @@ function Heading12() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Inter_Tight:Medium',sans-serif] font-medium justify-center leading-[28px] relative shrink-0 text-[#03030f] text-[20px] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`The Strategy Hub — Guidance `}</p>
+        <p className="mb-0">{`The Strategy Hub   Guidance `}</p>
         <p className="mb-0">{`and Insights for Modern `}</p>
         <p>Leaders</p>
       </div>

@@ -273,7 +273,7 @@ function Container8() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Inter_Tight:Regular',sans-serif] font-normal justify-center leading-[24px] relative shrink-0 text-[16px] text-[rgba(3,3,15,0.7)] w-full whitespace-pre-wrap">
-        <p className="mb-0">We work as an extension of your team—</p>
+        <p className="mb-0">We work as an extension of your team </p>
         <p className="mb-0">{`immersing ourselves in your goals, challenges, `}</p>
         <p className="mb-0">{`and vision to ensure aligned outcomes. We `}</p>
         <p className="mb-0">{`believe great results come from working `}</p>
@@ -285,7 +285,7 @@ function Container8() {
 
 function WeWorkAsAnExtensionOfYourTeamImmersingOurselvesInYourGoalsChallengesAndVisionToEnsureAlignedOutcomesWeBelieveGreatResultsComeFromWorkingCloselyTogether() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end max-w-[500px] relative shrink-0 w-full" data-name="We work as an extension of your team—immersing ourselves in your goals, challenges, and vision to ensure aligned outcomes. We believe great results come from working closely together.">
+    <div className="content-stretch flex flex-col items-start justify-end max-w-[500px] relative shrink-0 w-full" data-name="We work as an extension of your team immersing ourselves in your goals, challenges, and vision to ensure aligned outcomes. We believe great results come from working closely together.">
       <Container8 />
     </div>
   );

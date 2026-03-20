@@ -45,7 +45,7 @@ export function ProcessSection() {
           </h2>
         </motion.div>
 
-        {/* Steps — all aligned in a flat row for clarity; icons and spacing */}
+        {/* Steps   all aligned in a flat row for clarity; icons and spacing */}
         <div className="grid grid-cols-3 gap-5 items-stretch">
           {steps.map((step, i) => {
             const Icon = step.icon;

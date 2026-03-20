@@ -189,19 +189,19 @@ export default function BlogPost() {
               {[
                 {
                   title: "The Strategic Edge: Insights on Tax Consultation for You",
-                  img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
+                  img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400"
                 },
                 {
                   title: "The Growth Blueprint: Strategies and Solutions that Help You",
-                  img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=400"
+                  img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
                 },
                 {
                   title: "The Leadership Resolve: Insights and Guidance that Help You",
-                  img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400"
+                  img: "https://images.unsplash.com/photo-8139kVrPU5o?auto=format&fit=crop&q=80&w=400"
                 },
                 {
                   title: "The Strategy Hub: Guidance and Insights for Modern Business",
-                  img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=400"
+                  img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=400"
                 }
               ].map((item, i) => (
                 <motion.div 

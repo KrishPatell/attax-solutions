@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { CheckCircle2, ShieldCheck, HeartHandshake, Scale } from "lucide-react";
 import { AttaxTestimonialCard } from "../AttaxTestimonialCard";
+import meImg from "../../../../assets/me.jpg";
 
 const commitments = [
   {
@@ -29,12 +30,14 @@ const testimonials = [
   {
     quote: "ATTAX didn't promise me the world; they promised me they would work hard and be honest. They delivered on both. Settling my $42k debt was the weight off my shoulders I'd been carrying for years.",
     author: "Robert M.",
-    role: "Orange County Business Owner"
+    role: "Orange County Business Owner",
+    photo: meImg,
   },
   {
     quote: "The transparency was what sold me. I'd spoken to other firms that felt like sales mills. ATTAX felt like a law firm. Professional, direct, and actually effective.",
     author: "Sarah J.",
-    role: "Recent Client"
+    role: "Recent Client",
+    photo: "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=facearea&facepad=2&q=80&w=200",
   }
 ];
 
@@ -44,7 +47,7 @@ export function ClientAssurance() {
       {/* Decorative glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1d1ee3]/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+      <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
           <div className="col-span-12 lg:col-span-6">
             <motion.div
@@ -66,7 +69,7 @@ export function ClientAssurance() {
                 className="text-[15px] md:text-[18px] text-white/60 leading-[1.7] mb-8 md:mb-12"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
               >
-                We do not use the word "guarantee" when it comes to legal outcomes — the IRS is a complex government agency and no firm can ethically promise a specific result.
+                We do not use the word "guarantee" when it comes to legal outcomes   the IRS is a complex government agency and no firm can ethically promise a specific result.
               </p>
 
               <div className="space-y-8">
@@ -110,7 +113,7 @@ export function ClientAssurance() {
                   quote={t.quote}
                   name={t.author}
                   title={t.role}
-                  photo={`https://i.pravatar.cc/150?u=${t.author}`}
+                  photo={t.photo}
                   index={idx}
                 />
               ))}

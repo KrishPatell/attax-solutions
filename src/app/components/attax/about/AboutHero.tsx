@@ -33,7 +33,7 @@ export function AboutHero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 w-full py-12 md:py-20">
+      <div className="relative z-10 max-w-[1200px] mx-auto w-full py-12 md:py-20">
         <Breadcrumbs current="About" />
 
         <div className="grid grid-cols-12 gap-12 items-center">

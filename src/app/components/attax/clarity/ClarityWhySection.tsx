@@ -4,7 +4,7 @@ import { AlertCircle, CheckCircle2 } from "lucide-react";
 export function ClarityWhySection() {
   return (
     <section className="py-[60px] md:py-[120px] bg-slate-50 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+      <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="grid grid-cols-12 gap-8 lg:gap-24 items-center">
           {/* Left Column: Problem */}
           <motion.div

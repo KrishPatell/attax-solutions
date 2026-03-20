@@ -3,24 +3,26 @@ import { motion, useInView } from "motion/react";
 import { ArrowUpRight, Scale, Handshake, BadgeDollarSign } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { AttaxTrustpilot } from "./TrustpilotBadge";
-
-const consultImg = "https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXglMjBhdHRvcm5leSUyMGNvbnN1bHRhbnQlMjBtZWV0aW5nJTIwY2xpZW50JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MzQ4ODYxNnww&ixlib=rb-4.1.0&q=80&w=1080";
+import consultImg from "../../../assets/handling-cases.jpg";
 
 const services = [
   {
     icon: Scale,
     title: "Tax Resolution",
-    desc: "We navigate the IRS collections process on your behalf — from Installment Agreements and Currently Not Collectible status to Offers in Compromise. Every resolution strategy is built around your real numbers.",
+    desc: "We navigate the IRS collections process on your behalf   from Installment Agreements and Currently Not Collectible status to Offers in Compromise. Every resolution strategy is built around your real numbers.",
+    points: ["Offer in Compromise", "Installment Agreements", "Penalty Abatement"],
   },
   {
     icon: BadgeDollarSign,
     title: "Tax Relief",
-    desc: "If you owe more than you can pay, tax relief programs can significantly reduce or defer your debt. We assess your eligibility, prepare your case, and present it to the IRS with precision.",
+    desc: "If you owe more than you can pay, federal tax relief programs can significantly reduce or defer your total debt. We assess your full eligibility, prepare your case, and present it to the IRS with clarity and precision.",
+    points: ["Currently Not Collectible", "IRS Fresh Start Program", "Innocent Spouse Relief"],
   },
   {
     icon: Handshake,
     title: "Tax Negotiation",
-    desc: "Expert negotiation directly with the IRS and state tax agencies to protect your assets, stop levies, and secure the best possible outcome — with a dedicated tax professional in your corner at every step.",
+    desc: "Expert negotiation directly with the IRS and state tax agencies to protect your assets, stop levies, and secure the best possible outcome   with a dedicated tax professional in your corner at every step.",
+    points: ["Lien Subordination & Withdrawal", "State Tax Negotiations", "Collections Appeals"],
   },
 ];
 
@@ -32,7 +34,7 @@ export function AttaxServices() {
     <section id="services" className="bg-white py-[60px] md:py-[120px]" ref={ref}>
       <div className="max-w-[1240px] mx-auto px-5 md:px-8">
         {/* Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 md:mb-20 gap-6 md:gap-8">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-6 md:gap-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -49,10 +51,10 @@ export function AttaxServices() {
               className="text-[32px] md:text-[36px] lg:text-[56px] leading-[1.2] md:leading-[1.1] text-[#03030f]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
-              Services That{" "}
+              <span className="lg:whitespace-nowrap">Services That{" "}
               <span className="italic" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Actually Work
-              </span>
+              </span></span>
             </h2>
             <p className="text-[14px] md:text-[16px] lg:text-[18px] text-[#0a1628]/60 mt-4 md:mt-6 leading-relaxed" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
               Our licensed Tax Specialists handle every aspect of your case, from initial analysis to final settlement, ensuring you never have to face the IRS alone.
@@ -91,19 +93,27 @@ export function AttaxServices() {
                    <Icon size={24} className="text-[#1d1ee3]" />
                 </div>
                 
-                <div className="flex flex-col gap-[12px] w-full">
+                <div className="flex flex-col gap-[12px] w-full flex-1">
                   <h3 
                     className="text-[#03030f] text-[24px] md:text-[26px] leading-[1.2] md:leading-[33.6px] font-semibold"
                     style={{ fontFamily: "'Inter Tight', sans-serif" }}
                   >
                     {svc.title}
                   </h3>
-                  <p 
-                    className="text-[rgba(3,3,15,0.7)] text-[14px] md:text-[15px] leading-[1.6] md:leading-[24px]"
+                  <p
+                    className="text-[rgba(3,3,15,0.7)] text-[14px] md:text-[15px] lg:text-[15.5px] leading-[1.6] md:leading-[24px]"
                     style={{ fontFamily: "'Inter Tight', sans-serif" }}
                   >
                     {svc.desc}
                   </p>
+                  <ul className="flex flex-col gap-2 mt-2">
+                    {svc.points.map((point) => (
+                      <li key={point} className="flex items-center gap-2 text-[#03030f] text-[14px] md:text-[15px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                        <span className="w-[6px] h-[6px] rounded-full bg-[#1d1ee3] shrink-0" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 <button className="flex h-[40px] items-center gap-[16px] group/btn">
@@ -128,7 +138,7 @@ export function AttaxServices() {
         >
           <ImageWithFallback
             src={consultImg}
-            alt="ATTAX Solutions — Professional Tax Consultation"
+            alt="ATTAX Solutions   Professional Tax Consultation"
             className="w-full h-full object-cover"
           />
           <div

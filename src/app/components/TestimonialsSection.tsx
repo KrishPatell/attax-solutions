@@ -14,7 +14,7 @@ const testimonials = [
     title: "CEO, Orion Tech",
     stars: 5,
     quote:
-      "Optimo transformed how we approach strategy. Their team didn't just consult—they became true partners in our growth. We saw a 40% operational improvement in just 6 months.",
+      "Optimo transformed how we approach strategy. Their team didn't just consult they became true partners in our growth. We saw a 40% operational improvement in just 6 months.",
   },
   {
     photo: imgT2,

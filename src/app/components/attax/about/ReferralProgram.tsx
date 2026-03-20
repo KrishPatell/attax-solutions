@@ -22,7 +22,7 @@ export function ReferralProgram() {
 
   return (
     <section id="referral" className="bg-[#f7f9ff] py-[60px] md:py-[120px]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-12 gap-8 md:gap-16">
           {/* Left - Program Info */}
           <div className="col-span-12 lg:col-span-5">
@@ -53,7 +53,7 @@ export function ReferralProgram() {
                   { icon: UserPlus, text: "$50 referral fee per enrolled client" },
                   { icon: Clock, text: "30-day clearance period for payments" },
                   { icon: DollarSign, text: "Paid after investigation fee collection" },
-                  { icon: CheckCircle2, text: "Simple referral agreement — no complexity" },
+                  { icon: CheckCircle2, text: "Simple referral agreement   no complexity" },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-4 text-[#0a1628] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                     <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#1d1ee3] shadow-sm border border-[#1d1ee3]/10">

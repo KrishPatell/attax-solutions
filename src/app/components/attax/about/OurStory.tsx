@@ -1,13 +1,12 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { ArrowUpRight, Download, FileText, Globe } from "lucide-react";
-
-const founderImg = "https://images.unsplash.com/photo-1661854236305-b02cef4aa0af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBzdWl0JTIwZm91bmRlciUyMENFTyUyMHBvcnRyYWl0fGVufDF8fHx8MTc3MzY1MzQ5OHww&ixlib=rb-4.1.0&q=80&w=1080";
+import founderImg from "../../../../assets/me.jpg";
 
 export function OurStory() {
   return (
     <section id="our-story" className="bg-white py-[60px] md:py-[120px] overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
           {/* Left - Founder Image */}
           <div className="col-span-12 lg:col-span-5 relative">
@@ -65,7 +64,7 @@ export function OurStory() {
                   At ATTAX Solutions, we don't believe in the traditional high-pressure sales approach. Tax debt is stressful enough without having to worry about who is actually handling your case.
                 </p>
                 <p>
-                  I founded this firm with a simple goal: to provide honest, skilled, and transparent IRS representation for people who feel overwhelmed by the system. We aren't just another tax mill — we are an established firm with real clients, real results, and a commitment to direct communication.
+                  I founded this firm with a simple goal: to provide honest, skilled, and transparent IRS representation for people who feel overwhelmed by the system. We aren't just another tax mill   we are an established firm with real clients, real results, and a commitment to direct communication.
                 </p>
                 
               </div>

@@ -34,7 +34,7 @@ export function TaxRelief() {
   return (
     <section id="tax-relief" className="py-[60px] md:py-[120px] bg-[#f9faff] scroll-mt-[120px]">
       <div className="max-w-[1440px] mx-auto px-5 md:px-8">
-        <div className="flex flex-col items-center text-center mb-10 md:mb-20 max-w-[900px] mx-auto">
+        <div className="flex flex-col items-center text-center mb-10 md:mb-12 max-w-[900px] mx-auto">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

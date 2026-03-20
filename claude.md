@@ -40,9 +40,9 @@ These are the exact correct values in use. Do not "fix" or "standardize" them.
 - Sub-section labels in components: `text-[16px]–text-[20px]` (varies by context — do not standardize)
 
 ## Critical Constraints
-- **Mobile-First**: `px-5` horizontal padding on mobile. Vertical: `py-[60px]` mobile / `py-[120px]` desktop.
+- **NO inner padding on max-width wrappers**: The `max-w-[1200px] mx-auto` content wrapper div must NEVER have horizontal padding (`px-*`, `md:px-*`, `lg:px-*`). Do not add `px-5`, `px-8`, or any responsive horizontal padding variant to this div. Ever. The correct pattern is always `className="max-w-[1200px] mx-auto"` — nothing else on that div.
+- **Vertical Spacing**: Standard vertical padding: `py-[60px]` (Mobile) / `py-[120px]` (Desktop).
 - **Button Sizing**: Use `self-start` on buttons inside flex-col containers to prevent full-width stretch. CTA pill pattern: `flex items-center gap-5 rounded-[50px] pl-5 pr-1.5 py-1.5` — `gap-5` is the standard gap, no `w-full` or `max-w` constraints.
-- **Section Spacing**: Consistent horizontal padding (**px-5**) on mobile. Standard vertical padding: `py-[60px]` (Mobile) / `py-[120px]` (Desktop).
 - **Icon Circles**: For contact/feature lists, use **50x50px** (rounded-full) containers with background color `#EAEEFF` and primary blue icons.
 - **Device Support**: 1440px desktop layout; mobile optimization is a priority.
 - **Terminology**: ALWAYS use "Tax Specialist", NEVER "Enrolled Agent".

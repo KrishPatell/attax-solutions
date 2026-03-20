@@ -1,14 +1,13 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { Briefcase, GraduationCap, MapPin, ArrowUpRight } from "lucide-react";
-
-const teamImg = "https://images.unsplash.com/photo-1661854236305-b02cef4aa0af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBzdWl0JTIwZm91bmRlciUyMENFTyUyMHBvcnRyYWl0fGVufDF8fHx8MTc3MzY1MzQ5OHww&ixlib=rb-4.1.0&q=80&w=1080";
-const officeImg = "https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBsdXh1cnklMjBOZXdwb3J0JTIwQmVhY2glMjBvZmZpY2V8ZW58MXx8fHwxNzczNjUzNTAxfDA&ixlib=rb-4.1.0&q=80&w=1080";
+import teamImg from "../../../../assets/me.jpg";
+const officeImg = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1080";
 
 export function TeamSection() {
   return (
     <section id="team" className="bg-white py-[60px] md:py-[120px]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-12 gap-8 md:gap-16 items-start mb-[60px] md:mb-[100px]">
           {/* Founder Bio */}
           <div className="col-span-12 lg:col-span-7">

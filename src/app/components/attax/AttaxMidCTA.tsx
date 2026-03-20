@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { ArrowUpRight, ShieldCheck, CheckCircle2, Clock } from "lucide-react";
+import ctaBg from "../../../assets/638b11cd6ed56ff750f40755e53285b0ad327e7f.png";
 
 const micros = [
   "Licensed IRS advocacy",
@@ -14,29 +15,28 @@ export function AttaxMidCTA() {
 
   return (
     <section className="bg-white py-[60px] md:py-[120px]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="bg-[#1d1ee3] rounded-[24px] p-6 md:p-16 text-center relative overflow-hidden shadow-[0_32px_80px_rgba(29,30,227,0.35)]"
+          className="rounded-[24px] p-6 md:p-16 text-center relative overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.4)]"
         >
-          {/* Dot grid pattern */}
+          {/* Background image */}
+          <img
+            src={ctaBg}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Black overlay */}
+          <div className="absolute inset-0 bg-black/70 pointer-events-none" />
+          {/* Dot grid on top */}
           <div
-            className="absolute inset-0 pointer-events-none opacity-[0.07]"
+            className="absolute inset-0 pointer-events-none opacity-[0.04]"
             style={{
               backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
               backgroundSize: "28px 28px",
-            }}
-          />
-          {/* Large soft glows */}
-          <div className="absolute -top-24 -left-24 w-[400px] h-[400px] rounded-full bg-white/10 blur-[80px] pointer-events-none" />
-          <div className="absolute -bottom-24 -right-24 w-[400px] h-[400px] rounded-full bg-[#0a1628]/30 blur-[80px] pointer-events-none" />
-          {/* Diagonal shine */}
-          <div
-            className="absolute inset-0 pointer-events-none opacity-20"
-            style={{
-              background: "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 50%, rgba(255,255,255,0.06) 100%)",
             }}
           />
           

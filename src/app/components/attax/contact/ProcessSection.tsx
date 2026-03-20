@@ -12,7 +12,7 @@ export function ProcessSection() {
     {
       icon: Calendar,
       title: "Schedule",
-      description: "We reach out to schedule your free consultation at a time that works for you — via phone or video conference.",
+      description: "We reach out to schedule your free consultation at a time that works for you   via phone or video conference.",
       color: "#F59E0B"
     },
     {
@@ -24,15 +24,15 @@ export function ProcessSection() {
     {
       icon: CheckCircle2,
       title: "Decision",
-      description: "You decide whether to move forward with our representation — there is zero obligation and no high-pressure sales.",
+      description: "You decide whether to move forward with our representation   there is zero obligation and no high-pressure sales.",
       color: "#8b5cf6"
     }
   ];
 
   return (
     <section className="py-[60px] md:py-[120px] bg-[#f9faff] border-y border-[#eaeaff]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-        <div className="text-center max-w-[800px] mx-auto mb-10 md:mb-20">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="text-center max-w-[800px] mx-auto mb-10 md:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

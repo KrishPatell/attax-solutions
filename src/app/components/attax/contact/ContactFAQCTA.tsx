@@ -1,8 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
-
-const expertsImg = "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200";
+import expertsImg from "../../../../assets/handling-cases.jpg";
 
 export function ContactFAQCTA() {
   const bookingUrl = "https://calendly.com/attax-solutions";
@@ -15,7 +14,7 @@ export function ContactFAQCTA() {
 
   return (
     <section className="bg-white py-[60px] md:py-[120px]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

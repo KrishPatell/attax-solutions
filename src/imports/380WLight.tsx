@@ -2038,8 +2038,8 @@ function Container41() {
         <p className="mb-0">{`It starts with a conversation. During an initial `}</p>
         <p className="mb-0">{`consultation, we’ll learn about your goals, `}</p>
         <p className="mb-0">{`challenges, and opportunities, then recommend `}</p>
-        <p className="mb-0">{`services—whether that’s growth planning, talent `}</p>
-        <p className="mb-0">{`strategy, or performance optimization—best `}</p>
+        <p className="mb-0">{`services whether that’s growth planning, talent `}</p>
+        <p className="mb-0">{`strategy, or performance optimization best `}</p>
         <p>aligned to your needs.</p>
       </div>
     </div>

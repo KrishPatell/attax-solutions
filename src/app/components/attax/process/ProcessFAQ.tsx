@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: "How do I know which service is right for my business?",
-    answer: "It starts with a comprehensive consultation. During our initial deep-dive, we evaluate your financial status, current tax notices, and future goals to recommend the most effective resolution program — whether that's an Offer in Compromise, Installment Agreement, or Audit Defense.",
+    answer: "It starts with a comprehensive consultation. During our initial deep-dive, we evaluate your financial status, current tax notices, and future goals to recommend the most effective resolution program   whether that's an Offer in Compromise, Installment Agreement, or Audit Defense.",
   },
   {
     question: "Do you offer customized solutions or standard frameworks?",

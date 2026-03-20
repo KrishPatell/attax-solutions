@@ -611,7 +611,7 @@ function Heading3() {
         <p className="mb-0">{`company lies a commitment to `}</p>
         <p className="mb-0">{`continuous improvement. We `}</p>
         <p className="mb-0">{`don’t just grow for the sake of `}</p>
-        <p className="mb-0">{`growth — we grow to create `}</p>
+        <p className="mb-0">{`growth   we grow to create `}</p>
         <p className="mb-0">{`value, simplify complexity, and `}</p>
         <p className="mb-0">{`solve real problems for real `}</p>
         <p className="mb-0">{`people. Thanks for being part of `}</p>
@@ -957,7 +957,7 @@ function Heading4() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[25.2px] not-italic relative shrink-0 text-[#03030f] text-[16.7px] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`The Growth Blueprint — Strategies and `}</p>
+        <p className="mb-0">{`The Growth Blueprint   Strategies and `}</p>
         <p>Solutions Hub for You</p>
       </div>
     </div>
@@ -1329,7 +1329,7 @@ function Heading6() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[25.2px] not-italic relative shrink-0 text-[#03030f] text-[16.7px] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`The Leadership Forum — Insights and `}</p>
+        <p className="mb-0">{`The Leadership Forum   Insights and `}</p>
         <p>Guidance Hub for You</p>
       </div>
     </div>
@@ -1516,7 +1516,7 @@ function Heading7() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[25.2px] not-italic relative shrink-0 text-[#03030f] text-[16.7px] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`The Strategy Hub — Guidance and `}</p>
+        <p className="mb-0">{`The Strategy Hub   Guidance and `}</p>
         <p>Insights for Modern Leaders</p>
       </div>
     </div>
@@ -1703,7 +1703,7 @@ function Heading8() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
       <div className="flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[25.2px] not-italic relative shrink-0 text-[#03030f] text-[16.7px] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`The Transformation Guide — Insights and `}</p>
+        <p className="mb-0">{`The Transformation Guide   Insights and `}</p>
         <p>Solutions Hub for You</p>
       </div>
     </div>

@@ -55,7 +55,7 @@ export function ProcessCTA() {
           {/* Image */}
           <div className="flex-1 relative min-h-[280px] md:min-h-[400px] lg:min-h-full">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1696861270495-7f35c35c3273"
+              src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1080"
               className="absolute inset-0 w-full h-full object-cover"
               alt="Experts collaboration"
             />

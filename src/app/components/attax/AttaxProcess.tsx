@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useInView } from "motion/react";
 import { ArrowUpRight, MessageCircle, Search, Shield, CheckCircle2, ChevronDown } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { AttaxTrustpilot } from "./TrustpilotBadge";
+import handlingCasesImg from "../../../assets/handling-cases.jpg";
 
 const steps = [
   {
@@ -10,9 +11,9 @@ const steps = [
     id: "consultation",
     icon: MessageCircle,
     title: "Complimentary Consultation",
-    desc: "We listen first. A 30-minute call with a licensed tax professional — no charge, no obligation.",
+    desc: "We listen first. A 30-minute call with a licensed tax professional   no charge, no obligation.",
     highlights: ["No fees, no pressure", "Expert consultation", "Nationwide representation"],
-    img: "https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBjb25zdWx0YXRpb24lMjBtZWV0aW5nJTIwb2ZmaWNlJTIwdGF4JTIwcmVzb2x1dGlvbnxlbnwxfHx8fDE3NzM0OTQwOTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: handlingCasesImg,
   },
   {
     num: "02",
@@ -21,25 +22,25 @@ const steps = [
     title: "Detailed Analysis",
     desc: "We pull your IRS transcripts, analyze your full liability, and identify every available relief option.",
     highlights: ["IRS transcript review", "Full liability breakdown", "Relief option mapping"],
-    img: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmFseXppbmclMjBmaW5hbmNpYWwlMjBkb2N1bWVudHMlMjB0YXglMjB0cmFuc2NyaXB0cyUyMG9mZmljZXxlbnwxfHx8fDE3NzM0OTQwOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=1080",
   },
   {
     num: "03",
     id: "defense",
     icon: Shield,
     title: "Strategic Defense",
-    desc: "We negotiate directly with the IRS — halting collections, releasing levies, and protecting your assets.",
+    desc: "We negotiate directly with the IRS   halting collections, releasing levies, and protecting your assets.",
     highlights: ["Collections halt", "Levy & lien release", "Asset protection"],
-    img: "https://images.unsplash.com/photo-1653213096273-4a0ba43fc50a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZWdvdGlhdGluZyUyMElSUyUyMGNvbGxlY3Rpb25zJTIwZGVmZW5zZSUyMHByb3RlY3Rpb258ZW58MXx8fHwxNzczNDk0MDkwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1080",
   },
   {
     num: "04",
     id: "resolution",
     icon: CheckCircle2,
     title: "Resolution",
-    desc: "Settlement confirmed. Whether it's a reduced balance, payment plan, or other relief — we see it through.",
+    desc: "Settlement confirmed. Whether it's a reduced balance, payment plan, or other relief   we see it through.",
     highlights: ["Offer in Compromise", "Payment plans", "Penalty abatement"],
-    img: "https://images.unsplash.com/photo-1681505526188-b05e68c77582?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdWNjZXNzZnVsJTIwdGF4JTIwcmVzb2x1dGlvbiUyMGhhbmRzaGFrZSUyMHNldHRsZW1lbnQlMjBkb2N1bWVudHN8ZW58MXx8fHwxNzczNDk0MDkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    img: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1080",
   },
 ];
 
@@ -138,7 +139,7 @@ export function AttaxProcess() {
                 className="text-white/80 text-[15px] leading-[1.6] max-w-[400px]"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
               >
-                Every step is handled by a dedicated tax professional — the same person, start to finish.
+                Every step is handled by a dedicated tax professional   the same person, start to finish.
               </p>
             </div>
           </motion.div>
@@ -165,7 +166,7 @@ export function AttaxProcess() {
                       {step.num}
                     </span>
                     <span
-                      className="flex-1 text-[16px] md:text-[20px] text-[#03030f] not-italic font-['Inter_Tight',sans-serif]"
+                      className="flex-1 text-[18px] md:text-[24px] text-[#03030f] not-italic font-['Inter_Tight',sans-serif]"
                       style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
                     >
                       {step.title}
@@ -173,7 +174,7 @@ export function AttaxProcess() {
                     <Icon
                       size={20}
                       color={isActive ? "#1d1ee3" : "rgba(3,3,15,0.4)"}
-                      className="shrink-0 transition-colors duration-200"
+                      className="shrink-0 transition-colors duration-200 md:!w-[25px] md:!h-[25px]"
                     />
                   </button>
 
@@ -244,7 +245,7 @@ export function AttaxProcess() {
               className="text-white/80 text-[15px] md:text-[17px] leading-[1.6] max-w-[700px]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >
-              Every ATTAX client receives a dedicated tax professional — not a salesperson. No handoffs. No surprises. We handle the IRS so you don't have to.
+              Every ATTAX client receives a dedicated tax professional   not a salesperson. No handoffs. No surprises. We handle the IRS so you don't have to.
             </p>
           </div>
           <div className="flex items-center justify-start md:justify-end shrink-0 w-full md:w-auto">

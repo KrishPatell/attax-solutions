@@ -1,11 +1,12 @@
 import { motion } from "motion/react";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
+import meImg from "../../../../assets/me.jpg";
 
 export function CoreVisionSection() {
   return (
     <section className="py-[60px] md:py-[120px] bg-[#f7f9ff] overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-[60px]">
           
           {/* Left: Content */}
@@ -90,7 +91,7 @@ export function CoreVisionSection() {
             className="flex-1 w-full lg:max-w-[540px] h-[300px] md:h-[480px] lg:h-[620px] rounded-[12px] overflow-hidden"
           >
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1556978082-fc2023bb5081?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aXNpb25hcnklMjBlbnRyZXByZW5ldXIlMjB0aGlua2luZyUyMGluJTIwYnJpZ2h0JTIwd29ya3NwYWNlJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzczNjU2OTEyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src={meImg}
               alt="ATTAX Visionary Portrait"
               className="w-full h-full object-cover rounded-[12px]"
             />

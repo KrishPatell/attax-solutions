@@ -6,7 +6,7 @@ const commitmentItems = [
   {
     icon: ShieldCheck,
     title: "Licensed Professionals",
-    desc: "Every case is handled directly by a licensed tax professional — never a salesperson.",
+    desc: "Every case is handled directly by a licensed tax professional   never a salesperson.",
     accent: "#F59E0B"
   },
   {
@@ -35,7 +35,7 @@ export function BeliefsSection() {
 
   return (
     <section id="beliefs" className="bg-white py-[120px]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-20 items-center">
           {/* Left: Content */}
           <div className="flex-1">

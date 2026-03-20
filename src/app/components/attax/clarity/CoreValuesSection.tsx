@@ -2,11 +2,12 @@ import { motion } from "motion/react";
 import { ArrowUpRight, TrendingUp, Zap } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { AttaxTestimonialCard } from "../AttaxTestimonialCard";
+import handlingCasesImg from "../../../../assets/handling-cases.jpg";
 
 export function CoreValuesSection() {
   return (
     <section className="py-[60px] md:py-[120px] bg-white overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-[60px]">
 
           {/* Left: Image with Testimonial Card */}
@@ -18,7 +19,7 @@ export function CoreValuesSection() {
             className="flex-1 relative w-full lg:max-w-[540px] h-[300px] md:h-[480px] lg:h-[620px] rounded-[12px] overflow-hidden"
           >
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1770943558988-2c605d6bd5a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0ZWFtJTIwY29sbGFib3JhdGluZyUyMGluJTIwbW9kZXJuJTIwZ2xhc3MlMjBvZmZpY2UlMjBtZWV0aW5nfGVufDF8fHx8MTc3MzY1NjkwOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src={handlingCasesImg}
               alt="ATTAX Collaboration"
               className="w-full h-full object-cover rounded-[12px]"
             />
@@ -29,7 +30,7 @@ export function CoreValuesSection() {
                 quote="ATTAX Clarity helped our business stay compliant with proactive monitoring and strategic IRS insight."
                 name="Zayan Daniel"
                 title="Head of Business Strategy"
-                photo="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=80&h=80&q=80"
+                photo="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=facearea&facepad=2&w=80&h=80&q=80"
               />
             </div>
           </motion.div>

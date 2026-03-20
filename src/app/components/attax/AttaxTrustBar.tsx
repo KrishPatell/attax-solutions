@@ -31,7 +31,7 @@ export function AttaxTrustBar() {
 
   return (
     <section className="bg-white border-b border-[#eaeeff] py-0" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:divide-x divide-y md:divide-y-0 divide-[#eaeeff]">
           {trustItems.map((item, i) => {
             const Icon = item.icon;
@@ -54,7 +54,7 @@ export function AttaxTrustBar() {
                     {item.title}
                   </p>
                   <p
-                    className="text-[rgba(10,22,40,0.55)] text-[12px] lg:text-[13px] mt-0.5"
+                    className="text-[rgba(10,22,40,0.55)] text-[12px] lg:text-[13px] mt-0.5 lg:whitespace-nowrap"
                     style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
                   >
                     {item.desc}

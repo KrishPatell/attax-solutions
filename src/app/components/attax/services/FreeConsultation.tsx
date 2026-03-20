@@ -2,11 +2,12 @@ import { motion } from "motion/react";
 import { ArrowRight, Clock, Video, Phone, CheckCircle2 } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { Link } from "react-router";
+import consultationImg from "../../../../assets/7ee3725ecc3a7dffc4d3371f2e502a8127203d34.png";
 
 export function FreeConsultation() {
   return (
     <section className="py-[60px] md:py-[120px] bg-white scroll-mt-[120px]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
           {/* Left: Image */}
           <div className="w-full lg:w-[45%] relative">
@@ -18,9 +19,9 @@ export function FreeConsultation() {
               className="aspect-[4/5] rounded-[32px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.12)] border border-[rgba(0,0,0,0.05)]"
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1762341113148-41a938d2e957?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0YXglMjBzcGVjaWFsaXN0JTIwY29uc3VsdGFudCUyMG1lZXRpbmclMjB3b21hbiUyMGNvbnN1bHRhdGlvbiUyMG9mZmljZSUyMGRlc2slMjBkZXNrJTIwcGFwZXJ3b3JrJTIwZmluYW5jZSUyMGV4cGVydCUyMGhhbmRzaGFrZXxlbnwxfHx8fDE3NzM2NjExNDB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src={consultationImg}
                 alt="Free Consultation Meeting"
-                className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover"
               />
             </motion.div>
           </div>

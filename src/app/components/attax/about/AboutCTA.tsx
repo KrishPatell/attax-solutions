@@ -9,7 +9,7 @@ export function AboutCTA() {
       <div className="absolute top-0 left-0 w-full h-1/2 bg-[#f9faff] -z-10" />
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-white -z-10" />
 
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+      <div className="max-w-[1200px] mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}

@@ -3,9 +3,9 @@ import { motion, useInView } from "motion/react";
 import { AttaxTestimonialCard } from "./AttaxTestimonialCard";
 
 const photoUrls = [
-  "https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBoZWFkc2hvdCUyMHNtaWxpbmd8ZW58MXx8fHwxNzczNDczODc5fDA&ixlib=rb-4.1.0&q=80&w=200",
-  "https://images.unsplash.com/photo-1773336099065-57893268749f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMGhlYWRzaG90JTIwc21pbGluZ3xlbnwxfHx8fDE3NzM0MzI0NjV8MA&ixlib=rb-4.1.0&q=80&w=200",
-  "https://images.unsplash.com/photo-1771924367247-3ea9ec09a258?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaWRkbGUlMjBhZ2VkJTIwY291cGxlJTIwcG9ydHJhaXQlMjBzbWlsaW5nfGVufDF8fHx8MTc3MzQ5NTIwM3ww&ixlib=rb-4.1.0&q=80&w=200",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2&q=80&w=200",
+  "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=facearea&facepad=2&q=80&w=200",
+  "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=200",
 ];
 
 const testimonials = [
@@ -15,7 +15,7 @@ const testimonials = [
     stars: 5,
     result: "Tax liability resolved through negotiation",
     quote:
-      "I had significant back taxes and hadn't filed in years. The ATTAX team got me current, stopped the levy on my bank account, and settled the entire liability. I don't say this lightly — they changed my life.",
+      "I had significant back taxes and hadn't filed in years. The ATTAX team got me current, stopped the levy on my bank account, and settled the entire liability. I don't say this lightly   they changed my life.",
   },
   {
     name: "Sandra R.",
@@ -31,12 +31,24 @@ const testimonials = [
     stars: 5,
     result: "Offer in Compromise successfully settled",
     quote:
-      "We owed the IRS a substantial amount. ATTAX prepared and negotiated an Offer in Compromise — we settled for a fraction of what was owed. Every step of the process was explained clearly, and we always knew where things stood. Highly recommend.",
+      "We owed the IRS a substantial amount. ATTAX prepared and negotiated an Offer in Compromise   we settled for a fraction of what was owed. Every step of the process was explained clearly, and we always knew where things stood. Highly recommend.",
   },
+];
+
+const resultHighlights = [
+  "Offer in Compromise: $52K settled for $4,200",
+  "Reduced $84K liability to $6,400",
+  "Wage garnishment released in 72 hours",
+  "IRS levy lifted in 48 hours",
+  "Penalty abatement: $31K reduced to $0",
+  "$110K tax debt resolved for $8,900",
+  "Installment plan secured at $180/month",
+  "Innocent Spouse Relief granted in full",
 ];
 
 // Triple the cards for a seamless infinite loop
 const loopCards = [...testimonials, ...testimonials, ...testimonials];
+const loopHighlights = [...resultHighlights, ...resultHighlights, ...resultHighlights];
 
 export function AttaxResults() {
   const ref = useRef<HTMLDivElement>(null);
@@ -44,7 +56,7 @@ export function AttaxResults() {
 
   return (
     <section id="results" className="bg-[#f7f9ff] py-[60px] md:py-[120px]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -73,12 +85,34 @@ export function AttaxResults() {
             className="text-[16px] leading-[1.6] text-[rgba(10,22,40,0.6)] max-w-[360px] hidden lg:block"
             style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
           >
-            These are not typical results — but they are real ones. Every case is unique. Every outcome is earned.
+            These are not typical results   but they are real ones. Every case is unique. Every outcome is earned.
           </p>
         </motion.div>
       </div>
 
-      {/* Infinite scroll strip — full width, no padding clipping */}
+      {/* Results ticker strip */}
+      <div className="overflow-hidden border-y border-[#e0e4f0] bg-white mb-10 md:mb-12">
+        <motion.div
+          animate={{ x: ["0%", "-33.333%"] }}
+          transition={{ duration: 22, ease: "linear", repeat: Infinity }}
+          className="flex items-center"
+          style={{ width: "max-content" }}
+        >
+          {loopHighlights.map((item, i) => (
+            <div key={i} className="flex items-center shrink-0">
+              <div className="flex items-center gap-2 px-6 py-3.5">
+                <span className="w-[6px] h-[6px] rounded-full bg-[#1d1ee3] shrink-0" />
+                <span className="text-[13px] text-[#03030f] whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}>
+                  {item}
+                </span>
+              </div>
+              <div className="w-px h-4 bg-[#e0e4f0] shrink-0" />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Infinite scroll strip   full width, no padding clipping */}
       <div className="overflow-hidden">
         <motion.div
           animate={{ x: ["0%", "-33.333%"] }}

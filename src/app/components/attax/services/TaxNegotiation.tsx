@@ -5,7 +5,7 @@ import { ImageWithFallback } from "../../figma/ImageWithFallback";
 export function TaxNegotiation() {
   return (
     <section id="tax-negotiation" className="py-[60px] md:py-[120px] bg-white scroll-mt-[120px]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-24">
           {/* Left: Content */}
           <div className="w-full lg:w-[50%]">
@@ -79,7 +79,7 @@ export function TaxNegotiation() {
               className="aspect-[4/5] rounded-[32px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.12)] border border-[rgba(0,0,0,0.05)]"
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1632433339330-f46c673854c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWdhbCUyMGRvY3VtZW50JTIwc2lnbmF0dXJlJTIwcGVuJTIwdGF4JTIwYWdyZWVtZW50JTIwb2ZmaWNlJTIwZGVzayUyMHByb2Zlc3Npb25hbCUyMGJ1c2luZXNzbWFuJTIwY29uc3VsdGF0aW9uJTIwbWVldGluZ3xlbnwxfHx8fDE3NzM2NjExMzV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=1080"
                 alt="Tax Negotiation Process"
                 className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700"
               />

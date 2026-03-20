@@ -2825,7 +2825,7 @@ function Container79() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Inter_Tight:Regular',sans-serif] font-normal justify-center leading-[24px] relative shrink-0 text-[16px] text-[rgba(3,3,15,0.7)] w-full whitespace-pre-wrap">
-        <p className="mb-0">{`We put our clients first—understanding their goals, challenges, and customers to `}</p>
+        <p className="mb-0">{`We put our clients first understanding their goals, challenges, and customers to `}</p>
         <p>deliver tailored solutions that create real value.</p>
       </div>
     </div>

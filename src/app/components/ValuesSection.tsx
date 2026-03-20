@@ -20,7 +20,7 @@ const tabs = [
     id: "tailored",
     label: "Tailored Solutions",
     content:
-      "No two businesses are the same. We craft bespoke strategies that address your unique challenges, opportunities, and vision—never a cookie-cutter approach.",
+      "No two businesses are the same. We craft bespoke strategies that address your unique challenges, opportunities, and vision never a cookie-cutter approach.",
   },
 ];
 
@@ -93,7 +93,7 @@ export function ValuesSection() {
                 className="text-[18px] leading-[1.6] text-[rgba(3,3,15,0.7)] mt-4"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
               >
-                At Optimo, Our partnership goes beyond delivering solutions—it's about building trust, aligning with your goals. We go beyond consulting to become your strategic partner—delivering tailored solutions, expert insight, and measurable results.
+                At Optimo, Our partnership goes beyond delivering solutions it's about building trust, aligning with your goals. We go beyond consulting to become your strategic partner delivering tailored solutions, expert insight, and measurable results.
               </p>
             </div>
 

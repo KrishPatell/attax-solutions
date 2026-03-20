@@ -50,7 +50,7 @@ export function ContactHero() {
             className="text-[20px] lg:text-[22px] leading-[1.6] text-[#0a1628]/60 max-w-[640px]"
             style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
           >
-            Your first consultation is free. No pressure, no commitment — just an honest conversation about what you're facing and what we can do about it.
+            Your first consultation is free. No pressure, no commitment   just an honest conversation about what you're facing and what we can do about it.
           </p>
         </motion.div>
       </div>

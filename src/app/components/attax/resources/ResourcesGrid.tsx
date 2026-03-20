@@ -8,7 +8,7 @@ const articles = [
     slug: "irs-audit-survival-guide",
     title: "IRS Audit Survival Guide: Everything You Need to Know",
     description: "An audit doesn't have to be the end of your financial freedom. Discover the proven strategies we use to protect our clients during IRS examinations.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
     date: "March 15, 2026",
     author: "Tax Specialist Team"
   },
@@ -16,7 +16,7 @@ const articles = [
     slug: "offer-in-compromise-guide",
     title: "Understanding the Offer in Compromise (OIC)",
     description: "Learn how you can potentially settle your IRS debt for a fraction of what you owe through the OIC program and start fresh with a clean slate.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
     date: "March 12, 2026",
     author: "ATTAX Resolution Center"
   },
@@ -24,7 +24,7 @@ const articles = [
     slug: "irs-audit-survival-guide",
     title: "How to Stop Wage Garnishments and Bank Levies",
     description: "When the IRS starts taking your paycheck or freezing your assets, you need immediate action. We outline the steps to halt collection activities fast.",
-    image: "https://images.unsplash.com/photo-1758520145178-29eafeda9908?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800",
     date: "March 10, 2026",
     author: "Strategic Advocacy Team"
   },
@@ -41,7 +41,7 @@ const articles = [
 export function ResourcesGrid() {
   return (
     <section className="py-[60px] md:py-[120px] bg-[#f7f9ff]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8 lg:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex items-end justify-between mb-8 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, x: -20 }}

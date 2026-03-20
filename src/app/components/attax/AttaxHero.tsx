@@ -3,72 +3,82 @@ import { ArrowUpRight, ChevronDown, Play, ShieldAlert, FileCheck } from "lucide-
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import svgPaths from "../../../imports/svg-tbbnbj1wyr";
 import svgPathsShield from "../../../imports/svg-w6in6wygdq";
-
-const heroBg = "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0YXglMjBzZXJ2aWNlcyUyMG9mZmljZXxlbnwxfHx8fDE3NzczNDg4NjE5fDA&ixlib=rb-4.1.0&q=80&w=1200";
+import taxPrepImg from "../../../assets/Individual-Tax-Preparation-1024x683.webp";
 
 export function AttaxHero() {
   const scrollTo = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="hero" className="relative min-h-[100vh] lg:min-h-[85vh] bg-[#0a1628] overflow-hidden flex items-center">
-      {/* BG color/solid as requested */}
+    <section id="hero" className="relative min-h-[100vh] lg:min-h-[88vh] bg-[#0a1628] overflow-hidden flex items-center">
+      {/* Background */}
       <div className="absolute inset-0 bg-[#0a1628]">
-        {/* Subtle grid pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.03]"
-          style={{ 
-            backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
-            backgroundSize: "40px 40px"
-          }} 
+        {/* Image pinned to right half   mask-image fades its left edge into the dark bg */}
+        <img
+          src={taxPrepImg}
+          alt=""
+          aria-hidden="true"
+          className="absolute top-0 right-0 h-full"
+          style={{
+            width: "62%",
+            objectFit: "cover",
+            objectPosition: "center 15%",
+            maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 25%, black 55%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 25%, black 55%)",
+          }}
         />
+        {/* Dark veil so text column stays clean */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(135deg, rgba(10,22,40,1) 0%, rgba(10,22,40,0.8) 50%, rgba(29,30,227,0.15) 100%)",
+              "linear-gradient(to right, #0a1628 40%, rgba(10,22,40,0.55) 58%, rgba(10,22,40,0.1) 100%)",
+          }}
+        />
+        {/* Subtle dot grid */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
           }}
         />
       </div>
 
-      {/* Blue accent glow */}
-      <div
-        className="absolute top-1/3 right-0 w-[600px] h-[600px] rounded-full opacity-10 pointer-events-none"
-        style={{ background: "radial-gradient(circle, #1d1ee3 0%, transparent 70%)" }}
-      />
-
       {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 pt-[100px] pb-[60px] w-full">
+      <div className="relative z-10 max-w-[1200px] mx-auto pt-[100px] pb-[60px] w-full">
         <div className="grid grid-cols-12 gap-10 items-center">
-          {/* Left — copy */}
+          {/* Left   copy */}
           <div className="col-span-12 lg:col-span-7">
-            {/* Eyebrow */}
+            {/* Eyebrow   avatar stack + stars + count */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 mb-8"
+              className="inline-flex items-center gap-4 mb-8"
             >
-              {/* 5 Golden Stars */}
-              <div className="h-[16px] relative shrink-0 w-[64px]">
-                {[0, 12, 24, 36, 48].map((left, index) => (
-                  <div key={index} className="absolute size-[16px] top-0" style={{ left: `${left}px` }}>
-                    <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-                      <path 
-                        d={svgPaths.p17f48400} 
-                        fill="#F59E0B" 
-                        stroke="#F59E0B" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth="1.33333" 
-                      />
-                    </svg>
+              {/* Overlapping avatar circles */}
+              <div className="flex items-center">
+                {[
+                  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=80",
+                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=80",
+                  "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=80",
+                ].map((src, i) => (
+                  <div
+                    key={i}
+                    className="w-[44px] h-[44px] rounded-full border-[2.5px] border-[#0a1628] overflow-hidden shrink-0"
+                    style={{ marginLeft: i === 0 ? 0 : "-12px", zIndex: 3 - i }}
+                  >
+                    <img src={src} alt="" className="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
-              
-              {/* Text */}
-              <p className="font-normal leading-[21px] text-[14px] text-[rgba(255,255,255,0.6)] whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                Over 500+ Cases Resolved Successfully
+
+              {/* Divider */}
+              <div className="w-px h-7 bg-white/15 shrink-0" />
+
+              {/* Label */}
+              <p className="text-[14px] text-white/60 whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                <span className="text-white font-semibold">2,400+</span> Satisfied Clients
               </p>
             </motion.div>
 
@@ -105,7 +115,7 @@ export function AttaxHero() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="mt-6 leading-[1.65] lg:leading-[1.7] text-[rgba(255,255,255,0.72)] max-w-[340px] md:max-w-[520px] text-[15px] md:text-[18.5px]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
-            >ATTAX Solutions resolves IRS and state tax debt — with honesty, clarity, and a plan that actually works.</motion.p>
+            >ATTAX Solutions resolves IRS and state tax debt   with honesty, clarity, and a plan that actually works.</motion.p>
 
             {/* Italic caption */}
             
@@ -156,27 +166,34 @@ export function AttaxHero() {
             </motion.div>
           </div>
 
-          {/* Right — floating stat cards */}
+          {/* Right   floating stat cards */}
           
         </div>
 
-        {/* Stats row - Unified Design from Optimo */}
+        {/* Tagline trust badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="flex gap-8 md:gap-16 mt-10 pt-8 border-t border-white/10 items-center flex-wrap"
+          className="mt-10 pt-8 border-t border-white/10"
         >
-          <div className="max-w-[520px]">
-            <div
-              className="text-[22px] text-white leading-tight italic"
+          <div className="inline-flex items-center gap-4 bg-white/[0.05] border border-white/[0.09] rounded-[14px] px-5 py-3.5 backdrop-blur-sm">
+            {/* Gold stars */}
+            <div className="flex gap-0.5 shrink-0">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="#FBBF24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              ))}
+            </div>
+            <div className="w-px h-4 bg-white/20 shrink-0" />
+            <p
+              className="text-[14px] md:text-[16px] text-white/85 italic leading-snug"
               style={{ fontFamily: "'Playfair Display', serif", fontWeight: 500 }}
             >
               "The fastest growing tax relief company in the nation"
-            </div>
+            </p>
           </div>
-
-          
         </motion.div>
       </div>
 

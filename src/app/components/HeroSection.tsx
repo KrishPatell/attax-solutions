@@ -100,7 +100,7 @@ export function HeroSection() {
             </motion.button>
           </motion.div>
 
-          {/* Subscribe Card — inlined below on smaller screens, floated right on large */}
+          {/* Subscribe Card   inlined below on smaller screens, floated right on large */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ export function HeroSection() {
                   className="text-[14px] leading-[1.5] text-[rgba(3,3,15,0.7)] mt-2"
                   style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
                 >
-                  Success doesn't happen by chance—it's built through smart strategy, informed decisions.
+                  Success doesn't happen by chance it's built through smart strategy, informed decisions.
                 </p>
               </div>
               <div className="flex items-center bg-[#eaeaff] rounded-full p-1.5 gap-2">

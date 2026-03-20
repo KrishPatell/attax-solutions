@@ -2,8 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import svgPaths from "../../../imports/svg-ps3a1hmcku";
-
-const imgBuildingA = "https://images.unsplash.com/photo-1554224155-6726b3ff858f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800";
+import imgBuildingA from "../../../assets/75c625e12e429e69fa04d226df2a67ef68773f5d.png";
 
 export function AttaxStrategicPlatformV2() {
   const ref = useRef<HTMLDivElement>(null);
@@ -20,7 +19,7 @@ export function AttaxStrategicPlatformV2() {
         </svg>
       ),
       title: "Back Taxes",
-      desc: "Years of unpaid taxes accumulating with penalties and interest can feel crushing — but there are real pathways to resolution.",
+      desc: "Years of unpaid taxes accumulating with penalties and interest can feel crushing   but there are real pathways to resolution.",
     },
     {
       icon: (
@@ -41,13 +40,13 @@ export function AttaxStrategicPlatformV2() {
         </svg>
       ),
       title: "IRS Notices",
-      desc: "Letters, levies, liens and wage garnishments are serious — but they can be stopped. You need a licensed professional in your corner.",
+      desc: "Letters, levies, liens and wage garnishments are serious   but they can be stopped. You need a licensed professional in your corner.",
     },
   ];
 
   return (
     <section className="bg-[#f7f9ff] py-[60px] md:py-[120px] overflow-hidden" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8 lg:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-[40px] items-stretch relative">
           
           {/* Left: Image Card with Overlays */}

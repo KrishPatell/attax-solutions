@@ -2,9 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, ShieldCheck, UserCheck, MessageCircle, FileBarChart, Plus, Minus } from "lucide-react";
 import { AttaxTestimonialCard } from "../AttaxTestimonialCard";
-
-const imgBackground = "https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080";
-const imgProfile = "https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=200";
+import imgBackground from "../../../../assets/handling-cases.jpg";
+import imgProfile from "../../../../assets/me.jpg";
 
 const features = [
   {
@@ -15,7 +14,7 @@ const features = [
   {
     icon: ShieldCheck,
     title: "Direct IRS Advocacy",
-    description: "We represent you directly before the IRS. You won't need to speak with agents or worry about letters — we handle all formal communication on your behalf."
+    description: "We represent you directly before the IRS. You won't need to speak with agents or worry about letters   we handle all formal communication on your behalf."
   },
   {
     icon: MessageCircle,
@@ -34,7 +33,7 @@ export function HandlingCases() {
 
   return (
     <section id="how-we-handle" className="bg-white py-[60px] md:py-[120px] overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">

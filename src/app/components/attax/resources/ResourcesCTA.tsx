@@ -5,7 +5,7 @@ import { ImageWithFallback } from "../../figma/ImageWithFallback";
 export function ResourcesCTA() {
   return (
     <section className="pb-[60px] md:pb-[120px] bg-white">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8 lg:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -67,7 +67,7 @@ export function ResourcesCTA() {
           {/* Right: Image */}
           <div className="w-full md:w-[45%] relative min-h-[240px] md:min-h-auto">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1758519290111-bfbd61b32d49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMGNvbnN1bHRhdGlvbiUyMG1lZXRpbmclMjBwZW9wbGUlMjBvZmZpY2UlMjB0ZWFtd29yayUyMHRheCUyMHNwZWNpYWxpc3QlMjBhZHZpc29yfGVufDF8fHx8MTc3MzY1ODM3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=1080"
               alt="Professional Consultation"
               className="absolute inset-0 w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700"
             />

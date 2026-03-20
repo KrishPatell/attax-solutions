@@ -48,7 +48,7 @@ function Container1() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <Container1 />
     </div>
   );
@@ -196,7 +196,7 @@ function Container4() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults1() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <Container4 />
     </div>
   );
@@ -348,7 +348,7 @@ function Container7() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults2() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <Container7 />
     </div>
   );
@@ -498,7 +498,7 @@ function Container10() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults3() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <Container10 />
     </div>
   );
@@ -611,7 +611,7 @@ function Quotes4() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults4() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <div className="h-[126.01px] shrink-0 w-full" data-name="Rectangle" />
     </div>
   );
@@ -689,7 +689,7 @@ function Quotes5() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults5() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <div className="h-[176.42px] shrink-0 w-full" data-name="Rectangle" />
     </div>
   );
@@ -767,7 +767,7 @@ function Quotes6() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults6() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <div className="h-[126.01px] shrink-0 w-full" data-name="Rectangle" />
     </div>
   );
@@ -845,7 +845,7 @@ function Quotes7() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults7() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <div className="h-[226.83px] shrink-0 w-full" data-name="Rectangle" />
     </div>
   );
@@ -923,7 +923,7 @@ function Quotes8() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults8() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <div className="h-[176.42px] shrink-0 w-full" data-name="Rectangle" />
     </div>
   );
@@ -1001,7 +1001,7 @@ function Quotes9() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults9() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <div className="h-[126.01px] shrink-0 w-full" data-name="Rectangle" />
     </div>
   );
@@ -1079,7 +1079,7 @@ function Quotes10() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults10() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <div className="h-[176.42px] shrink-0 w-full" data-name="Rectangle" />
     </div>
   );
@@ -1157,7 +1157,7 @@ function Quotes11() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults11() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <div className="h-[126.01px] shrink-0 w-full" data-name="Rectangle" />
     </div>
   );
@@ -1235,7 +1235,7 @@ function Quotes12() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults12() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <div className="h-[226.83px] shrink-0 w-full" data-name="Rectangle" />
     </div>
   );
@@ -1313,7 +1313,7 @@ function Quotes13() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults13() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <div className="h-[176.42px] shrink-0 w-full" data-name="Rectangle" />
     </div>
   );
@@ -1391,7 +1391,7 @@ function Quotes14() {
 
 function TheirConsultantsDidntJustOfferAdviceTheyRolledUpTheirSleevesAndWorkedAlongsideUsToSolveComplexChallengesAndDeliverRealResults14() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice—they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
+    <div className="content-stretch flex flex-col items-start justify-end relative shrink-0 w-full" data-name="'Their consultants didn’t just offer advice they rolled up their sleeves and worked alongside us to solve complex challenges and deliver real results.">
       <div className="h-[126.01px] shrink-0 w-full" data-name="Rectangle" />
     </div>
   );

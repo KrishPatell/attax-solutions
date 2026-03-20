@@ -3,7 +3,7 @@ import { motion, useInView } from "motion/react";
 import { ArrowUpRight, ShieldCheck, Zap, Globe, Lock, Cpu, BarChart3 } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 
-const platformImg = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200";
+const platformImg = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200";
 
 const pillars = [
   {
@@ -36,7 +36,7 @@ export function AttaxStrategicPlatform() {
 
   return (
     <section id="platform" className="bg-[#0a1628] py-[120px] overflow-hidden" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-12 gap-16 items-center">
           {/* Left Column - Visual */}
           <motion.div

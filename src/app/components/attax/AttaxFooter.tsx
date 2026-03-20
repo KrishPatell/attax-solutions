@@ -29,7 +29,7 @@ export function AttaxFooter() {
     <footer id="contact" className="bg-[#0a1628] text-white">
       {/* Contact CTA bar */}
       <div className="border-b border-white/10 border-solid">
-        <div className="max-w-[1200px] mx-auto px-5 lg:px-8 py-10 lg:py-16">
+        <div className="max-w-[1200px] mx-auto py-10 lg:py-16">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div>
               <h2
@@ -45,7 +45,7 @@ export function AttaxFooter() {
                 className="text-white/60 text-[15px] lg:text-[16px] mt-3"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
               >
-                Speak with a tax specialist today — no cost, no obligation.
+                Speak with a tax specialist today   no cost, no obligation.
               </p>
             </div>
             <div className="flex flex-row flex-wrap items-center gap-4 shrink-0 w-full sm:w-auto">
@@ -79,12 +79,12 @@ export function AttaxFooter() {
       </div>
 
       {/* Main footer grid */}
-      <div className="max-w-[1200px] mx-auto px-5 lg:px-8 py-12 lg:py-16">
+      <div className="max-w-[1200px] mx-auto py-12 lg:py-16">
         <div className="grid grid-cols-12 gap-y-12 lg:gap-10">
           {/* Brand */}
           <div className="col-span-12 lg:col-span-4">
             <div className="flex items-center gap-2 mb-5">
-              <BrandLogo light />
+              <BrandLogo light className="w-[145px]" />
             </div>
             <p
               className="text-white/55 text-[14px] leading-[1.7] mb-6 max-w-[280px]"
@@ -184,7 +184,7 @@ export function AttaxFooter() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10 border-solid">
-        <div className="max-w-[1200px] mx-auto px-5 lg:px-8 py-6 flex flex-col items-center gap-4 text-center">
+        <div className="max-w-[1200px] mx-auto py-6 flex flex-col items-center gap-4 text-center">
           <p
             className="text-white/35 text-[12px]"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}

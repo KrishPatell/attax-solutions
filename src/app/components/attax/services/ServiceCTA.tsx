@@ -5,7 +5,7 @@ import { Link } from "react-router";
 export function ServiceCTA() {
   return (
     <section className="py-[60px] md:pb-[120px] md:pt-0 bg-white">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}

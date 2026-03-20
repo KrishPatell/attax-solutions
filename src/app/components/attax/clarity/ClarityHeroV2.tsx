@@ -7,7 +7,7 @@ import svgPaths from "../../../imports/svg-sgovbpraxs";
 export function ClarityHeroV2() {
   return (
     <section className="relative pt-[100px] md:pt-[160px] pb-[60px] md:pb-[120px] bg-white overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+      <div className="max-w-[1200px] mx-auto relative z-10">
 
         {/* Top Content Layout */}
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 mb-12 md:mb-16">
@@ -46,7 +46,7 @@ export function ClarityHeroV2() {
               className="text-[14px] md:text-[16px] lg:text-[20px] leading-[1.6] text-[rgba(3,3,15,0.7)] max-w-[620px] mb-8 md:mb-12"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              ATTAX Clarity is a proactive monitoring and scoring system — built so you're never caught off guard by your tax standing again.
+              ATTAX Clarity is a proactive monitoring and scoring system   built so you're never caught off guard by your tax standing again.
             </motion.p>
 
             <motion.div
@@ -87,7 +87,7 @@ export function ClarityHeroV2() {
           className="relative rounded-[16px] overflow-hidden h-[220px] sm:h-[360px] md:h-[480px] lg:aspect-[1140/580] lg:h-auto mb-12 md:mb-24"
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1695067058684-da5a90013c57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWlsaW5nJTIwZGl2ZXJzZSUyMGJ1c2luZXNzJTIwcGVvcGxlJTIwaGlnaCUyMGZpdmUlMjBjZWxlYnJhdGlvbiUyMG9mZmljZXxlbnwxfHx8fDE3NzM2NTY3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=1080"
             alt="Clarity Solution Celebration"
             className="w-full h-full object-cover"
           />

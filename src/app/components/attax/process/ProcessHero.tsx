@@ -35,7 +35,7 @@ export function ProcessHero() {
           className="relative w-full aspect-[16/10] md:aspect-[16/7] lg:aspect-[21/9] rounded-[16px] md:rounded-[24px] overflow-hidden shadow-2xl"
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1565688527174-775059ac429c"
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1440"
             className="w-full h-full object-cover"
             alt="Tax Specialists Team"
           />
