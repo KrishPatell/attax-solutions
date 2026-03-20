@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { useState, useEffect, CSSProperties } from "react";
+import { AnimatePresence } from "motion/react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { ChevronDown, Phone, Menu, X, Shield } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
@@ -14,6 +14,11 @@ const navLinks = [
   { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/contact" },
 ];
+
+// Smooth CSS-only navbar entrance — avoids Framer Motion fixed-position jitter on iOS Safari
+const navbarStyle: CSSProperties = {
+  animation: "navbarSlideIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
+};
 
 export function AttaxNavbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,10 +41,8 @@ export function AttaxNavbar() {
   };
 
   return (
-    <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <header
+      style={navbarStyle}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`}
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
@@ -135,6 +138,22 @@ export function AttaxNavbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
+
+// CSS keyframe injected once at module level
+const _styleTag = (
+  <style>{`
+    @keyframes navbarSlideIn {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  `}</style>
+);
