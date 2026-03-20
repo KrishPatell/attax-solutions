@@ -1,5 +1,5 @@
 import { useState, useEffect, CSSProperties } from "react";
-import { AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { ChevronDown, Phone, Menu, X, Shield } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
