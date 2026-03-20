@@ -35,7 +35,7 @@ export function useImmersiveTrigger() {
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => setActive(entry.isIntersecting),
-      { threshold: 0.2 }
+      { threshold: 0.05 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -52,7 +52,7 @@ export function AttaxServices() {
   return (
     <section
       id="services"
-      className="relative py-[60px] md:py-[120px] transition-colors duration-500"
+      className="relative py-[60px] md:py-[120px] transition-colors duration-150"
       style={{ background: immersiveActive ? "#0a1628" : "#ffffff" }}
       ref={ref}
     >
@@ -66,21 +66,21 @@ export function AttaxServices() {
             className="max-w-[640px]"
           >
             <span
-              className="text-[#1d1ee3] text-[14px] md:text-[16px] font-medium block mb-2 md:mb-4"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
+              className="text-[14px] md:text-[16px] font-medium block mb-2 md:mb-4"
+              style={{ fontFamily: "'Inter Tight', sans-serif", color: immersiveActive ? "#ffffff" : "#1d1ee3" }}
             >
               [What We Do]
             </span>
             <h2
-              className="text-[32px] md:text-[36px] lg:text-[56px] leading-[1.2] md:leading-[1.1] text-[#03030f]"
-              style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
+              className="text-[32px] md:text-[36px] lg:text-[56px] leading-[1.2] md:leading-[1.1]"
+              style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500, color: immersiveActive ? "#ffffff" : "#03030f" }}
             >
               <span className="lg:whitespace-nowrap">Services That{" "}
               <span className="italic" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Actually Work
               </span></span>
             </h2>
-            <p className="text-[14px] md:text-[16px] lg:text-[18px] text-[#0a1628]/60 mt-4 md:mt-6 leading-relaxed" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+            <p className="text-[14px] md:text-[16px] lg:text-[18px] mt-4 md:mt-6 leading-relaxed" style={{ fontFamily: "'Inter Tight', sans-serif", color: immersiveActive ? "rgba(255,255,255,0.6)" : "rgba(10,22,40,0.6)" }}>
               Our licensed Tax Specialists handle every aspect of your case, from initial analysis to final settlement, ensuring you never have to face the IRS alone.
             </p>
           </motion.div>
