@@ -52,8 +52,11 @@ export function AttaxServices() {
   return (
     <section
       id="services"
-      className="relative py-[60px] md:py-[120px] transition-colors duration-150"
-      style={{ background: immersiveActive ? "#0a1628" : "#ffffff" }}
+      className="relative py-[60px] md:py-[120px] [will-change:background-color] [backface-visibility:hidden] duration-150"
+      style={{
+        background: immersiveActive ? "#0a1628" : "#ffffff",
+        transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)",
+      }}
       ref={ref}
     >
       <div className="max-w-[1240px] mx-auto px-5 md:px-8">
