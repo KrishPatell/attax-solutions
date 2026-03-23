@@ -123,15 +123,6 @@ export function HandlingCases() {
                   darkProfile
                 />
               </div>
-              <div className="hidden md:block max-w-[361px] pointer-events-auto">
-                <AttaxTestimonialCard
-                  quote="I felt lost dealing with the IRS on my own. ATTAX took over and resolved everything within months."
-                  name="Sarah J."
-                  title="Los Angeles Resident"
-                  photo={testimonialPhoto}
-                  darkProfile
-                />
-              </div>
             </div>
           </motion.div>
 
