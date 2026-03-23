@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Shield, Mail, Phone, MapPin, Send, Linkedin, Twitter, Facebook, Download } from "lucide-react";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { BrandLogo } from "./BrandLogo";
 import attaxPdf from "../../../assets/ATTAX Solutions-2.pdf";
 
@@ -17,7 +17,6 @@ const links = {
 
 export function AttaxFooter() {
   const [email, setEmail] = useState("");
-  const navigate = useNavigate();
 
   return (
     <footer id="contact" className="bg-[#0a1628] text-white">
@@ -43,22 +42,22 @@ export function AttaxFooter() {
               </p>
             </div>
             <div className="flex flex-row flex-wrap items-center gap-4 shrink-0 w-full sm:w-auto">
-              <motion.button
-                whileHover={{ scale: 1.04, boxShadow: "0 0 40px rgba(29,30,227,0.4)" }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => navigate("/contact")}
+              <a
+                href={attaxPdf}
+                download="ATTAX Solutions Presentation.pdf"
                 className="flex items-center justify-start gap-5 bg-white rounded-[50px] pl-5 md:pl-7 pr-1.5 md:pr-2 py-1.5 md:py-2 group cursor-pointer w-auto"
+                style={{ textDecoration: "none" }}
               >
                 <span
                   className="text-[#0a1628] text-[14px] md:text-[15px]"
                   style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
                 >
-                  Free Consultation
+                  Download Presentation
                 </span>
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center group-hover:bg-[#1618c7] transition-colors shrink-0">
-                  <Mail size={18} className="md:w-[18px] md:h-[18px] w-4 h-4" color="white" />
+                  <Download size={18} className="md:w-[18px] md:h-[18px] w-4 h-4" color="white" />
                 </div>
-              </motion.button>
+              </a>
               <a
                 href="tel:+18558292829"
                 className="flex items-center justify-start gap-2 text-white/70 hover:text-white text-[14px] md:text-[15px] transition-colors py-2 whitespace-nowrap"
@@ -66,15 +65,6 @@ export function AttaxFooter() {
               >
                 <Phone size={15} className="text-[#a5b4fc]" />
                 +1 (855) 829-2829
-              </a>
-              <a
-                href={attaxPdf}
-                download="ATTAX Solutions Presentation.pdf"
-                className="flex items-center justify-start gap-2 text-white/70 hover:text-white text-[14px] md:text-[15px] transition-colors py-2 whitespace-nowrap"
-                style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
-              >
-                <Download size={15} className="text-[#a5b4fc]" />
-                Download Presentation
               </a>
             </div>
           </div>

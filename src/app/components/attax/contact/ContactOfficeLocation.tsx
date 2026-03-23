@@ -94,7 +94,11 @@ export function ContactOfficeLocation() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="relative h-full min-h-[320px] md:min-h-[480px] rounded-[16px] md:rounded-[20px] overflow-hidden group"
               >
-                <ImageWithFallback src={remoteImg} alt="Remote Support" className="absolute inset-0 w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-110" />
+                <ImageWithFallback
+                  src={remoteImg}
+                  alt="Remote Support"
+                  className="absolute inset-0 w-full h-full object-cover object-[80%_20%] lg:object-[center_20%] transition-transform duration-700 group-hover:scale-110"
+                />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[12px] font-medium text-[#03030f]">Remote</div>
               </motion.div>
             </div>

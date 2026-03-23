@@ -65,7 +65,7 @@ export function AttaxNavbar() {
       style={navbarStyle}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`}
     >
-      <div className="max-w-[1440px] mx-auto px-[22px] lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-[20px] lg:px-8">
         <div
           className={`bg-white rounded-[16px] px-6 py-3.5 flex items-center gap-4 transition-shadow duration-300 [transform:translate3d(0,0,0)] [-webkit-backface-visibility:hidden] [backface-visibility:hidden] ${
             scrolled ? "shadow-[0_8px_32px_rgba(0,0,0,0.14)]" : "shadow-[0_2px_16px_rgba(0,0,0,0.07)]"
