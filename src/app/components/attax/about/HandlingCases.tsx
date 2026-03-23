@@ -113,7 +113,7 @@ export function HandlingCases() {
             </div>
 
             {/* Testimonial Cards */}
-            <div className="absolute inset-x-0 bottom-0 p-[30px] flex flex-col md:flex-row items-start md:items-end gap-4 justify-end h-full pointer-events-none">
+            <div className="absolute inset-x-0 bottom-0 p-[30px] flex flex-col md:flex-row items-start md:items-end gap-4 justify-start h-full pointer-events-none">
               <div className="max-w-[361px] pointer-events-auto">
                 <AttaxTestimonialCard
                   quote="ATTAX helped me navigate my complex IRS situation with direct advocacy and a clear strategy"
