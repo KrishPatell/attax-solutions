@@ -26,7 +26,7 @@ export function BrandLogo({ light = false, className }: BrandLogoProps) {
           {...intrinsic}
           decoding="sync"
           draggable={false}
-          className={className ?? "h-[40px] w-auto object-contain object-left"}
+          className={className ?? "h-[45px] w-auto object-contain object-left"}
         />
       </span>
     );

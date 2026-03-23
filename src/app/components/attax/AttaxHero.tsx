@@ -1,11 +1,13 @@
 import { motion } from "motion/react";
 import { ArrowUpRight, ChevronDown, Play, ShieldAlert, FileCheck } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { useNavigate } from "react-router";
 import svgPaths from "../../../imports/svg-tbbnbj1wyr";
 import svgPathsShield from "../../../imports/svg-w6in6wygdq";
 import taxPrepImg from "../../../assets/Individual-Tax-Preparation-1024x683.webp";
 
 export function AttaxHero() {
+  const navigate = useNavigate();
   const scrollTo = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
@@ -133,7 +135,7 @@ export function AttaxHero() {
               <motion.button
                 whileHover={{ scale: 1.04, boxShadow: "0 12px 40px rgba(29,30,227,0.45)" }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
+                onClick={() => navigate("/contact")}
                 className="flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group self-start"
               >
                 <span

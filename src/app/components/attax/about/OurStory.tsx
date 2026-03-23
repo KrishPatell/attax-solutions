@@ -59,7 +59,7 @@ export function OurStory() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.15 }}
-                className="relative rounded-[20px] overflow-hidden flex-1 min-h-[280px]"
+                className="relative rounded-[20px] overflow-hidden flex-1 min-h-[350px]"
               >
                 <ImageWithFallback
                   src={omarImg}
@@ -107,9 +107,8 @@ export function OurStory() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="grid grid-cols-2 gap-4 pt-10 border-t border-[#eaeaff]"
             >
-              <a
+              <div
                 href={attaxPdf}
-                download="ATTAX Solutions Presentation.pdf"
                 className="col-span-2 sm:col-span-1 p-[22px] rounded-[16px] border border-[#eaeaff] hover:border-[#1d1ee3]/30 transition-colors group cursor-pointer bg-[#f9faff] flex flex-col gap-4 no-underline"
               >
                 <div className="flex items-center gap-3">
@@ -126,11 +125,7 @@ export function OurStory() {
                 <p className="text-[14px] text-[#0a1628]/50 leading-[1.5]">
                   Learn more about our methodology and firm history.
                 </p>
-                <div className="flex items-center gap-2 text-[#1d1ee3] text-[13px] font-bold uppercase tracking-wider">
-                  <span>View PDF</span>
-                  <Download size={14} className="group-hover:translate-y-0.5 transition-transform" />
-                </div>
-              </a>
+              </div>
 
               <div className="col-span-2 sm:col-span-1 p-[22px] rounded-[16px] border border-[#eaeaff] hover:border-[#1d1ee3]/30 transition-colors group cursor-pointer bg-[#f9faff] flex flex-col gap-4">
                 <div className="flex items-center gap-3">

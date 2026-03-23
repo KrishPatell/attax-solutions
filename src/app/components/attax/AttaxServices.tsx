@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { ArrowUpRight, Scale, Handshake, BadgeDollarSign } from "lucide-react";
+import { useNavigate } from "react-router";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { AttaxTrustpilot } from "./TrustpilotBadge";
 import consultImg from "../../../assets/handling-cases.webp";
@@ -27,6 +28,7 @@ const services = [
 ];
 
 export function AttaxServices() {
+  const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -159,7 +161,7 @@ export function AttaxServices() {
                 </span>
               </p>
               <motion.button
-                onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
+                onClick={() => navigate("/contact")}
                 className="mt-6 md:mt-8 flex items-center gap-3 bg-white rounded-[50px] pl-4 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group mx-auto md:mx-0"
               >
                 <span className="text-[#0a1628] text-[14px] md:text-[16px] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>

@@ -9,7 +9,7 @@ export function ContactFAQCTA() {
   const benefits = [
     "Schedule a Free Consultation",
     "Get an Honest Case Evaluation",
-    "Start Your Path to IRS Resolution"
+    "Start Your Path to IRS Resolution",
   ];
 
   return (
@@ -45,13 +45,13 @@ export function ContactFAQCTA() {
               </div>
             </motion.button>
 
-            <div className="space-y-4 w-full">
-              {benefits.map((benefit, idx) => (
-                <div key={idx} className="flex items-center gap-4 text-[#03030f]/70">
-                  <div className="w-5 h-5 rounded-full bg-[#1d1ee3]/10 flex items-center justify-center text-[#1d1ee3] shrink-0">
-                    <BadgeCheck size={14} />
+            <div className="flex flex-col gap-3">
+              {benefits.map((label, idx) => (
+                <div key={idx} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#1d1ee3]/10 flex items-center justify-center shrink-0">
+                    <BadgeCheck size={14} className="text-[#1d1ee3]" />
                   </div>
-                  <span className="text-[14px] md:text-[16px] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{benefit}</span>
+                  <p className="text-[14px] md:text-[16px] font-medium text-[#03030f]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{label}</p>
                 </div>
               ))}
             </div>

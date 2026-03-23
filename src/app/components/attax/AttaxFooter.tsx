@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Shield, Mail, Phone, MapPin, Send, Linkedin, Twitter, Facebook, Download } from "lucide-react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { BrandLogo } from "./BrandLogo";
 import attaxPdf from "../../../assets/ATTAX Solutions-2.pdf";
 
 const linkMap: Record<string, string> = {
   About: "/about",
+  Contact: "/contact",
 };
 
 const links = {
@@ -16,6 +17,7 @@ const links = {
 
 export function AttaxFooter() {
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   return (
     <footer id="contact" className="bg-[#0a1628] text-white">
@@ -44,7 +46,7 @@ export function AttaxFooter() {
               <motion.button
                 whileHover={{ scale: 1.04, boxShadow: "0 0 40px rgba(29,30,227,0.4)" }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => document.querySelector("#contact-form")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => navigate("/contact")}
                 className="flex items-center justify-start gap-5 bg-white rounded-[50px] pl-5 md:pl-7 pr-1.5 md:pr-2 py-1.5 md:py-2 group cursor-pointer w-auto"
               >
                 <span

@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { ShieldCheck, HeartHandshake, Zap, Scale, ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const commitmentItems = [
   {
@@ -30,6 +31,7 @@ const commitmentItems = [
 ];
 
 export function BeliefsSection() {
+  const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -151,7 +153,7 @@ export function BeliefsSection() {
                 <motion.button
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
-                  onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
+                  onClick={() => navigate("/contact")}
                   className="w-full flex items-center justify-between bg-[#1d1ee3] rounded-[50px] pl-6 pr-2 py-2 group hover:bg-[#1618c7] transition-colors"
                 >
                   <span 

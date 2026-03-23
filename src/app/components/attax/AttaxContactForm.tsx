@@ -120,15 +120,12 @@ export function AttaxContactForm() {
           transition={{ duration: 0.7 }}
           className="mb-8 md:mb-16"
         >
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-1 h-5 rounded-full bg-[#1d1ee3]" />
-            <span
-              className="text-[#1d1ee3] text-[13px] uppercase tracking-[0.12em]"
-              style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700 }}
-            >
-              Contact Us
-            </span>
-          </div>
+          <span
+            className="text-[#1d1ee3] text-[13px] uppercase tracking-widest font-bold block mb-4"
+            style={{ fontFamily: "'Inter Tight', sans-serif" }}
+          >
+            [Contact Us]
+          </span>
 
           <h2
             className="text-[32px] lg:text-[50px] leading-[1.08] text-[#060e1e] mb-4"

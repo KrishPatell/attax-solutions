@@ -42,7 +42,7 @@ export function HandlingCases() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
           <div className="max-w-[900px]">
             <motion.span
               initial={{ opacity: 0, y: 10 }}
@@ -112,13 +112,22 @@ export function HandlingCases() {
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500" />
             </div>
 
-            {/* Testimonial Card (Figma: Card) */}
-            <div className="absolute inset-x-0 bottom-0 p-[30px] flex flex-col items-start justify-end h-full pointer-events-none">
+            {/* Testimonial Cards */}
+            <div className="absolute inset-x-0 bottom-0 p-[30px] flex flex-col md:flex-row items-start md:items-end gap-4 justify-end h-full pointer-events-none">
               <div className="max-w-[361px] pointer-events-auto">
                 <AttaxTestimonialCard
                   quote="ATTAX helped me navigate my complex IRS situation with direct advocacy and a clear strategy"
                   name="Robert M."
                   title="Orange County Business Owner"
+                  photo={testimonialPhoto}
+                  darkProfile
+                />
+              </div>
+              <div className="hidden md:block max-w-[361px] pointer-events-auto">
+                <AttaxTestimonialCard
+                  quote="I felt lost dealing with the IRS on my own. ATTAX took over and resolved everything within months."
+                  name="Sarah J."
+                  title="Los Angeles Resident"
                   photo={testimonialPhoto}
                   darkProfile
                 />

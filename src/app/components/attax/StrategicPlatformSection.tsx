@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { ArrowUpRight, ShieldCheck, Zap, Globe, Lock, Cpu, BarChart3 } from "lucide-react";
+import { useNavigate } from "react-router";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 
 const platformImg = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200";
@@ -29,6 +30,7 @@ const pillars = [
 ];
 
 export function AttaxStrategicPlatform() {
+  const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -153,7 +155,7 @@ export function AttaxStrategicPlatform() {
               <motion.button
                 whileHover={{ scale: 1.04, boxShadow: "0 12px 40px rgba(29,30,227,0.4)" }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => window.open(bookingUrl, "_blank")}
+                onClick={() => navigate("/contact")}
                 className="flex items-center gap-3 bg-[#1d1ee3] rounded-[50px] pl-6 pr-2 py-2 group"
               >
                 <span

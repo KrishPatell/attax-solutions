@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "motion/react";
 import { Plus } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const faqs = [
   {
@@ -116,6 +117,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
 }
 
 export function AttaxFAQ() {
+  const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -152,7 +154,7 @@ export function AttaxFAQ() {
               Don't see your question here? Book a free consultation and we'll walk you through your options, no pressure and no obligation.
             </p>
             <motion.button
-              onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
+              onClick={() => navigate("/contact")}
               className="mt-6 self-start hidden lg:flex items-center gap-5 bg-[#0a1628] rounded-[50px] pl-5 pr-1.5 py-1.5 group w-fit"
             >
               <span

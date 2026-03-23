@@ -55,8 +55,7 @@ export function AttaxNavbar() {
       return;
     }
 
-    // Only `About` is live right now. Other routes are still draft.
-    if (href === "/about") {
+    if (href === "/about" || href === "/contact") {
       navigate(href);
     }
   };
@@ -85,7 +84,7 @@ export function AttaxNavbar() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleNavClick(link.href)}
-                className="px-3.5 py-2 rounded-lg text-[rgba(10,22,40,0.7)] hover:text-[#0a1628] hover:bg-[#f0f4ff] transition-colors duration-200 text-[14px] whitespace-nowrap"
+                className="px-3.5 py-2 rounded-lg text-[rgba(10,22,40,0.7)] hover:text-[#0a1628] hover:bg-[#f0f4ff] transition-colors duration-200 text-[15.25px] whitespace-nowrap"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
               >
                 {link.label}
@@ -97,7 +96,7 @@ export function AttaxNavbar() {
           <div className="hidden lg:flex items-center gap-4 shrink-0 ml-auto xl:ml-0">
             <a
               href="tel:+18558292829"
-              className="flex items-center gap-2 text-[#0a1628] text-[14px] hover:text-[#1d1ee3] transition-colors"
+              className="flex items-center gap-2 text-[#0a1628] text-[15px] hover:text-[#1d1ee3] transition-colors"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
               <Phone size={15} className="text-[#1d1ee3]" />
@@ -106,8 +105,8 @@ export function AttaxNavbar() {
             <motion.button
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
-              className="flex items-center gap-2 bg-[#1d1ee3] text-white rounded-[10px] px-5 py-2.5 text-[14px] hover:bg-[#1618c7] transition-colors"
+              onClick={() => navigate("/contact")}
+              className="flex items-center gap-2 bg-[#1d1ee3] text-white rounded-[10px] px-5 py-2.5 text-[15px] hover:bg-[#1618c7] transition-colors"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
               Get Started
@@ -149,7 +148,7 @@ export function AttaxNavbar() {
                 <Phone size={14} /> +1 (855) 829-2829
               </a>
               <button
-                onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
+                onClick={() => navigate("/contact")}
                 className="bg-[#1d1ee3] text-white rounded-[10px] px-5 py-2.5 text-[14px]"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
               >

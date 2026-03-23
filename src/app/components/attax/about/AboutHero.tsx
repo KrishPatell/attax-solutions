@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router";
 import svgPaths from "../../../../imports/svg-tbbnbj1wyr";
 import { Breadcrumbs } from "./Breadcrumbs";
 import heroImg from "../../../../assets/hero-tax-seniors.jpg";
@@ -75,19 +76,15 @@ export function AboutHero() {
             ATTAX Solutions provides direct IRS representation and case resolution. Honest advocacy, real results, zero pressure.
           </p>
 
-          <motion.a
-            href="https://calendly.com/attax-solutions"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
+          <Link
+            to="/contact"
             className="bg-[#1d1ee3] text-white rounded-[50px] pl-[18px] pr-1.5 py-1.5 font-medium text-[14px] inline-flex items-center gap-4 shrink-0 whitespace-nowrap self-start"
           >
             <span>Book a Free Call</span>
             <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center shrink-0">
               <ArrowUpRight size={17} className="text-[#1d1ee3]" />
             </div>
-          </motion.a>
+          </Link>
         </motion.div>
 
         {/* Full-width image */}

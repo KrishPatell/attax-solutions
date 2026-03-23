@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { Bookmark, FolderOpen, Sparkles, Users, Lightbulb, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router";
 
 const teamImg = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=900";
 
@@ -126,23 +127,15 @@ export function AboutStats() {
               </div>
             </motion.div>
 
-            <motion.a
-              href="https://calendly.com/attax-solutions"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.35 }}
+            <Link
+              to="/contact"
               className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 pr-1.5 py-1.5 font-bold text-[15px] inline-flex items-center gap-5 self-start w-fit"
             >
               <span>Book a Free Call</span>
               <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0">
                 <ArrowUpRight size={18} className="text-[#1d1ee3]" />
               </div>
-            </motion.a>
+            </Link>
           </div>
         </div>
 
