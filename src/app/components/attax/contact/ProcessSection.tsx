@@ -52,7 +52,7 @@ export function ProcessSection() {
             <div className="inline-flex items-center gap-3 bg-white px-5 py-3 rounded-full border border-[#eaeaff] shadow-sm">
               <Clock size={16} className="text-[#1d1ee3] shrink-0" />
               <p
-                className="text-[13px] md:text-[14px] text-[#0a1628]/70 whitespace-nowrap"
+                className="text-[13px] md:text-[14px] text-[#0a1628]/70"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
               >
                 We respond within 1 business hour — Mon–Fri, 9 AM–6 PM PT
