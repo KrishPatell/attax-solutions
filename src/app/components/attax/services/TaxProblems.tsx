@@ -40,7 +40,7 @@ export function TaxProblems() {
       {/* Decorative gradient blur */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#1d1ee3]/10 rounded-full blur-[100px] -ml-32 -mt-32" />
 
-      <div className="max-w-[1440px] mx-auto px-5 md:px-8 relative z-10">
+      <div className="max-w-[1440px] mx-auto relative z-10">
         <div className="flex flex-col items-center text-center mb-10 md:mb-12 max-w-[900px] mx-auto">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -49,7 +49,7 @@ export function TaxProblems() {
             className="text-[#a5b4fc] text-[14px] uppercase tracking-widest font-bold block mb-4"
             style={{ fontFamily: "'Inter Tight', sans-serif" }}
           >
-            [Common Problems]
+            Common Problems
           </motion.span>
 
           <h2
@@ -81,7 +81,7 @@ export function TaxProblems() {
                   <problem.icon size={22} />
                 </div>
                 <div className="text-[12px] uppercase tracking-widest font-bold text-white/30 group-hover:text-white/60 transition-colors">
-                  [Case Code: {idx + 1}]
+                  Case Code: {idx + 1}
                 </div>
               </div>
               

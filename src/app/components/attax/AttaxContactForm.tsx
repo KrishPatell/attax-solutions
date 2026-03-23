@@ -131,7 +131,7 @@ export function AttaxContactForm() {
           </div>
 
           <h2
-            className="text-[32px] lg:text-[52px] leading-[1.08] text-[#060e1e] mb-4"
+            className="text-[32px] lg:text-[50px] leading-[1.08] text-[#060e1e] mb-4"
             style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
           >
             Let's Solve This{" "}

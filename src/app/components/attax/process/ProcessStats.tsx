@@ -27,7 +27,7 @@ const stats = [
 export function ProcessStats() {
   return (
     <section className="py-[60px] md:py-[100px] bg-white">
-      <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-20">
+      <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col items-center text-center gap-4 mb-10 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

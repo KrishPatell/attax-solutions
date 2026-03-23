@@ -9,6 +9,7 @@ interface AttaxTestimonialCardProps {
   stars?: number;
   result?: string;
   index?: number;
+  darkProfile?: boolean;
 }
 
 export function AttaxTestimonialCard({
@@ -19,6 +20,7 @@ export function AttaxTestimonialCard({
   stars = 5,
   result,
   index = 0,
+  darkProfile = false,
 }: AttaxTestimonialCardProps) {
   return (
     <div className="flex flex-col gap-6 w-full h-full">
@@ -77,13 +79,13 @@ export function AttaxTestimonialCard({
         </div>
         <div className="flex flex-col">
           <p
-            className="text-[18px] text-[#03030f] leading-tight"
+            className={`text-[18px] leading-tight ${darkProfile ? "text-white" : "text-[#03030f]"}`}
             style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
           >
             {name}
           </p>
           <p
-            className="text-[14px] text-[rgba(3,3,15,0.7)]"
+            className={`text-[14px] ${darkProfile ? "text-white/60" : "text-[rgba(3,3,15,0.7)]"}`}
             style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
           >
             {title}

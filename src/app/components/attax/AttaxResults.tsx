@@ -53,7 +53,7 @@ export function AttaxResults() {
 
   return (
     <section id="results" className="bg-[#f7f9ff] py-[60px] md:py-[120px]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -69,7 +69,7 @@ export function AttaxResults() {
               [Client Results]
             </span>
             <h2
-              className="text-[32px] md:text-[36px] lg:text-[52px] leading-[1.15] text-[#03030F] md:whitespace-nowrap"
+              className="text-[32px] md:text-[36px] lg:text-[50px] leading-[1.15] text-[#03030F] md:whitespace-nowrap"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
               Real Outcomes.{" "}

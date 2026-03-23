@@ -53,7 +53,7 @@ export function AttaxProcess() {
 
   return (
     <section id="process" className="bg-[#f7f9ff] py-[60px] md:py-[120px]" ref={ref}>
-      <div className="max-w-[1240px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 md:mb-16 gap-6 md:gap-0">
           <motion.div
@@ -68,11 +68,11 @@ export function AttaxProcess() {
               [Our Process]
             </span>
             <h2
-              className="leading-[1.2] md:leading-[1.15] text-[#0a1628] text-[32px] md:text-[34px]"
+              className="leading-[1.2] md:leading-[1.15] text-[#0a1628] text-[32px] md:text-[34px] lg:text-[50px]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
               From First Call to{" "}
-              <span className="block md:inline" style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic" }}>
+              <span className="inline" style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic" }}>
                 Full Resolution
               </span>
             </h2>
@@ -83,8 +83,6 @@ export function AttaxProcess() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
               className="flex items-center gap-5 bg-[#0a1628] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group shrink-0 h-fit w-auto"
             >
@@ -94,8 +92,9 @@ export function AttaxProcess() {
               >
                 Start Your Case
               </span>
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center group-hover:bg-[#1618c7] transition-colors shrink-0">
-                <ArrowUpRight size={20} className="w-4 h-4 md:w-5 md:h-5" color="white" />
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
+                <ArrowUpRight size={20} className="w-4 h-4 md:w-5 md:h-5 text-white absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
+                <ArrowUpRight size={20} className="w-4 h-4 md:w-5 md:h-5 text-white absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
               </div>
             </motion.button>
           </div>
@@ -213,15 +212,14 @@ export function AttaxProcess() {
                             ))}
                           </ul>
                           <motion.button
-                            whileHover={{ scale: 1.04 }}
-                            whileTap={{ scale: 0.97 }}
                             className="self-start flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 mt-2 group"
                           >
                             <span className="text-white text-[16px]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}>
                               Explore Service
                             </span>
-                            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                              <ArrowUpRight size={18} color="#1d1ee3" />
+                            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
+                              <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
+                              <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
                             </div>
                           </motion.button>
                         </div>

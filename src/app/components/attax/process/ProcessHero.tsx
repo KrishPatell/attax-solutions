@@ -4,7 +4,7 @@ import { ImageWithFallback } from "../../figma/ImageWithFallback";
 export function ProcessHero() {
   return (
     <section className="relative pt-[120px] md:pt-[180px] pb-[60px] md:pb-[100px] overflow-hidden bg-white">
-      <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-20">
+      <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col items-center text-center gap-6 mb-10 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -13,7 +13,7 @@ export function ProcessHero() {
             className="flex items-center gap-2"
           >
             <span className="text-[#1d1ee3] text-[14px] md:text-[16px] font-medium font-['Inter_Tight']">
-              [Our Process]
+              Our Process
             </span>
             <div className="w-1.5 h-1.5 rounded-full bg-[#F59E0B]" />
           </motion.div>

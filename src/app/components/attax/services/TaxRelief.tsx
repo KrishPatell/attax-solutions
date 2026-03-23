@@ -33,7 +33,7 @@ const programs = [
 export function TaxRelief() {
   return (
     <section id="tax-relief" className="py-[60px] md:py-[120px] bg-[#f9faff] scroll-mt-[120px]">
-      <div className="max-w-[1440px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col items-center text-center mb-10 md:mb-12 max-w-[900px] mx-auto">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -42,7 +42,7 @@ export function TaxRelief() {
             className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4"
             style={{ fontFamily: "'Inter Tight', sans-serif" }}
           >
-            [Tax Relief]
+            Tax Relief
           </motion.span>
 
           <h2
@@ -88,7 +88,7 @@ export function TaxRelief() {
         <div className="flex justify-center">
           <Link
             to="/#process"
-            className="flex items-center gap-4 w-fit bg-white border border-[rgba(0,0,0,0.05)] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 font-medium text-[14px] md:text-[16px] text-[#0a1628] hover:shadow-xl transition-all duration-300 group"
+            className="flex items-center gap-5 w-fit bg-white border border-[rgba(0,0,0,0.05)] rounded-[50px] pl-5 pr-1.5 py-1.5 font-medium text-[14px] md:text-[16px] text-[#0a1628] hover:shadow-xl transition-all duration-300 group"
           >
             <span className="whitespace-nowrap">Explore IRS Fresh Start Programs</span>
             <div className="w-10 h-10 md:w-12 md:h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center text-white group-hover:rotate-45 transition-transform duration-300 shrink-0">

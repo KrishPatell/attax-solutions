@@ -15,7 +15,7 @@ export function AttaxMidCTA() {
 
   return (
     <section className="bg-white py-[60px] md:py-[120px]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -60,7 +60,7 @@ export function AttaxMidCTA() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-[32px] md:text-[40px] lg:text-[56px] leading-[1.1] text-white max-w-[850px] mx-auto mb-8"
+              className="text-[32px] md:text-[40px] lg:text-[50px] leading-[1.1] text-white max-w-[850px] mx-auto mb-8"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
             >
               Stop the IRS collections.{" "}
@@ -100,16 +100,15 @@ export function AttaxMidCTA() {
               className="flex items-center justify-center"
             >
               <motion.button
-                whileHover={{ scale: 1.03, backgroundColor: "#fff", color: "#1d1ee3" }}
-                whileTap={{ scale: 0.98 }}
                 onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
                 className="flex items-center gap-5 bg-white text-[#1d1ee3] rounded-[50px] pl-5 md:pl-8 pr-1.5 md:pr-3 py-1.5 md:py-3 shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all group self-start"
               >
                 <span className="text-[14px] md:text-[17px] whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}>
                   Get My Resolution Strategy
                 </span>
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center group-hover:bg-[#1618c7] transition-colors shrink-0">
-                  <ArrowUpRight size={20} className="md:w-[22px] md:h-[22px]" color="white" />
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
+                  <ArrowUpRight size={20} className="md:w-[22px] md:h-[22px] text-white absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
+                  <ArrowUpRight size={20} className="md:w-[22px] md:h-[22px] text-white absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
                 </div>
               </motion.button>
             </motion.div>

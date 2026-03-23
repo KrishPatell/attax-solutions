@@ -34,14 +34,14 @@ export default function BlogPost() {
 
       <main className="pt-[140px] pb-[100px]">
         {/* Blog Header */}
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center text-center mb-12"
           >
             <Link to="/resources" className="text-[12px] uppercase tracking-widest font-bold text-[#1d1ee3] mb-6 hover:opacity-70 transition-opacity">
-              [ {blog.category} ]
+              {blog.category}
             </Link>
             <h1 
               className="text-[40px] md:text-[56px] lg:text-[72px] leading-[1.1] text-[#0a1628] font-medium max-w-[900px] mb-8"
@@ -165,7 +165,7 @@ export default function BlogPost() {
 
         {/* Related Posts Section (Strategic Insights) */}
         <section className="pt-[100px] border-t border-[rgba(0,0,0,0.05)] bg-[#f9faff]">
-          <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+          <div className="max-w-[1200px] mx-auto">
             <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
               <h2 className="text-[40px] lg:text-[52px] leading-[1.1] text-[#0a1628] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 Strategic Insights That <br />
@@ -175,10 +175,10 @@ export default function BlogPost() {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-[#1d1ee3] text-white rounded-full px-8 py-4 flex items-center gap-3 font-semibold group"
+                  className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 pr-1.5 py-1.5 flex items-center gap-5 font-semibold group"
                 >
                   View All Hubs
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform">
+                  <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform">
                     <ArrowUpRight size={18} />
                   </div>
                 </motion.button>

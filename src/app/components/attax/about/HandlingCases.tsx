@@ -2,47 +2,53 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, ShieldCheck, UserCheck, MessageCircle, FileBarChart, Plus, Minus } from "lucide-react";
 import { AttaxTestimonialCard } from "../AttaxTestimonialCard";
-import imgBackground from "../../../../assets/handling-cases.webp";
-import imgProfile from "../../../../assets/me.jpg";
+import dedicatedImg from "../../../../assets/tab-dedicated-representation.jpg";
+import transparencyImg from "../../../../assets/tab-total-transparency.jpg";
 
 const features = [
   {
     icon: UserCheck,
     title: "Dedicated Representation",
-    description: "One licensed representative is assigned to your case. No handoffs, no anonymous call centers, and no impersonal management of your financial future."
+    description: "One licensed representative is assigned to your case. No handoffs, no anonymous call centers, and no impersonal management of your financial future.",
+    image: dedicatedImg
   },
   {
     icon: ShieldCheck,
     title: "Direct IRS Advocacy",
-    description: "We represent you directly before the IRS. You won't need to speak with agents or worry about letters   we handle all formal communication on your behalf."
+    description: "We represent you directly before the IRS. You won't need to speak with agents or worry about letters. We handle all formal communication on your behalf.",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200"
   },
   {
     icon: MessageCircle,
     title: "Total Transparency",
-    description: "You'll never be in the dark. We provide regular updates on your case's progress and ensure you understand every step of our strategy before we execute it."
+    description: "You'll never be in the dark. We provide regular updates on your case's progress and ensure you understand every step of our strategy before we execute it.",
+    image: transparencyImg
   },
   {
     icon: FileBarChart,
     title: "Strategic Resolution",
-    description: "We don't just fill out forms. We analyze your unique situation to develop a custom legal strategy aimed at the most favorable outcome allowed by law."
+    description: "We don't just fill out forms. We analyze your unique situation to develop a custom legal strategy aimed at the most favorable outcome allowed by law.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200"
   }
 ];
+
+const testimonialPhoto = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2&q=80&w=200";
 
 export function HandlingCases() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
     <section id="how-we-handle" className="bg-white py-[60px] md:py-[120px] overflow-hidden">
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
-          <div className="max-w-[700px]">
-            <motion.span 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+          <div className="max-w-[900px]">
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-[#1d1ee3] text-[16px] font-medium block mb-3" 
+              className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
               [How We Handle Cases]
@@ -51,11 +57,10 @@ export function HandlingCases() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-[32px] md:text-[42px] lg:text-[52px] leading-[1.2] md:leading-[1.1] text-[#03030f] font-medium"
+              className="text-[32px] md:text-[42px] lg:text-[50px] leading-[1.2] md:leading-[1.1] lg:leading-none text-[#03030f] font-medium lg:whitespace-nowrap"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              The Advantage of <br />
-              Choosing <span className="italic text-[#03030f]" style={{ fontFamily: "'Playfair Display', serif" }}>Our Firm</span>
+              The Advantage of Choosing <span className="italic text-[#03030f]" style={{ fontFamily: "'Playfair Display', serif" }}>Our Firm</span>
             </motion.h2>
           </div>
           
@@ -66,13 +71,14 @@ export function HandlingCases() {
           >
             <button
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="group relative bg-[#1d1ee3] rounded-[50px] pl-6 pr-2 py-2 inline-flex items-center gap-5 hover:bg-[#1618c7] transition-all self-start"
+              className="group relative bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 inline-flex items-center gap-5 hover:bg-[#1618c7] transition-all self-start"
             >
               <span className="text-white text-[16px] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 Get Started
               </span>
-              <div className="w-11 h-11 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
-                <ArrowUpRight size={20} className="text-[#1d1ee3]" />
+              <div className="w-11 h-11 bg-white rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
+                <ArrowUpRight size={20} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
+                <ArrowUpRight size={20} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
               </div>
             </button>
           </motion.div>
@@ -89,26 +95,32 @@ export function HandlingCases() {
             viewport={{ once: true }}
             className="flex-1 min-h-[340px] md:min-h-[500px] relative rounded-[12px] overflow-hidden group"
           >
-            {/* Background Image Container */}
+            {/* Background Image — switches with active tab */}
             <div className="absolute inset-0">
-              <img 
-                src={imgBackground} 
-                alt="Client Meeting" 
-                width={1292}
-                height={734}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-colors duration-500" />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={activeTab}
+                  src={features[activeTab].image}
+                  alt={features[activeTab].title}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </AnimatePresence>
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500" />
             </div>
 
             {/* Testimonial Card (Figma: Card) */}
             <div className="absolute inset-x-0 bottom-0 p-[30px] flex flex-col items-start justify-end h-full pointer-events-none">
               <div className="max-w-[361px] pointer-events-auto">
-                <AttaxTestimonialCard 
+                <AttaxTestimonialCard
                   quote="ATTAX helped me navigate my complex IRS situation with direct advocacy and a clear strategy"
                   name="Robert M."
                   title="Orange County Business Owner"
-                  photo={imgProfile}
+                  photo={testimonialPhoto}
+                  darkProfile
                 />
               </div>
             </div>

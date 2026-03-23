@@ -46,10 +46,10 @@ These are the exact correct values in use. Do not "fix" or "standardize" them.
 - **Icon Circles**: For contact/feature lists, use **50x50px** (rounded-full) containers with background color `#EAEEFF` and primary blue icons.
 - **Device Support**: 1440px desktop layout; mobile optimization is a priority.
 - **Terminology**: ALWAYS use "Tax Specialist", NEVER "Enrolled Agent".
-- **Contact Details**: 
-  - HQ: Irvine, CA.
-  - Phone: +1 (949) 287-3015.
-  - Emails: `info@attaxsolutions.com` (General), `support@attaxsolutions.com` (Support), `omar@attaxsolutions.com` (Founder).
+- **Contact Details**:
+  - HQ: Newport Beach, CA.
+  - Phone: +1 (855) 829-2829.
+  - Emails: `info@attaxsolutions.com` (General), `support@attaxsolutions.com` (Support), `omar@attaxsolutions.com` (Founder — never display publicly on site).
 - **Tagline**: "The fastest growing tax relief company in the nation" (No debt figures).
 - **Design Patterns**: Glassmorphic CTA banners, trust badges, Optimo/AX hierarchy.
 

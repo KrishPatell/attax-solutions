@@ -21,7 +21,7 @@ const articles = [
     author: "ATTAX Resolution Center"
   },
   {
-    slug: "irs-audit-survival-guide",
+    slug: "wage-garnishment-bank-levy-guide",
     title: "How to Stop Wage Garnishments and Bank Levies",
     description: "When the IRS starts taking your paycheck or freezing your assets, you need immediate action. We outline the steps to halt collection activities fast.",
     image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800",
@@ -29,7 +29,7 @@ const articles = [
     author: "Strategic Advocacy Team"
   },
   {
-    slug: "offer-in-compromise-guide",
+    slug: "tax-debt-relief-scams",
     title: "The Truth About Tax Debt Relief Scams",
     description: "Protect yourself from predatory companies that make false promises. We show you how to identify legitimate, professional tax representation.",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
@@ -58,7 +58,7 @@ export function ResourcesGrid() {
 
           <div className="hidden sm:block">
             <span className="text-[rgba(10,22,40,0.5)] text-[14px] uppercase tracking-widest font-bold">
-              [Explore All]
+              Explore All
             </span>
           </div>
         </div>

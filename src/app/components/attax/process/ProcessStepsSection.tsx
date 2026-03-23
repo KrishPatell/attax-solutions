@@ -56,7 +56,7 @@ const steps = [
 export function ProcessStepsSection() {
   return (
     <section className="py-[60px] md:py-[100px] bg-white">
-      <div className="max-w-[1240px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1240px] mx-auto">
         <div className="flex flex-col items-start gap-4 mb-10 md:mb-16">
           <motion.span
             initial={{ opacity: 0, x: -20 }}
@@ -64,7 +64,7 @@ export function ProcessStepsSection() {
             viewport={{ once: true }}
             className="text-[#1d1ee3] text-[14px] md:text-[16px] font-medium font-['Inter_Tight']"
           >
-            [Step-by-Step]
+            Step-by-Step
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

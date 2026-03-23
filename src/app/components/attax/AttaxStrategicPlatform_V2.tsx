@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import svgPaths from "../../../imports/svg-ps3a1hmcku";
 import imgBuildingA from "../../../assets/75c625e12e429e69fa04d226df2a67ef68773f5d.webp";
@@ -46,7 +47,7 @@ export function AttaxStrategicPlatformV2() {
 
   return (
     <section className="bg-[#f7f9ff] py-[60px] md:py-[120px] overflow-hidden" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-[40px] items-stretch relative">
           
           {/* Left: Image Card with Overlays */}
@@ -94,7 +95,7 @@ export function AttaxStrategicPlatformV2() {
                     <p className="text-white/60 text-[12px] lg:text-[14px] font-['Inter_Tight']">Proactive Resolution Architecture</p>
                   </div>
                 </div>
-                <p className="text-white/80 leading-relaxed font-['Inter_Tight'] text-[14px]">
+                <p className="text-white/80 leading-relaxed font-['Inter_Tight'] text-[14px] lg:text-[15.5px]">
                   Our platform combines decades of tax law expertise with a streamlined process that removes the middleman and puts you directly in touch with professionals.
                 </p>
               </motion.div>
@@ -114,7 +115,7 @@ export function AttaxStrategicPlatformV2() {
               className="flex flex-col gap-3"
             >
               <span className="text-[#1d1ee3] text-[14px] md:text-[16px] font-medium font-['Inter_Tight']">[The Problem]</span>
-              <h2 className="leading-[1.2] text-[#0a1628] font-medium font-['Inter_Tight'] text-[32px] lg:text-[40px]">
+              <h2 className="leading-[1.2] text-[#0a1628] font-medium font-['Inter_Tight'] text-[32px] lg:text-[50px]">
                 You shouldn't have to face this <span className="italic font-['Playfair_Display']">alone</span>.
               </h2>
               <p className="text-[15px] lg:text-[16px] leading-relaxed text-[#0a1628]/70 max-w-[500px] font-['Inter_Tight'] mt-2">
@@ -128,11 +129,9 @@ export function AttaxStrategicPlatformV2() {
                 className="mt-6 self-start flex items-center gap-5 bg-[#1d1ee3] rounded-full pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group"
               >
                 <span className="text-white text-[14px] md:text-[16px] font-medium font-['Inter_Tight'] leading-tight px-1 whitespace-nowrap">Book Strategic Session</span>
-                <div className="w-10 h-10 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center transition-transform group-hover:rotate-12 shrink-0">
-                  <svg className="size-4.5 text-[#1D1EE3]" fill="none" viewBox="0 0 18 18">
-                    <path d="M5.25 5.25H12.75V12.75" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                    <path d="M5.25 12.75L12.75 5.25" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                  </svg>
+                <div className="w-10 h-10 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center overflow-hidden relative shrink-0">
+                  <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
+                  <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
                 </div>
               </motion.button>
             </motion.div>

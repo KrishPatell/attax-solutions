@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { AttaxNavbar } from "../components/attax/AttaxNavbar";
 import { AttaxFooter } from "../components/attax/AttaxFooter";
 import { ServicesHero } from "../components/attax/services/ServicesHero";
@@ -37,8 +36,8 @@ export default function Services() {
           <FreeConsultation />
           <ServiceCTA />
         </div>
-        <AttaxFAQ />
         <AttaxContactForm />
+        <AttaxFAQ />
       </main>
 
       <AttaxFooter />

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 
 export function ResourcesCTA() {
@@ -22,7 +22,7 @@ export function ResourcesCTA() {
               className="text-white/60 text-[14px] uppercase tracking-widest font-bold mb-6 block"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              [CTA]
+              Get Started
             </span>
 
             <h2
@@ -41,7 +41,7 @@ export function ResourcesCTA() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
-                className="self-start flex items-center gap-5 bg-white text-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 font-bold text-[14px] md:text-[16px] group transition-all whitespace-nowrap"
+                className="self-start flex items-center gap-5 bg-white text-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 font-bold text-[14px] md:text-[16px] group transition-all whitespace-nowrap"
               >
                 <span>Get Started Today</span>
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center text-white group-hover:rotate-45 transition-transform duration-300 flex-shrink-0">

@@ -66,7 +66,7 @@ export const blogPosts: Record<string, BlogPostData> = {
     quote: {
       text: "The OIC is not a loophole; it's a legal remedy for those who truly cannot pay. Success requires mathematical precision and a deep understanding of IRS internal manuals.",
       author: "Omar S.",
-      role: "Founder & Tax Specialist",
+      role: "Principal Tax Specialist",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100"
     },
     sections: [

@@ -1,8 +1,6 @@
 import { motion } from "motion/react";
-import { Link } from "react-router";
-import { ArrowUpRight, CheckCircle2, Shield, Activity, Bell, FileText } from "lucide-react";
+import { ArrowUpRight, Shield, Activity, Bell, FileText } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
-import svgPaths from "../../../imports/svg-sgovbpraxs";
 
 export function ClarityHeroV2() {
   return (
@@ -20,7 +18,7 @@ export function ClarityHeroV2() {
               className="text-[#1d1ee3] text-[14px] md:text-[16px] font-medium mb-4"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              [ATTAX Clarity]
+              ATTAX Clarity
             </motion.div>
 
             <motion.h1
@@ -46,7 +44,7 @@ export function ClarityHeroV2() {
               className="text-[14px] md:text-[16px] lg:text-[20px] leading-[1.6] text-[rgba(3,3,15,0.7)] max-w-[620px] mb-8 md:mb-12"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              ATTAX Clarity is a proactive monitoring and scoring system   built so you're never caught off guard by your tax standing again.
+              ATTAX Clarity is a proactive monitoring and scoring system, built so you're never caught off guard by your tax standing again.
             </motion.p>
 
             <motion.div
@@ -56,7 +54,7 @@ export function ClarityHeroV2() {
             >
               <button
                 onClick={() => document.querySelector("#clarity")?.scrollIntoView({ behavior: "smooth" })}
-                className="self-start group relative bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 inline-flex items-center gap-5 hover:bg-[#1618c7] transition-all"
+                className="self-start group relative bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 inline-flex items-center gap-5 hover:bg-[#1618c7] transition-all"
               >
                 <span className="text-white text-[14px] md:text-[16px] font-medium whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Join Our Waitlist
@@ -75,7 +73,28 @@ export function ClarityHeroV2() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="w-full lg:max-w-[380px] shrink-0"
           >
-            
+            <div className="bg-[#0a1628] rounded-[24px] p-8 text-white">
+              <p className="text-white/40 text-[12px] uppercase tracking-widest font-medium mb-8" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                Clarity Dashboard Preview
+              </p>
+              <div className="space-y-6">
+                {[
+                  { value: "14", unit: "days", label: "Average advance IRS warning", color: "#a5b4fc" },
+                  { value: "100%", unit: "", label: "IRS transcript sync coverage", color: "#6ee7b7" },
+                  { value: "24/7", unit: "", label: "Proactive account monitoring", color: "#fcd34d" },
+                ].map((stat, i) => (
+                  <div key={i} className="flex items-center gap-5 pb-6 border-b border-white/10 last:border-0 last:pb-0">
+                    <div className="w-[50px] h-[50px] rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                      <span className="text-[11px] font-bold text-white/60" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{stat.unit || "★"}</span>
+                    </div>
+                    <div>
+                      <p className="text-[28px] font-bold leading-none mb-1" style={{ color: stat.color, fontFamily: "'Inter Tight', sans-serif" }}>{stat.value}</p>
+                      <p className="text-white/50 text-[13px] leading-[1.4]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{stat.label}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
 

@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { AttaxNavbar } from "../components/attax/AttaxNavbar";
 import { AttaxFooter } from "../components/attax/AttaxFooter";
 import { ResourcesHero } from "../components/attax/resources/ResourcesHero";

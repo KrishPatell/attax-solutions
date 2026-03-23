@@ -17,7 +17,7 @@ export function ServicesHero() {
             className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4 md:mb-6"
             style={{ fontFamily: "'Inter Tight', sans-serif" }}
           >
-            [Our Services]
+            Our Services
           </motion.span>
 
           <motion.h1
@@ -27,7 +27,7 @@ export function ServicesHero() {
             className="text-[34px] md:text-[52px] lg:text-[72px] leading-[1.1] text-[#0a1628] font-medium mb-6 md:mb-10"
             style={{ fontFamily: "'Inter Tight', sans-serif" }}
           >
-            Comprehensive Tax Relief Services  {" "}
+            Comprehensive Tax Relief Services{" "}
             <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
               Tailored to Your Situation
             </span>
@@ -52,7 +52,7 @@ export function ServicesHero() {
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(29,30,227,0.15)" }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 text-[14px] md:text-[16px] font-medium flex items-center gap-5 w-fit shadow-[0_10px_30px_rgba(29,30,227,0.1)] transition-all group"
+                className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 pr-1.5 py-1.5 text-[14px] md:text-[16px] font-medium flex items-center gap-5 w-fit shadow-[0_10px_30px_rgba(29,30,227,0.1)] transition-all group"
               >
                 <span className="whitespace-nowrap">Start Your Complimentary Consultation</span>
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 shrink-0">

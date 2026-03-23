@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, ShieldCheck, Clock, Lock } from "lucide-react";
 import { Link } from "react-router";
+import ctaBg from "../../../../assets/29be9e144d4cbc3f542ccc4e6b661999b17fa2ee.png";
 
 export function AboutCTA() {
   return (
@@ -9,16 +10,20 @@ export function AboutCTA() {
       <div className="absolute top-0 left-0 w-full h-1/2 bg-[#f9faff] -z-10" />
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-white -z-10" />
 
-      <div className="max-w-[1200px] mx-auto relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0 relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-[#0a1628] rounded-[24px] md:rounded-[48px] p-8 md:p-16 lg:p-24 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.2)]"
+          className="rounded-[24px] md:rounded-[48px] p-8 md:p-16 lg:p-24 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.2)]"
         >
-          {/* Blue accent glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1d1ee3]/20 rounded-full blur-[100px] pointer-events-none" />
+          {/* Background image */}
+          <img src={ctaBg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
+          {/* Black overlay */}
+          <div className="absolute inset-0 bg-black/75 pointer-events-none" />
+          {/* Dot grid */}
+          <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
           
           <div className="relative z-10 flex flex-col items-center">
             <motion.div
@@ -42,7 +47,7 @@ export function AboutCTA() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-[32px] md:text-[52px] lg:text-[64px] leading-[1.2] md:leading-[1.1] text-white mb-6 md:mb-8 max-w-[800px]"
+              className="text-[32px] md:text-[52px] lg:text-[50px] leading-[1.2] md:leading-[1.1] text-white mb-6 md:mb-8 max-w-[800px]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
             >
               Start Your{" "}
@@ -51,17 +56,6 @@ export function AboutCTA() {
               </span>{" "}
               Consultation
             </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-white/60 text-[18px] mb-12 max-w-[580px]"
-              style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
-            >
-              Take the first step toward resolution. Speak with a licensed tax professional about your situation today.
-            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -72,31 +66,45 @@ export function AboutCTA() {
             >
               <Link to="/contact">
                 <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(29,30,227,0.3)" }}
-                  whileTap={{ scale: 0.97 }}
-                  className="flex items-center gap-4 bg-[#1d1ee3] text-white rounded-[50px] pl-6 md:pl-10 pr-2 md:pr-4 py-2 md:py-4 group self-start mx-auto"
+                  className="flex items-center gap-5 bg-[#1d1ee3] text-white rounded-[50px] pl-5 pr-1.5 py-1.5 group self-start mx-auto"
                 >
                   <span className="text-[18px] font-semibold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Get Started</span>
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#1d1ee3] group-hover:bg-blue-50 transition-colors">
-                    <ArrowRight size={22} />
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
+                    <ArrowRight size={22} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%]" />
+                    <ArrowRight size={22} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out translate-x-[-150%] group-hover:translate-x-0" />
                   </div>
                 </motion.button>
               </Link>
 
-              <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
-                <div className="flex items-center gap-2 text-white/40 text-[14px]">
-                  <Clock size={16} />
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex flex-wrap items-center justify-center gap-4 md:gap-8 mb-12"
+              >
+                <div
+                  className="flex items-center gap-2.5 text-white/90 text-[15px]"
+                  style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
+                >
+                  <Clock size={18} className="text-white/60" />
                   <span>Responds within 1 business day</span>
                 </div>
-                <div className="flex items-center gap-2 text-white/40 text-[14px]">
-                  <Lock size={16} />
+                <div
+                  className="flex items-center gap-2.5 text-white/90 text-[15px]"
+                  style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
+                >
+                  <Lock size={18} className="text-white/60" />
                   <span>Private & Secure</span>
                 </div>
-                <div className="flex items-center gap-2 text-white/40 text-[14px]">
-                  <ShieldCheck size={16} />
+                <div
+                  className="flex items-center gap-2.5 text-white/90 text-[15px]"
+                  style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
+                >
+                  <ShieldCheck size={18} className="text-white/60" />
                   <span>Licensed Representation</span>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </motion.div>

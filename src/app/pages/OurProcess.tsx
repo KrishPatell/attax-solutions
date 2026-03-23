@@ -27,11 +27,11 @@ export default function OurProcess() {
         {/* 03. Steps Grid - Based on Optimo "Explore More Services" */}
         <ProcessStepsSection />
 
-        {/* 04. FAQ */}
-        <AttaxFAQ />
-
-        {/* 05. Contact Form */}
+        {/* 04. Contact Form */}
         <AttaxContactForm />
+
+        {/* 05. FAQ */}
+        <AttaxFAQ />
 
         {/* 06. CTA */}
         <ProcessCTA />

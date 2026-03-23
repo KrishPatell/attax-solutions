@@ -1,146 +1,113 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
-import { Briefcase, GraduationCap, MapPin, ArrowUpRight } from "lucide-react";
-import teamImg from "../../../../assets/me.jpg";
-const officeImg = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1080";
+import { TrendingUp, Building2 } from "lucide-react";
+
+const officeImg = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1080";
 
 export function TeamSection() {
   return (
     <section id="team" className="bg-white py-[60px] md:py-[120px]">
-      <div className="max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-12 gap-8 md:gap-16 items-start mb-[60px] md:mb-[100px]">
-          {/* Founder Bio */}
-          <div className="col-span-12 lg:col-span-7">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <h2
-                className="text-[32px] md:text-[48px] leading-[1.2] md:leading-[1.1] text-[#0a1628] mb-6 md:mb-8"
-                style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
-              >
-                Meet Our{" "}
-                <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  Leadership
-                </span>
-              </h2>
-              <div className="space-y-6 text-[18px] text-[#0a1628]/70 leading-[1.8]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                <p>
-                  Omar Hassan is the Founder and CEO of ATTAX Solutions. Under his leadership, the firm has grown into one of the most respected tax resolution companies in the nation, focusing on a direct, no-nonsense approach to IRS advocacy.
-                </p>
-                <p>
-                  With years of experience in the tax relief industry, Omar's vision for ATTAX Solutions was to move away from the "sales-first" mentality that plagues the sector and move toward a professional services model where case results and client communication are the primary focus.
-                </p>
-              </div>
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
 
-              {/* Credential Box */}
-              <div className="mt-8 md:mt-12 p-5 md:p-8 rounded-[16px] md:rounded-[24px] bg-[#f0f4ff]/50 border border-[#1d1ee3]/10 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#1d1ee3]/5 rounded-bl-[100px] -z-10 group-hover:scale-125 transition-transform duration-700" />
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#1d1ee3] shadow-sm">
-                    <GraduationCap size={24} />
-                  </div>
-                  <h3 
-                    className="text-[#0a1628] text-[20px]" 
-                    style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
-                  >
-                    Licensed IRS Advocacy Credential
-                  </h3>
-                </div>
-                <p 
-                  className="text-[#0a1628]/60 text-[16px] leading-[1.7]" 
-                  style={{ fontFamily: "'Inter Tight', sans-serif" }}
-                >
-                  Our representation is backed by the highest federal tax credential granted by the IRS. This status is achieved through a rigorous 3-part comprehensive examination covering individual and business tax laws, and maintained with annual ethics and professional education requirements.
-                </p>
-              </div>
-            </motion.div>
-          </div>
+        {/* ── Our HQ & Environment ── */}
+        <div className="grid grid-cols-12 gap-8 md:gap-16 items-center">
 
-          {/* Founder Photo */}
-          <div className="col-span-12 lg:col-span-5">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="rounded-[32px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.12)] border-[8px] border-white"
-            >
-              <ImageWithFallback
-                src={teamImg}
-                alt="Omar Hassan"
-                className="w-full h-[360px] md:h-[580px] object-cover"
-              />
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Office / Culture / Careers */}
-        <div className="grid grid-cols-12 gap-8 items-center pt-[60px] md:pt-[100px] border-t border-[#eaeaff]">
+          {/* Left: Label, heading, body, bullets, CTA */}
           <div className="col-span-12 lg:col-span-6">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="rounded-[32px] overflow-hidden h-[400px]"
+              className="relative z-10"
             >
-              <ImageWithFallback
-                src={officeImg}
-                alt="ATTAX Solutions Office"
-                className="w-full h-full object-cover"
-              />
+              <span className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                [Our HQ]
+              </span>
+              <h2 className="text-[32px] md:text-[48px] lg:text-[50px] leading-[1.15] text-[#03030f] mb-6 whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}>
+                Newport Beach,{" "}
+                <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>California</span>
+              </h2>
+              <p className="text-[16px] md:text-[18px] text-[#03030f]/60 leading-[1.8] mb-8" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                Our headquarters in Newport Beach is designed for focus, strategy, and collaborative problem-solving. We believe a professional environment produces professional results — for our team and for every client we represent.
+              </p>
+
+              <div className="flex flex-col gap-3 mb-10">
+                {[
+                  "Newport Beach, CA — our permanent home base",
+                  "Collaborative, focused strategy environment",
+                  "Serving clients across all 50 states",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-4">
+                    <div className="w-[35px] h-[35px] rounded-full bg-[#eaeeff] flex items-center justify-center shrink-0">
+                      <TrendingUp size={18} className="text-[#1d1ee3]" />
+                    </div>
+                    <span className="text-[15px] text-[#03030f]/70" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <motion.a
+                href="/contact"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 pr-1.5 py-1.5 font-bold text-[15px] inline-flex items-center gap-5 self-start w-fit transition-all"
+              >
+                <span>Visit Us</span>
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0">
+                  <Building2 size={18} className="text-[#1d1ee3]" />
+                </div>
+              </motion.a>
             </motion.div>
           </div>
 
+          {/* Right: Office image */}
           <div className="col-span-12 lg:col-span-6">
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="lg:pl-8"
+              transition={{ duration: 0.8 }}
+              className="relative z-0"
             >
-              <h3 
-                className="text-[32px] text-[#0a1628] mb-6" 
-                style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
-              >
-                Our HQ & Environment
-              </h3>
-              <p 
-                className="text-[17px] text-[#0a1628]/60 leading-[1.8] mb-8" 
-                style={{ fontFamily: "'Inter Tight', sans-serif" }}
-              >
-                Located in Irvine, California, our office is designed for focus and collaborative strategy. We believe that a professional environment leads to professional results. 
-              </p>
-              
-              <div className="flex flex-col gap-4">
-                <a 
-                  href="/careers" 
-                  className="flex items-center justify-between p-6 rounded-[20px] bg-[#f9faff] border border-[#eaeaff] hover:border-[#1d1ee3]/30 transition-all group"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#1d1ee3] shadow-sm">
-                      <Briefcase size={20} />
-                    </div>
-                    <div>
-                      <p className="text-[#0a1628] font-semibold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Join Our Team</p>
-                      <p className="text-[#0a1628]/50 text-[14px]">Explore career opportunities at ATTAX</p>
-                    </div>
-                  </div>
-                  <ArrowUpRight size={20} className="text-[#1d1ee3] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </a>
-
-                <div className="flex items-center gap-3 p-6 text-[15px] text-[#0a1628]/60">
-                  <MapPin size={18} className="text-[#1d1ee3]" />
-                  <span>Irvine HQ • Serving Clients Nationwide</span>
-                </div>
+              <div className="relative rounded-[28px] overflow-hidden h-[420px] md:h-[540px]">
+                <ImageWithFallback
+                  src={officeImg}
+                  alt="ATTAX Solutions Newport Beach HQ"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </div>
+              {/* Location badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="absolute bottom-4 left-4 lg:bottom-8 lg:left-8 bg-white/90 backdrop-blur-[20px] rounded-[20px] px-6 py-4 flex items-center gap-4 shadow-lg border border-white/20"
+              >
+                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[#eaeeff] flex items-center justify-center shrink-0">
+                  <Building2 size={18} className="text-[#1d1ee3]" />
+                </div>
+                <div>
+                  <p
+                    className="text-[#03030f] font-semibold text-[16px] lg:text-[18px] leading-tight whitespace-nowrap"
+                    style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                  >
+                    Newport Beach HQ
+                  </p>
+                  <p
+                    className="text-[#03030f]/50 text-[12px] lg:text-[14px] leading-tight whitespace-nowrap"
+                    style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                  >
+                    California, USA
+                  </p>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
+
       </div>
     </section>
   );

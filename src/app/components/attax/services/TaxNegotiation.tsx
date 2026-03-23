@@ -16,7 +16,7 @@ export function TaxNegotiation() {
               className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              [Tax Negotiation]
+              Tax Negotiation
             </motion.span>
             
             <h2

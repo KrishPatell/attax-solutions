@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Shield, Mail, Phone, MapPin, Send, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Shield, Mail, Phone, MapPin, Send, Linkedin, Twitter, Facebook, Download } from "lucide-react";
 import { Link } from "react-router";
 import { BrandLogo } from "./BrandLogo";
+import attaxPdf from "../../../assets/ATTAX Solutions-2.pdf";
+
+const linkMap: Record<string, string> = {
+  About: "/about",
+};
 
 const links = {
   Company: ["About", "Our Process", "ATTAX", "Clarity", "Contact"],
@@ -16,7 +21,7 @@ export function AttaxFooter() {
     <footer id="contact" className="bg-[#0a1628] text-white">
       {/* Contact CTA bar */}
       <div className="border-b border-white/10 border-solid">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 py-10 lg:py-16">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-0 py-10 lg:py-16">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div>
               <h2
@@ -60,13 +65,22 @@ export function AttaxFooter() {
                 <Phone size={15} className="text-[#a5b4fc]" />
                 +1 (855) 829-2829
               </a>
+              <a
+                href={attaxPdf}
+                download="ATTAX Solutions Presentation.pdf"
+                className="flex items-center justify-start gap-2 text-white/70 hover:text-white text-[14px] md:text-[15px] transition-colors py-2 whitespace-nowrap"
+                style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
+              >
+                <Download size={15} className="text-[#a5b4fc]" />
+                Download Presentation
+              </a>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main footer grid */}
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8 py-12 lg:py-16">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0 py-12 lg:py-16">
         <div className="grid grid-cols-12 gap-y-12 lg:gap-10">
           {/* Brand */}
           <div className="col-span-12 lg:col-span-4">
@@ -139,16 +153,32 @@ export function AttaxFooter() {
                 {category}
               </h4>
               <ul className="flex flex-col gap-3">
-                {items.map((item) => (
-                  <li key={item}>
-                    <span
-                      className="text-white/50 text-[15px] cursor-default text-left"
-                      style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
-                    >
-                      {item}
-                    </span>
-                  </li>
-                ))}
+                {items.map((item) => {
+                  const href = linkMap[item];
+                  if (href) {
+                    return (
+                      <li key={item}>
+                        <Link
+                          to={href}
+                          className="text-white/50 text-[15px] hover:text-white/90 transition-colors text-left"
+                          style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
+                        >
+                          {item}
+                        </Link>
+                      </li>
+                    );
+                  }
+                  return (
+                    <li key={item}>
+                      <span
+                        className="text-white/50 text-[15px] cursor-default text-left"
+                        style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
+                      >
+                        {item}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -165,7 +195,7 @@ export function AttaxFooter() {
               {[
                 { icon: Mail, text: "info@attaxsolutions.com", href: "mailto:info@attaxsolutions.com" },
                 { icon: Phone, text: "+1 (855) 829-2829", href: "tel:+18558292829" },
-                { icon: MapPin, text: "Irvine, CA", href: "#" },
+                { icon: MapPin, text: "Newport Beach, CA", href: "#" },
               ].map(({ icon: Icon, text, href }) => (
                 <li key={text}>
                   <a
@@ -185,7 +215,7 @@ export function AttaxFooter() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10 border-solid">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 py-6 flex flex-col items-center gap-4 text-center">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-0 py-6 flex flex-col items-center gap-4 text-center">
           <p
             className="text-white/60 text-[12px]"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}

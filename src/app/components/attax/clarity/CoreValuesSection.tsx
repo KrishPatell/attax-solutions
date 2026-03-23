@@ -47,7 +47,7 @@ export function CoreValuesSection() {
                 className="text-[#1d1ee3] text-[16px] font-medium block mb-3" 
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
-                [Core Value]
+                Core Value
               </motion.span>
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export function CoreValuesSection() {
                 className="text-[32px] md:text-[40px] lg:text-[52px] leading-[1.1] text-[#03030f] font-medium mb-6"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
-                The Value <span className="italic italic text-[#03030f]" style={{ fontFamily: "'Playfair Display', serif" }}>Behind</span>
+                The Value <span className="italic text-[#03030f]" style={{ fontFamily: "'Playfair Display', serif" }}>Behind</span>
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ export function CoreValuesSection() {
             >
               <button
                 onClick={() => document.querySelector("#clarity")?.scrollIntoView({ behavior: "smooth" })}
-                className="self-start group relative bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 inline-flex items-center gap-5 hover:bg-[#1618c7] transition-all"
+                className="self-start group relative bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 inline-flex items-center gap-5 hover:bg-[#1618c7] transition-all"
               >
                 <span className="text-white text-[14px] md:text-[16px] font-medium whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                   Get Started

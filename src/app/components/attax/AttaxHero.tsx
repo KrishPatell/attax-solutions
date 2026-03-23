@@ -9,7 +9,7 @@ export function AttaxHero() {
   const scrollTo = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="hero" className="relative min-h-[90vh] lg:min-h-[88vh] bg-[#0a1628] overflow-hidden flex items-center">
+    <section id="hero" className="relative min-h-[90vh] lg:min-h-[100vh] bg-[#0a1628] overflow-hidden flex items-center">
       {/* Background */}
       <div className="absolute inset-0 bg-[#0a1628]">
         {/* Image pinned to right half   mask-image fades its left edge into the dark bg */}
@@ -48,7 +48,7 @@ export function AttaxHero() {
       </div>
 
       {/* Content — horizontal padding matches Services / Process / navbar inset */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 pt-[100px] pb-[60px] w-full">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-0 pt-[100px] pb-[60px] w-full">
         <div className="grid grid-cols-12 gap-10 items-center">
           {/* Left   copy */}
           <div className="col-span-12 lg:col-span-7">
@@ -128,7 +128,7 @@ export function AttaxHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
-              className="flex flex-col md:flex-row md:items-center gap-4 mt-10"
+              className="flex flex-col md:flex-row md:items-center gap-4 mt-6"
             >
               <motion.button
                 whileHover={{ scale: 1.04, boxShadow: "0 12px 40px rgba(29,30,227,0.45)" }}
@@ -142,8 +142,9 @@ export function AttaxHero() {
                 >
                   Start Your Complimentary Consultation
                 </span>
-                <div className="w-10 h-10 md:w-12 md:h-12 shrink-0 bg-white rounded-full flex items-center justify-center group-hover:bg-blue-50 transition-colors duration-200">
-                  <ArrowUpRight size={18} className="md:w-5 md:h-5" color="#1d1ee3" />
+                <div className="w-10 h-10 md:w-12 md:h-12 shrink-0 bg-white rounded-full flex items-center justify-center overflow-hidden relative">
+                  <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
+                  <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
                 </div>
               </motion.button>
 

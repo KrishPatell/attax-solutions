@@ -47,9 +47,18 @@ export function AttaxNavbar() {
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
     if (href === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (location.pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        navigate("/");
+      }
+      return;
     }
-    // All other pages are currently draft — no navigation
+
+    // Only `About` is live right now. Other routes are still draft.
+    if (href === "/about") {
+      navigate(href);
+    }
   };
 
   return (

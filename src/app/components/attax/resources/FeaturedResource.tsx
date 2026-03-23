@@ -48,7 +48,7 @@ export function FeaturedResource() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="self-start group flex items-center gap-5 bg-[#1d1ee3] text-white rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 transition-all"
+                className="self-start group flex items-center gap-5 bg-[#1d1ee3] text-white rounded-[50px] pl-5 pr-1.5 py-1.5 transition-all"
               >
                 <span className="text-[14px] md:text-[16px] font-medium whitespace-nowrap">Read Case Study</span>
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center text-[#1d1ee3] group-hover:rotate-45 transition-transform duration-300 flex-shrink-0">

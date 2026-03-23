@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { AttaxNavbar } from "../components/attax/AttaxNavbar";
 import { AttaxFooter } from "../components/attax/AttaxFooter";
-import { Shield, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
 
 export default function Privacy() {
@@ -81,11 +81,11 @@ export default function Privacy() {
               <section>
                 <h2 className="text-[24px] text-[#0a1628] font-bold mb-4">6. Contact Us</h2>
                 <p>
-                  If you have questions about this Privacy Policy, please contact our Irvine, CA headquarters:
+                  If you have questions about this Privacy Policy, please contact our Newport Beach, CA headquarters:
                 </p>
                 <div className="mt-4 p-6 bg-white rounded-xl border border-[#eaeeff] shadow-sm">
                   <p className="font-bold text-[#1d1ee3]">ATTAX Solutions LLC</p>
-                  <p>Irvine, CA</p>
+                  <p>Newport Beach, CA</p>
                   <p>Phone: +1 (855) 829-2829</p>
                   <p>Email: info@attaxsolutions.com</p>
                 </div>

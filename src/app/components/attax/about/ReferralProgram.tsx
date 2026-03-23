@@ -1,28 +1,11 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { UserPlus, DollarSign, Clock, CheckCircle2, ChevronDown, ChevronUp, Send } from "lucide-react";
-
-const faqs = [
-  {
-    question: "When do I get paid?",
-    answer: "Referral fees are paid after a 30-day clearance period following the successful collection of the investigation fee from the new client."
-  },
-  {
-    question: "What if the client doesn't complete the investigation?",
-    answer: "No referral fee is paid if the client does not complete the initial investigation phase or if the investigation fee is not collected."
-  },
-  {
-    question: "Can I refer family members?",
-    answer: "Yes, you can refer family members as long as you have their proper consent to share their contact information with us."
-  }
-];
+import { motion } from "motion/react";
+import { UserPlus, DollarSign, Clock, CheckCircle2, Send } from "lucide-react";
 
 export function ReferralProgram() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section id="referral" className="bg-[#f7f9ff] py-[60px] md:py-[120px]">
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         <div className="grid grid-cols-12 gap-8 md:gap-16">
           {/* Left - Program Info */}
           <div className="col-span-12 lg:col-span-5">
@@ -32,8 +15,17 @@ export function ReferralProgram() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4"
+                style={{ fontFamily: "'Inter Tight', sans-serif" }}
+              >
+                [Referral Program]
+              </motion.span>
               <h2
-                className="text-[32px] md:text-[48px] leading-[1.2] md:leading-[1.1] text-[#0a1628] mb-6 md:mb-8"
+                className="text-[32px] md:text-[48px] lg:text-[50px] leading-[1.2] md:leading-[1.1] text-[#0a1628] mb-6 md:mb-8"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 Help Others.{" "}
@@ -48,54 +40,22 @@ export function ReferralProgram() {
                 Know someone struggling with IRS or state tax debt? Refer them to ATTAX Solutions. Our referral program is designed to reward you for helping people find professional representation.
               </p>
 
-              <div className="space-y-6 mb-12">
+              <div className="space-y-5 md:space-y-7 mb-12">
                 {[
                   { icon: UserPlus, text: "$50 referral fee per enrolled client" },
                   { icon: Clock, text: "30-day clearance period for payments" },
                   { icon: DollarSign, text: "Paid after investigation fee collection" },
-                  { icon: CheckCircle2, text: "Simple referral agreement   no complexity" },
+                  { icon: CheckCircle2, text: "Simple referral agreement, no complexity" },
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4 text-[#0a1628] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#1d1ee3] shadow-sm border border-[#1d1ee3]/10">
-                      <item.icon size={18} />
+                  <div key={idx} className="flex items-center gap-[18px] text-[#0a1628] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                    <div className="w-[46px] h-[46px] rounded-full bg-white flex items-center justify-center text-[#1d1ee3] shadow-sm border border-[#1d1ee3]/10">
+                      <item.icon size={21} />
                     </div>
                     <span>{item.text}</span>
                   </div>
                 ))}
               </div>
 
-              {/* FAQ Accordion */}
-              <div className="mt-16">
-                <h3 className="text-[20px] text-[#0a1628] mb-6 font-semibold" style={{ fontFamily: "'Inter Tight', sans-serif" }}>Referral Program FAQ</h3>
-                <div className="space-y-3">
-                  {faqs.map((faq, idx) => (
-                    <div key={idx} className="border border-[#eaeaff] bg-white rounded-[16px] overflow-hidden">
-                      <button
-                        onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                        className="w-full flex items-center justify-between p-5 text-left text-[#0a1628] hover:bg-[#f9faff] transition-colors"
-                        style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
-                      >
-                        <span>{faq.question}</span>
-                        {openIndex === idx ? <ChevronUp size={18} className="text-[#1d1ee3]" /> : <ChevronDown size={18} className="text-[#0a1628]/40" />}
-                      </button>
-                      <AnimatePresence>
-                        {openIndex === idx && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            className="overflow-hidden bg-[#f9faff]"
-                          >
-                            <div className="p-5 pt-0 text-[15px] text-[#0a1628]/60 leading-[1.6]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                              {faq.answer}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </motion.div>
           </div>
 

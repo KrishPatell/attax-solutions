@@ -10,7 +10,7 @@ export function ResourcesHero() {
           className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-semibold block mb-4"
           style={{ fontFamily: "'Inter Tight', sans-serif" }}
         >
-          [Blog]
+          Blog
         </motion.span>
 
         <motion.h1

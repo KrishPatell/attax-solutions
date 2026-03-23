@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { PhoneCall, Calendar, Search, ClipboardCheck, ArrowRight } from "lucide-react";
+import { PhoneCall, Calendar, Search, ClipboardCheck } from "lucide-react";
 
 const steps = [
   {
@@ -15,7 +15,7 @@ const steps = [
   {
     icon: Search,
     title: "Case Review",
-    description: "We review your situation together   no charge, no commitment. We provide an honest evaluation of your legal options."
+    description: "We review your situation together, at no charge and with no commitment. We provide an honest evaluation of your legal options."
   },
   {
     icon: ClipboardCheck,
@@ -27,7 +27,7 @@ const steps = [
 export function WhatHappensNext() {
   return (
     <section id="what-happens-next" className="bg-white py-[60px] md:py-[120px]">
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
           <div className="col-span-12 lg:col-span-5">
             <motion.div
@@ -37,8 +37,17 @@ export function WhatHappensNext() {
               transition={{ duration: 0.7 }}
               className="md:sticky md:top-40"
             >
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4"
+                style={{ fontFamily: "'Inter Tight', sans-serif" }}
+              >
+                [What Happens Next]
+              </motion.span>
               <h2
-                className="text-[32px] md:text-[48px] leading-[1.2] md:leading-[1.1] text-[#0a1628] mb-6 md:mb-8"
+                className="text-[32px] md:text-[48px] lg:text-[50px] leading-[1.2] md:leading-[1.1] text-[#0a1628] mb-6 md:mb-8"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
                 What Happens{" "}
@@ -93,20 +102,20 @@ export function WhatHappensNext() {
 
                   {/* Step Content */}
                   <div className="pb-12 group-last:pb-0 pt-2">
-                    <span 
-                      className="text-[#1d1ee3] text-[13px] font-bold uppercase tracking-widest mb-2 block" 
+                    <span
+                      className="text-[#1d1ee3] text-[13px] font-bold uppercase tracking-widest mb-2 block"
                       style={{ fontFamily: "'Inter Tight', sans-serif" }}
                     >
                       Step 0{idx + 1}
                     </span>
-                    <h3 
-                      className="text-[24px] text-[#0a1628] mb-4" 
+                    <h3
+                      className="text-[24px] text-[#0a1628] mb-4"
                       style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
                     >
                       {step.title}
                     </h3>
-                    <p 
-                      className="text-[16px] text-[#0a1628]/60 leading-[1.7] max-w-[480px]" 
+                    <p
+                      className="text-[16px] text-[#0a1628]/60 leading-[1.7] max-w-[480px]"
                       style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
                     >
                       {step.description}

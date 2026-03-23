@@ -17,7 +17,7 @@ export function TaxResolution() {
               className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              [Tax Resolution]
+              Tax Resolution
             </motion.span>
             
             <h2
@@ -86,7 +86,7 @@ export function TaxResolution() {
                 <span className="font-bold text-[#0a1628] leading-tight">Licensed <br />Representation</span>
               </div>
               <p className="text-[13px] text-[rgba(10,22,40,0.4)] font-medium uppercase tracking-widest">
-                [Credentialed]
+                Credentialed
               </p>
             </div>
           </div>

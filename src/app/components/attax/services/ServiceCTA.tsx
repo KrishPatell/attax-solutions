@@ -30,7 +30,7 @@ export function ServiceCTA() {
               className="text-white/60 text-[14px] uppercase tracking-widest font-bold mb-8 block"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              [Ready to Start?]
+              Ready to Start?
             </span>
             
             <h2
@@ -48,7 +48,7 @@ export function ServiceCTA() {
                 <motion.button
                   whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#1d1ee3" }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-white text-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 font-medium text-[14px] md:text-[16px] flex items-center gap-5 w-fit shadow-2xl transition-all duration-300 group"
+                  className="bg-white text-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 font-medium text-[14px] md:text-[16px] flex items-center gap-5 w-fit shadow-2xl transition-all duration-300 group"
                 >
                   <span className="whitespace-nowrap">Get Started Now</span>
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center text-white group-hover:rotate-45 transition-transform duration-300 shrink-0">

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, Clock, Video, Phone, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Clock, Video, CheckCircle2 } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { Link } from "react-router";
 import consultationImg from "../../../../assets/7ee3725ecc3a7dffc4d3371f2e502a8127203d34.png";
@@ -35,7 +35,7 @@ export function FreeConsultation() {
               className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              [The First Step]
+              The First Step
             </motion.span>
             
             <h2
@@ -91,7 +91,7 @@ export function FreeConsultation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
-              className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 font-medium text-[14px] md:text-[16px] flex items-center gap-5 group w-fit self-start"
+              className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 pr-1.5 py-1.5 font-medium text-[14px] md:text-[16px] flex items-center gap-5 group w-fit self-start"
             >
               <span className="whitespace-nowrap">Schedule Your Meeting</span>
               <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 shrink-0">

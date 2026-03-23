@@ -121,7 +121,7 @@ export function AttaxFAQ() {
 
   return (
     <section id="faq" className="bg-[#f7f9ff] py-[60px] md:py-[120px]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-20">
           {/* Left heading */}
           <motion.div
@@ -134,10 +134,10 @@ export function AttaxFAQ() {
               className="text-[#1d1ee3] text-[16px] block mb-4"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
-              [FAQ]
+              FAQ
             </span>
             <h2
-              className="text-[32px] lg:text-[52px] leading-[1.2] text-[#0a1628]"
+              className="text-[32px] lg:text-[50px] leading-[1.2] text-[#0a1628]"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
               Common{" "}
@@ -149,11 +149,9 @@ export function AttaxFAQ() {
               className="text-[15px] lg:text-[16px] leading-[1.6] text-[rgba(10,22,40,0.6)] mt-4"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >
-              Don't see your question here? Book a free consultation and we'll walk you through your options   no pressure, no obligation.
+              Don't see your question here? Book a free consultation and we'll walk you through your options, no pressure and no obligation.
             </p>
             <motion.button
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
               onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
               className="mt-6 self-start hidden lg:flex items-center gap-5 bg-[#0a1628] rounded-[50px] pl-5 pr-1.5 py-1.5 group w-fit"
             >
@@ -163,8 +161,17 @@ export function AttaxFAQ() {
               >
                 Book Free Call
               </span>
-              <div className="w-10 h-10 bg-[#1d1ee3] rounded-full flex items-center justify-center shrink-0">
-                <svg width="18" height="18" fill="none" viewBox="0 0 18 18">
+              <div className="w-10 h-10 bg-[#1d1ee3] rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
+                <svg width="18" height="18" fill="none" viewBox="0 0 18 18" className="absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]">
+                  <path
+                    d="M4 14L14 4M14 4H7M14 4V11"
+                    stroke="white"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <svg width="18" height="18" fill="none" viewBox="0 0 18 18" className="absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0">
                   <path
                     d="M4 14L14 4M14 4H7M14 4V11"
                     stroke="white"

@@ -18,7 +18,7 @@ const cards = [
     icon: Bell,
     badge: "Available at Launch",
     title: "IRS Notice Detection",
-    desc: "Real-time monitoring of your IRS account. Get instant alerts the moment the IRS issues a notice, files a lien, or initiates collection action   days before the mail arrives.",
+    desc: "Real-time monitoring of your IRS account. Get instant alerts the moment the IRS issues a notice, files a lien, or initiates collection action, days before the mail arrives.",
     features: [
       "Live IRS transcript monitoring",
       "Instant SMS & email notice alerts",
@@ -30,7 +30,7 @@ const cards = [
     icon: BarChart3,
     badge: "Beta · Coming Soon",
     title: "ATTAX Score",
-    desc: "Your personal tax health score. A single number that tells you exactly where you stand with the IRS, what risks you face, and what actions to take   updated in real time.",
+    desc: "Your personal tax health score. A single number that tells you exactly where you stand with the IRS, what risks you face, and what actions to take, updated in real time.",
     features: [
       "Comprehensive IRS risk assessment",
       "Actionable score with improvement plan",
@@ -65,7 +65,7 @@ export function AttaxClarity() {
 
   return (
     <section id="clarity" className="py-[60px] md:py-[120px] bg-white" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1200px] mx-auto">
 
         {/* Header */}
         <motion.div
@@ -78,7 +78,7 @@ export function AttaxClarity() {
             className="text-[#1d1ee3] text-[14px] md:text-[16px] block mb-2 md:mb-4"
             style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
           >
-            [Coming Soon · Proprietary Technology]
+            Coming Soon · Proprietary Technology
           </span>
           <h2
             className="leading-[1.2] md:leading-[1.1] text-[#03030f] text-[32px] md:text-[34px] lg:text-[52px]"
@@ -93,7 +93,7 @@ export function AttaxClarity() {
             className="text-[14px] md:text-[16px] lg:text-[18px] leading-[1.65] text-[rgba(3,3,15,0.65)] mt-4 md:mt-5 max-w-[720px]"
             style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
           >
-            The only platform that monitors your IRS standing in real time   so you see every notice, every flag, and every risk before it becomes a crisis.{" "}
+            The only platform that monitors your IRS standing in real time, so you see every notice, every flag, and every risk before it becomes a crisis.{" "}
             <span style={{ fontWeight: 500, color: "rgba(3,3,15,0.85)" }}>No competitor offers anything like it.</span>
           </p>
         </motion.div>
@@ -236,7 +236,7 @@ export function AttaxClarity() {
               />
               <button
                 type="submit"
-                className="flex items-center gap-2 bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 group hover:bg-[#1618c7] transition-colors shrink-0"
+                className="flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 group hover:bg-[#1618c7] transition-colors shrink-0"
               >
                 <span
                   className="text-white text-[14px] whitespace-nowrap"

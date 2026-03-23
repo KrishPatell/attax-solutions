@@ -31,7 +31,7 @@ export function ServiceAnchors() {
 
   return (
     <div className="sticky top-[72px] lg:top-[88px] z-40 bg-white border-y border-[rgba(0,0,0,0.05)] shadow-sm">
-      <div className="max-w-[1440px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between py-3 md:py-4 gap-3 md:gap-4">
           {/* Breadcrumb   hidden on mobile */}
           <div className="hidden md:flex items-center gap-2 text-[14px] font-medium text-[rgba(10,22,40,0.4)]">
