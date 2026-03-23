@@ -23,7 +23,7 @@ const offices = [
 
 export function ContactOfficeLocation() {
   return (
-    <section className="bg-[#f7f7f4] pt-[80px] md:pt-[120px] pb-[60px] md:pb-[80px] overflow-hidden">
+    <section className="bg-[#f7f7f4] pt-[110px] md:pt-[120px] pb-[60px] md:pb-[80px] overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         <div className="grid grid-cols-12 gap-8 md:gap-16 items-stretch">
           {/* Left Side: Content */}

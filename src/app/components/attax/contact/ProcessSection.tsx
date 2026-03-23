@@ -27,7 +27,7 @@ export function ProcessSection() {
 
   return (
     <section className="py-[60px] md:py-[120px] bg-[#f9faff] border-y border-[#eaeaff]">
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         <div className="text-center max-w-[800px] mx-auto mb-10 md:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -14,7 +14,7 @@ export function ContactFAQCTA() {
 
   return (
     <section className="bg-white py-[60px] md:py-[120px]">
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
