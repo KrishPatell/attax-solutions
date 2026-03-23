@@ -97,7 +97,7 @@ export function ContactOfficeLocation() {
                 <ImageWithFallback
                   src={remoteImg}
                   alt="Remote Support"
-                  className="absolute inset-0 w-full h-full object-cover object-[80%_20%] lg:object-[center_20%] transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover object-[80%_20%] lg:object-[80%_20%] transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[12px] font-medium text-[#03030f]">Remote</div>
               </motion.div>
