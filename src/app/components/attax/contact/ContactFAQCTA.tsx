@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
-import dependentTaxCreditsImg from "../../../../assets/29be9e144d4cbc3f542ccc4e6b661999b17fa2ee.png";
+import ctaDependentImg from "../../../../assets/contact-cta-dependent.jpg";
 
 export function ContactFAQCTA() {
   const bookingUrl = "https://calendly.com/attax-solutions";
@@ -60,14 +60,12 @@ export function ContactFAQCTA() {
           {/* Image side */}
           <div className="hidden lg:block lg:col-span-5 relative h-full min-h-[500px]">
             <ImageWithFallback
-              src={dependentTaxCreditsImg}
+              src={ctaDependentImg}
               alt="Who can I claim as a dependent?"
-              width={1292}
-              height={734}
+              width={411}
+              height={600}
               className="absolute inset-0 w-full h-full object-cover"
             />
-            {/* Gradient overlay for blending */}
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#f7f4ef]/30" />
           </div>
 
           {/* Decorative background shapes */}
