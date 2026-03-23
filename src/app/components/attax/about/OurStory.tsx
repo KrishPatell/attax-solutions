@@ -107,25 +107,30 @@ export function OurStory() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="grid grid-cols-2 gap-4 pt-10 border-t border-[#eaeaff]"
             >
-              <div
+              <a
                 href={attaxPdf}
+                download="ATTAX Solutions Presentation.pdf"
                 className="col-span-2 sm:col-span-1 p-[22px] rounded-[16px] border border-[#eaeaff] hover:border-[#1d1ee3]/30 transition-colors group cursor-pointer bg-[#f9faff] flex flex-col gap-4 no-underline"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-[46px] h-[46px] rounded-full bg-white flex items-center justify-center text-[#1d1ee3] shadow-sm shrink-0">
-                    <FileText size={23} />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-[46px] h-[46px] rounded-full bg-white flex items-center justify-center text-[#1d1ee3] shadow-sm shrink-0">
+                      <FileText size={23} />
+                    </div>
+                    <span
+                      className="text-[#0a1628] font-semibold text-[16px] lg:text-[17px]"
+                      style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                    >
+                      ATTAX Presentation
+                    </span>
                   </div>
-                  <span
-                    className="text-[#0a1628] font-semibold text-[16px] lg:text-[17px]"
-                    style={{ fontFamily: "'Inter Tight', sans-serif" }}
-                  >
-                    ATTAX Presentation
-                  </span>
+                  <Download size={20} className="text-[#1d1ee3] group-hover:translate-x-0.5 transition-transform shrink-0" />
                 </div>
                 <p className="text-[14px] text-[#0a1628]/50 leading-[1.5]">
                   Learn more about our methodology and firm history.
                 </p>
-              </div>
+                <span className="text-[#1d1ee3] text-[13px] font-bold uppercase tracking-wider">Download PDF</span>
+              </a>
 
               <div className="col-span-2 sm:col-span-1 p-[22px] rounded-[16px] border border-[#eaeaff] hover:border-[#1d1ee3]/30 transition-colors group cursor-pointer bg-[#f9faff] flex flex-col gap-4">
                 <div className="flex items-center gap-3">
