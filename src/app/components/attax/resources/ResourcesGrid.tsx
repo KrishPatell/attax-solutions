@@ -35,6 +35,30 @@ const articles = [
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
     date: "March 05, 2026",
     author: "Compliance Department"
+  },
+  {
+    slug: "penalty-abatement-guide",
+    title: "IRS Penalty Abatement: How to Get Your Penalties Removed",
+    description: "Failure-to-file and failure-to-pay penalties can double your balance. Learn how First-Time Abatement and reasonable cause relief can eliminate them.",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80",
+    date: "March 20, 2026",
+    author: "Tax Specialist Team"
+  },
+  {
+    slug: "installment-agreement-guide",
+    title: "IRS Installment Agreements: Your Complete Guide to Monthly Payments",
+    description: "Can't pay your tax debt in full? An installment agreement stops collection action and gives you a manageable path to resolution — if structured correctly.",
+    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=80",
+    date: "March 18, 2026",
+    author: "Tax Specialist Team"
+  },
+  {
+    slug: "tax-lien-guide",
+    title: "IRS Tax Liens Explained: How to Protect Your Credit and Property",
+    description: "A federal tax lien can block a home sale, damage your credit, and follow you for years. Understand your options for release, withdrawal, and discharge.",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=80",
+    date: "March 22, 2026",
+    author: "Tax Specialist Team"
   }
 ];
 

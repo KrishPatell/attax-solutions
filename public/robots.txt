@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block build artifacts
+Disallow: /src/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Crawl delay for politeness
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://attaxsolutions.com/sitemap.xml

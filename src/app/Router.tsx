@@ -11,6 +11,9 @@ import Services from "./pages/Services";
 import OurProcess from "./pages/OurProcess";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import Glossary from "./pages/Glossary";
+import Disclaimer from "./pages/Disclaimer";
+import CaliforniaPrivacy from "./pages/CaliforniaPrivacy";
 
 export const router = createBrowserRouter([
   {
@@ -54,8 +57,20 @@ export const router = createBrowserRouter([
         Component: Clarity,
       },
       {
+        path: "glossary",
+        Component: Glossary,
+      },
+      {
         path: "terms",
         Component: Terms,
+      },
+      {
+        path: "disclaimer",
+        Component: Disclaimer,
+      },
+      {
+        path: "california-privacy",
+        Component: CaliforniaPrivacy,
       },
       {
         path: "privacy",
