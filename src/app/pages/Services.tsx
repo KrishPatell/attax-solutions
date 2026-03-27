@@ -11,12 +11,21 @@ import { HandlingCases } from "../components/attax/about/HandlingCases";
 import { ServiceCTA } from "../components/attax/services/ServiceCTA";
 import { AttaxFAQ } from "../components/attax/AttaxFAQ";
 import { AttaxContactForm } from "../components/attax/AttaxContactForm";
+import { ServicesStats } from "../components/attax/services/ServicesStats";
 import { useEffect } from "react";
 
 export default function Services() {
-  // Smooth scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Tax Relief Services — IRS Resolution, OIC & Negotiation | ATTAX Solutions";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "ATTAX Solutions offers comprehensive IRS tax relief services including Tax Resolution, Offer in Compromise, Installment Agreements, Penalty Abatement, and Wage Garnishment Release. Serving all 50 states.");
+    }
+    return () => {
+      document.title = "ATTAX Solutions — Expert Tax Debt Resolution";
+      if (metaDesc) metaDesc.setAttribute("content", "ATTAX Solutions offers expert IRS and state tax debt resolution. Licensed professionals, free consultations, and proven results. Serving clients nationwide.");
+    };
   }, []);
 
   return (
@@ -25,6 +34,7 @@ export default function Services() {
       
       <main>
         <ServicesHero />
+        <ServicesStats />
         <ServiceAnchors />
         
         <div className="space-y-0">
