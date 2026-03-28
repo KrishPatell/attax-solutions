@@ -191,14 +191,24 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx" defer></script>
 
-    <!-- UserWay Accessibility Widget — replace YOUR_USERWAY_ACCOUNT_ID with your account ID from userway.org -->
-    <script data-account="YOUR_USERWAY_ACCOUNT_ID" src="https://cdn.userway.org/widget.js"></script>
+    <!--
+      Accessibility FAB: in-app <AccessibilityWidget /> (App.tsx) uses the same insets as the cookie button
+      (src/constants/floatingActions.ts). To use UserWay instead, restore the script below and remove
+      AccessibilityWidget from App.tsx, then keep the style block in sync with FAB_CORNER_INSET_PX (+ safe-area).
+    -->
+    <!-- <script data-account="YOUR_USERWAY_ACCOUNT_ID" src="https://cdn.userway.org/widget.js"></script>
     <style>
-      /* Force UserWay button to bottom-right */
       #userwayAccessibilityIcon,
       [id*="userway"],
       .userway_buttons_wrapper,
-      #userway-container { bottom: 24px !important; right: 24px !important; top: auto !important; left: auto !important; }
-    </style>
+      #userway-container,
+      div[id^="userway"] {
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+        right: calc(20px + env(safe-area-inset-right, 0px)) !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 !important;
+      }
+    </style> -->
   </body>
 </html>

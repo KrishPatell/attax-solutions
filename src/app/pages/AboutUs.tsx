@@ -38,7 +38,7 @@ export default function AboutUs() {
   return (
     <div className="w-full min-h-screen bg-white">
       <AttaxNavbar />
-      <main>
+      <main className="min-w-0">
         <AboutHero />
         <HandlingCases />
         <WhatHappensNext />

@@ -128,49 +128,59 @@ export function CoreValuesSection() {
             </div>
 
             <div className="flex flex-col gap-6">
-              <div className="flex flex-wrap gap-x-1 gap-y-0 border-b border-[rgba(10,22,40,0.14)]">
-                {gradeTabs.map((tab) => {
-                  const isActive = active === tab.id;
-                  return (
-                    <button
-                      key={tab.id}
-                      type="button"
-                      onClick={() => setActive(tab.id)}
-                      className="flex items-center gap-2 pb-3.5 px-3 -mx-1 first:pl-0 relative text-left touch-manipulation"
-                      aria-pressed={isActive}
-                      aria-current={isActive ? "true" : undefined}
-                    >
-                      <motion.span
-                        aria-hidden
-                        animate={{ opacity: isActive ? 1 : 0, scale: isActive ? 1 : 0.6 }}
-                        transition={{ duration: 0.2 }}
-                        className="w-2 h-2 rounded-full bg-[#1d1ee3] shrink-0"
-                      />
-                      <span
-                        className="text-[15px] md:text-[17px] transition-colors duration-200 whitespace-nowrap"
-                        style={{
-                          fontFamily: "'Inter Tight', sans-serif",
-                          fontWeight: isActive ? 600 : 500,
-                          color: isActive ? "#0a1628" : "rgba(10,22,40,0.45)",
-                        }}
+              {/*
+                Mobile: 2×2 grid (no awkward wrap). lg+: single horizontal row.
+              */}
+              <div className="-mx-5 px-5 lg:mx-0 lg:px-0">
+                <div
+                  role="tablist"
+                  aria-label="ATTAX Score factors"
+                  className="grid grid-cols-2 gap-x-2 gap-y-1 w-full border-b border-[rgba(10,22,40,0.14)] pb-1 lg:flex lg:flex-row lg:flex-wrap lg:gap-x-1 lg:gap-y-0 lg:w-full lg:pb-0"
+                >
+                  {gradeTabs.map((tab) => {
+                    const isActive = active === tab.id;
+                    return (
+                      <button
+                        key={tab.id}
+                        type="button"
+                        role="tab"
+                        aria-selected={isActive}
+                        onClick={() => setActive(tab.id)}
+                        className="flex w-full min-w-0 items-center gap-2 pb-3.5 px-2 sm:px-3 relative text-left touch-manipulation lg:w-auto lg:shrink-0 lg:px-3 lg:-mx-1 lg:first:pl-0"
                       >
-                        {tab.label}
-                      </span>
-                      {isActive && (
-                        <motion.div
-                          layoutId="clarity-grade-tab-underline"
-                          className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#1d1ee3] rounded-full"
-                          transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                        <motion.span
+                          aria-hidden
+                          animate={{ opacity: isActive ? 1 : 0, scale: isActive ? 1 : 0.6 }}
+                          transition={{ duration: 0.2 }}
+                          className="w-2 h-2 rounded-full bg-[#1d1ee3] shrink-0"
                         />
-                      )}
-                    </button>
-                  );
-                })}
+                        <span
+                          className="text-[14px] md:text-[16px] lg:text-[17px] transition-colors duration-200 text-left leading-snug lg:whitespace-nowrap"
+                          style={{
+                            fontFamily: "'Inter Tight', sans-serif",
+                            fontWeight: isActive ? 600 : 500,
+                            color: isActive ? "#0a1628" : "rgba(10,22,40,0.45)",
+                          }}
+                        >
+                          {tab.label}
+                        </span>
+                        {isActive && (
+                          <motion.div
+                            layoutId="clarity-grade-tab-underline"
+                            className="absolute bottom-0 left-2 right-2 sm:left-3 sm:right-3 h-0.5 bg-[#1d1ee3] rounded-full"
+                            transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                          />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
+                  role="tabpanel"
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}

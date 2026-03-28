@@ -95,7 +95,7 @@ export function OurTeam() {
     >
       {/* overflow:hidden breaks position:sticky — do not add it here */}
 
-      <div className="max-w-[1200px] mx-auto px-5 md:px-0 relative">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0 relative min-w-0">
         {/* Mobile: left-edge progress line */}
         <div
           className="md:hidden absolute left-5 top-[72px] bottom-[72px] w-[3px] -translate-x-1/2 pointer-events-none rounded-full"
@@ -117,7 +117,7 @@ export function OurTeam() {
           a tall containing block to slide within. md:items-start breaks sticky by shrinking the
           left cell to content height only.
         */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-0 md:items-stretch">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-0 md:items-stretch min-w-0">
           {/* Desktop: vertical center line */}
           <div
             className="hidden md:block pointer-events-none absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 z-0 rounded-full"
@@ -134,7 +134,7 @@ export function OurTeam() {
           </div>
 
           {/* Left: fill stretched row height so sticky has a tall containing block (see grid comment above). */}
-          <div className="relative z-[1] pl-8 md:pl-0 md:pr-8 md:h-full md:min-h-0">
+          <div className="relative z-[1] pl-8 md:pl-0 md:pr-8 md:h-full md:min-h-0 min-w-0">
             <div className="sticky top-28 max-w-[480px] pb-4 md:pb-0 z-[1]">
               <p
                 className="text-[14px] uppercase tracking-widest font-bold mb-6 md:mb-8"
@@ -163,7 +163,7 @@ export function OurTeam() {
           </div>
 
           {/* Right: scrolling role cards */}
-          <div className="relative z-[1] pl-10 md:pl-14 md:pr-0">
+          <div className="relative z-[1] pl-10 md:pl-14 md:pr-0 min-w-0">
             {ROLES.map((item, index) => {
               const num = String(index + 1).padStart(2, "0");
               return (

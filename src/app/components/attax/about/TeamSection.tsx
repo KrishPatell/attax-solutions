@@ -13,18 +13,18 @@ export function TeamSection() {
         <div className="grid grid-cols-12 gap-8 md:gap-16 items-center">
 
           {/* Left: Label, heading, body, bullets, CTA */}
-          <div className="col-span-12 lg:col-span-6">
+          <div className="col-span-12 lg:col-span-6 min-w-0">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative z-10"
+              className="relative z-10 min-w-0"
             >
               <span className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                 [Our HQ]
               </span>
-              <h2 className="text-[32px] md:text-[48px] lg:text-[50px] leading-[1.15] text-[#03030f] mb-6 whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}>
+              <h2 className="text-[32px] md:text-[48px] lg:text-[50px] leading-[1.15] text-[#03030f] mb-6 whitespace-normal md:whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}>
                 Irvine,{" "}
                 <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>California</span>
               </h2>
@@ -62,13 +62,13 @@ export function TeamSection() {
           </div>
 
           {/* Right: Office image */}
-          <div className="col-span-12 lg:col-span-6">
+          <div className="col-span-12 lg:col-span-6 min-w-0">
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative z-0"
+              className="relative z-0 min-w-0"
             >
               <div className="relative rounded-[28px] overflow-hidden h-[420px] md:h-[540px]">
                 <ImageWithFallback

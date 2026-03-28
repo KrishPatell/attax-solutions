@@ -22,7 +22,7 @@ export function AboutHero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="inline-flex items-center gap-2 mb-7"
+          className="inline-flex items-center gap-2 mb-7 min-w-0 max-w-full"
         >
           <div className="h-[16px] relative shrink-0 w-[64px]">
             {[0, 12, 24, 36, 48].map((left, index) => (

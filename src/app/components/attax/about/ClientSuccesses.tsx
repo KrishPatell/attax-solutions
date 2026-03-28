@@ -203,9 +203,8 @@ export function ClientSuccesses() {
         </div>
       </div>
 
-      {/* Infinite scroll track */}
-      <div className="relative">
-  
+      {/* Infinite scroll track — clip wide row so it never widens the document on mobile */}
+      <div className="relative w-full min-w-0 overflow-x-hidden">
         <div className="flex gap-5 animate-scroll-left" style={{ width: "max-content" }}>
           {doubled.map((story, i) => (
             <SuccessCard key={i} story={story} />

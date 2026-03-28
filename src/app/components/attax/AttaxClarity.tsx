@@ -224,7 +224,10 @@ export function AttaxClarity() {
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 w-full md:w-auto shrink-0">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:flex-row items-start sm:items-stretch gap-2 w-full md:w-auto shrink-0"
+            >
               <input
                 type="text"
                 required
@@ -257,7 +260,7 @@ export function AttaxClarity() {
               />
               <button
                 type="submit"
-                className="flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 group hover:bg-[#1618c7] transition-colors shrink-0"
+                className="flex w-fit max-w-full items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 group hover:bg-[#1618c7] transition-colors shrink-0"
               >
                 <span
                   className="text-white text-[14px] whitespace-nowrap"
