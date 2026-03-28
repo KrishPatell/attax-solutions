@@ -5,7 +5,7 @@ import { ImageWithFallback } from "../../figma/ImageWithFallback";
 export function TaxNegotiation() {
   return (
     <section id="tax-negotiation" className="py-[60px] md:py-[120px] bg-white scroll-mt-[120px]">
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
         <div className="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-24">
           {/* Left: Content */}
           <div className="w-full lg:w-[50%]">

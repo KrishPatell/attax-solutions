@@ -5,7 +5,7 @@ import { Link } from "react-router";
 export function ClarityPortalAndBackup() {
   return (
     <section className="py-[60px] md:py-[120px] bg-white relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
           
           {/* Section 06: Portal Login */}

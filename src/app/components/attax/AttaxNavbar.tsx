@@ -7,10 +7,9 @@ import { BrandLogo } from "./BrandLogo";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Our Process", href: "/our-process" },
-  { label: "ATTAX", href: "/attax" },
-  { label: "Clarity", href: "/clarity" },
   { label: "About", href: "/about" },
+  { label: "ATTAX Clarity", href: "/clarity" },
+  { label: "Our Process", href: "/our-process" },
   { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/contact" },
 ];
@@ -54,10 +53,7 @@ export function AttaxNavbar() {
       }
       return;
     }
-
-    if (href === "/about" || href === "/contact") {
-      navigate(href);
-    }
+    navigate(href);
   };
 
   return (
@@ -102,15 +98,17 @@ export function AttaxNavbar() {
               <Phone size={15} className="text-[#1d1ee3]" />
               +1 (855) 829-2829
             </a>
-            <motion.button
+            <motion.a
+              href="https://getstarted.attaxsolutions.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => navigate("/contact")}
               className="flex items-center gap-2 bg-[#1d1ee3] text-white rounded-[10px] px-5 py-2.5 text-[15px] hover:bg-[#1618c7] transition-colors"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
             >
               Get Started
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Mobile Hamburger */}
@@ -147,13 +145,15 @@ export function AttaxNavbar() {
               <a href="tel:+18558292829" className="text-[#1d1ee3] text-[14px] flex items-center gap-2">
                 <Phone size={14} /> +1 (855) 829-2829
               </a>
-              <button
-                onClick={() => navigate("/contact")}
+              <a
+                href="https://getstarted.attaxsolutions.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#1d1ee3] text-white rounded-[10px] px-5 py-2.5 text-[14px]"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
               >
                 Get Started
-              </button>
+              </a>
             </div>
           </motion.div>
         )}

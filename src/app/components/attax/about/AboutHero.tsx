@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import svgPaths from "../../../../imports/svg-tbbnbj1wyr";
 import { Breadcrumbs } from "./Breadcrumbs";
 import heroImg from "../../../../assets/hero-tax-seniors.jpg";
+import { HERO_H1_CLASS_ON_LIGHT, HERO_H1_STYLE } from "../../../lib/heroH1";
 
 export function AboutHero() {
   return (
@@ -49,8 +50,8 @@ export function AboutHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-[34px] md:text-[44px] lg:text-[64px] leading-[1.2] md:leading-[1.1] text-[#03030f] tracking-[-0.5px] mb-7"
-          style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700 }}
+          className={`${HERO_H1_CLASS_ON_LIGHT} mb-7`}
+          style={HERO_H1_STYLE}
         >
           Resolve Your IRS Debt<br />
           with{" "}

@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
+import { HERO_H1_CLASS_ON_LIGHT, HERO_H1_STYLE } from "../../../lib/heroH1";
 
 export function ContactHero() {
   return (
@@ -34,15 +35,9 @@ export function ContactHero() {
             </span>
           </div>
 
-          <h1
-            className="text-[64px] lg:text-[72px] leading-[1.05] text-[#0a1628] mb-6 tracking-tight"
-            style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 700 }}
-          >
-            Let's Talk About Your{" "}
-            <span 
-              className="italic font-normal" 
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
+          <h1 className={`${HERO_H1_CLASS_ON_LIGHT} mb-7`} style={HERO_H1_STYLE}>
+            Let&apos;s Talk About Your{" "}
+            <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
               Situation
             </span>
           </h1>

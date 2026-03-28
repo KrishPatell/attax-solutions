@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { X, ChevronRight } from "lucide-react";
+import {
+  FAB_CORNER_INSET_PX,
+  FAB_TRIGGER_SIZE_PX,
+} from "../../../constants/floatingActions";
 
 const STORAGE_KEY = "attax-cookie-consent-v2";
 
@@ -72,12 +76,22 @@ export function CookieConsent() {
   const rejectAll = () => save(DEFAULT_PREFS);
   const savePrefs = () => save(prefs);
 
+  /** Dismiss corner notice without blocking the site; treat as non-essential off + do not show again */
+  const dismissNotice = () => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_PREFS));
+    } catch {}
+    setPrefs(DEFAULT_PREFS);
+    setShowBanner(false);
+    setShowButton(true);
+  };
+
   const toggle = (key: keyof Omit<Prefs, "necessary">) =>
     setPrefs(p => ({ ...p, [key]: !p[key] }));
 
   return (
     <>
-      {/* ── Persistent bottom-LEFT cookie icon — always visible ── */}
+      {/* ── Persistent cookie icon — bottom-left (accessibility FAB lives bottom-right) ── */}
       <AnimatePresence>
         {showButton && !showBanner && !showModal && (
           <motion.button
@@ -89,117 +103,114 @@ export function CookieConsent() {
             onClick={() => setShowModal(true)}
             aria-label="Cookie preferences"
             title="Manage cookie preferences"
-            className="fixed z-[9995] transition-colors"
-            style={{ bottom: 24, left: 24, color: "white", mixBlendMode: "difference" }}
+            className="fixed z-[9995] flex items-center justify-center rounded-full border border-[rgba(10,22,40,0.12)] bg-white text-[#0a1628] shadow-[0_8px_30px_rgba(10,22,40,0.12)] transition-colors hover:bg-[#f7f7f4] box-border"
+            style={{
+              width: FAB_TRIGGER_SIZE_PX,
+              height: FAB_TRIGGER_SIZE_PX,
+              bottom: `calc(${FAB_CORNER_INSET_PX}px + env(safe-area-inset-bottom, 0px))`,
+              left: `calc(${FAB_CORNER_INSET_PX}px + env(safe-area-inset-left, 0px))`,
+            }}
           >
             <CookieIcon />
           </motion.button>
         )}
       </AnimatePresence>
 
-      {/* ── Initial cookie banner — large centered modal with backdrop ── */}
+      {/* ── First-visit notice: bottom-left card — no backdrop (a11y trigger is bottom-right) ── */}
       <AnimatePresence>
         {showBanner && (
-          <>
-            {/* Backdrop */}
+          <div className="fixed bottom-6 left-6 z-[9996] max-[480px]:left-4 max-[480px]:right-4 max-[480px]:bottom-4 pointer-events-none">
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-[9996]"
-              style={{ background: "rgba(10,22,40,0.60)" }}
-              aria-hidden="true"
-            />
-            {/* Centering wrapper — flex handles position, motion handles animation */}
-            <div
-              className="fixed inset-0 z-[9997] flex items-center justify-center px-4"
-              style={{ pointerEvents: "none" }}
+              initial={{ opacity: 0, y: 16, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, y: 12, scale: 0.98 }}
+              transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+              role="region"
+              aria-label="Cookie notice"
+              className="pointer-events-auto w-full max-w-[min(400px,calc(100vw-48px))]"
+              style={{
+                background: "#ffffff",
+                borderRadius: 16,
+                border: "1px solid rgba(10,22,40,0.1)",
+                boxShadow: "0 16px 48px rgba(10,22,40,0.14)",
+                overflow: "hidden",
+              }}
             >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95, y: 16 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.96, y: 10 }}
-                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                role="dialog"
-                aria-modal="true"
-                aria-label="Cookie consent"
-                style={{
-                  width: "min(480px, calc(100vw - 32px))",
-                  background: "#ffffff",
-                  borderRadius: 20,
-                  border: "1px solid rgba(10,22,40,0.07)",
-                  boxShadow: "0 32px 80px rgba(10,22,40,0.22)",
-                  overflow: "hidden",
-                  pointerEvents: "auto",
-                }}
-              >
-                {/* Blue top accent */}
-                <div style={{ height: 4, background: "#1d1ee3" }} />
+              <div style={{ height: 3, background: "#1d1ee3" }} />
 
-                <div className="p-7">
-                  {/* Header */}
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                    <h2
-                      className="text-[22px] font-bold text-[#0a1628] leading-snug"
-                      style={{ fontFamily: "'Inter Tight', sans-serif" }}
-                    >
-                      We use cookies
-                    </h2>
-                    <button
-                      onClick={() => setShowBanner(false)}
-                      aria-label="Close"
-                      className="w-8 h-8 rounded-full flex items-center justify-center text-[#0a1628]/35 hover:text-[#0a1628]/70 hover:bg-[#f7f7f4] transition-colors shrink-0 mt-[-2px]"
-                    >
-                      <X size={16} />
-                    </button>
-                  </div>
-
-                  {/* Body */}
-                  <p
-                    className="text-[15px] text-[#0a1628]/60 leading-[1.7] mb-8"
+              <div className="p-5">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <h2
+                    className="text-[17px] font-bold text-[#0a1628] leading-snug pr-2"
                     style={{ fontFamily: "'Inter Tight', sans-serif" }}
                   >
-                    We use cookies to improve your experience and analyse site traffic. See our{" "}
-                    <a
-                      href="/privacy"
-                      className="text-[#1d1ee3] underline underline-offset-2 hover:text-[#1618c7] transition-colors"
-                    >
-                      Privacy Policy
-                    </a>
-                    .
-                  </p>
-
-                  {/* Buttons */}
-                  <div className="flex gap-3">
-                    <button
-                      onClick={acceptAll}
-                      className="flex-1 py-4 rounded-[50px] text-[15px] font-semibold text-white transition-colors"
-                      style={{ fontFamily: "'Inter Tight', sans-serif", background: "#1d1ee3" }}
-                      onMouseEnter={e => (e.currentTarget.style.background = "#1618c7")}
-                      onMouseLeave={e => (e.currentTarget.style.background = "#1d1ee3")}
-                    >
-                      Accept All
-                    </button>
-                    <button
-                      onClick={() => { setShowBanner(false); setShowModal(true); }}
-                      className="flex-1 py-4 rounded-[50px] text-[15px] font-semibold transition-colors"
-                      style={{
-                        fontFamily: "'Inter Tight', sans-serif",
-                        color: "rgba(10,22,40,0.60)",
-                        border: "1.5px solid rgba(10,22,40,0.15)",
-                        background: "transparent",
-                      }}
-                      onMouseEnter={e => (e.currentTarget.style.background = "#f7f7f4")}
-                      onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
-                    >
-                      Manage
-                    </button>
-                  </div>
+                    Cookies
+                  </h2>
+                  <button
+                    type="button"
+                    onClick={dismissNotice}
+                    aria-label="Dismiss cookie notice"
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-[#0a1628]/40 hover:text-[#0a1628]/70 hover:bg-[#f7f7f4] transition-colors shrink-0 -mt-0.5 -mr-0.5"
+                  >
+                    <X size={16} />
+                  </button>
                 </div>
-              </motion.div>
-            </div>
-          </>
+
+                <p
+                  className="text-[13px] text-[#0a1628]/60 leading-[1.65] mb-4"
+                  style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                >
+                  We use cookies to improve your experience.{" "}
+                  <a
+                    href="/privacy"
+                    className="text-[#1d1ee3] underline underline-offset-2 hover:text-[#1618c7]"
+                  >
+                    Privacy Policy
+                  </a>
+                  . You can ignore this and use the site; change choices anytime via the cookie button.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={acceptAll}
+                    className="flex-1 min-w-[100px] py-2.5 px-3 rounded-full text-[13px] font-semibold text-white transition-colors"
+                    style={{ fontFamily: "'Inter Tight', sans-serif", background: "#1d1ee3" }}
+                    onMouseEnter={e => (e.currentTarget.style.background = "#1618c7")}
+                    onMouseLeave={e => (e.currentTarget.style.background = "#1d1ee3")}
+                  >
+                    Accept
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowBanner(false);
+                      setShowModal(true);
+                    }}
+                    className="flex-1 min-w-[100px] py-2.5 px-3 rounded-full text-[13px] font-semibold transition-colors"
+                    style={{
+                      fontFamily: "'Inter Tight', sans-serif",
+                      color: "rgba(10,22,40,0.65)",
+                      border: "1.5px solid rgba(10,22,40,0.14)",
+                      background: "transparent",
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.background = "#f7f7f4")}
+                    onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+                  >
+                    Manage
+                  </button>
+                  <button
+                    type="button"
+                    onClick={dismissNotice}
+                    className="w-full sm:w-auto py-2.5 px-3 rounded-full text-[13px] font-medium text-[#0a1628]/45 hover:text-[#0a1628]/70 transition-colors"
+                    style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                  >
+                    Continue without choosing
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
 

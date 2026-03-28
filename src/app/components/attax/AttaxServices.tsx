@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { ArrowUpRight, Scale, Handshake, BadgeDollarSign } from "lucide-react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { AttaxTrustpilot } from "./TrustpilotBadge";
 import consultImg from "../../../assets/handling-cases.webp";
@@ -62,22 +62,24 @@ export function AttaxServices() {
               Our licensed Tax Specialists handle every aspect of your case, from initial analysis to final settlement, ensuring you never have to face the IRS alone.
             </p>
           </motion.div>
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.98 }}
-            className="flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group shrink-0 self-start"
-          >
-            <span className="text-white text-[14px] md:text-[16px] font-medium px-2" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-              View All Services
-            </span>
-            <div className="w-9 h-9 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
-              <ArrowUpRight size={16} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
-              <ArrowUpRight size={16} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
-            </div>
-          </motion.button>
+          <Link to="/services" className="shrink-0 self-start">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.98 }}
+              className="flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group cursor-pointer"
+            >
+              <span className="text-white text-[14px] md:text-[16px] font-medium px-2" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                View All Services
+              </span>
+              <div className="w-9 h-9 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
+                <ArrowUpRight size={16} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
+                <ArrowUpRight size={16} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
+              </div>
+            </motion.div>
+          </Link>
         </div>
 
         {/* Service cards grid */}
@@ -119,14 +121,14 @@ export function AttaxServices() {
                   </ul>
                 </div>
 
-                <button className="flex h-[40px] items-center gap-[16px] group/btn">
+                <Link to="/services" className="flex h-[40px] items-center gap-[16px] group/btn">
                   <span className="text-[#03030f] text-[13.9px] font-medium leading-[21px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
                     Read More
                   </span>
                   <div className="size-[39px] rounded-full border border-[rgba(0,0,0,0.07)] flex items-center justify-center group-hover/btn:bg-[#03030f] transition-colors duration-300">
                     <ArrowUpRight size={16} className="text-[#03030f] group-hover/btn:text-white transition-colors duration-300" />
                   </div>
-                </button>
+                </Link>
               </motion.div>
             );
           })}

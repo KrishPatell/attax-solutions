@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "motion/react";
 import { ArrowUpRight, MessageCircle, Search, Shield, CheckCircle2, ChevronDown } from "lucide-react";
+import { Link } from "react-router";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { AttaxTrustpilot } from "./TrustpilotBadge";
 import complimentaryConsultationImg from "../../../assets/9ac5963fc0e77b27818e101e597556691793370f.webp";
@@ -79,24 +80,25 @@ export function AttaxProcess() {
           </motion.div>
           <div className="flex items-center gap-10 shrink-0 w-auto">
             
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="flex items-center gap-5 bg-[#0a1628] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group shrink-0 h-fit w-auto"
-            >
-              <span
-                className="text-white text-[14px] md:text-[15px]"
-                style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
+            <Link to="/our-process" className="shrink-0 h-fit w-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex items-center gap-5 bg-[#0a1628] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group cursor-pointer"
               >
-                Start Your Case
-              </span>
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
-                <ArrowUpRight size={20} className="w-4 h-4 md:w-5 md:h-5 text-white absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
-                <ArrowUpRight size={20} className="w-4 h-4 md:w-5 md:h-5 text-white absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
-              </div>
-            </motion.button>
+                <span
+                  className="text-white text-[14px] md:text-[15px]"
+                  style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
+                >
+                  See Our Process
+                </span>
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
+                  <ArrowUpRight size={20} className="w-4 h-4 md:w-5 md:h-5 text-white absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
+                  <ArrowUpRight size={20} className="w-4 h-4 md:w-5 md:h-5 text-white absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
+                </div>
+              </motion.div>
+            </Link>
           </div>
         </div>
 
@@ -211,17 +213,19 @@ export function AttaxProcess() {
                               </li>
                             ))}
                           </ul>
-                          <motion.button
-                            className="self-start flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 mt-2 group"
-                          >
-                            <span className="text-white text-[16px]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}>
-                              Explore Service
-                            </span>
-                            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
-                              <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
-                              <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
-                            </div>
-                          </motion.button>
+                          <Link to="/services" className="self-start mt-2">
+                            <motion.div
+                              className="flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 group cursor-pointer"
+                            >
+                              <span className="text-white text-[16px]" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}>
+                                Explore Service
+                              </span>
+                              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 overflow-hidden relative">
+                                <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
+                                <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
+                              </div>
+                            </motion.div>
+                          </Link>
                         </div>
                       </motion.div>
                     )}

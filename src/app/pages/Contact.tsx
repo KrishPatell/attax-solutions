@@ -7,9 +7,20 @@ import { AttaxFAQ } from "../components/attax/AttaxFAQ";
 import { ContactFAQCTA } from "../components/attax/contact/ContactFAQCTA";
 import { motion } from "motion/react";
 import { useEffect } from "react";
+import { usePageSeo } from "../lib/pageSeo";
 
 export default function Contact() {
-  // Scroll to top on mount
+  usePageSeo({
+    title: "Contact ATTAX Solutions — Free IRS Tax Debt Consultation",
+    description:
+      "Contact ATTAX Solutions to start your free, confidential IRS tax debt consultation. Licensed Tax Specialists available nationwide. No fees, no obligation.",
+    path: "/contact",
+    breadcrumbs: [
+      { name: "Home", path: "/" },
+      { name: "Contact", path: "/contact" },
+    ],
+  });
+
   useEffect(() => {
     if (window.location.hash) {
       const id = window.location.hash.substring(1);

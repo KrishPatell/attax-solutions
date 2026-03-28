@@ -2,60 +2,69 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
+import { Breadcrumbs } from "../about/Breadcrumbs";
+import svgPaths from "../../../../imports/svg-tbbnbj1wyr";
+import { HERO_H1_CLASS_ON_LIGHT, HERO_H1_STYLE } from "../../../lib/heroH1";
 
 export function ServicesHero() {
   return (
-    <section className="bg-white pt-[120px] md:pt-[160px] pb-0 overflow-hidden">
+    <section className="bg-[#f9faff] pt-[120px] md:pt-[160px] pb-8 md:pb-12 lg:pb-14 rounded-b-[28px] md:rounded-b-[40px] lg:rounded-b-[48px] mb-8 md:mb-12 shadow-[0_28px_80px_rgba(29,30,227,0.07)] border-b border-[rgba(29,30,227,0.08)] overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-5 md:px-0">
+        <div className="w-full mb-8 md:mb-12 lg:mb-14">
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
+            <Breadcrumbs current="Services" light />
+          </motion.div>
 
-        {/* Label + heading + desc + CTA — left-aligned */}
-        <div className="max-w-[820px] mb-10 md:mb-14">
-          <motion.span
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[#1d1ee3] text-[13px] uppercase tracking-widest font-bold block mb-5"
-            style={{ fontFamily: "'Inter Tight', sans-serif" }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="inline-flex flex-wrap items-center gap-2 mb-7"
           >
-            [Our Services]
-          </motion.span>
+            <div className="h-[16px] relative shrink-0 w-[64px]" aria-hidden>
+              {[0, 12, 24, 36, 48].map((left, index) => (
+                <div key={index} className="absolute size-[16px] top-0" style={{ left: `${left}px` }}>
+                  <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
+                    <path
+                      d={svgPaths.p17f48400}
+                      fill="#F59E0B"
+                      stroke="#F59E0B"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.33333"
+                    />
+                  </svg>
+                </div>
+              ))}
+            </div>
+            <p className="text-[14px] text-[#03030f]/50" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              The fastest growing tax relief company in the nation
+            </p>
+          </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[36px] md:text-[58px] lg:text-[76px] leading-[1.05] text-[#0a1628] font-semibold mb-8"
-            style={{ fontFamily: "'Inter Tight', sans-serif" }}
-          >
-            Comprehensive Tax{" "}
-            <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Relief
-            </span>
-            {" "}Services
-            <br />
-            Tailored to{" "}
-            <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Your Situation
-            </span>
-          </motion.h1>
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 sm:gap-8 w-full">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[15px] md:text-[17px] leading-[1.7] text-[rgba(10,22,40,0.55)] max-w-[480px]"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className={`${HERO_H1_CLASS_ON_LIGHT} min-w-0 flex-1`}
+              style={HERO_H1_STYLE}
             >
-              Every case gets a dedicated Tax Specialist and a strategy built around your specific debt, history, and circumstances — not a template.
-            </motion.p>
+              Tax Relief Services
+              <br />
+              For{" "}
+              <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
+                Your Situation
+              </span>
+            </motion.h1>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="shrink-0"
+              className="shrink-0 sm:pt-2 lg:pt-4"
             >
-              <Link to="/contact">
+              <Link to="/contact" className="block w-fit sm:ml-auto">
                 <motion.button
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
@@ -70,14 +79,24 @@ export function ServicesHero() {
               </Link>
             </motion.div>
           </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-[14px] md:text-[16px] lg:text-[18px] leading-[1.65] text-[rgba(3,3,15,0.68)] max-w-[720px] mt-6 md:mt-8 w-full"
+            style={{ fontFamily: "'Inter Tight', sans-serif" }}
+          >
+            Every case gets a dedicated Tax Specialist and a strategy built around your specific debt, history, and circumstances — not a template.
+          </motion.p>
         </div>
 
-        {/* Full-width hero image — flush bottom, rounded top corners */}
+        {/* Hero image — rounded capsule so the section ends with clear geometry */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="relative rounded-t-[20px] overflow-hidden h-[220px] sm:h-[340px] md:h-[460px] lg:h-[540px]"
+          className="relative rounded-[20px] md:rounded-[24px] lg:rounded-[28px] overflow-hidden h-[220px] sm:h-[340px] md:h-[460px] lg:h-[540px] border border-[rgba(29,30,227,0.1)] shadow-[0_16px_48px_rgba(10,22,40,0.08)]"
         >
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1440"

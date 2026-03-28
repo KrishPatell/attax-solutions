@@ -1,13 +1,23 @@
+import { useEffect } from "react";
 import { AttaxNavbar } from "../components/attax/AttaxNavbar";
+import { usePageSeo } from "../lib/pageSeo";
 import { AttaxFooter } from "../components/attax/AttaxFooter";
 import { ResourcesHero } from "../components/attax/resources/ResourcesHero";
-import { FeaturedResource } from "../components/attax/resources/FeaturedResource";
-import { ResourcesGrid } from "../components/attax/resources/ResourcesGrid";
-import { ResourcesCTA } from "../components/attax/resources/ResourcesCTA";
-import { useEffect } from "react";
+import { ResourcesTabs } from "../components/attax/resources/ResourcesTabs";
+import { ContactFAQCTA } from "../components/attax/contact/ContactFAQCTA";
 
 export default function Resources() {
-  // Smooth scroll to top on mount
+  usePageSeo({
+    title: "Resources — IRS Guides, FAQs & Tax Glossary | ATTAX Solutions",
+    description:
+      "Plain-English guides on IRS notices, tax relief programs, penalties, and wage garnishments. Browse the ATTAX blog, FAQ library, IRS notice decoder, and tax glossary.",
+    path: "/resources",
+    breadcrumbs: [
+      { name: "Home", path: "/" },
+      { name: "Resources", path: "/resources" },
+    ],
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -15,12 +25,11 @@ export default function Resources() {
   return (
     <div className="w-full min-h-screen bg-white overflow-x-hidden">
       <AttaxNavbar />
-      
+
       <main>
         <ResourcesHero />
-        <FeaturedResource />
-        <ResourcesGrid />
-        <ResourcesCTA />
+        <ResourcesTabs />
+        <ContactFAQCTA />
       </main>
 
       <AttaxFooter />

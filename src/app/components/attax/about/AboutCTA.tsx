@@ -64,7 +64,7 @@ export function AboutCTA() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col items-center gap-6"
             >
-              <Link to="/contact">
+              <a href="https://getstarted.attaxsolutions.com/" target="_blank" rel="noopener noreferrer">
                 <motion.button
                   className="flex items-center gap-5 bg-[#1d1ee3] text-white rounded-[50px] pl-5 pr-1.5 py-1.5 group self-start mx-auto"
                 >
@@ -74,7 +74,7 @@ export function AboutCTA() {
                     <ArrowRight size={22} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out translate-x-[-150%] group-hover:translate-x-0" />
                   </div>
                 </motion.button>
-              </Link>
+              </a>
 
               <motion.div
                 initial={{ opacity: 0, y: 12 }}

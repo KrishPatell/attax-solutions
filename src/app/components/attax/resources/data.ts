@@ -2,6 +2,8 @@ export interface BlogPostData {
   slug: string;
   category: string;
   title: string;
+  /** Shown in post meta; defaults in BlogPost if omitted */
+  readTime?: string;
   featuredImage: string;
   overview: string;
   expectations: string[];
@@ -20,6 +22,60 @@ export interface BlogPostData {
 }
 
 export const blogPosts: Record<string, BlogPostData> = {
+  "what-to-do-owe-irs-money": {
+    slug: "what-to-do-owe-irs-money",
+    category: "Tax Relief",
+    title: "What to Do If You Owe the IRS Money (And Haven't Filed in Years)",
+    readTime: "7 min read",
+    featuredImage:
+      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200",
+    overview:
+      "Missing years of tax returns doesn't mean you're out of options. In fact, doing nothing is usually the worst choice: penalties and interest keep growing, and the IRS may file returns for you (substitute for return) or move into enforced collection. The good news is that thousands of people in your situation get back on track every year — by filing past-due returns, facing the real numbers, and then choosing a resolution path that fits their income and assets. This guide walks through the sequence we use at ATTAX: stabilize, file, assess, resolve.",
+    expectations: [
+      "A clear order of operations: what to do first so you don't make the problem worse.",
+      "Why filing past-due returns is almost always the prerequisite to any payment plan or settlement.",
+      "How penalties and interest accrue — and which relief options may apply after you're compliant.",
+      "What licensed representation does at each stage so you're not dealing with the IRS alone.",
+    ],
+    quote: {
+      text: "The IRS doesn't forget unfiled years — but neither should you use shame as an excuse to wait. The moment you file and get a true balance, you can negotiate, plan, and move forward. That's where resolution actually starts.",
+      author: "ATTAX Solutions",
+      role: "Tax Specialist Team",
+      avatar: "https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=100",
+    },
+    sections: [
+      {
+        title: "Step 1: Stop the Bleeding (Compliance First)",
+        content:
+          "Before the IRS will approve most installment agreements, Offers in Compromise, or hardship statuses, you generally need to be current on filing requirements — or have a concrete plan to become current. That means gathering W-2s, 1099s, and other income documents for every missing year and preparing accurate returns (sometimes with reconstructed records if paperwork is lost). Voluntary filing almost always works in your favor compared with waiting for the IRS to prepare a return using third-party data only, which often overstates what you owe.",
+      },
+      {
+        title: "Step 2: Know What the IRS Already Sees",
+        content:
+          "Employers, banks, and payers file information returns that the IRS matches to your account. So even if you haven't filed, the IRS may have a partial picture of your income. Pulling your wage and income transcripts confirms what they have on file and helps us file complete, defensible returns — and avoid surprises after you submit. This step is about replacing guesswork with facts.",
+      },
+      {
+        title: "Step 3: Understand the Balance (Tax, Penalties, Interest)",
+        content:
+          "Once returns are processed, you'll see the real tax due. On top of that, failure-to-file and failure-to-pay penalties can add up quickly, and interest compounds daily until the debt is paid. That sounds harsh — but it's also why programs like First-Time Abatement, reasonable-cause penalty relief, and structured payment options exist. You can't negotiate intelligently until the assessed balance is clear.",
+      },
+      {
+        title: "Step 4: Pick a Resolution That Matches Your Reality",
+        content:
+          "With a known balance and current compliance, we can match you to the right IRS path: a streamlined or full financial installment agreement, an Offer in Compromise if you qualify, Currently Not Collectible status if you're in genuine hardship, or penalty abatement where the facts support it. The 'best' outcome isn't the same for everyone — it's the one that's sustainable and legally sound for your situation.",
+      },
+      {
+        title: "Why People Wait — and Why Starting Now Matters",
+        content:
+          "Fear, shame, and mail you didn't open are the most common reasons returns go unfiled for years. The IRS's collection timeline and substitute returns don't pause for those feelings. The sooner you file and engage, the more options you typically have — and the less you'll pay in avoidable penalties and enforced collection. You don't need to have everything perfect on day one; you need a licensed team that can sequence the work and speak to the IRS on your behalf.",
+      },
+    ],
+    interstitialImage:
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1000",
+    finalThoughts:
+      "Owing the IRS money with years of unfiled returns feels overwhelming — but it's a defined problem with defined solutions. At ATTAX Solutions, we start with transcripts and facts, get you compliant, then build a resolution strategy you can live with. If you're ready to stop avoiding the mailbox, request a free, confidential consultation and we'll map your next steps.",
+  },
+
   "irs-audit-survival-guide": {
     slug: "irs-audit-survival-guide",
     category: "Audit Insight",

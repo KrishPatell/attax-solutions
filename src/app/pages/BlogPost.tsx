@@ -1,15 +1,109 @@
-import { useParams, Link } from "react-router";
+import { useParams, Link, useLocation } from "react-router";
 import { motion } from "motion/react";
 import { AttaxNavbar } from "../components/attax/AttaxNavbar";
 import { AttaxFooter } from "../components/attax/AttaxFooter";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { blogPosts } from "../components/attax/resources/data";
-import { useEffect } from "react";
+import {
+  heroFallbackForSlug,
+  interstitialFallbackForSlug,
+  quoteAvatarFallback,
+} from "../components/attax/resources/blogImageFallbacks";
+import { useEffect, useMemo } from "react";
 import { ArrowLeft, Clock, User, ArrowUpRight } from "lucide-react";
+import { DEFAULT_OG_IMAGE, usePageSeo, type PageSeoConfig } from "../lib/pageSeo";
+
+const RELATED_TAX_GUIDES: { title: string; slug: string; img: string }[] = [
+  {
+    title: "What to Do If You Owe the IRS (Unfiled Returns)",
+    slug: "what-to-do-owe-irs-money",
+    img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title: "IRS Audit Survival: Documentation & Defense",
+    slug: "irs-audit-survival-guide",
+    img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title: "Offer in Compromise: Settle IRS Debt for Less",
+    slug: "offer-in-compromise-guide",
+    img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title: "Stop Wage Garnishments & Bank Levies",
+    slug: "wage-garnishment-bank-levy-guide",
+    img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title: "Tax Debt Relief Scams: What to Watch For",
+    slug: "tax-debt-relief-scams",
+    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title: "IRS Penalty Abatement & First-Time Relief",
+    slug: "penalty-abatement-guide",
+    img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title: "Installment Agreements & Monthly IRS Payments",
+    slug: "installment-agreement-guide",
+    img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title: "Federal Tax Liens: Release, Withdrawal & Your Options",
+    slug: "tax-lien-guide",
+    img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+  },
+];
 
 export default function BlogPost() {
   const { slug } = useParams();
+  const location = useLocation();
   const blog = blogPosts[slug || ""];
+
+  const seo = useMemo((): PageSeoConfig => {
+    if (blog) {
+      const desc =
+        blog.overview.length > 158 ? `${blog.overview.slice(0, 155).trimEnd()}…` : blog.overview;
+      const og = blog.featuredImage.startsWith("http") ? blog.featuredImage : DEFAULT_OG_IMAGE;
+      return {
+        title: `${blog.title} | ATTAX Solutions`,
+        description: desc,
+        path: `/resources/${blog.slug}`,
+        ogImage: og,
+        ogType: "article",
+        article: {
+          publishedTime: "2026-03-01T12:00:00.000Z",
+          modifiedTime: "2026-03-28T12:00:00.000Z",
+          section: blog.category,
+        },
+        breadcrumbs: [
+          { name: "Home", path: "/" },
+          { name: "Resources", path: "/resources" },
+          { name: blog.title, path: `/resources/${blog.slug}` },
+        ],
+      };
+    }
+    return {
+      title: "Article Not Found | ATTAX Solutions",
+      description:
+        "This tax guide could not be found. Browse the ATTAX resource library for IRS debt relief articles and tools.",
+      path: location.pathname || "/resources",
+      noindex: true,
+      breadcrumbs: [
+        { name: "Home", path: "/" },
+        { name: "Resources", path: "/resources" },
+        { name: "Not found", path: location.pathname },
+      ],
+    };
+  }, [blog, location.pathname]);
+
+  usePageSeo(seo);
+
+  const relatedGuides = useMemo(
+    () => RELATED_TAX_GUIDES.filter((g) => g.slug !== slug).slice(0, 4),
+    [slug]
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,13 +111,29 @@ export default function BlogPost() {
 
   if (!blog) {
     return (
-      <div className="w-full min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold mb-4">Blog Post Not Found</h1>
-          <Link to="/resources" className="text-[#1d1ee3] hover:underline flex items-center gap-2 justify-center">
-            <ArrowLeft size={18} /> Back to Resources
-          </Link>
+      <div className="w-full min-h-screen flex flex-col bg-white">
+        <AttaxNavbar />
+        <div className="flex-1 flex items-center justify-center px-6 pt-28 pb-20">
+          <div className="text-center max-w-md">
+            <h1
+              className="text-[28px] md:text-[34px] font-semibold text-[#0a1628] mb-4"
+              style={{ fontFamily: "'Inter Tight', sans-serif" }}
+            >
+              Article not found
+            </h1>
+            <p className="text-[#0a1628]/60 mb-8 text-[15px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+              That guide may have moved. Explore the resource library or contact us for help.
+            </p>
+            <Link
+              to="/resources"
+              className="text-[#1d1ee3] hover:underline inline-flex items-center gap-2 justify-center font-medium"
+              style={{ fontFamily: "'Inter Tight', sans-serif" }}
+            >
+              <ArrowLeft size={18} /> Back to Resources
+            </Link>
+          </div>
         </div>
+        <AttaxFooter />
       </div>
     );
   }
@@ -58,7 +168,7 @@ export default function BlogPost() {
               </div>
               <div className="flex items-center gap-2">
                 <Clock size={16} className="text-[#1d1ee3]" />
-                <span>12 min read</span>
+                <span>{blog.readTime ?? "12 min read"}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#1d1ee3]" />
@@ -75,6 +185,7 @@ export default function BlogPost() {
             >
               <ImageWithFallback
                 src={blog.featuredImage}
+                fallbackSrc={heroFallbackForSlug(blog.slug)}
                 alt={blog.title}
                 className="w-full h-full object-cover"
               />
@@ -119,7 +230,12 @@ export default function BlogPost() {
                 </p>
                 <div className="flex items-center gap-4 relative z-10">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
-                    <img src={blog.quote.avatar} alt={blog.quote.author} className="w-full h-full object-cover" />
+                    <ImageWithFallback
+                      src={blog.quote.avatar}
+                      fallbackSrc={quoteAvatarFallback}
+                      alt=""
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-bold text-[#0a1628]">{blog.quote.author}</p>
@@ -145,6 +261,7 @@ export default function BlogPost() {
                 <div className="w-full aspect-[16/9] rounded-[24px] overflow-hidden mb-16 shadow-lg">
                   <ImageWithFallback
                     src={blog.interstitialImage}
+                    fallbackSrc={interstitialFallbackForSlug(blog.slug)}
                     alt="Process context"
                     className="w-full h-full object-cover"
                   />
@@ -186,40 +303,33 @@ export default function BlogPost() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  title: "The Strategic Edge: Insights on Tax Consultation for You",
-                  img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400"
-                },
-                {
-                  title: "The Growth Blueprint: Strategies and Solutions that Help You",
-                  img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
-                },
-                {
-                  title: "The Leadership Resolve: Insights and Guidance that Help You",
-                  img: "https://images.unsplash.com/photo-8139kVrPU5o?auto=format&fit=crop&q=80&w=400"
-                },
-                {
-                  title: "The Strategy Hub: Guidance and Insights for Modern Business",
-                  img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=400"
-                }
-              ].map((item, i) => (
-                <motion.div 
-                  key={i}
+              {relatedGuides.map((item, i) => (
+                <motion.div
+                  key={item.slug}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className="group"
                 >
-                  <div className="aspect-[4/3] rounded-[16px] overflow-hidden mb-6">
-                    <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  </div>
-                  <h4 className="text-[18px] leading-[1.4] text-[#0a1628] font-semibold mb-4 group-hover:text-[#1d1ee3] transition-colors">
-                    {item.title}
-                  </h4>
-                  <Link to="#" className="flex items-center gap-2 text-[#1d1ee3] text-[14px] font-bold">
-                    Read More <div className="w-6 h-6 bg-[#1d1ee3] rounded-full flex items-center justify-center text-white text-[10px]"><ArrowUpRight size={12} /></div>
+                  <Link to={`/resources/${item.slug}`} className="block">
+                    <div className="aspect-[4/3] rounded-[16px] overflow-hidden mb-6">
+                      <ImageWithFallback
+                        src={item.img}
+                        fallbackSrc={heroFallbackForSlug(item.slug)}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <h4 className="text-[18px] leading-[1.4] text-[#0a1628] font-semibold mb-4 group-hover:text-[#1d1ee3] transition-colors">
+                      {item.title}
+                    </h4>
+                    <span className="inline-flex items-center gap-2 text-[#1d1ee3] text-[14px] font-bold">
+                      Read More{" "}
+                      <span className="w-6 h-6 bg-[#1d1ee3] rounded-full flex items-center justify-center text-white">
+                        <ArrowUpRight size={12} />
+                      </span>
+                    </span>
                   </Link>
                 </motion.div>
               ))}

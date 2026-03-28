@@ -1,40 +1,60 @@
-import { motion } from "motion/react";
-import { ArrowUpRight, Shield, Activity, Bell, FileText } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
+import { Breadcrumbs } from "../about/Breadcrumbs";
+import clarityHeroImg from "../../../../assets/clarity-hero.webp";
+import { HERO_H1_CLASS_ON_LIGHT, HERO_H1_STYLE } from "../../../lib/heroH1";
+
+const tickerItems = [
+  {
+    title: "IRS Transcript Sync",
+    desc: "100% coverage — every notice, lien, and collection action captured in real time.",
+  },
+  {
+    title: "Proactive Monitoring",
+    desc: "24/7 account surveillance so you're never the last to know.",
+  },
+];
 
 export function ClarityHeroV2() {
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setActiveIdx((i) => (i + 1) % tickerItems.length);
+    }, 3500);
+    return () => clearInterval(t);
+  }, []);
+
   return (
     <section className="relative pt-[100px] md:pt-[160px] pb-[60px] md:pb-[120px] bg-white overflow-hidden">
-      <div className="max-w-[1200px] mx-auto relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <Breadcrumbs current="ATTAX Clarity" light />
+        </motion.div>
 
         {/* Top Content Layout */}
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-12 mb-12 md:mb-16">
+        <div className="relative z-20 flex flex-col lg:flex-row items-start justify-between gap-12 mb-12 md:mb-16 lg:mb-6">
 
           {/* Left: Heading & Description */}
           <div className="max-w-[720px]">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-[#1d1ee3] text-[14px] md:text-[16px] font-medium mb-4"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
-            >
-              ATTAX Clarity
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-[34px] md:text-[44px] lg:text-[72px] leading-[1.1] tracking-[-0.02em] text-[#03030f] font-semibold mb-6 md:mb-8"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
+              className={`${HERO_H1_CLASS_ON_LIGHT} mb-7`}
+              style={HERO_H1_STYLE}
             >
               Know Before the <br />
-              <div className="flex items-center gap-3">
-                <span>IRS</span>
-                <span className="italic text-[#1d1ee3]" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  Acts.
-                </span>
-              </div>
+              IRS{" "}
+              <span className="italic font-normal text-[#1d1ee3]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                Acts.
+              </span>
             </motion.h1>
 
             <motion.p
@@ -44,7 +64,7 @@ export function ClarityHeroV2() {
               className="text-[14px] md:text-[16px] lg:text-[20px] leading-[1.6] text-[rgba(3,3,15,0.7)] max-w-[620px] mb-8 md:mb-12"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              ATTAX Clarity is a proactive monitoring and scoring system, built so you're never caught off guard by your tax standing again.
+              ATTAX Clarity is a proactive monitoring and scoring system — built so you're never caught off guard by your tax standing again.
             </motion.p>
 
             <motion.div
@@ -66,33 +86,66 @@ export function ClarityHeroV2() {
             </motion.div>
           </div>
 
-          {/* Right: Statistics Card */}
+          {/* Right: Stats Card — cream; ~20% of card height over the hero image (tune lg:mb negative margin). */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-full lg:max-w-[380px] shrink-0"
+            className="hidden lg:block w-full lg:max-w-[340px] shrink-0 relative self-end lg:mb-[-3.5rem] xl:mb-[-4rem]"
           >
-            <div className="bg-[#0a1628] rounded-[24px] p-8 text-white">
-              <p className="text-white/40 text-[12px] uppercase tracking-widest font-medium mb-8" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                Clarity Dashboard Preview
-              </p>
-              <div className="space-y-6">
-                {[
-                  { value: "14", unit: "days", label: "Average advance IRS warning", color: "#a5b4fc" },
-                  { value: "100%", unit: "", label: "IRS transcript sync coverage", color: "#6ee7b7" },
-                  { value: "24/7", unit: "", label: "Proactive account monitoring", color: "#fcd34d" },
-                ].map((stat, i) => (
-                  <div key={i} className="flex items-center gap-5 pb-6 border-b border-white/10 last:border-0 last:pb-0">
-                    <div className="w-[50px] h-[50px] rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                      <span className="text-[11px] font-bold text-white/60" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{stat.unit || "★"}</span>
-                    </div>
-                    <div>
-                      <p className="text-[28px] font-bold leading-none mb-1" style={{ color: stat.color, fontFamily: "'Inter Tight', sans-serif" }}>{stat.value}</p>
-                      <p className="text-white/50 text-[13px] leading-[1.4]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{stat.label}</p>
-                    </div>
-                  </div>
-                ))}
+            <div
+              className="bg-[#f7f7f4] rounded-[20px] overflow-hidden"
+              style={{
+                boxShadow: "0 28px 70px rgba(10,22,40,0.14), 0 12px 32px rgba(10,22,40,0.08)",
+                border: "1px solid rgba(10,22,40,0.06)",
+              }}
+            >
+              {/* Blue top accent */}
+              <div className="h-[3px] w-full bg-[#1d1ee3]" />
+
+              <div className="p-8">
+                {/* Hero stat */}
+                <div className="pb-6 border-b border-[#0a1628]/10">
+                  <p
+                    className="text-[72px] leading-none font-bold text-[#0a1628]"
+                    style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                  >
+                    14
+                  </p>
+                  <p
+                    className="text-[15px] text-[#0a1628]/55 mt-2 leading-snug"
+                    style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                  >
+                    days on average before{" "}
+                    <span className="italic" style={{ fontFamily: "'Playfair Display', serif" }}>IRS warning</span>
+                  </p>
+                </div>
+
+                {/* Ticker — airport-style vertical scroll */}
+                <div className="pt-6 overflow-hidden" style={{ minHeight: 80 }}>
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeIdx}
+                      initial={{ y: 36, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -36, opacity: 0 }}
+                      transition={{ duration: 0.45, ease: "easeInOut" }}
+                    >
+                      <p
+                        className="text-[17px] font-semibold text-[#0a1628] mb-1.5"
+                        style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                      >
+                        {tickerItems[activeIdx].title}
+                      </p>
+                      <p
+                        className="text-[13px] text-[#0a1628]/50 leading-[1.55]"
+                        style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                      >
+                        {tickerItems[activeIdx].desc}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -103,39 +156,14 @@ export function ClarityHeroV2() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="relative rounded-[16px] overflow-hidden h-[220px] sm:h-[360px] md:h-[480px] lg:aspect-[1140/580] lg:h-auto mb-12 md:mb-24"
+          className="relative z-0 rounded-[16px] overflow-hidden h-[220px] sm:h-[360px] md:h-[480px] lg:aspect-[1140/580] lg:h-auto"
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=1080"
-            alt="Clarity Solution Celebration"
+            src={clarityHeroImg}
+            alt="ATTAX Clarity — IRS Monitoring Platform"
             className="w-full h-full object-cover"
           />
         </motion.div>
-
-        {/* Features Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8">
-          {[
-            { label: "Transcript Sync", icon: FileText },
-            { label: "Notice Analysis", icon: Bell },
-            { label: "Score Calculation", icon: Activity },
-            { label: "Crisis Prevention", icon: Shield }
-          ].map((item, i) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 + i * 0.1 }}
-              className="pt-6 border-t border-[#eaeaff] flex flex-col items-start gap-4 group"
-            >
-              <div className="w-[50px] h-[50px] rounded-full bg-[#eaeaff] flex items-center justify-center transition-transform group-hover:scale-110">
-                <item.icon size={22} className="text-[#1d1ee3]" />
-              </div>
-              <span className="text-[14px] md:text-[16px] lg:text-[20px] text-[#03030f] font-medium" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                {item.label}
-              </span>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

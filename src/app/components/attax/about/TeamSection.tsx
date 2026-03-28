@@ -25,16 +25,16 @@ export function TeamSection() {
                 [Our HQ]
               </span>
               <h2 className="text-[32px] md:text-[48px] lg:text-[50px] leading-[1.15] text-[#03030f] mb-6 whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}>
-                Newport Beach,{" "}
+                Irvine,{" "}
                 <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>California</span>
               </h2>
               <p className="text-[16px] md:text-[18px] text-[#03030f]/60 leading-[1.8] mb-8" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                Our headquarters in Newport Beach is designed for focus, strategy, and collaborative problem-solving. We believe a professional environment produces professional results — for our team and for every client we represent.
+                Our headquarters in Irvine is designed for focus, strategy, and collaborative problem-solving. We believe a professional environment produces professional results — for our team and for every client we represent.
               </p>
 
               <div className="flex flex-col gap-3 mb-10">
                 {[
-                  "Newport Beach, CA — our permanent home base",
+                  "Irvine, CA — our permanent home base",
                   "Collaborative, focused strategy environment",
                   "Serving clients across all 50 states",
                 ].map((item) => (
@@ -73,7 +73,7 @@ export function TeamSection() {
               <div className="relative rounded-[28px] overflow-hidden h-[420px] md:h-[540px]">
                 <ImageWithFallback
                   src={officeImg}
-                  alt="ATTAX Solutions Newport Beach HQ"
+                  alt="ATTAX Solutions Irvine HQ"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
@@ -94,7 +94,7 @@ export function TeamSection() {
                     className="text-[#03030f] font-semibold text-[16px] lg:text-[18px] leading-tight whitespace-nowrap"
                     style={{ fontFamily: "'Inter Tight', sans-serif" }}
                   >
-                    Newport Beach HQ
+                    Irvine HQ
                   </p>
                   <p
                     className="text-[#03030f]/50 text-[12px] lg:text-[14px] leading-tight whitespace-nowrap"

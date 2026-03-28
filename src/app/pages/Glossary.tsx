@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
 import { AttaxNavbar } from "../components/attax/AttaxNavbar";
 import { AttaxFooter } from "../components/attax/AttaxFooter";
 import { AttaxCtaBanner } from "../components/attax/CtaBannerSection";
 import { Link } from "react-router";
 import { ArrowUpRight, Search } from "lucide-react";
+import { HERO_H1_CLASS_ON_LIGHT, HERO_H1_STYLE } from "../lib/heroH1";
+import { usePageSeo } from "../lib/pageSeo";
 
 const terms = [
   {
@@ -235,27 +237,16 @@ const activeLetters = new Set(terms.map(g => g.letter));
 export default function Glossary() {
   const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    document.title = "Tax Glossary — Common IRS Terms Explained | ATTAX Solutions";
-    const meta = document.querySelector("meta[name='description']");
-    if (meta) {
-      meta.setAttribute("content", "Plain-English definitions of common IRS and tax resolution terms — from abatement and levies to Offer in Compromise and tax liens. Know what you're dealing with.");
-    } else {
-      const m = document.createElement("meta");
-      m.name = "description";
-      m.content = "Plain-English definitions of common IRS and tax resolution terms — from abatement and levies to Offer in Compromise and tax liens. Know what you're dealing with.";
-      document.head.appendChild(m);
-    }
-    const canonical = document.querySelector("link[rel='canonical']");
-    if (canonical) {
-      canonical.setAttribute("href", "https://attaxsolutions.com/glossary");
-    } else {
-      const l = document.createElement("link");
-      l.rel = "canonical";
-      l.href = "https://attaxsolutions.com/glossary";
-      document.head.appendChild(l);
-    }
-  }, []);
+  usePageSeo({
+    title: "Tax Glossary — Common IRS Terms Explained | ATTAX Solutions",
+    description:
+      "Plain-English definitions of common IRS and tax resolution terms — from abatement and levies to Offer in Compromise and tax liens. Know what you're dealing with.",
+    path: "/glossary",
+    breadcrumbs: [
+      { name: "Home", path: "/" },
+      { name: "Tax Glossary", path: "/glossary" },
+    ],
+  });
 
   const filtered = query.trim()
     ? terms.map(group => ({
@@ -286,8 +277,8 @@ export default function Glossary() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 }}
-              className="text-[36px] md:text-[52px] lg:text-[64px] leading-[1.1] text-[#0a1628] font-semibold mb-6"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
+              className={`${HERO_H1_CLASS_ON_LIGHT} mb-7`}
+              style={HERO_H1_STYLE}
             >
               IRS Terms,{" "}
               <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>

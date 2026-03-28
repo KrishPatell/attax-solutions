@@ -3,8 +3,21 @@ import { AttaxNavbar } from "../components/attax/AttaxNavbar";
 import { AttaxFooter } from "../components/attax/AttaxFooter";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
+import { HERO_H1_CLASS_ON_LIGHT, HERO_H1_STYLE } from "../lib/heroH1";
+import { usePageSeo } from "../lib/pageSeo";
 
 export default function Privacy() {
+  usePageSeo({
+    title: "Privacy Policy | ATTAX Solutions",
+    description:
+      "How ATTAX Solutions collects, uses, and protects your personal information when you use our website and tax resolution services. Last updated March 2026.",
+    path: "/privacy",
+    breadcrumbs: [
+      { name: "Home", path: "/" },
+      { name: "Privacy Policy", path: "/privacy" },
+    ],
+  });
+
   return (
     <div className="min-h-screen bg-[#fcfdff] selection:bg-[#1d1ee3]/10 selection:text-[#1d1ee3]">
       <AttaxNavbar />
@@ -23,8 +36,8 @@ export default function Privacy() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-[48px] lg:text-[64px] leading-[1.1] text-[#0a1628] mb-8" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}>
-              Privacy <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic" }}>Policy</span>
+            <h1 className={`${HERO_H1_CLASS_ON_LIGHT} mb-7`} style={HERO_H1_STYLE}>
+              Privacy <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontWeight: 400 }}>Policy</span>
             </h1>
             
             <p className="text-[18px] text-[#0a1628]/60 mb-12" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
@@ -81,11 +94,11 @@ export default function Privacy() {
               <section>
                 <h2 className="text-[24px] text-[#0a1628] font-bold mb-4">6. Contact Us</h2>
                 <p>
-                  If you have questions about this Privacy Policy, please contact our Newport Beach, CA headquarters:
+                  If you have questions about this Privacy Policy, please contact our Irvine, CA headquarters:
                 </p>
                 <div className="mt-4 p-6 bg-white rounded-xl border border-[#eaeeff] shadow-sm">
                   <p className="font-bold text-[#1d1ee3]">ATTAX Solutions LLC</p>
-                  <p>Newport Beach, CA</p>
+                  <p>Irvine, CA</p>
                   <p>Phone: +1 (855) 829-2829</p>
                   <p>Email: info@attaxsolutions.com</p>
                 </div>

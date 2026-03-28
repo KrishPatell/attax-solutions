@@ -1,15 +1,22 @@
-import { useEffect } from "react";
 import { motion } from "motion/react";
 import { AttaxNavbar } from "../components/attax/AttaxNavbar";
 import { AttaxFooter } from "../components/attax/AttaxFooter";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
+import { HERO_H1_CLASS_ON_LIGHT, HERO_H1_STYLE } from "../lib/heroH1";
+import { usePageSeo } from "../lib/pageSeo";
 
 export default function Disclaimer() {
-  useEffect(() => {
-    document.title = "Website Disclaimer | ATTAX Solutions";
-    window.scrollTo(0, 0);
-  }, []);
+  usePageSeo({
+    title: "Website Disclaimer | ATTAX Solutions",
+    description:
+      "Important disclaimers for ATTAX Solutions — results vary, no guarantees on IRS outcomes, independent company, and limitations of website information. Last updated March 2026.",
+    path: "/disclaimer",
+    breadcrumbs: [
+      { name: "Home", path: "/" },
+      { name: "Disclaimer", path: "/disclaimer" },
+    ],
+  });
 
   return (
     <div className="min-h-screen bg-[#fcfdff] selection:bg-[#1d1ee3]/10 selection:text-[#1d1ee3]">
@@ -23,9 +30,9 @@ export default function Disclaimer() {
           </nav>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-[48px] lg:text-[64px] leading-[1.1] text-[#0a1628] mb-8" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}>
+            <h1 className={`${HERO_H1_CLASS_ON_LIGHT} mb-7`} style={HERO_H1_STYLE}>
               Website{" "}
-              <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic" }}>Disclaimer</span>
+              <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontWeight: 400 }}>Disclaimer</span>
             </h1>
             <p className="text-[18px] text-[#0a1628]/60 mb-12" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
               Last updated: March 27, 2026

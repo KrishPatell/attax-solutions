@@ -1,9 +1,8 @@
-import { createBrowserRouter, Outlet } from "react-router";
+import { useEffect } from "react";
+import { createBrowserRouter, Outlet, useLocation } from "react-router";
 import ATTAX from "./pages/ATTAX";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
-import { HomeV1 } from "./pages/HomeV1";
-import { HomeV2 } from "./pages/HomeV2";
 import Clarity from "./pages/Clarity";
 import Resources from "./pages/Resources";
 import BlogPost from "./pages/BlogPost";
@@ -14,11 +13,57 @@ import Privacy from "./pages/Privacy";
 import Glossary from "./pages/Glossary";
 import Disclaimer from "./pages/Disclaimer";
 import CaliforniaPrivacy from "./pages/CaliforniaPrivacy";
+import Sitemap from "./pages/Sitemap";
+import NotFound from "./pages/NotFound";
+
+/**
+ * SPA navigation does not reset scroll. Scroll to top on pathname change; if the URL has a
+ * hash, scroll that element into view after paint (retries briefly for lazy-mounted sections).
+ */
+function RootLayout() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      if (!id) {
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        return;
+      }
+      let cancelled = false;
+      const tryHash = () => {
+        if (cancelled) return true;
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          return true;
+        }
+        return false;
+      };
+      if (!tryHash()) {
+        const t = window.setTimeout(() => tryHash(), 120);
+        const t2 = window.setTimeout(() => tryHash(), 320);
+        return () => {
+          cancelled = true;
+          clearTimeout(t);
+          clearTimeout(t2);
+        };
+      }
+      return () => {
+        cancelled = true;
+      };
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname, location.hash]);
+
+  return <Outlet />;
+}
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: Outlet,
+    Component: RootLayout,
     children: [
       {
         index: true,
@@ -77,16 +122,12 @@ export const router = createBrowserRouter([
         Component: Privacy,
       },
       {
-        path: "optimo",
-        Component: HomeV1,
-      },
-      {
-        path: "optimo-v2",
-        Component: HomeV2,
+        path: "sitemap",
+        Component: Sitemap,
       },
       {
         path: "*",
-        Component: ATTAX,
+        Component: NotFound,
       },
     ],
   },

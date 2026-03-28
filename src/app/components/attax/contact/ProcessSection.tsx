@@ -21,7 +21,7 @@ export function ProcessSection() {
     {
       icon: CheckCircle2,
       title: "Decision",
-      description: "You decide whether to move forward with our representation. There is zero obligation and no high-pressure sales.",
+      description: "You decide whether to move forward with our representation. You decide freely, with a full understanding of your options.",
     }
   ];
 

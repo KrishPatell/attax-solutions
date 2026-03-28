@@ -1,124 +1,192 @@
-import { motion } from "motion/react";
-import { ArrowUpRight, TrendingUp, Zap } from "lucide-react";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
-import { AttaxTestimonialCard } from "../AttaxTestimonialCard";
-import handlingCasesImg from "../../../../assets/handling-cases.webp";
+import clarityScoreCardImg from "../../../../assets/tab-total-transparency.jpg";
+
+/** Same interaction pattern as [ValuesSection.tsx](src/app/components/ValuesSection.tsx); copy is ATTAX Score / tax health. */
+const gradeTabs = [
+  {
+    id: "filing",
+    label: "Filing History",
+    content:
+      "Late or missing returns raise your risk score. We track your compliance across all years on file so gaps in your filing history never hide in the background.",
+  },
+  {
+    id: "payment",
+    label: "Payment Status",
+    content:
+      "Outstanding balances and deferred liabilities all factor into your overall tax health. We surface what you owe, what’s in limbo, and what the IRS sees the same day.",
+  },
+  {
+    id: "penalty",
+    label: "Penalty Accrual",
+    content:
+      "Failure-to-pay penalties compound daily. We flag them before they escalate so you can act while options like abatement or resolution programs still matter.",
+  },
+  {
+    id: "liens",
+    label: "Liens & Levies",
+    content:
+      "Federal tax liens and account levies are the IRS’s most aggressive actions. We detect them immediately and fold them into your score so nothing hits by surprise.",
+  },
+] as const;
 
 export function CoreValuesSection() {
-  return (
-    <section className="py-[60px] md:py-[120px] bg-white overflow-hidden">
-      <div className="max-w-[1200px] mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-[60px]">
+  const [active, setActive] = useState<string>(gradeTabs[0].id);
+  const ref = useRef<HTMLElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
-          {/* Left: Image with Testimonial Card */}
+  return (
+    <section
+      ref={ref}
+      className="py-[60px] md:py-[120px] bg-white"
+    >
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
+        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+          {/* Left: sticky visual + CTA (pattern from ValuesSection) */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="flex-1 relative w-full lg:max-w-[540px] h-[300px] md:h-[480px] lg:h-[620px] rounded-[12px] overflow-hidden"
+            initial={{ opacity: 0, x: -28 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.65 }}
+            className="w-full lg:w-[min(440px,42%)] shrink-0 lg:sticky lg:top-28 lg:self-start"
           >
-            <ImageWithFallback
-              src={handlingCasesImg}
-              alt="ATTAX Collaboration"
-              width={1292}
-              height={734}
-              className="w-full h-full object-cover rounded-[12px]"
-            />
-            
-            {/* Testimonial Card Overlay */}
-            <div className="absolute bottom-8 left-8 right-8 max-w-[361px]">
-              <AttaxTestimonialCard
-                quote="ATTAX Clarity helped our business stay compliant with proactive monitoring and strategic IRS insight."
-                name="Zayan Daniel"
-                title="Head of Business Strategy"
-                photo="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=facearea&facepad=2&w=80&h=80&q=80"
+            <div className="relative w-full aspect-[4/5] max-h-[560px] rounded-[20px] overflow-hidden shadow-[0_20px_50px_rgba(10,22,40,0.08)]">
+              <ImageWithFallback
+                src={clarityScoreCardImg}
+                alt="Transparent view of tax account monitoring and ATTAX Score insights"
+                className="absolute inset-0 w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-7 md:p-9">
+                <p
+                  className="text-white/90 text-[13px] uppercase tracking-widest font-bold mb-3"
+                  style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                >
+                  ATTAX Clarity
+                </p>
+                <h3
+                  className="text-[26px] md:text-[32px] leading-[1.15] text-white mb-6"
+                  style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
+                >
+                  What We Track.{" "}
+                  <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    What It Means.
+                  </span>
+                </h3>
+                <motion.button
+                  type="button"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => document.querySelector("#clarity-waitlist")?.scrollIntoView({ behavior: "smooth" })}
+                  className="flex items-center gap-3 bg-white rounded-[50px] pl-6 pr-2 py-2 w-fit group"
+                >
+                  <span
+                    className="text-[#0a1628] text-[15px] md:text-[16px]"
+                    style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
+                  >
+                    Join the Waitlist
+                  </span>
+                  <div className="w-11 h-11 bg-[#1d1ee3] rounded-full flex items-center justify-center group-hover:bg-[#1618c7] transition-colors duration-200">
+                    <ArrowUpRight size={18} color="white" />
+                  </div>
+                </motion.button>
+              </div>
             </div>
           </motion.div>
 
-          {/* Right: Content */}
-          <div className="flex-1 flex flex-col gap-12">
+          {/* Right: heading + intro + tabs */}
+          <motion.div
+            initial={{ opacity: 0, x: 28 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.65, delay: 0.08 }}
+            className="flex-1 min-w-0 flex flex-col gap-8 lg:gap-10 lg:pt-1"
+          >
             <div>
-              <motion.span 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="text-[#1d1ee3] text-[16px] font-medium block mb-3" 
+              <span
+                className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
-                Core Value
-              </motion.span>
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-[32px] md:text-[40px] lg:text-[52px] leading-[1.1] text-[#03030f] font-medium mb-6"
-                style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                [ATTAX Score]
+              </span>
+              <h2
+                className="text-[32px] md:text-[42px] lg:text-[48px] leading-[1.12] text-[#0a1628] mb-5"
+                style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
-                The Value <span className="italic text-[#03030f]" style={{ fontFamily: "'Playfair Display', serif" }}>Behind</span>
-              </motion.h2>
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-[14px] md:text-[16px] lg:text-[18px] leading-[1.6] text-[rgba(3,3,15,0.7)] max-w-[500px]"
-                style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                How We Grade{" "}
+                <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  Your Tax Health
+                </span>
+              </h2>
+              <p
+                className="text-[15px] md:text-[17px] text-[#0a1628]/60 leading-[1.7] max-w-[560px]"
+                style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
               >
-                The value behind our tax relief work goes far beyond simple resolutions. It's rooted in how we listen, collaborate, and protect every client's financial future.
-              </motion.p>
+                Your ATTAX Score is a single number from 0 to 100 — a real-time picture of your IRS standing. Select a
+                factor below to see how it shapes your score and what we monitor for you.
+              </p>
             </div>
 
             <div className="flex flex-col gap-6">
-              {[
-                { 
-                  title: "Strategic Alignment", 
-                  desc: "We work closely with you to align every action with your long-term tax compliance.",
-                  icon: TrendingUp
-                },
-                { 
-                  title: "Long-Term Impact", 
-                  desc: "We deliver sustainable tax relief solutions that drive stability and growth.",
-                  icon: Zap
-                }
-              ].map((feature, i) => (
-                <motion.div 
-                  key={feature.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 * i }}
-                  viewport={{ once: true }}
-                  className="group flex items-center gap-4 py-4 border-t border-[rgba(0,0,0,0.07)] last:border-b"
-                >
-                  <div className="w-12 h-12 bg-[#eaeaff] rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <feature.icon size={22} className="text-[#1d1ee3]" />
-                  </div>
-                  <div>
-                    <h4 className="text-[16px] md:text-[18px] lg:text-[20px] font-medium text-[#03030f]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{feature.title}</h4>
-                    <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[rgba(3,3,15,0.7)]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>{feature.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+              <div className="flex flex-wrap gap-x-1 gap-y-0 border-b border-[rgba(10,22,40,0.14)]">
+                {gradeTabs.map((tab) => {
+                  const isActive = active === tab.id;
+                  return (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      onClick={() => setActive(tab.id)}
+                      className="flex items-center gap-2 pb-3.5 px-3 -mx-1 first:pl-0 relative text-left touch-manipulation"
+                      aria-pressed={isActive}
+                      aria-current={isActive ? "true" : undefined}
+                    >
+                      <motion.span
+                        aria-hidden
+                        animate={{ opacity: isActive ? 1 : 0, scale: isActive ? 1 : 0.6 }}
+                        transition={{ duration: 0.2 }}
+                        className="w-2 h-2 rounded-full bg-[#1d1ee3] shrink-0"
+                      />
+                      <span
+                        className="text-[15px] md:text-[17px] transition-colors duration-200 whitespace-nowrap"
+                        style={{
+                          fontFamily: "'Inter Tight', sans-serif",
+                          fontWeight: isActive ? 600 : 500,
+                          color: isActive ? "#0a1628" : "rgba(10,22,40,0.45)",
+                        }}
+                      >
+                        {tab.label}
+                      </span>
+                      {isActive && (
+                        <motion.div
+                          layoutId="clarity-grade-tab-underline"
+                          className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#1d1ee3] rounded-full"
+                          transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                        />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-            >
-              <button
-                onClick={() => document.querySelector("#clarity")?.scrollIntoView({ behavior: "smooth" })}
-                className="self-start group relative bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 inline-flex items-center gap-5 hover:bg-[#1618c7] transition-all"
-              >
-                <span className="text-white text-[14px] md:text-[16px] font-medium whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Get Started
-                </span>
-                <div className="w-10 h-10 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
-                  <ArrowUpRight size={18} className="text-[#1d1ee3]" />
-                </div>
-              </button>
-            </motion.div>
-          </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.25 }}
+                  className="min-h-[4.5rem]"
+                >
+                  <p
+                    className="text-[15px] md:text-[16px] leading-[1.65] text-[#0a1628]/65"
+                    style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
+                  >
+                    {gradeTabs.find((t) => t.id === active)?.content}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -37,11 +37,11 @@ export function FeaturedResource() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-t border-[rgba(0,0,0,0.05)] pt-6 md:pt-10">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-[#1d1ee3] rounded-full flex items-center justify-center text-white font-bold text-[18px]">
-                  OS
+                  AT
                 </div>
                 <div>
-                  <h4 className="text-[#0a1628] font-semibold text-[16px]">Omar S.</h4>
-                  <p className="text-[rgba(10,22,40,0.6)] text-[14px]">Founder & Principal Tax Specialist</p>
+                  <h4 className="text-[#0a1628] font-semibold text-[16px]">ATTAX Solutions</h4>
+                  <p className="text-[rgba(10,22,40,0.6)] text-[14px]">Tax Specialist Team</p>
                 </div>
               </div>
 

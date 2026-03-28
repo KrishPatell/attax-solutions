@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { ShieldCheck, HeartHandshake, Scale } from "lucide-react";
-import { AttaxTestimonialCard } from "../AttaxTestimonialCard";
 
 const commitments = [
   {
@@ -20,21 +19,6 @@ const commitments = [
   }
 ];
 
-const testimonials = [
-  {
-    quote: "ATTAX didn't promise me the world; they promised me they would work hard and be honest. They delivered on both. Settling my $42k debt was the weight off my shoulders I'd been carrying for years.",
-    author: "Robert M.",
-    role: "Orange County Business Owner",
-    photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&q=80&w=200",
-  },
-  {
-    quote: "The transparency was what sold me. I'd spoken to other firms that felt like sales mills. ATTAX felt like a law firm. Professional, direct, and actually effective.",
-    author: "Sarah J.",
-    role: "Recent Client",
-    photo: "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=facearea&facepad=2&q=80&w=200",
-  }
-];
-
 export function ClientAssurance() {
   return (
     <section id="client-assurance" className="bg-[#0a1628] py-[60px] md:py-[120px] overflow-hidden relative">
@@ -42,87 +26,68 @@ export function ClientAssurance() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1d1ee3]/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-5 md:px-0 relative z-10">
-        <div className="grid grid-cols-12 gap-8 md:gap-16 items-start">
-          <div className="col-span-12 lg:col-span-6">
+        <div className="mb-12 md:mb-16">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-[#a5b4fc] text-[14px] uppercase tracking-widest font-bold block mb-4"
+            style={{ fontFamily: "'Inter Tight', sans-serif" }}
+          >
+            [Client Assurance]
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.05 }}
+            className="text-[32px] md:text-[48px] lg:text-[50px] leading-[1.2] md:leading-[1.1] text-white max-w-[700px]"
+            style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
+          >
+            Our Client{" "}
+            <span className="italic font-normal text-[#a5b4fc]" style={{ fontFamily: "'Playfair Display', serif" }}>
+              Assurance
+            </span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-[15px] md:text-[18px] text-white/55 leading-[1.7] mt-6 max-w-[600px] md:max-w-[min(56rem,100%)] lg:max-w-[min(64rem,100%)] text-pretty"
+            style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
+          >
+            We do not use the word "guarantee" when it comes to legal outcomes. The IRS is a complex government agency and no firm can ethically promise a specific result.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {commitments.map((item, idx) => (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              key={idx}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="bg-white/5 border border-white/10 rounded-[20px] p-7 hover:bg-white/[0.08] transition-colors"
             >
-              <motion.span
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-[#a5b4fc] text-[14px] uppercase tracking-widest font-bold block mb-4"
-                style={{ fontFamily: "'Inter Tight', sans-serif" }}
-              >
-                [Client Assurance]
-              </motion.span>
-              <h2
-                className="text-[32px] md:text-[48px] lg:text-[50px] leading-[1.2] md:leading-[1.1] text-white mb-6 md:mb-8"
+              <div className="w-12 h-12 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-[#a5b4fc] mb-6">
+                <item.icon size={20} />
+              </div>
+              <h3
+                className="text-white text-[20px] mb-3"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
               >
-                Our Client{" "}
-                <span className="italic font-normal text-[#a5b4fc]" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  Assurance
-                </span>
-              </h2>
+                {item.title}
+              </h3>
               <p
-                className="text-[15px] md:text-[18px] text-white/60 leading-[1.7] mb-8 md:mb-12"
+                className="text-white/50 text-[15px] leading-[1.65]"
                 style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
               >
-                We do not use the word "guarantee" when it comes to legal outcomes. The IRS is a complex government agency and no firm can ethically promise a specific result.
+                {item.description}
               </p>
-
-              <div className="space-y-8">
-                {commitments.map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className="flex gap-6"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#a5b4fc] shrink-0">
-                      <item.icon size={20} />
-                    </div>
-                    <div>
-                      <h3 
-                        className="text-white text-[20px] mb-2" 
-                        style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
-                      >
-                        {item.title}
-                      </h3>
-                      <p 
-                        className="text-white/50 text-[15px] leading-[1.6]" 
-                        style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
-                      >
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
-          </div>
-
-          <div className="col-span-12 lg:col-span-6">
-            <div className="space-y-6">
-              {testimonials.map((t, idx) => (
-                <AttaxTestimonialCard
-                  key={idx}
-                  quote={t.quote}
-                  name={t.author}
-                  title={t.role}
-                  photo={t.photo}
-                  index={idx}
-                  darkProfile
-                />
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

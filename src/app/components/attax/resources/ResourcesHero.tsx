@@ -1,28 +1,29 @@
 import { motion } from "motion/react";
+import { HERO_H1_CLASS_ON_LIGHT, HERO_H1_STYLE } from "../../../lib/heroH1";
 
 export function ResourcesHero() {
   return (
-    <section className="bg-white pt-[120px] md:pt-[180px] pb-[60px] md:pb-[80px]">
-      <div className="max-w-[1200px] mx-auto text-center">
+    <section className="bg-white pt-[120px] md:pt-[180px] pb-[40px] md:pb-[60px]">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0 text-center">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-semibold block mb-4"
+          className="text-[#1d1ee3] text-[14px] uppercase tracking-widest font-bold block mb-4"
           style={{ fontFamily: "'Inter Tight', sans-serif" }}
         >
-          Blog
+          [Resources]
         </motion.span>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-[34px] md:text-[56px] lg:text-[72px] leading-[1.1] text-[#0a1628] font-medium max-w-[900px] mx-auto mb-6"
-          style={{ fontFamily: "'Inter Tight', sans-serif" }}
+          className={`${HERO_H1_CLASS_ON_LIGHT} max-w-[860px] mx-auto mb-7`}
+          style={HERO_H1_STYLE}
         >
-          The ATTAX Insights <br />
+          Understand Your Situation{" "}
           <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Tax Resources & Blog
+            Before You Do Anything Else
           </span>
         </motion.h1>
 
@@ -30,10 +31,10 @@ export function ResourcesHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-[14px] md:text-[16px] lg:text-[18px] text-[rgba(3,3,15,0.7)] max-w-[600px] mx-auto leading-[1.7]"
+          className="text-[15px] md:text-[17px] text-[#0a1628]/55 max-w-[580px] mx-auto leading-[1.7]"
           style={{ fontFamily: "'Inter Tight', sans-serif" }}
         >
-          Expert guidance, real stories, and actionable strategies to help you navigate IRS challenges and reclaim your financial peace of mind.
+          Real information about IRS processes, tax terms, and what your notices mean — written clearly, without the legal fog.
         </motion.p>
       </div>
     </section>

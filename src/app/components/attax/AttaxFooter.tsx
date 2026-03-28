@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { motion } from "motion/react";
-import { Mail, Phone, MapPin, Send, Linkedin, Instagram, Facebook, Download } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, Download } from "lucide-react";
 import { Link } from "react-router";
 import { BrandLogo } from "./BrandLogo";
 import attaxPdf from "../../../assets/ATTAX Solutions-2.pdf";
@@ -17,11 +16,13 @@ const navColumns = [
   {
     heading: "Company",
     links: [
+      { label: "Home", to: "/" },
       { label: "About Us", to: "/about" },
       { label: "Our Process", to: "/our-process" },
       { label: "Services", to: "/services" },
       { label: "ATTAX Clarity", to: "/clarity" },
       { label: "Contact Us", to: "/contact" },
+      { label: "Sitemap", to: "/sitemap" },
     ],
   },
   {
@@ -47,11 +48,9 @@ const navColumns = [
       { label: "Client Portal", to: "https://clientportal.attaxsolutions.com", external: true },
     ],
   },
-];
+] as const;
 
 export function AttaxFooter() {
-  const [email, setEmail] = useState("");
-
   return (
     <footer id="contact" className="bg-[#0a1628] text-white">
 
@@ -108,28 +107,32 @@ export function AttaxFooter() {
 
       {/* ── Main grid ── */}
       <div className="max-w-[1200px] mx-auto px-5 md:px-0 py-14 lg:py-20">
-        <div className="grid grid-cols-12 gap-y-12 lg:gap-10">
+        <div className="grid grid-cols-12 gap-y-12 lg:gap-x-12 lg:gap-y-10 lg:items-start">
 
-          {/* Brand + contact + social */}
-          <div className="col-span-12 lg:col-span-3">
-            <div className="mb-6">
-              <BrandLogo light className="w-[140px]" />
-            </div>
-            <p
-              className="text-white/55 text-[14px] leading-[1.7] mb-8 max-w-[260px]"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
-            >
-              The fastest growing tax relief company in the nation. IRS & state tax debt resolution with integrity and precision.
-            </p>
+          {/* Brand + contact + social — column max 340px; inner stack 330px for breathing room */}
+          <div className="col-span-12 lg:col-span-4 w-full max-w-[340px]">
+            <div className="flex flex-col gap-10 max-w-[330px]">
+              <div>
+                <div className="mb-8">
+                  <BrandLogo light className="w-[140px]" />
+                </div>
+                <p
+                  className="text-white/55 text-[15px] md:text-[16px] leading-[1.7]"
+                  style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                >
+                  The fastest growing tax relief company in the nation. IRS & state tax debt resolution with integrity and precision.
+                </p>
+              </div>
 
-            {/* Contact info */}
-            <p
-              className="text-white/40 text-[11px] uppercase tracking-widest font-bold mb-3"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
-            >
-              Contact Us
-            </p>
-            <ul className="flex flex-col gap-3 mb-8">
+              {/* Contact info */}
+              <div>
+                <p
+                  className="text-white/40 text-[11px] uppercase tracking-widest font-bold mb-4"
+                  style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                >
+                  Contact Us
+                </p>
+                <ul className="flex flex-col gap-4">
               {[
                 { icon: Phone, text: "+1 (855) 829-2829", href: "tel:+18558292829" },
                 { icon: Mail, text: "info@attaxsolutions.com", href: "mailto:info@attaxsolutions.com" },
@@ -138,7 +141,7 @@ export function AttaxFooter() {
                 <li key={text}>
                   <a
                     href={href}
-                    className="flex items-center gap-2 text-white/55 text-[14px] hover:text-white transition-colors"
+                    className="flex items-center gap-2 text-white/55 text-[15px] md:text-[16px] hover:text-white transition-colors"
                     style={{ fontFamily: "'Inter Tight', sans-serif" }}
                   >
                     <Icon size={13} className="shrink-0 text-[#a5b4fc]" />
@@ -146,16 +149,18 @@ export function AttaxFooter() {
                   </a>
                 </li>
               ))}
-            </ul>
+                </ul>
+              </div>
 
-            {/* Connect */}
-            <p
-              className="text-white/40 text-[11px] uppercase tracking-widest font-bold mb-3"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
-            >
-              Connect With Us
-            </p>
-            <div className="flex gap-2 flex-wrap">
+              {/* Connect */}
+              <div>
+                <p
+                  className="text-white/40 text-[11px] uppercase tracking-widest font-bold mb-4"
+                  style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                >
+                  Connect With Us
+                </p>
+                <div className="flex gap-3 flex-wrap">
               {[
                 { href: "https://www.linkedin.com/company/attax-solutions", label: "LinkedIn", Icon: Linkedin },
                 { href: "https://www.instagram.com/attaxsolutions", label: "Instagram", Icon: Instagram },
@@ -183,79 +188,46 @@ export function AttaxFooter() {
               >
                 <TikTokIcon size={15} />
               </motion.a>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Nav columns */}
-          {navColumns.map((col) => (
-            <div key={col.heading} className="col-span-6 sm:col-span-4 lg:col-span-2">
+          {navColumns.map((col, i) => (
+            <div
+              key={col.heading}
+              className={`col-span-6 sm:col-span-4 ${i === 0 ? "lg:col-span-2" : "lg:col-span-3"}`}
+            >
               <h4
                 className="text-white/40 text-[11px] mb-5 uppercase tracking-widest font-bold"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 {col.heading}
               </h4>
-              <ul className="flex flex-col gap-2.5">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    {"external" in link && link.external ? (
-                      <a
-                        href={link.to}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white/55 text-[14px] hover:text-white transition-colors"
-                        style={{ fontFamily: "'Inter Tight', sans-serif" }}
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        to={link.to}
-                        className="text-white/55 text-[14px] hover:text-white transition-colors"
-                        style={{ fontFamily: "'Inter Tight', sans-serif" }}
-                      >
-                        {link.label}
-                      </Link>
-                    )}
-                  </li>
-                ))}
+              <ul className="flex flex-col gap-[calc(0.625rem*1.15)]">
+                {col.links.map((link) => {
+                  const linkClass =
+                    "text-white/55 text-[15px] md:text-[16px] hover:text-white transition-colors";
+                  const style = { fontFamily: "'Inter Tight', sans-serif" as const };
+
+                  return (
+                    <li key={link.label}>
+                      {"external" in link && link.external ? (
+                        <a href={link.to} target="_blank" rel="noopener noreferrer" className={linkClass} style={style}>
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link to={link.to} className={linkClass} style={style}>
+                          {link.label}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
-
-          {/* Newsletter */}
-          <div className="col-span-12 sm:col-span-8 lg:col-span-3">
-            <h4
-              className="text-white/40 text-[11px] mb-5 uppercase tracking-widest font-bold"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
-            >
-              Tax Tips Newsletter
-            </h4>
-            <p
-              className="text-white/50 text-[13px] leading-[1.65] mb-4"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
-            >
-              Monthly insights on IRS programs, deadlines, and tax relief strategies — delivered free.
-            </p>
-            <div className="flex items-center bg-white/10 rounded-full p-1.5 gap-2 overflow-hidden">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
-                className="min-w-0 flex-1 bg-transparent px-3 py-1 text-[14px] text-white placeholder:text-white/35 outline-none border-none"
-                style={{ fontFamily: "'Inter Tight', sans-serif" }}
-              />
-              <motion.button
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Subscribe to newsletter"
-                className="w-9 h-9 bg-[#1d1ee3] rounded-full flex items-center justify-center shrink-0 cursor-pointer hover:bg-[#1618c7] transition-colors"
-              >
-                <Send size={13} color="white" />
-              </motion.button>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -265,34 +237,42 @@ export function AttaxFooter() {
           <div className="space-y-5">
             <div>
               <p
-                className="text-white/35 text-[11px] uppercase tracking-widest font-bold mb-3"
+                className="text-white/45 text-[12px] md:text-[13px] uppercase tracking-widest font-bold mb-3"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 Website Disclaimer
               </p>
               <p
-                className="text-white/35 text-[12px] leading-[1.75]"
+                className="text-white/45 text-[15px] leading-[1.75]"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 Estimates and statements about program performance are based on historical results and specific client situations. Individual results will vary based on circumstances which include, but are not limited to, your financial situation and the accuracy and timeliness of the information you provide to ATTAX Solutions. We do not guarantee that your taxes owed will be reduced by a specific amount or percentage, paid off within a specific period, or that you will qualify for any IRS or state programs. Penalties and interest will continue to accrue until your tax liability is fully paid to the IRS and state.
               </p>
             </div>
             <p
-              className="text-white/30 text-[12px] leading-[1.75]"
+              className="text-white/45 text-[15px] leading-[1.75]"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
               ATTAX Solutions LLC is a private tax resolution company independent from the IRS. We are not affiliated with or endorsed by the IRS or any government agency. We are licensed tax professionals. We do not assume tax liability, make payments to taxing authorities or creditors, or provide tax, bankruptcy, accounting, or legal advice. Results vary. Nothing here constitutes legal or financial advice. For official IRS information, visit{" "}
-              <a href="https://www.irs.gov" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/50 transition-colors">IRS.gov</a>.
+              <a
+                href="https://www.irs.gov"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white/70 transition-colors text-[15px]"
+              >
+                IRS.gov
+              </a>
+              .
             </p>
             <div>
               <p
-                className="text-white/35 text-[11px] uppercase tracking-widest font-bold mb-2"
+                className="text-white/45 text-[12px] md:text-[13px] uppercase tracking-widest font-bold mb-2"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 Testimonials &amp; Reviews
               </p>
               <p
-                className="text-white/30 text-[12px] leading-[1.75]"
+                className="text-white/45 text-[15px] leading-[1.75]"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 Testimonials were provided by actual ATTAX Solutions clients and are the clients' sole opinions and experiences. Clients were not compensated. These are individual results which will vary based on circumstances. We do not claim that they are typical results that consumers will generally achieve. Nothing included here should be taken as a guarantee, warranty, prediction, or representation about the results of your situation.
@@ -306,7 +286,7 @@ export function AttaxFooter() {
       <div className="border-t border-white/08">
         <div className="max-w-[1200px] mx-auto px-5 md:px-0 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p
-            className="text-white/35 text-[12px] text-center md:text-left"
+            className="text-white/45 text-[15px] text-center md:text-left"
             style={{ fontFamily: "'Inter Tight', sans-serif" }}
           >
             © 2025–26 ATTAX Solutions LLC · All rights reserved.
@@ -321,7 +301,7 @@ export function AttaxFooter() {
               <Link
                 key={item.label}
                 to={item.to}
-                className="text-white/35 text-[12px] hover:text-white/65 transition-colors whitespace-nowrap"
+                className="text-white/45 text-[15px] hover:text-white/80 transition-colors whitespace-nowrap"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 {item.label}
@@ -332,7 +312,7 @@ export function AttaxFooter() {
             href="https://blitzstudio.xyz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/35 text-[12px] hover:text-white/55 transition-colors whitespace-nowrap"
+            className="text-white/45 text-[15px] hover:text-white/70 transition-colors whitespace-nowrap"
             style={{ fontFamily: "'Inter Tight', sans-serif" }}
           >
             Built by <span className="text-white/45">Blitz Studio</span>

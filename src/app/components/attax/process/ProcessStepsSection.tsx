@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
+import { SECTION_H2_CLASS_LIGHT, SECTION_H2_STYLE } from "../../../lib/heroH1";
 
 const steps = [
   {
@@ -67,8 +68,8 @@ export function ProcessStepsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.05 }}
-              className="text-[32px] md:text-[48px] lg:text-[56px] leading-[1.1] text-[#0a1628] font-semibold"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
+              className={SECTION_H2_CLASS_LIGHT}
+              style={SECTION_H2_STYLE}
             >
               Four Steps.{" "}
               <span className="italic font-normal" style={{ fontFamily: "'Playfair Display', serif" }}>

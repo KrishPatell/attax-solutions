@@ -55,6 +55,7 @@ const cards = [
 export function AttaxClarity() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -65,7 +66,7 @@ export function AttaxClarity() {
 
   return (
     <section id="clarity" className="py-[60px] md:py-[120px] bg-white" ref={ref}>
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
 
         {/* Header */}
         <motion.div
@@ -201,31 +202,51 @@ export function AttaxClarity() {
               className="text-[14px] text-[rgba(3,3,15,0.55)] leading-relaxed"
               style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 400 }}
             >
-              No spam. Just one email when we launch. Unsubscribe anytime.
+              No spam. No sharing. We'll only reach out when it's ready.
             </p>
           </div>
 
           {submitted ? (
-            <div className="flex items-center gap-3 shrink-0">
-              <div className="w-10 h-10 bg-[#eaeaff] rounded-full flex items-center justify-center">
-                <CheckIcon color="#1d1ee3" />
+            <div className="flex flex-col items-center md:items-start gap-2 shrink-0">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-[#eaeaff] rounded-full flex items-center justify-center">
+                  <CheckIcon color="#1d1ee3" />
+                </div>
+                <p
+                  className="text-[#1d1ee3] text-[15px]"
+                  style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
+                >
+                  You're on the list.
+                </p>
               </div>
-              <p
-                className="text-[#1d1ee3] text-[15px]"
-                style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
-              >
-                You're on the list!
+              <p className="text-[13px] text-[rgba(3,3,15,0.5)]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                We'll notify you when ATTAX Clarity goes live.
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex gap-2 w-full md:w-auto shrink-0">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 w-full md:w-auto shrink-0">
+              <input
+                type="text"
+                required
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="First name"
+                className="rounded-[12px] px-4 py-3 text-[14px] text-[#03030f] outline-none w-full sm:w-[140px]"
+                style={{
+                  fontFamily: "'Inter Tight', sans-serif",
+                  background: "white",
+                  border: "1.5px solid #dde0ff",
+                }}
+                onFocus={(e) => (e.target.style.borderColor = "#1d1ee3")}
+                onBlur={(e) => (e.target.style.borderColor = "#dde0ff")}
+              />
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                className="rounded-[12px] px-4 py-3 text-[14px] text-[#03030f] outline-none w-full md:w-[220px]"
+                placeholder="Email address"
+                className="rounded-[12px] px-4 py-3 text-[14px] text-[#03030f] outline-none w-full sm:w-[200px]"
                 style={{
                   fontFamily: "'Inter Tight', sans-serif",
                   background: "white",
@@ -242,7 +263,7 @@ export function AttaxClarity() {
                   className="text-white text-[14px] whitespace-nowrap"
                   style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
                 >
-                  Notify Me
+                  Join Our Waitlist
                 </span>
                 <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center group-hover:bg-blue-50 transition-colors">
                   <ArrowUpRight size={15} color="#1d1ee3" />

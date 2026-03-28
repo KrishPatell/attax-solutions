@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import svgPaths from "../../../imports/svg-tbbnbj1wyr";
 import svgPathsShield from "../../../imports/svg-w6in6wygdq";
 import taxPrepImg from "../../../assets/Individual-Tax-Preparation-1024x683.webp";
+import { HERO_H1_CLASS_ON_DARK, HERO_H1_STYLE } from "../../lib/heroH1";
 
 export function AttaxHero() {
   const navigate = useNavigate();
@@ -93,20 +94,14 @@ export function AttaxHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <span
-                className="block text-[34px] md:text-[44px] lg:text-[72px] leading-[1.2] md:leading-[1.1] text-white tracking-[-1px] lg:tracking-[-1.5px]"
-                style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
-              >
-                Tax Debt Doesn't
+              <span className={`block ${HERO_H1_CLASS_ON_DARK}`} style={HERO_H1_STYLE}>
+                Tax Debt Doesn&apos;t
               </span>
-              <span
-                className="block text-[34px] md:text-[44px] lg:text-[72px] leading-[1.2] md:leading-[1.1] tracking-[-1px] lg:tracking-[-1.5px] text-white"
-                style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 600 }}
-              >
+              <span className={`block ${HERO_H1_CLASS_ON_DARK}`} style={HERO_H1_STYLE}>
                 Have to{" "}
                 <span
-                  className="italic text-[#a5b4fc]"
-                  style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600, letterSpacing: "-1.44px" }}
+                  className="italic font-normal text-[#a5b4fc]"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   Define You
                 </span>

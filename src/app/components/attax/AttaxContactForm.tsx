@@ -46,9 +46,9 @@ const contactCards = [
   },
   {
     icon: MapPin,
-    label: "Newport Beach, CA",
+    label: "Irvine, CA",
     value: "Serving clients nationwide",
-    href: "https://maps.google.com/?q=Newport+Beach,CA",
+    href: "https://maps.google.com/?q=Irvine,CA",
     external: true,
   },
 ];
