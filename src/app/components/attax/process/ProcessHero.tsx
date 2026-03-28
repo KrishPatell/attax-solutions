@@ -1,11 +1,20 @@
 import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router";
 import { Breadcrumbs } from "../about/Breadcrumbs";
 import { HERO_H1_CLASS_ON_LIGHT, HERO_H1_STYLE } from "../../../lib/heroH1";
 
 export function ProcessHero() {
   return (
-    <section className="relative pt-[100px] md:pt-[160px] pb-[60px] md:pb-[100px] overflow-hidden bg-white">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-0">
+    <section className="relative pt-[100px] md:pt-[160px] pb-[60px] md:pb-[100px] overflow-hidden bg-white border-b border-[rgba(29,30,227,0.06)]">
+      {/* Reads as white; soft cool wash + blurs separate this band from the flat white steps block */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6ff]/90 via-white to-white" />
+        <div className="absolute -top-[30%] right-[-15%] h-[min(420px,85vw)] w-[min(420px,85vw)] rounded-full bg-[#1d1ee3]/[0.04] blur-[100px]" />
+        <div className="absolute top-[40%] -left-[20%] h-[320px] w-[320px] rounded-full bg-[#c7d2fe]/25 blur-[90px]" />
+      </div>
+
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-0">
         <div className="flex flex-col items-start gap-6 max-w-[780px]">
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <Breadcrumbs current="Our Process" light />
@@ -32,9 +41,29 @@ export function ProcessHero() {
           </motion.p>
 
           <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.26 }}
+          >
+            <Link to="/contact" className="block w-fit">
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 pr-1.5 py-1.5 text-[14px] md:text-[15px] font-medium flex items-center gap-5 w-fit group"
+                style={{ fontFamily: "'Inter Tight', sans-serif" }}
+              >
+                <span className="whitespace-nowrap">Free Consultation</span>
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 shrink-0">
+                  <ArrowRight size={17} className="text-[#1d1ee3]" />
+                </div>
+              </motion.button>
+            </Link>
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.34 }}
             className="flex flex-wrap gap-3 pt-2"
           >
             {[
