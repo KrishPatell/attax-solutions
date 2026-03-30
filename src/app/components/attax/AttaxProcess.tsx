@@ -3,7 +3,6 @@ import { motion, AnimatePresence, useInView } from "motion/react";
 import { ArrowUpRight, MessageCircle, Search, Shield, CheckCircle2, ChevronDown } from "lucide-react";
 import { Link } from "react-router";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-import { AttaxTrustpilot } from "./TrustpilotBadge";
 import complimentaryConsultationImg from "../../../assets/9ac5963fc0e77b27818e101e597556691793370f.webp";
 
 const steps = [
@@ -241,7 +240,7 @@ export function AttaxProcess() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12 bg-[#0a1628] rounded-[18px] p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 md:gap-6"
+          className="mt-12 bg-[#0a1628] rounded-[18px] p-6 md:p-8 flex flex-col items-start gap-5 md:gap-6"
         >
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 md:w-12 md:h-12 bg-white/5 rounded-full flex items-center justify-center shrink-0">
@@ -253,11 +252,6 @@ export function AttaxProcess() {
             >
               Every ATTAX client receives a dedicated tax professional   not a salesperson. No handoffs. No surprises. We handle the IRS so you don't have to.
             </p>
-          </div>
-          <div className="flex items-center justify-start md:justify-end shrink-0 w-full md:w-auto">
-            <div className="scale-90 origin-left">
-              <AttaxTrustpilot />
-            </div>
           </div>
         </motion.div>
       </div>

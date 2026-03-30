@@ -80,7 +80,7 @@ export const blogPosts: Record<string, BlogPostData> = {
     slug: "irs-audit-survival-guide",
     category: "Audit Insight",
     title: "The Ultimate Hub for IRS Audit Survival Strategies",
-    featuredImage: "https://images.unsplash.com/photo-1554224155-1696413575b8?w=1200&auto=format&fit=crop&q=80",
+    featuredImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&auto=format&fit=crop&q=80",
     overview: "Welcome to ATTAX Insights, a platform dedicated to helping taxpayers navigate, plan, and address tax audits with confidence. Backed by professional tax specialization, our Hub provides a comprehensive framework to understand, prepare, and resolve your audit challenges.",
     expectations: [
       "Strategic insights into federal and state audit processes.",
@@ -92,7 +92,7 @@ export const blogPosts: Record<string, BlogPostData> = {
       text: "An audit is not a verdict; it's a process. With the right strategy and direct advocacy, we turn a period of uncertainty into a clear path toward resolution and financial closure.",
       author: "ATTAX Solutions",
       role: "Tax Specialist Team",
-      avatar: "https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=100"
+      avatar: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=100"
     },
     sections: [
       {
@@ -216,7 +216,7 @@ export const blogPosts: Record<string, BlogPostData> = {
     slug: "penalty-abatement-guide",
     category: "Penalty Relief",
     title: "IRS Penalty Abatement: How to Get Your Penalties Removed",
-    featuredImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&auto=format&fit=crop&q=80",
+    featuredImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&auto=format&fit=crop&q=80",
     overview: "IRS penalties can easily double or triple what you originally owed. The failure-to-file penalty, failure-to-pay penalty, and accuracy-related penalties compound every month — and most taxpayers don't know they can ask to have them removed. The IRS has formal programs for penalty relief, and the First-Time Abatement policy alone eliminates penalties for millions of eligible taxpayers every year.",
     expectations: [
       "The three main types of IRS penalty relief and how each one works.",
@@ -244,7 +244,7 @@ export const blogPosts: Record<string, BlogPostData> = {
         content: "Certain penalties can also be removed under specific statutory exceptions — for example, if the IRS provided you with incorrect written advice that caused the underpayment. The IRS maintains an Abatement Code List, and knowing which codes apply to your situation is where professional help adds real value. We review every client's penalty breakdown before recommending an abatement strategy."
       }
     ],
-    interstitialImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000",
+    interstitialImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1000",
     finalThoughts: "Before you make any payment arrangement with the IRS, it's worth knowing how much of your balance is actually penalties — because those may be removable. At ATTAX Solutions, penalty abatement review is part of every case intake. Contact us to find out what you might not owe."
   },
 

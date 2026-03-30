@@ -73,7 +73,9 @@ export function ClarityHeroV2() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <button
-                onClick={() => document.querySelector("#clarity")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document.querySelector("#clarity-introducing")?.scrollIntoView({ behavior: "smooth", block: "start" })
+                }
                 className="self-start group relative bg-[#1d1ee3] rounded-[50px] pl-5 pr-1.5 py-1.5 inline-flex items-center gap-5 hover:bg-[#1618c7] transition-all"
               >
                 <span className="text-white text-[14px] md:text-[16px] font-medium whitespace-nowrap" style={{ fontFamily: "'Inter Tight', sans-serif" }}>

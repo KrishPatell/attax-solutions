@@ -78,7 +78,11 @@ export function CoreValuesSection() {
                   type="button"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => document.querySelector("#clarity-waitlist")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .querySelector("#clarity-introducing")
+                      ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                  }
                   className="flex items-center gap-3 bg-white rounded-[50px] pl-6 pr-2 py-2 w-fit group"
                 >
                   <span

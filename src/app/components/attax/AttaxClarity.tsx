@@ -68,12 +68,13 @@ export function AttaxClarity() {
     <section id="clarity" className="py-[60px] md:py-[120px] bg-white" ref={ref}>
       <div className="max-w-[1200px] mx-auto px-5 md:px-0">
 
-        {/* Header */}
+        {/* Header — scroll target for hero / score-section CTAs */}
         <motion.div
+          id="clarity-introducing"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="flex flex-col items-center text-center mb-10 md:mb-14"
+          className="flex flex-col items-center text-center mb-10 md:mb-14 scroll-mt-[100px] md:scroll-mt-[120px]"
         >
           <span
             className="text-[#1d1ee3] text-[14px] md:text-[16px] block mb-2 md:mb-4"

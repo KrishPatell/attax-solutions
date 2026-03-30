@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "motion/react";
 import { Plus, Minus, ArrowUpRight } from "lucide-react";
+import { GETSTARTED_URL } from "../../../../constants/ctaUrls";
 
 const faqs = [
   {
@@ -93,7 +94,7 @@ export function ContactFAQ() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => window.open("https://calendly.com/attax-solutions", "_blank")}
+                  onClick={() => window.open(GETSTARTED_URL, "_blank", "noopener,noreferrer")}
                   className="bg-[#1d1ee3] text-white rounded-full px-8 py-4 font-bold flex items-center gap-3 shadow-lg"
                 >
                   Make A Call

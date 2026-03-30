@@ -45,11 +45,11 @@ export default function Contact() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          {/* 01. Office Location Header */}
-          <ContactOfficeLocation />
+          {/* 01. Drop Us a Message Form Section */}
+          <AttaxContactForm leadOnContactPage />
 
-          {/* 02. Drop Us a Message Form Section */}
-          <AttaxContactForm />
+          {/* 02. Office Location Header */}
+          <ContactOfficeLocation />
 
           {/* 03. What Happens After You Submit (Process Roadmap) */}
           <ProcessSection />

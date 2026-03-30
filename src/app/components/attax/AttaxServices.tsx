@@ -3,7 +3,6 @@ import { motion, useInView } from "motion/react";
 import { ArrowUpRight, Scale, Handshake, BadgeDollarSign } from "lucide-react";
 import { Link, useNavigate } from "react-router";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-import { AttaxTrustpilot } from "./TrustpilotBadge";
 import consultImg from "../../../assets/handling-cases.webp";
 
 const services = [
@@ -151,7 +150,7 @@ export function AttaxServices() {
           <div
             className="absolute inset-0 bg-[#0a1628]/45 md:bg-[#0a1628]/45"
           />
-          <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-12 bg-[#00000000] text-center md:text-left">
+          <div className="absolute inset-0 flex flex-col items-center justify-center px-6 md:px-12 bg-[#00000000] text-center md:text-left">
             <div className="max-w-[500px]">
               <p
                 className="text-white text-[24px] md:text-[32px] leading-[1.3] md:leading-[1.25]"
@@ -174,9 +173,6 @@ export function AttaxServices() {
                   <ArrowUpRight size={18} className="text-white absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />
                 </div>
               </motion.button>
-            </div>
-            <div className="hidden md:block">
-              <AttaxTrustpilot />
             </div>
           </div>
         </motion.div>

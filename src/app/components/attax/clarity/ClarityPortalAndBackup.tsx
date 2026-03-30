@@ -27,7 +27,7 @@ export function ClarityPortalAndBackup() {
                 Access your dashboard, manage payments, and view your tax score.
               </p>
               <a
-                href="https://portal.attaxsolutions.com"
+                href="https://getstarted.attaxsolutions.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-auto inline-flex items-center gap-2 text-[#1d1ee3] font-bold text-[16px] underline underline-offset-8 transition-all hover:gap-4"

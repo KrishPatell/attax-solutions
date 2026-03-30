@@ -13,56 +13,54 @@ import { useEffect, useMemo } from "react";
 import { ArrowLeft, Clock, User, ArrowUpRight } from "lucide-react";
 import { DEFAULT_OG_IMAGE, usePageSeo, type PageSeoConfig } from "../lib/pageSeo";
 
-const RELATED_TAX_GUIDES: { title: string; slug: string; img: string; date: string }[] = [
+const RELATED_TAX_GUIDES: { title: string; slug: string; img: string }[] = [
   {
     title: "What to Do If You Owe the IRS (Unfiled Returns)",
     slug: "what-to-do-owe-irs-money",
     img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800",
-    date: "Mar 2026",
   },
   {
     title: "IRS Audit Survival: Documentation & Defense",
     slug: "irs-audit-survival-guide",
-    img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
-    date: "Mar 2026",
+    img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
   },
   {
     title: "Offer in Compromise: Settle IRS Debt for Less",
     slug: "offer-in-compromise-guide",
     img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
-    date: "Mar 2026",
   },
   {
     title: "Stop Wage Garnishments & Bank Levies",
     slug: "wage-garnishment-bank-levy-guide",
-    img: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=800",
-    date: "Mar 2026",
+    img: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800",
   },
   {
     title: "Tax Debt Relief Scams: What to Watch For",
     slug: "tax-debt-relief-scams",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-    date: "Mar 2026",
+    img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
   },
   {
     title: "IRS Penalty Abatement & First-Time Relief",
     slug: "penalty-abatement-guide",
-    img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=800",
-    date: "Mar 2026",
+    img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
   },
   {
     title: "Installment Agreements & Monthly IRS Payments",
     slug: "installment-agreement-guide",
     img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
-    date: "Mar 2026",
   },
   {
     title: "Federal Tax Liens: Release, Withdrawal & Your Options",
     slug: "tax-lien-guide",
     img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
-    date: "Mar 2026",
   },
 ];
+
+function excerptFromOverview(overview: string, maxLen = 130): string {
+  const t = overview.trim();
+  if (t.length <= maxLen) return t;
+  return `${t.slice(0, maxLen - 1).trimEnd()}…`;
+}
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -108,10 +106,20 @@ export default function BlogPost() {
 
   usePageSeo(seo);
 
-  const relatedGuides = useMemo(
-    () => RELATED_TAX_GUIDES.filter((g) => g.slug !== slug).slice(0, 4),
-    [slug]
-  );
+  const relatedGuides = useMemo(() => {
+    return RELATED_TAX_GUIDES.filter((g) => g.slug !== slug)
+      .slice(0, 4)
+      .map((g) => {
+        const post = blogPosts[g.slug];
+        return {
+          ...g,
+          category: post?.category ?? "Tax Guide",
+          author: post?.quote.author ?? "ATTAX Solutions",
+          excerpt: post ? excerptFromOverview(post.overview) : "",
+          dateLabel: "28 Mar 2026",
+        };
+      });
+  }, [slug]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -316,79 +324,61 @@ export default function BlogPost() {
               </Link>
             </div>
 
-            {/* Reading path timeline — mobile / tablet (compact horizontal) */}
-            <div className="flex lg:hidden items-center gap-1 overflow-x-auto pb-3 mb-8 -mx-1 px-1 [scrollbar-width:thin]" aria-label="Suggested reading order">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {relatedGuides.map((item, i) => (
-                <div key={`m-step-${item.slug}`} className="flex items-center shrink-0">
-                  <div className="flex flex-col items-center gap-1 w-[52px]">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#1d1ee3] bg-white text-[11px] font-bold tabular-nums text-[#1d1ee3]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-[9px] uppercase tracking-wider font-bold text-[#0a1628]/35 text-center leading-none" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                      {item.date}
-                    </span>
-                  </div>
-                  {i < relatedGuides.length - 1 && <div className="h-0.5 w-6 shrink-0 bg-[#1d1ee3]/20 self-start mt-4" />}
-                </div>
-              ))}
-            </div>
-
-            {/* Reading path timeline — lg+ */}
-            <ol className="hidden lg:flex list-none items-center gap-0 mb-10 p-0 m-0" aria-label="Suggested reading order">
-              {relatedGuides.map((item, i) => (
-                <li key={`step-${item.slug}`} className="flex flex-1 min-w-0 items-center">
-                  <div className="flex flex-col items-center gap-1.5 shrink-0 w-full max-w-[76px] mx-auto">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#1d1ee3] bg-white text-[12px] font-bold tabular-nums text-[#1d1ee3]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-[#0a1628]/40 text-center leading-tight px-0.5" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                      {item.date}
-                    </span>
-                  </div>
-                  {i < relatedGuides.length - 1 && <div className="h-0.5 flex-1 bg-[#1d1ee3]/20 min-w-[8px] self-start mt-[18px]" />}
-                </li>
-              ))}
-            </ol>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
-              {relatedGuides.map((item, i) => (
-                <motion.div
+                <motion.article
                   key={item.slug}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group relative"
+                  transition={{ delay: i * 0.08 }}
+                  className="group"
                 >
-                  <Link to={`/resources/${item.slug}`} className="block">
-                    <div className="relative aspect-[4/3] rounded-[16px] overflow-hidden mb-4">
-                      <div className="absolute left-3 top-3 z-[1] flex items-center gap-2 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-[#0a1628]/70 shadow-sm border border-[rgba(10,22,40,0.06)]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                        <span className="tabular-nums text-[#1d1ee3]">{String(i + 1).padStart(2, "0")}</span>
-                        <span className="text-[#0a1628]/35">·</span>
-                        <Clock className="w-3 h-3 text-[#1d1ee3]" aria-hidden />
-                        <span>{item.date}</span>
-                      </div>
+                  <Link
+                    to={`/resources/${item.slug}`}
+                    className="block rounded-[16px] overflow-hidden bg-white border border-[rgba(10,22,40,0.08)] shadow-[0_1px_3px_rgba(10,22,40,0.06)] hover:shadow-[0_12px_40px_rgba(10,22,40,0.08)] transition-shadow duration-300 text-left"
+                  >
+                    <div className="relative aspect-[16/10] overflow-hidden">
                       <ImageWithFallback
                         src={item.img}
                         fallbackSrc={heroFallbackForSlug(item.slug)}
                         alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 flex justify-between items-end gap-3">
+                        <div className="min-w-0">
+                          <p className="text-white text-[14px] font-semibold leading-tight truncate" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                            {item.author}
+                          </p>
+                          <p className="text-white/85 text-[13px] mt-1" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                            {item.dateLabel}
+                          </p>
+                        </div>
+                        <p className="text-white text-[13px] font-medium shrink-0 max-w-[45%] text-right leading-snug" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                          {item.category}
+                        </p>
+                      </div>
                     </div>
-                    <h4
-                      className="text-[18px] leading-[1.4] text-[#0a1628] font-semibold mb-3 group-hover:text-[#1d1ee3] transition-colors text-left"
-                      style={{ fontFamily: "'Inter Tight', sans-serif" }}
-                    >
-                      {item.title}
-                    </h4>
-                    <span className="inline-flex items-center gap-2 text-[#1d1ee3] text-[14px] font-bold text-left" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                      Read More{" "}
-                      <span className="w-6 h-6 bg-[#1d1ee3] rounded-full flex items-center justify-center text-white">
-                        <ArrowUpRight size={12} />
+                    <div className="p-5 flex flex-col items-stretch gap-3">
+                      <h3
+                        className="text-[18px] md:text-[19px] leading-snug font-semibold text-[#0a1628] group-hover:text-[#1d1ee3] transition-colors"
+                        style={{ fontFamily: "'Inter Tight', sans-serif" }}
+                      >
+                        {item.title}
+                      </h3>
+                      {item.excerpt ? (
+                        <p className="text-[14px] md:text-[15px] leading-relaxed text-[#0a1628]/60 line-clamp-3" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                          {item.excerpt}
+                        </p>
+                      ) : null}
+                      <span className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[#1d1ee3] mt-1" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
+                        Read post
+                        <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden />
                       </span>
-                    </span>
+                    </div>
                   </Link>
-                </motion.div>
+                </motion.article>
               ))}
             </div>
           </div>

@@ -34,8 +34,6 @@ export function AttaxStrategicPlatform() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const bookingUrl = "https://calendly.com/attax-solutions";
-
   return (
     <section id="platform" className="bg-[#0a1628] py-[120px] overflow-hidden" ref={ref}>
       <div className="max-w-[1200px] mx-auto">

@@ -1,11 +1,13 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import svgPaths from "../../../imports/svg-ps3a1hmcku";
 import imgBuildingA from "../../../assets/75c625e12e429e69fa04d226df2a67ef68773f5d.webp";
 
 export function AttaxStrategicPlatformV2() {
+  const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -126,9 +128,10 @@ export function AttaxStrategicPlatformV2() {
               <motion.button 
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={() => navigate("/contact")}
                 className="mt-6 self-start flex items-center gap-5 bg-[#1d1ee3] rounded-full pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group"
               >
-                <span className="text-white text-[14px] md:text-[16px] font-medium font-['Inter_Tight'] leading-tight px-1 whitespace-nowrap">Book Strategic Session</span>
+                <span className="text-white text-[14px] md:text-[16px] font-medium font-['Inter_Tight'] leading-tight px-1 whitespace-nowrap">Start Your Complimentary Consultation</span>
                 <div className="w-10 h-10 md:w-11 md:h-11 bg-white rounded-full flex items-center justify-center overflow-hidden relative shrink-0">
                   <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />
                   <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out translate-x-[-150%] translate-y-[150%] group-hover:translate-x-0 group-hover:translate-y-0" />

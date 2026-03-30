@@ -1,16 +1,13 @@
 import { motion } from "motion/react";
 import { ArrowUpRight, ChevronDown, Play, ShieldAlert, FileCheck } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-import { useNavigate } from "react-router";
 import svgPaths from "../../../imports/svg-tbbnbj1wyr";
+import { GETSTARTED_URL } from "../../../constants/ctaUrls";
 import svgPathsShield from "../../../imports/svg-w6in6wygdq";
 import taxPrepImg from "../../../assets/Individual-Tax-Preparation-1024x683.webp";
 import { HERO_H1_CLASS_ON_DARK, HERO_H1_STYLE } from "../../lib/heroH1";
 
 export function AttaxHero() {
-  const navigate = useNavigate();
-  const scrollTo = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
-
   return (
     <section id="hero" className="relative min-h-[90vh] lg:min-h-[100vh] bg-[#0a1628] overflow-hidden flex items-center">
       {/* Background */}
@@ -130,14 +127,14 @@ export function AttaxHero() {
               <motion.button
                 whileHover={{ scale: 1.04, boxShadow: "0 12px 40px rgba(29,30,227,0.45)" }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => navigate("/contact")}
+                onClick={() => window.open(GETSTARTED_URL, "_blank", "noopener,noreferrer")}
                 className="flex items-center gap-5 bg-[#1d1ee3] rounded-[50px] pl-5 md:pl-6 pr-1.5 md:pr-2 py-1.5 md:py-2 group self-start"
               >
                 <span
                   className="text-white text-[13px] md:text-[16px] whitespace-nowrap"
                   style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 500 }}
                 >
-                  Start Your Complimentary Consultation
+                  Get Started
                 </span>
                 <div className="w-10 h-10 md:w-12 md:h-12 shrink-0 bg-white rounded-full flex items-center justify-center overflow-hidden relative">
                   <ArrowUpRight size={18} className="text-[#1d1ee3] absolute transition-transform duration-300 ease-in-out group-hover:translate-x-[150%] group-hover:-translate-y-[150%]" />

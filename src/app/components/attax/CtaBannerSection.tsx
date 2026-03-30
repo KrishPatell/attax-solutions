@@ -9,7 +9,7 @@ export function AttaxCtaBanner() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
-  const bookingUrl = "https://calendly.com/attax-solutions";
+  const bookingUrl = "https://getstarted.attaxsolutions.com/";
 
   return (
     null

@@ -40,7 +40,7 @@ const articles = [
     slug: "penalty-abatement-guide",
     title: "IRS Penalty Abatement: How to Get Your Penalties Removed",
     description: "Failure-to-file and failure-to-pay penalties can double your balance. Learn how First-Time Abatement and reasonable cause relief can eliminate them.",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80",
     date: "March 20, 2026",
     author: "Tax Specialist Team"
   },

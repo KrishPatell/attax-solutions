@@ -38,10 +38,8 @@ export default function Clarity() {
         {/* Why We Built This */}
         <ClarityWhySection />
 
-        {/* 03 + 04 + 05. Membership tiers & Waitlist */}
-        <div id="clarity">
-          <AttaxClarity />
-        </div>
+        {/* 03 + 04 + 05. Membership tiers & Waitlist (section id lives on AttaxClarity) */}
+        <AttaxClarity />
 
         {/* ATTAX Score Factors */}
         <CoreValuesSection />

@@ -6,12 +6,8 @@ import {
   MapPin,
   Send,
   ChevronDown,
-  ShieldCheck,
-  Clock,
-  Globe,
   CheckCircle2,
 } from "lucide-react";
-import AttaxTrustpilot from "../../../imports/AttaxTrustpilot";
 
 const issueOptions = [
   "IRS Audit / Examination",
@@ -53,11 +49,6 @@ const contactCards = [
   },
 ];
 
-const trustBadges = [
-  { icon: Clock, text: "We respond within 1 business day." },
-  { icon: ShieldCheck, text: "All information is strictly confidential." },
-];
-
 interface FormState {
   fullName: string;
   phone: string;
@@ -66,7 +57,11 @@ interface FormState {
   message: string;
 }
 
-export function AttaxContactForm() {
+type AttaxContactFormProps = {
+  leadOnContactPage?: boolean;
+};
+
+export function AttaxContactForm({ leadOnContactPage = false }: AttaxContactFormProps) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -97,7 +92,11 @@ export function AttaxContactForm() {
   return (
     <section
       id="contact"
-      className="relative bg-white py-[60px] md:py-[120px] px-5 md:px-8 overflow-x-hidden"
+      className={`relative bg-white px-5 md:px-8 overflow-x-hidden ${
+        leadOnContactPage
+          ? "pt-[100px] md:pt-[160px] pb-[60px] md:pb-[120px]"
+          : "py-[60px] md:py-[120px]"
+      }`}
       ref={ref}
     >
       {/* Subtle background grid - now dark on light */}
@@ -187,14 +186,6 @@ export function AttaxContactForm() {
                 </div>
               </motion.a>
             ))}
-
-            {/* Divider */}
-            <div className="border-t border-slate-100" />
-
-            {/* Trust Badges */}
-            <div className="relative w-full max-w-[240px] h-[100px]">
-              <AttaxTrustpilot />
-            </div>
           </motion.div>
 
           {/* ── Right: Form (Swapped from Left) ── */}

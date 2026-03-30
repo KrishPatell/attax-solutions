@@ -2,9 +2,10 @@ import { motion } from "motion/react";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import ctaDependentImg from "../../../../assets/contact-cta-dependent.jpg";
+import { GETSTARTED_URL } from "../../../../constants/ctaUrls";
 
 export function ContactFAQCTA() {
-  const bookingUrl = "https://calendly.com/attax-solutions";
+  const bookingUrl = GETSTARTED_URL;
 
   const benefits = [
     "Schedule a Free Consultation",
@@ -36,7 +37,7 @@ export function ContactFAQCTA() {
             <motion.button
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => window.open(bookingUrl, "_blank")}
+              onClick={() => window.open(bookingUrl, "_blank", "noopener,noreferrer")}
               className="bg-[#1d1ee3] text-white rounded-[50px] pl-5 pr-1.5 py-1.5 font-bold text-[14px] md:text-[16px] inline-flex items-center gap-5 self-start w-fit transition-all shadow-xl mb-8 md:mb-12 whitespace-nowrap"
             >
               <span>Get Started</span>
