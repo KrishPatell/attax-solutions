@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Search, ChevronDown, ArrowUpRight, Clock, AlertTriangle, AlertCircle, Info, BookOpen, ExternalLink } from "lucide-react";
 import { Link } from "react-router";
@@ -239,123 +239,29 @@ const urgencyConfig = {
 // ─── SUB-COMPONENTS ───────────────────────────────────────────────────────────
 
 function BlogTab() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const featured = articles.find((a) => a.featured);
-  const filtered = articles
-    .filter((a) => !a.featured)
-    .filter((a) => activeCategory === "All" || a.category === activeCategory);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const p = new URLSearchParams(window.location.search);
+    const u =
+      "https://app.trysoro.com/api/embed/575855c5-58eb-4ed5-95a7-ee16b5833f1a" +
+      (p.get("post") ? "?post=" + encodeURIComponent(p.get("post")!) : "");
+
+    const s = document.createElement("script");
+    s.src = u;
+    container.appendChild(s);
+
+    return () => {
+      if (container.contains(s)) container.removeChild(s);
+    };
+  }, []);
 
   return (
     <div>
-      {/* Featured article */}
-      {featured && (
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-10 md:mb-14"
-        >
-          <Link to={`/resources/${featured.slug}`} className="group block relative rounded-[24px] overflow-hidden bg-[#0a1628]">
-            <div className="relative h-[300px] md:h-[460px]">
-              <ImageWithFallback
-                src={featured.image}
-                fallbackSrc={heroFallbackForSlug(featured.slug)}
-                alt={featured.title}
-                className="w-full h-full object-cover opacity-70 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
-              />
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/40 to-transparent" />
-            </div>
-            {/* Content overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="bg-[#1d1ee3] text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  Start Here
-                </span>
-                <span className="text-white/60 text-[13px]" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                  {featured.category} · {featured.readTime}
-                </span>
-              </div>
-              <h2
-                className="text-[22px] md:text-[36px] lg:text-[42px] leading-[1.2] text-white font-semibold max-w-[780px] mb-4 group-hover:text-[#a5b4fc] transition-colors"
-                style={{ fontFamily: "'Inter Tight', sans-serif" }}
-              >
-                {featured.title}
-              </h2>
-              <p className="text-white/60 text-[14px] md:text-[16px] leading-[1.6] max-w-[600px] hidden md:block" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                {featured.excerpt}
-              </p>
-            </div>
-          </Link>
-        </motion.div>
-      )}
-
-      {/* Category filter */}
-      <div className="flex flex-wrap gap-2 mb-8">
-        {CATEGORIES.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className={`px-4 py-2 rounded-full text-[13px] font-semibold transition-all ${
-              activeCategory === cat
-                ? "bg-[#1d1ee3] text-white"
-                : "bg-[#f7f7f4] text-[#0a1628]/60 hover:bg-[#eaeeff] hover:text-[#1d1ee3]"
-            }`}
-            style={{ fontFamily: "'Inter Tight', sans-serif" }}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      {/* Article grid — reference style: 2-col image cards with overlay titles */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-        {filtered.map((article, i) => (
-          <motion.div
-            key={article.slug}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.06 }}
-          >
-            <Link
-              to={`/resources/${article.slug}`}
-              className="group block relative rounded-[20px] overflow-hidden bg-[#0a1628]"
-            >
-              <div className="relative h-[240px] md:h-[300px]">
-                <ImageWithFallback
-                  src={article.image}
-                  fallbackSrc={heroFallbackForSlug(article.slug)}
-                  alt={article.title}
-                  className="w-full h-full object-cover opacity-75 group-hover:opacity-85 group-hover:scale-105 transition-all duration-600"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/80 via-transparent to-transparent" />
-                {/* Category pill */}
-                <div className="absolute top-4 left-4">
-                  <span
-                    className="bg-white/90 text-[#0a1628] text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full"
-                    style={{ fontFamily: "'Inter Tight', sans-serif" }}
-                  >
-                    {article.category}
-                  </span>
-                </div>
-              </div>
-              {/* Title overlay card — reference style */}
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <div className="bg-white rounded-[14px] p-4 shadow-lg">
-                  <p className="text-[#0a1628]/40 text-[11px] uppercase tracking-wider font-semibold mb-1.5" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
-                    {article.readTime} · {article.date}
-                  </p>
-                  <h3
-                    className="text-[16px] md:text-[18px] leading-[1.3] text-[#0a1628] font-semibold group-hover:text-[#1d1ee3] transition-colors"
-                    style={{ fontFamily: "'Inter Tight', sans-serif" }}
-                  >
-                    {article.title}
-                  </h3>
-                </div>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
-      </div>
+      <div id="soro-blog" ref={containerRef} />
     </div>
   );
 }
